@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<location id="1" name="Route 1">
+	<events>
+		<InformationEvent command="info">
+			You are on a dark road!
+		</InformationEvent>
+	</events>
+</location>
