@@ -11,9 +11,12 @@ public class Trainer {
 	public Trainer(int locationId, List<Integer> tokens){
 		this.locationId = locationId;
 		this.tokens = tokens;
+		if(!tokens.contains(0)){
+			tokens.add(0);
+		}
 	}
 	
-	public int getLocation(){
+	public int getLocationId(){
 		return locationId;
 	}
 	

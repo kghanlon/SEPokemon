@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <world>
 	<location id="1" name="Route 1">
-			<InformationEvent typ="0" command="info" reqToken="0;2">
+			<InformationEvent typ="0" command="info" reqToken="0">
 				You are on a dark road!
 			</InformationEvent>
 			<ChangeLocationEvent typ="1" command="go north" nextLocId="2" reqToken="0">
