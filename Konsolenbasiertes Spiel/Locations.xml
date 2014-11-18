@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<location id="1" name="Route 1">
-	<events>
-		<InformationEvent command="info">
-			You are on a dark road!
-		</InformationEvent>
-	</events>
-</location>
+<world>
+	<location id="1" name="Route 1">
+			<InformationEvent typ="0" command="info" reqToken="0;2">
+				You are on a dark road!
+			</InformationEvent>
+			<ChangeLocationEvent typ="1" command="go north" nextLocId="2" reqToken="0">
+				You go north.
+			</ChangeLocationEvent>
+	</location>
+	<location id="2" name="Route 2">
+			<InformationEvent typ="0" command="info" reqToken="0">
+				You are looking at a giant tree.
+			</InformationEvent>
+	</location>
+</world>
