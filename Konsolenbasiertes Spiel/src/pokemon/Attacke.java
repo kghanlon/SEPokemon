@@ -17,6 +17,13 @@ public class Attacke {
 		schaden = Integer.parseInt(atthash.get(id).split("#")[3]);
 	}
 	
+	public Attacke(String name, Typ typ, float gen, int schaden){
+		this.name = name;
+		this.typ = typ;
+		this.gen = gen;
+		this.schaden = schaden;
+	}
+	
 	public String toString(){
 		return name +"\t" + Pokemon.typToString(typ) + "\tSchaden: "+ schaden + "\tGenauigkeit: " + gen;
 	}

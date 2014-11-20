@@ -2,6 +2,7 @@ package pokemon;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Pokemon {
@@ -14,7 +15,7 @@ public class Pokemon {
 	private int lvl, exp, maxkp, kp, staerke, vert, tempo;
 	
 	public Pokemon(int id, int lvl, int exp, int[] attackenid, int maxkp, 
-			int kp, int staerke, int vert, int tempo, float fangrate, HashMap<Integer, Attacke> moeglicheAttacken){
+			int kp, int staerke, int vert, int tempo){
 		
 		
 		this.name = pokehash.get(id).split("#")[0].trim();
@@ -26,7 +27,14 @@ public class Pokemon {
 		for(int i=0; i<attackenid.length; i++){
 			attacken[i] = new Attacke(attackenid[i]);
 		}
-		this.fangrate=fangrate;
+		this.fangrate=Float.parseFloat(pokehash.get(id).split("#")[3].trim());		
+		HashMap<Integer, Attacke> hashtmp = new HashMap<>();
+		String [] moeg = pokehash.get(id).split("#")[4].split("$");
+		for(int i=4; i<moeg.length; i++){
+			Attacke a = new Attacke(Integer.parseInt(moeg[i].split(";")[1]));
+			hashtmp.put(Integer.parseInt(moeg[i].split(";")[0].trim()), a);			
+		}
+		this.moeglicheAttacken=hashtmp;
 		this.lvl=lvl;
 		this.exp=exp;
 		this.maxkp=maxkp;
@@ -34,8 +42,50 @@ public class Pokemon {
 		this.staerke=staerke;
 		this.vert=vert;
 		this.tempo=tempo;
-		this.moeglicheAttacken=moeglicheAttacken;
+		
 	}
+	
+	public Pokemon(int id, int lvl){
+		this.name = pokehash.get(id).split("#")[0].trim();
+		Typ[] typtmp = new Typ[2];
+		typtmp[0] = Pokemon.stringToTyp(pokehash.get(id).split("#")[1].trim());
+		typtmp[1] = Pokemon.stringToTyp(pokehash.get(id).split("#")[2].trim());
+		this.typ=typtmp;
+		this.lvl=lvl;
+		this.fangrate=Float.parseFloat(pokehash.get(id).split("#")[3].trim());		
+		HashMap<Integer, Attacke> hashtmp = new HashMap<>();
+		String [] moeg = pokehash.get(id).split("#")[4].split("%");
+		for(int i=0; i<moeg.length; i++){
+			Attacke a = new Attacke(Integer.parseInt(moeg[i].split(";")[1]));
+			hashtmp.put(Integer.parseInt(moeg[i].split(";")[0].trim()), a);			
+		}
+		this.moeglicheAttacken=hashtmp;
+		zufallsWerteWild(lvl);
+	}
+	
+	private void zufallsWerteWild(int lvl){
+		int attackenanzahl=0;
+		Attacke[] a = new Attacke[4];
+		for(int i=lvl;i>0; i--){
+			if(moeglicheAttacken.containsKey(i))
+			//sucht die ältesten attacken, die das pokemon hätte lernen können und die einem seiner typen entsprechen
+			{
+				attacken[attackenanzahl]=moeglicheAttacken.get(i);
+				attackenanzahl++;
+			}
+			if(attackenanzahl==4){
+				break;
+			}
+		}
+		exp=(int)(aufstiegsgrenze(lvl)/5);//mache ich damit man als exp gewinn des trainers einfach die nehmen kann die das fremde pokemon hat so steigt es auch wenn die level höher gehen
+		maxkp = (int)(lvl*Math.pow(1.035, lvl)*10);
+		kp=maxkp;
+		double ran = Math.random()*3.14;
+		staerke=(int)(10+lvl+Math.sin(ran)*5.1);//ausgeglichen angriff und verteidigung
+		vert = (int)(10+lvl+Math.abs(Math.cos(ran))*5.1);
+		tempo=(int)((4*staerke+vert)/5);//starkes pokemon ist schneller einfach festgelegt		
+	}
+	
 	
 	public void expGewinn(int i){
 		exp+=i;
@@ -91,22 +141,26 @@ public class Pokemon {
 				Scanner sc = new Scanner(System.in);
 				t = sc.nextInt();
 				sc.close();
-			}catch(Exception e){
-				e.printStackTrace();
+			}catch(InputMismatchException e){
+				System.out.println("Ungültige Eingabe wird als nein gewertet.");//todo evtl. hier ne schleife bis gültige eingabe
 				t=0;
 			}
 			switch(t){
-				case 1: attacken[0] = tmp;
-				System.out.println(attacken[0].getName() + " wurde verlernt.");
+				case 1:
+					System.out.println(attacken[0].getName() + " wurde verlernt."); 
+					attacken[0] = tmp;				
 				break; 
-				case 2:attacken[1] = tmp;
-				System.out.println(attacken[1].getName() + " wurde verlernt.");
+				case 2:
+					System.out.println(attacken[1].getName() + " wurde verlernt.");
+					attacken[1] = tmp;				
 				break;
-				case 3:attacken[2] = tmp;
-				System.out.println(attacken[2].getName() + " wurde verlernt.");
+				case 3:
+					System.out.println(attacken[2].getName() + " wurde verlernt.");
+					attacken[2] = tmp;				
 				break;
-				case 4:attacken[3] = tmp;
-				System.out.println(attacken[3].getName() + " wurde verlernt.");
+				case 4:
+					System.out.println(attacken[3].getName() + " wurde verlernt.");
+					attacken[3] = tmp;				
 				break;
 			default: System.out.println("Die Attacke wurde nicht erlernt");
 			}	
@@ -149,6 +203,13 @@ public class Pokemon {
 		return null;
 	} 
 	
+	public static Attacke strToAtt(String s){
+		String name = s.split("#")[0].trim();
+		Typ typ = Pokemon.stringToTyp(s.split("#")[1].trim());
+		float gen = Float.parseFloat(s.split("#")[2].trim());
+		int schaden = Integer.parseInt(s.split("#")[3]);
+		return new Attacke(name, typ, gen, schaden);
+	}
 	public static Typ stringToTyp(String s){
 		switch(s){
 		case "wasser": return Typ.wasser;

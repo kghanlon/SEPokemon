@@ -50,6 +50,13 @@ public class Game {
 		while(true){
 			locations.get(t.getLocationId()).runLocation(t);
 		}*/
+		kaitest();
+		    
+	}
+	
+	//Methoden:
+	
+	public static void kaitest(){
 		HashMap<Integer, String> atthash = new HashMap<>();
 		atthash.put(0, "Donnerblitz#elektro#0.9#80");
 		atthash.put(1, "Funkensprung#elektro#1.0#40");
@@ -57,25 +64,21 @@ public class Game {
 		atthash.put(3, "Ruckzuckhieb#normal#1.0#60");
 		atthash.put(4, "Bodyslam#normal#0.8#70");
 		HashMap<Integer, String> pokehash = new HashMap<>();
-		pokehash.put(0, "Pikachu#elektro#elektro");
+		pokehash.put(0, "Pikachu#elektro#elektro#0.7#5;2%10;1%15;3%20;0%25;4");
 		Attacke.setAtthash(atthash);
 		Pokemon.setPokehash(pokehash);
-		int [] att = {2};
 		HashMap<Integer, Attacke> moeglicheAttacken = new HashMap<>();
 		moeglicheAttacken.put(5, new Attacke(2));
 		moeglicheAttacken.put(10, new Attacke(1));
 		moeglicheAttacken.put(15, new Attacke(3));
 		moeglicheAttacken.put(20, new Attacke(0));
 		moeglicheAttacken.put(25, new Attacke(4));
-		Pokemon pikachu = new Pokemon(0,9,8, att, 120, 67, 75, 40, 100, (float)0.95, moeglicheAttacken);
+		Pokemon pikachu = new Pokemon(0, 26);
 		System.out.println(pikachu);
 		System.out.println(pikachu.ausgabeAttacken());
-		pikachu.expGewinn(10000);
+		pikachu.expGewinn(100);
 		System.out.println(pikachu);
-		    
 	}
-	
-	//Methoden:
 	
 	public static void getAllLocations(NodeList nodes){
 		//Hier werden alle Locations die in der XML stehen in die
