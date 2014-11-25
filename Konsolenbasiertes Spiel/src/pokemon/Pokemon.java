@@ -6,32 +6,32 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Pokemon {
-	private static HashMap<Integer, String> pokehash = new HashMap<>();
+
 	private HashMap<Integer, Attacke> moeglicheAttacken = new HashMap<>();
-	private String name;
+	private PokeNamen name;
 	private Attacke [] attacken = new Attacke[4];
 	private float fangrate;
 	private Typ[] typ = new Typ[2];
 	private int lvl, exp, maxkp, kp, staerke, vert, tempo;
 	
-	public Pokemon(int id, int lvl, int exp, int[] attackenid, int maxkp, 
+	public Pokemon(PokeNamen name, int lvl, int exp, AttackenNamen[] attackenid, int maxkp, 
 			int kp, int staerke, int vert, int tempo){
 		
 		
-		this.name = pokehash.get(id).split("#")[0].trim();
+		this.name = name;
 		Typ[] typtmp = new Typ[2];
-		typtmp[0] = Pokemon.stringToTyp(pokehash.get(id).split("#")[1].trim());
-		typtmp[1] = Pokemon.stringToTyp(pokehash.get(id).split("#")[2].trim());
+		typtmp[0] = Statisches.stringToTyp(Statisches.getPokehash().get(name).split("#")[0].trim());
+		typtmp[1] = Statisches.stringToTyp(Statisches.getPokehash().get(name).split("#")[1].trim());
 		this.typ=typtmp;
 		attacken= new Attacke[4];
 		for(int i=0; i<attackenid.length; i++){
 			attacken[i] = new Attacke(attackenid[i]);
 		}
-		this.fangrate=Float.parseFloat(pokehash.get(id).split("#")[3].trim());		
+		this.fangrate=Float.parseFloat(Statisches.getPokehash().get(name).split("#")[2].trim());		
 		HashMap<Integer, Attacke> hashtmp = new HashMap<>();
-		String [] moeg = pokehash.get(id).split("#")[4].split("$");
+		String [] moeg = Statisches.getPokehash().get(name).split("#")[3].split("$");
 		for(int i=4; i<moeg.length; i++){
-			Attacke a = new Attacke(Integer.parseInt(moeg[i].split(";")[1]));
+			Attacke a = new Attacke(Statisches.strToAttName(moeg[i].split(";")[1]));
 			hashtmp.put(Integer.parseInt(moeg[i].split(";")[0].trim()), a);			
 		}
 		this.moeglicheAttacken=hashtmp;
@@ -45,18 +45,18 @@ public class Pokemon {
 		
 	}
 	
-	public Pokemon(int id, int lvl){
-		this.name = pokehash.get(id).split("#")[0].trim();
+	public Pokemon(PokeNamen name, int lvl){
+		this.name = name;
 		Typ[] typtmp = new Typ[2];
-		typtmp[0] = Pokemon.stringToTyp(pokehash.get(id).split("#")[1].trim());
-		typtmp[1] = Pokemon.stringToTyp(pokehash.get(id).split("#")[2].trim());
+		typtmp[0] = Statisches.stringToTyp(Statisches.getPokehash().get(name).split("#")[0].trim());
+		typtmp[1] = Statisches.stringToTyp(Statisches.getPokehash().get(name).split("#")[1].trim());
 		this.typ=typtmp;
 		this.lvl=lvl;
-		this.fangrate=Float.parseFloat(pokehash.get(id).split("#")[3].trim());		
+		this.fangrate=Float.parseFloat(Statisches.getPokehash().get(name).split("#")[2].trim());		
 		HashMap<Integer, Attacke> hashtmp = new HashMap<>();
-		String [] moeg = pokehash.get(id).split("#")[4].split("%");
+		String [] moeg = Statisches.getPokehash().get(name).split("#")[3].split("%");
 		for(int i=0; i<moeg.length; i++){
-			Attacke a = new Attacke(Integer.parseInt(moeg[i].split(";")[1]));
+			Attacke a = new Attacke(Statisches.strToAttName(moeg[i].split(";")[1]));
 			hashtmp.put(Integer.parseInt(moeg[i].split(";")[0].trim()), a);			
 		}
 		this.moeglicheAttacken=hashtmp;
@@ -100,24 +100,18 @@ public class Pokemon {
 	
 	private void levelaufstieg(){
 		lvl++;		
-		exp = (int)Pokemon.max(exp-aufstiegsgrenze(lvl-1), 0);
+		exp = (int)Statisches.max(exp-aufstiegsgrenze(lvl-1), 0);
 		System.out.println("\nLEVELAUFSTIEG\n" +name + " ist nun auf Level " + lvl + "!");
 		if(gibtAttackeLvl(lvl)){
 			attackeLernen(lvl);
 		}
-		Pokemon.sleep();
+		Statisches.sleep();
 		if(exp >= aufstiegsgrenze(lvl)){//wenn man so viele exp bekommt, dass direkt mehrere Level steigt dann geht er hier rein
 			levelaufstieg();
 		}
 	}
 	
-	public static void sleep(){
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-	}
+
 	
 	private boolean gibtAttackeLvl(int l){
 		if(moeglicheAttacken.containsKey(l)){
@@ -129,12 +123,12 @@ public class Pokemon {
 	private void attackeLernen(int l){
 		Attacke tmp = moeglicheAttacken.get(l);		
 		if(attacken[3]!=null){//keine freien Attackenplätze
-			Pokemon.sleep();
+			Statisches.sleep();
 			System.out.println("\nNEUE ATTACKE " + tmp.getName() + " erlernbar:\nTyp: " + tmp.getTyp() + "\tSchaden:" + tmp.getSchaden()+ "\tGen: " + tmp.getGen());
-			Pokemon.sleep();
+			Statisches.sleep();
 			System.out.println("\nWenn du diese Attacke erlernen möchtest,\nwähle aus welche Attacke weichen soll");
-			Pokemon.sleep();
-			Pokemon.sleep();
+			Statisches.sleep();
+			Statisches.sleep();
 			System.out.println(ausgabeAttacken() + "\n(Wenn die Attacke nicht erlernt werden soll gib 0 ein)\n");
 			int t;
 			try{
@@ -179,9 +173,9 @@ public class Pokemon {
 				attacken[3]=tmp;
 				i=3;
 			}
-			Pokemon.sleep();
+			Statisches.sleep();
 			System.out.println("\nNEUE ATTACKE " + name + " hat " + tmp.getName() +" an Position "+ (i+1) +" gelernt.\n");
-			Pokemon.sleep();
+			Statisches.sleep();
 			System.out.println("Typ: " + tmp.getTyp() + "\tSchaden:" + tmp.getSchaden()+ "\tGen: " + tmp.getGen() );
 		}
 	}
@@ -191,7 +185,7 @@ public class Pokemon {
 		String t = s.toUpperCase();
 		for(int i=0; i<4; i++){
 			if(attacken[i] !=null){
-				String v = attacken[i].getName().toUpperCase();//eingabe des namens auch möglich
+				String v = attacken[i].getName() + "";//eingabe des namens auch möglich
 				if(t.equals(v)){
 					return attacken[i];
 				}
@@ -203,53 +197,20 @@ public class Pokemon {
 		return null;
 	} 
 	
-	public static Attacke strToAtt(String s){
-		String name = s.split("#")[0].trim();
-		Typ typ = Pokemon.stringToTyp(s.split("#")[1].trim());
-		float gen = Float.parseFloat(s.split("#")[2].trim());
-		int schaden = Integer.parseInt(s.split("#")[3]);
-		return new Attacke(name, typ, gen, schaden);
-	}
-	public static Typ stringToTyp(String s){
-		switch(s){
-		case "wasser": return Typ.wasser;
-		case "elektro" : return Typ.elektro;
-		case "feuer" : return Typ.feuer;
-		case "pflanze" : return Typ.pflanze;
-		case "psycho" : return Typ.psycho;
-		case "gestein" : return Typ.gestein;
-		case "flug" : return Typ.flug;
-		case "normal" : return Typ.normal;
+	/*public static AttackenNamen strToAtt(String s){		
+		Typ typ = Pokemon.stringToTyp(s.split("#")[0].trim());
+		float gen = Float.parseFloat(s.split("#")[1].trim());
+		int schaden = Integer.parseInt(s.split("#")[2]);
+		for(AttackenNamen t: Attacke.getAtthash().keySet()){
+			if(Attacke.getAtthash().get(t).equals(typ+"#"+gen+"#"+schaden+"#")){
+				return t;
+			}
 		}
-		return null;
-	}
-	public static String typToString(Typ t){
-		switch(t){
-		case wasser : return "wasser";
-		case elektro : return "elektro";
-		case feuer : return "feuer";
-		case pflanze : return "pflanze";
-		case psycho : return "psycho";
-		case gestein : return "gestein";
-		case flug : return "flug";
-		case normal : return "normal";
-		}
-		return null;
-	}
-	 
-	public static double min(double a, double b){
-		if(a<=b){
-			return a;
-		}
-		return b;
-	}
+		return AttackenNamen.PLATSCHER;//wird eig nicht erreicht aber defualt ist platscher
+	}*/
 	
-	public static double max(double a, double b){
-		if(a>=b){
-			return a;
-		}
-		return b;
-	}
+	
+	
 	
 	public String ausgabeAttacken(){
 		StringBuilder sb =new StringBuilder();
@@ -287,20 +248,11 @@ public class Pokemon {
 	
 	
 	
-	public String getName() {
+	public PokeNamen getName() {
 		return name;
 	}
-	public void setName(String s){//evtl nützlich wenn man einen namen anders haben möchte
-		if(s.length()>0){
-			name = s;
-		}
-	}	
-	public static HashMap<Integer, String> getPokehash() {
-		return pokehash;
-	}
-	public static void setPokehash(HashMap<Integer, String> pokehash) {
-		Pokemon.pokehash = pokehash;
-	}
+	
+
 	public Attacke [] getAttacken() {
 		return attacken;
 	}

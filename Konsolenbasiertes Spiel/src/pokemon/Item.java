@@ -3,17 +3,17 @@ package pokemon;
 import java.util.HashMap;
 
 public abstract class Item {
-	private static HashMap<Integer, String> itemhash = new HashMap<>();
+
 	protected String name;
 	private int anzahl;
 	
 	public Item(int id){
-		this.name=Item.itemhash.get(id).split("#")[0].trim();
+		this.name=Statisches.getItemhash().get(id).split("#")[0].trim();
 		setAnzahl(1);
 	}
 	
 	public Item(int id, int anzahl){
-		this.name=Item.itemhash.get(id).split("#")[0].trim();
+		this.name=Statisches.getItemhash().get(id).split("#")[0].trim();
 		this.setAnzahl(anzahl);
 	}
 	
@@ -34,11 +34,5 @@ public abstract class Item {
 		this.anzahl = anzahl;
 	}
 
-	public static HashMap<Integer, String> getItemhash() {
-		return itemhash;
-	}
 
-	public static void setItemhash(HashMap<Integer, String> itemhash) {
-		Item.itemhash = itemhash;
-	}
 }

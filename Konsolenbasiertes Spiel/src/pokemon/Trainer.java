@@ -52,16 +52,16 @@ public class Trainer {
 	}
 	
 	public void pokemonTauschen(Pokemon a, Pokemon b){
-		Pokemon.sleep();
+		Statisches.sleep();
 		System.out.println(a.getName() + "wurde gegen " + b.getName() + " getauscht.");
 		a = b;
 	}
 	
 	public void pokemonErsetzen(Pokemon p){
-		Pokemon.sleep();
+		Statisches.sleep();
 		System.out.println("GEFANGEN: Du hast " + p.getName() + "gefangen.");
 		if(team[team.length-1]!=null){
-			Pokemon.sleep();
+			Statisches.sleep();
 			System.out.println("Welches Pokemon soll durch " + p.getName() + " ersetzt werden?");
 		for(int i=0; i< team.length; i++){
 			System.out.println((i+1) + ") " + p.getName());
@@ -105,7 +105,7 @@ public class Trainer {
 					break;
 				}
 			}
-			Pokemon.sleep();
+			Statisches.sleep();
 			System.out.println("Pokemon wurde an " + j +". Stelle im Team eingefügt.");			
 		}
 	}

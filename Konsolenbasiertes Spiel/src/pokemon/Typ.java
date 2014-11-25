@@ -1,7 +1,7 @@
 package pokemon;
 
 public enum Typ {
-	wasser, elektro, feuer, pflanze, psycho, gestein, flug, normal
+	WASSER, ELEKTRO, FEUER, PFLANZE, PSYCHO, GESTEIN, FLUG, NORMAL
 }
 
 

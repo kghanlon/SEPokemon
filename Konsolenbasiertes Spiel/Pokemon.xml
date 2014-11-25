@@ -1,1 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<PokemonListe>
+<Pokemon id="PIKACHU">
+	<Typ name="ELEKTRO"/>	
+	<Typ name="ELEKTRO"/>
+	<Fangrate wert=0.7/>
+	<AttackenListe>
+		<Attacke id="RUTENSCHLAG" lvl=5/>
+		<Attacke id="RUCKZUCKHIEB" lvl=10/>
+		<Attacke id="FUNKENSPRUNG" lvl=15/>
+		<Attacke id="BODYSLAM" lvl=20/>
+		<Attacke id="DONNERBLITZ" lvl=25/>
+	</AttackenListe>
+</Pokemon>
+
+
+
+</PokemonListe>

@@ -1,0 +1,5 @@
+package pokemon;
+
+public enum ItemNamen {
+	POKEBALL, SUPERBALL, HYPERBALL, MEISTERBALL, TRANK, SUPERTRANK, HYPERTRANK
+}
