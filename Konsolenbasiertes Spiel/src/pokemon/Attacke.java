@@ -13,7 +13,7 @@ public class Attacke {
 		this.name = name;
 		typ = Statisches.stringToTyp(Statisches.getAtthash().get(name).split("#")[0].trim());
 		gen = Float.parseFloat(Statisches.getAtthash().get(name).split("#")[1].trim());
-		schaden = Integer.parseInt(Statisches.getAtthash().get(name).split("#")[2]);
+		schaden = Integer.parseInt(Statisches.getAtthash().get(name).split("#")[2].trim());
 	}
 	
 	/*public Attacke(AttackenNamen name, Typ typ, float gen, int schaden){
@@ -28,8 +28,8 @@ public class Attacke {
 	}
 	
 
-	public AttackenNamen getName() {
-		return name;
+	public String getName() {
+		return name+"";
 	}
 	public Typ getTyp() {
 		return typ;

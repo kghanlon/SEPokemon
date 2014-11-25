@@ -1,1 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<AttackenListe>
+	<Attacke id="DONNERBLITZ">
+		<Typ id="ELEKTRO"/>	
+		<Gen wert="0.9"/>
+		<Schaden wert="80"/>
+	</Attacke>
+	<Attacke id="FUNKENSPRUNG">
+		<Typ id="ELEKTRO"/>	
+		<Gen wert="1.0"/>
+		<Schaden wert="40"/>
+	</Attacke>
+	<Attacke id="RUTENSCHLAG">
+		<Typ id="NORMAL"/>	
+		<Gen wert="1.0"/>
+		<Schaden wert="0"/>
+	</Attacke>
+	<Attacke id="RUCKZUCKHIEB">
+		<Typ id="NORMAL"/>	
+		<Gen wert="1.0"/>
+		<Schaden wert="60"/>
+	</Attacke>
+	<Attacke id="BODYSLAM">
+		<Typ id="NORMAL"/>	
+		<Gen wert="0.8"/>
+		<Schaden wert="70"/>
+	</Attacke>
+	<Attacke id="GLUT">
+		<Typ id="FEUER"/>	
+		<Gen wert="0.9"/>
+		<Schaden wert="50"/>
+	</Attacke>
+	<Attacke id="FLAMMENWURF">
+		<Typ id="FEUER"/>	
+		<Gen wert="0.8"/>
+		<Schaden wert="90"/>
+	</Attacke>
+</AttackenListe>

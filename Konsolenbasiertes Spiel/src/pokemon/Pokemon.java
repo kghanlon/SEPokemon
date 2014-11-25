@@ -130,29 +130,29 @@ public class Pokemon {
 			Statisches.sleep();
 			Statisches.sleep();
 			System.out.println(ausgabeAttacken() + "\n(Wenn die Attacke nicht erlernt werden soll gib 0 ein)\n");
-			int t;
+			String t;
 			try{
 				Scanner sc = new Scanner(System.in);
-				t = sc.nextInt();
+				t = sc.next();
 				sc.close();
 			}catch(InputMismatchException e){
 				System.out.println("Ungültige Eingabe wird als nein gewertet.");//todo evtl. hier ne schleife bis gültige eingabe
-				t=0;
+				t="0";
 			}
 			switch(t){
-				case 1:
+				case "1":
 					System.out.println(attacken[0].getName() + " wurde verlernt."); 
 					attacken[0] = tmp;				
 				break; 
-				case 2:
+				case "2":
 					System.out.println(attacken[1].getName() + " wurde verlernt.");
 					attacken[1] = tmp;				
 				break;
-				case 3:
+				case "3":
 					System.out.println(attacken[2].getName() + " wurde verlernt.");
 					attacken[2] = tmp;				
 				break;
-				case 4:
+				case "4":
 					System.out.println(attacken[3].getName() + " wurde verlernt.");
 					attacken[3] = tmp;				
 				break;
@@ -181,11 +181,12 @@ public class Pokemon {
 	}
 	
 	
-	public Attacke befehlToAttacke(String s){
+	/*public Attacke befehlToAttacke(String s){
 		String t = s.toUpperCase();
 		for(int i=0; i<4; i++){
 			if(attacken[i] !=null){
-				String v = attacken[i].getName() + "";//eingabe des namens auch möglich
+				String v = attacken[i].getName();//eingabe des namens auch möglich
+				v=v.toUpperCase();
 				if(t.equals(v)){
 					return attacken[i];
 				}
@@ -195,7 +196,7 @@ public class Pokemon {
 			}
 		}
 		return null;
-	} 
+	} */
 	
 	/*public static AttackenNamen strToAtt(String s){		
 		Typ typ = Pokemon.stringToTyp(s.split("#")[0].trim());
@@ -248,8 +249,8 @@ public class Pokemon {
 	
 	
 	
-	public PokeNamen getName() {
-		return name;
+	public String getName() {
+		return ""+name;
 	}
 	
 

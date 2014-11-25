@@ -31,7 +31,7 @@ public class Game {
 		try{
 			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder builder = factory.newDocumentBuilder();
-			doc = builder.parse( new File("Locations.xml") );
+			doc = builder.parse( new File("./Konsolenbasiertes Spiel/Locations.xml") );
 		} catch(ParserConfigurationException e){
 		   	e.printStackTrace();
 		} catch (SAXException e){
@@ -44,7 +44,7 @@ public class Game {
 		getAllLocations(doc.getFirstChild().getChildNodes());
 		
 		//Trainer laden:
-		Trainer t = new Trainer(1, new ArrayList<Integer>());
+		Trainer t = new Trainer(1, new ArrayList<Integer>(), null, null, null);
 		
 		//Spiel starten:
 		while(true){
@@ -59,11 +59,11 @@ public class Game {
 	
 	public static void kaitest(){		
 		Statisches.einlesen();
-		Pokemon pikachu = new Pokemon(PokeNamen.PIKACHU, 26);
-		System.out.println(pikachu);
-		System.out.println(pikachu.ausgabeAttacken());
-		pikachu.expGewinn(100);
-		System.out.println(pikachu);
+		/*Pokemon pikachu = new Pokemon(PokeNamen.PIKACHU, 26);
+		Pokemon glumanda = new Pokemon(PokeNamen.GLUMANDA, 28);
+		System.out.println(glumanda);
+		System.out.println(glumanda.ausgabeAttacken());
+		System.out.println(pikachu);*/
 	}
 	
 	public static void getAllLocations(NodeList nodes){

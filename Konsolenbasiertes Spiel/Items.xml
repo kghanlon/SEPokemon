@@ -1,1 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<ItemListe>
+	<Item id="POKEBALL">		
+		<Wert wert="1"/>	
+	</Item>	
+	<Item id="SUPERBALL">		
+		<Wert wert="2"/>	
+	</Item>	
+	<Item id="HYPERBALL">		
+		<Wert wert="3"/>
+	</Item>	
+	<Item id="MEISTERBALL">		
+		<Wert wert="1000"/>	
+	</Item>	
+	<Item id="TRANK">		
+		<Wert wert="20"/>	
+	</Item>	
+	<Item id="SUPERTRANK">		
+		<Wert wert="50"/>
+	</Item>	
+	<Item id="HYPERTRANK">		
+		<Wert wert="200"/>
+	</Item>	
+</ItemListe>

@@ -4,21 +4,21 @@ import java.util.HashMap;
 
 public abstract class Item {
 
-	protected String name;
+	protected ItemNamen name;
 	private int anzahl;
 	
-	public Item(int id){
-		this.name=Statisches.getItemhash().get(id).split("#")[0].trim();
+	public Item(ItemNamen name){
+		this.name=name;
 		setAnzahl(1);
 	}
 	
-	public Item(int id, int anzahl){
-		this.name=Statisches.getItemhash().get(id).split("#")[0].trim();
+	public Item(ItemNamen namen, int anzahl){
+		this.name=namen;
 		this.setAnzahl(anzahl);
 	}
 	
 	public String getName(){
-		return name;
+		return name+"";
 	}
 	
 	public abstract boolean istBall();
