@@ -59,6 +59,9 @@ public class Game {
 	
 	public static void kaitest(){		
 		Statisches.einlesen();
+		Trainer t = Statisches.gespeicherterTrainer();
+		System.out.println(t);
+		Statisches.trainerSpeichern(t);
 		/*Pokemon pikachu = new Pokemon(PokeNamen.PIKACHU, 26);
 		Pokemon glumanda = new Pokemon(PokeNamen.GLUMANDA, 28);
 		System.out.println(glumanda);

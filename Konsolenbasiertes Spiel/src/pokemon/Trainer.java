@@ -116,6 +116,23 @@ public class Trainer {
 		return items;
 	} 
 	
+	public String toString(){
+		StringBuilder sb = new StringBuilder();
+		sb.append("Name: " + name + "\n");
+		sb.append("LocId: " + locationId + "\n");
+		for(int i=0; i<3; i++){
+			if(team[i]!=null){
+				sb.append("POKEMON " + (i+1) + ": " + team[i].getName() + "\n");
+			}
+		}
+		for(int i=0; i<items.size(); i++){
+			sb.append("ITEM " + i + ": " + items.get(i).getName() + " Anzahl: " + items.get(i).getAnzahl() +"\n");
+		}
+		for(int i=0; i<tokens.size(); i++){
+			sb.append("TOKEN " + i + ": " + tokens.get(i) + "\n");
+		}
+		return sb.toString();
+	}
 	
 	
 	
@@ -137,8 +154,9 @@ public class Trainer {
 	
 	
 	
-	
-	
+	public Pokemon[] getTeam(){
+		return team;
+	}
 	
 	
 	public int getLocationId(){

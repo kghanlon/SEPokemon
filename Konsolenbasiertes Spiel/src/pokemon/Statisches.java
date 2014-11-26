@@ -1,13 +1,15 @@
 package pokemon;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import javax.xml.parsers.*;
 
 import org.w3c.dom.Document;
-import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
@@ -64,10 +66,6 @@ public class Statisches {
 			System.out.println("IOprobleme");
 		}
 		itemeinlesen(doc.getChildNodes().item(0).getChildNodes());
-		
-		for(ItemNamen n : itemhash.keySet()){
-			System.out.println("Name: " + n + " String: " + itemhash.get(n));
-		}
 			
 	}
 	
@@ -118,6 +116,107 @@ public class Statisches {
 		}
 	}
 	
+	public static Trainer gespeicherterTrainer(){
+		Trainer t;
+Document doc = null;
+	    
+		try{
+			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+			DocumentBuilder builder = factory.newDocumentBuilder();
+			doc = builder.parse( new File("./Konsolenbasiertes Spiel/Trainer.xml") );
+		} catch(ParserConfigurationException e){
+		   	System.out.println("Parserprobleme");
+		} catch (SAXException e){
+			System.out.println("SAXEprobleme");
+		}catch (IOException e){
+			System.out.println("IOprobleme");
+		}
+		NodeList n = doc.getChildNodes();
+		Pokemon [] pok = new Pokemon[4];
+		List<Integer> token = new ArrayList<>();
+		List<Item> item = new ArrayList<>();
+		
+		String name = n.item(0).getAttributes().getNamedItem("name").getNodeValue();//name
+		int locid = Integer.parseInt(n.item(0).getAttributes().getNamedItem("locationId").getNodeValue());
+		n=n.item(0).getChildNodes();
+		int pokcounter=0;
+		for(int i=1; i<n.item(1).getChildNodes().getLength(); i+=2){//pokemon einlesen
+			PokeNamen id = strToPokeNamen(n.item(1).getChildNodes().item(i).getAttributes().getNamedItem("id").getNodeValue());
+			int lvl = Integer.parseInt(n.item(1).getChildNodes().item(i).getAttributes().getNamedItem("lvl").getNodeValue());
+			int exp = Integer.parseInt(n.item(1).getChildNodes().item(i).getAttributes().getNamedItem("exp").getNodeValue());
+			int maxkp = Integer.parseInt(n.item(1).getChildNodes().item(i).getAttributes().getNamedItem("maxkp").getNodeValue());
+			int kp = Integer.parseInt(n.item(1).getChildNodes().item(i).getAttributes().getNamedItem("kp").getNodeValue());
+			int staerke = Integer.parseInt(n.item(1).getChildNodes().item(i).getAttributes().getNamedItem("staerke").getNodeValue());
+			int vert = Integer.parseInt(n.item(1).getChildNodes().item(i).getAttributes().getNamedItem("vert").getNodeValue());
+			int tempo = Integer.parseInt(n.item(1).getChildNodes().item(i).getAttributes().getNamedItem("tempo").getNodeValue());
+			AttackenNamen[] at = new AttackenNamen[4];
+			int counter=0;
+			for(int j =1; j<n.item(1).getChildNodes().item(i).getChildNodes().item(1).getChildNodes().getLength(); j+=2){
+				at[counter++] = strToAttName(n.item(1).getChildNodes().item(i).getChildNodes().item(1).getChildNodes().item(j).getAttributes().getNamedItem("id").getNodeValue());
+			}
+			pok[pokcounter++] = new Pokemon(id, lvl, exp, at, maxkp, kp, staerke, vert, tempo);
+		}
+		for(int i=1; i<n.item(3).getChildNodes().getLength(); i+=2){//item einlesen
+			ItemNamen id = strToItemName(n.item(3).getChildNodes().item(i).getAttributes().getNamedItem("id").getNodeValue());
+			int anzahl = Integer.parseInt(n.item(3).getChildNodes().item(i).getAttributes().getNamedItem("anzahl").getNodeValue());
+			Item it = new Ball(ItemNamen.POKEBALL, 0);
+			switch(n.item(3).getChildNodes().item(i).getAttributes().getNamedItem("id").getNodeValue()){
+			case "BALL": it= new Ball(id, anzahl); break;
+			case "HEILEN": it=new Heilungsitem(id, anzahl);break;
+			}
+			item.add(it);
+		}
+		for(int i=1; i<n.item(5).getChildNodes().getLength(); i+=2){//tokens einlesen
+			token.add(Integer.parseInt(n.item(5).getChildNodes().item(i).getAttributes().getNamedItem("id").getNodeValue()));
+		}
+		t = new Trainer(locid, token, name, item, pok);
+		return t;
+	}
+	
+	public static void trainerSpeichern(Trainer t){
+		StringBuilder sb = new StringBuilder();
+		
+		sb.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");//Headzeile der xml
+		sb.append("<Trainerelemente locationId=\""+ t.getLocationId() + "\" name=\""+ t.getName() + "\">\n");
+		
+		sb.append("<PokemonListe>\n");
+		for(int i=0; i<t.getTeam().length; i++){//auslesen der Pokemon
+			if(t.getTeam()[i]!=null){
+			sb.append("<Pokemon id=\""+t.getTeam()[i].getName() +"\" lvl=\"" +t.getTeam()[i].getLvl() + "\" exp=\"" + t.getTeam()[i].getExp() + "\" maxkp=\"" + t.getTeam()[i].getMaxkp() + "\" kp=\"" + t.getTeam()[i].getKp() + "\" staerke=\"" + t.getTeam()[i].getStaerke() + "\" vert=\"" + t.getTeam()[i].getVert() + "\" tempo=\"" + t.getTeam()[i].getTempo() + "\">\n");
+			sb.append("<AttackenListe>\n");
+			for(int j=0; j<t.getTeam()[i].getAttacken().length; j++){//attacken auslesen
+				sb.append("<Attacke id=\"" + t.getTeam()[i].getAttacken()[j].getName() + "\"/>\n");
+			}
+			sb.append("</AttackenListe>\n");
+			
+			sb.append("</Pokemon>\n");
+			}
+		}
+		sb.append("</PokemonListe>\n");
+		
+		sb.append("<ItemListe>\n");
+		for(int i=0; i<t.getItems().size(); i++){//auslesen der items
+			sb.append("<Item id=\""+t.getItems().get(i).getName() +"\" anzahl=\"" +t.getItems().get(i).getAnzahl() + "\" typ=\"" + t.getItems().get(i).getTyp()  + "\"/>\n");			
+		}
+		sb.append("</ItemListe>\n");
+		
+		sb.append("<TokenListe>\n");
+		for(int i=0; i<t.getTokens().size(); i++){//auslesen der items
+			sb.append("<Token id=\""+t.getTokens().get(i) +"\"/>\n");			
+		}
+		sb.append("</TokenListe>\n");
+		
+		sb.append("</Trainerelemente>\n");
+
+		try{
+			FileWriter fw = new FileWriter(new File("./Konsolenbasiertes Spiel/Trainer.xml"));
+			fw.write(sb.toString());
+			fw.close();
+		}catch(IOException io){
+			System.out.println("Datei konnte nicht geöffnet werden.");
+		}
+		System.out.println("Speichern erfolgreich.");
+	}
 	
 	private static ItemNamen strToItemName(String name) {
 		for(ItemNamen i : ItemNamen.values()){

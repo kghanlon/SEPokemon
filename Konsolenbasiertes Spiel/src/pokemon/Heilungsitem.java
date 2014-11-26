@@ -37,4 +37,9 @@ public class Heilungsitem extends Item {
 	public String toString(){		
 		return name + " Heilungswert: " +wert + "kp";		
 	}
+
+	@Override
+	public String getTyp() {
+		return "HEILEN";
+	}
 }

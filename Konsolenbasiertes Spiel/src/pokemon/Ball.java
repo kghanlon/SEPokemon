@@ -38,4 +38,9 @@ public class Ball extends Item {
 	public String toString() {
 		return name + " Fangwahrscheinlichkeit: " +(wert*100) + "%";
 	}
+
+	@Override
+	public String getTyp() {
+		return "BALL";
+	}
 }

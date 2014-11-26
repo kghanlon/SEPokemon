@@ -78,12 +78,12 @@ public class Pokemon {
 			}
 		}
 		exp=(int)(aufstiegsgrenze(lvl)/5);//mache ich damit man als exp gewinn des trainers einfach die nehmen kann die das fremde pokemon hat so steigt es auch wenn die level höher gehen
-		maxkp = (int)(lvl*Math.pow(1.035, lvl)*10);
+		maxkp = (int)(lvl*Math.pow(1.035, lvl)*2);
 		kp=maxkp;
 		double ran = Math.random()*3.14;
-		staerke=(int)(10+lvl+Math.sin(ran)*5.1);//ausgeglichen angriff und verteidigung
-		vert = (int)(10+lvl+Math.abs(Math.cos(ran))*5.1);
-		tempo=(int)((4*staerke+vert)/5);//starkes pokemon ist schneller einfach festgelegt		
+		staerke=(int)(10+lvl+Math.sin(ran)*lvl);//ausgeglichen angriff und verteidigung
+		vert = (int)(10+lvl+Math.abs(Math.cos(ran))*lvl);
+		tempo=(int)((6*staerke+vert)/7);//starkes pokemon ist schneller einfach festgelegt		
 	}
 	
 	

@@ -25,6 +25,7 @@ public abstract class Item {
 	public abstract boolean kannHeilen();
 	public abstract boolean anwenden(Pokemon p);
 	public abstract String toString();
+	public abstract String getTyp();
 
 	public int getAnzahl() {
 		return anzahl;
