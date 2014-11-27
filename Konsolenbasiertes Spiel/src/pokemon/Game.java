@@ -108,7 +108,7 @@ public class Game {
 		//Geht alle Event Tags durch:
 		for(int j = 1; j < nodes.item(i).getChildNodes().getLength(); j+=2){
 			
-			//Und fügt das richte Event zur Liste hinzu.
+			//Und fï¿½gt das richte Event zur Liste hinzu.
 			int typ = Integer.parseInt(nodes.item(i).getChildNodes().item(j)
 					 .getAttributes().getNamedItem("typ").getNodeValue());
 			
@@ -217,25 +217,4 @@ public class Game {
 		return info;
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-		//Diese einzeln zur Liste hinzufuegen:
-		for(int k = 0; k < tokString.split(";").length; k++){
-			reqTokens.add(Integer.parseInt(tokString.split(";")[k]));
+}
