@@ -1,6 +1,5 @@
 package pokemon;
 
-import java.util.HashMap;
 
 public class Attacke {
 	private AttackenNamen name;
