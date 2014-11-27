@@ -1,16 +1,190 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <world>
-	<location id="1" name="Route 1">
-			<InformationEvent typ="0" command="info" reqToken="0">
-				You are on a dark road!
+	<location id="1" name="Alabastia">
+			<InformationEvent typ="0" command="look around" reqToken="1">
+				You are standing in Alabastia, your hometown. You see your mothers house, but know nobody is home right now.
+				Beside it is Prof. Oaks laboratory. You should hurry so you wont be late for your appointment with Prof. Oak.
+				To the north you see the beginning of Route 1.
 			</InformationEvent>
-			<ChangeLocationEvent typ="1" command="go north" nextLocId="2" reqToken="0">
-				You go north.
+			<InformationEvent typ="0" command="look around" reqToken="201">
+				You are standing in Alabastia, your hometown. You see your mothers house, but know nobody is home right now.
+				Beside it is Prof. Oaks laboratory. To the north you see the beginning of Route 1.
+			</InformationEvent>
+			<InformationEvent typ="0" command="look around" reqToken="402">
+				You are standing in Alabastia, your hometown. You see your mothers house, but know nobody is home right now.
+				Beside it is Prof. Oaks laboratory. Why don't you go in and tell Oak the passphrase he's looking for?
+			</InformationEvent>
+			<ChangeLocationEvent typ="1" command="enter laboratory" nextLocId="2" reqToken="">
+				You move towards Prof. Oaks laboratory and open the heavy doors.
+			</ChangeLocationEvent>
+			<ChangeLocationEvent typ="1" command="go north" nextLocId="3" reqToken="">
+				You go north to Route 1.
 			</ChangeLocationEvent>
 	</location>
-	<location id="2" name="Route 2">
-			<InformationEvent typ="0" command="info" reqToken="0">
-				You are looking at a giant tree.
+	<location id="2" name="Prof. Oaks laboratory">
+			<InformationEvent typ="0" command="look around" reqToken="2">
+				You are in Prof. Oaks huge laboratory. All around you are his weird science machines, you probably shouldn't
+				touch them. At the end of the room you see a frustrated Prof. Oak.
 			</InformationEvent>
+			<InformationEvent typ="0" command="look around" reqToken="201">
+				You are in Prof. Oaks huge laboratory. All around you are his weird science machines, you probably shouldn't
+				touch them. At the end of the room you see a frustrated Prof. Oak waiting for your return.
+			</InformationEvent>
+			<CompoundEvent typ="2" command="talk to oak" reqToken="2">
+				<InformationEvent typ="0" command="" reqToken="">
+					As you approach Prof. Oak he starts talking: "Good that you're finally here! I need your help.
+					A good friend of mine named John did some work on my computer, but now I can't remember the password 
+					he set for me. I can't leave my lab right now, so could you please go to John and tell him I sent you? 
+					He'll tell you my password then.
+					Great thank you, but hurry!"
+					After this Prof. Oak turns his back on you and starts yelling at one of his assistants.
+				</InformationEvent>
+				<RemoveTokenEvent typ="3" command="" reqToken="" token="1"/>
+				<RemoveTokenEvent typ="3" command="" reqToken="" token="2"/>
+				<GrantTokenEvent typ="4" command="" reqToken="" token="201"/>
+			</CompoundEvent>
+			<CompoundEvent typ="2" command="talk to oak" reqToken="402">
+				<InformationEvent typ="0" command="" reqToken="">
+					"Finally, you made it back! So what's the password? Oh really? PIKACHU again? I guess I should have
+					tried that... Whatever, thanks so much for your help! Here have a Pikachu of your own and go on an adventure!"
+				</InformationEvent>
+				<RemoveTokenEvent typ="3" command="" reqToken="" token="402"/>
+			</CompoundEvent>
+			<ChangeLocationEvent typ="1" command="leave laboratory" reqToken="" nextLocId="1">
+				You exit Prof. Oaks laboratory and return to the streets of Alabastia.
+			</ChangeLocationEvent>
+	</location>
+	<location id="3" name="Route 1">
+		<InformationEvent typ="0" command="look around" reqToken="3">
+			You are walking down Route 1, just north of Alabastia. Up ahead you see a woman walking her Fukano. 
+			The road continues to the east, to the west you see a large forest.
+		</InformationEvent>
+		<ChangeLocationEvent typ="1" command="go south" reqToken="" nextLocId="1">
+			You go south down Route 1 and return to Alabastia. Maybe your mom's back home?
+		</ChangeLocationEvent>
+		<ChangeLocationEvent typ="1" command="go east" reqToken="" nextLocId="4">
+			You go east towards John's house.
+		</ChangeLocationEvent>
+		<ChangeLocationEvent typ="1" command="go west" reqToken="" nextLocId="5">
+			You go west towards the forest.
+		</ChangeLocationEvent>
+		<InformationEvent typ="0" command="talk to woman" reqToken="3">
+			You talk to the woman as her Fukano regards you with an interested gaze.
+			" Oh hi, how are you doing? You're looking for John? He just came by here and went east towards
+			his house. I hope I could help."
+			As you leave she smiles at you and her Fukano barks twice, releasing little flames into the air.
+		</InformationEvent>
+		
+	</location>
+	<location id="4" name="Infront of John's house">
+		<InformationEvent typ="0" command="look around" reqToken="4">
+			You're standing in front of a large wooden house. Standing at the door is a man you presume is John. He doesn't look happy.
+		</InformationEvent>
+		<InformationEvent typ="0" command="look around" reqToken="401">
+			You're standing in front of John's house. John is sitting beside the door waiting for you to bring his key.
+		</InformationEvent>
+		<InformationEvent typ="0" command="look around" reqToken="402">
+			You're standing in front of John's house.
+		</InformationEvent>
+		<CompoundEvent typ="2" command="talk to john" reqToken="4">
+			<InformationEvent typ="0" command="" reqToken="">
+				The man approaches you and says: "Hi my name's John. What? You need my help? Well I'll need yours first.
+				You see, I just lost my keys in the forest to the west of Route 1, and can't get into my house. I'd get
+				them myself, but I think I saw a bear there, so I'm too scared. But you should be fine eh? Get me my keys
+				and I'll help you with whatever you need."
+				After your conversation John sits down beside his door.
+			</InformationEvent>
+			<RemoveTokenEvent typ="3" command="" reqToken="" token="4"/>
+			<GrantTokenEvent typ="4" command="" reqToken="" token="401"/>
+		</CompoundEvent>
+		<InformationEvent typ="0" command="talk to john" reqToken="401">
+			"Hey, you got my keys yet?"
+		</InformationEvent>
+		<CompoundEvent typ="2" command="give keys to john" reqToken="401;501">
+			<InformationEvent typ="0" command="" reqToken="">
+				You give John his keys.
+				"Hey you got them! Awesome! Okay, with what do you need help? Oh Oak forgot his password again?
+				Man he's really getting old eh? Okay, the password is PIKACHU. Thanks again friend!"
+				With these words John opens his door.
+				"Oh, it wasn't even locked... Oh well."
+				After these words he vanishes in his house. Time to get back and give Prof. Oak his password.
+			</InformationEvent>
+			<RemoveTokenEvent typ="3" command="" reqToken="" token="401"/>
+			<RemoveTokenEvent typ="3" command="" reqToken="" token="501"/>
+			<RemoveTokenEvent typ="3" command="" reqToken="" token="503"/>
+			<RemoveTokenEvent typ="3" command="" reqToken="" token="504"/>
+			<GrantTokenEvent typ="4" command="" reqToken="" token="402"/>
+		</CompoundEvent>
+		<ChangeLocationEvent typ="1" command="go west" reqToken="" nextLocId="3">
+			You go back west to Route 1.
+		</ChangeLocationEvent>
+	</location>
+	<location id="5" name="Forest to the west of Route 1">
+		<InformationEvent typ="0" command="look around" reqToken="5">
+			You arrive at the edge of the forest. It's pretty dark, you probably shouldn't go in any further.
+		</InformationEvent>
+		<InformationEvent typ="0" command="look around" reqToken="5;401">
+			You arrive at the edge of the forest. You see a large pile of leaves in front of you, and something that
+			looks like a rabbit hole behind a tree. You also see some bear tracks. Maybe you should hurry with finding the keys.
+			Rout 1 is to your east.
+		</InformationEvent>
+		<InformationEvent typ="0" command="look around" reqToken="402">
+			You arrive at the edge of the forest, but are too afraid of bears to go in any further...
+		</InformationEvent>
+		<CompoundEvent typ="2" command="examine rabbit hole" reqToken="5;401">
+			<InformationEvent typ="0" command="" reqToken="">
+				You grope around in the rabbit hole, but find nothing. At the same time you start to hear growling noises.
+				That bear seems to have heard you, you don't have much time left!
+			</InformationEvent>
+			<RemoveTokenEvent typ="3" command="" reqToken="" token="5"/>
+			<GrantTokenEvent typ="4" command="" reqToken="" token="502"/>
+		</CompoundEvent>
+		<CompoundEvent typ="2" command="examine pile of leaves" reqToken="5;401">
+			<InformationEvent typ="0" command="" reqToken="">
+				You shuffle through the leaves and hear metal clinging sounds. You found the key! At the same time you start
+				to hear growling noises. That bear seems to have heard you, time to get back to John!
+			</InformationEvent>
+			<RemoveTokenEvent typ="3" command="" reqToken="" token="5"/>
+			<GrantTokenEvent typ="4" command="" reqToken="" token="501"/>
+			<GrantTokenEvent typ="4" command="" reqToken="" token="503"/>
+		</CompoundEvent>
+		<CompoundEvent typ="2" command="examine pile of leaves" reqToken="502">
+			<InformationEvent typ="0" command="" reqToken="">
+				You shuffle through the leaves as fast as you can, and almost missed the metal object inside. You've got the
+				keys, now run or that bear'll get you!!
+			</InformationEvent>
+			<RemoveTokenEvent typ="3" command="" reqToken="" token="502"/>
+			<GrantTokenEvent typ="4" command="" reqToken="" token="501"/>
+			<GrantTokenEvent typ="4" command="" reqToken="" token="504"/>
+		</CompoundEvent>
+		<CompoundEvent typ="2" command="examine rabbit hole" reqToken="503">
+			<InformationEvent typ="0" command="" reqToken="">
+				What the hell are you doing? You've got the keys and that bear is getting closer... Get out!
+			</InformationEvent>
+			<RemoveTokenEvent typ="3" command="" reqToken="" token="503"/>
+			<GrantTokenEvent typ="4" command="" reqToken="" token="504"/>
+		</CompoundEvent>
+		<InformationEvent typ="0" command="look around" reqToken="502">
+			You're in the forest beside a rabbit hole. You see a pile of leaves and see a bear coming towards you...
+			Route 1 is to your east.
+		</InformationEvent>
+		<InformationEvent typ="0" command="look around" reqToken="503">
+			You're in the forest beside pile of leaves. You see a rabbit hole behind a tree and a bear coming toward you...
+			Route 1 is to your east
+		</InformationEvent>
+		<InformationEvent typ="0" command="look around" reqToken="504">
+			The only thing you're aware of is the gigantic bear running towards you!
+		</InformationEvent>
+		<ChangeLocationEvent typ="1" command="go east" reqToken="" nextLocId="3">
+			You turn around and run back to Route 1.
+		</ChangeLocationEvent>
 	</location>
 </world>
+
+
+
+
+
+
+
+

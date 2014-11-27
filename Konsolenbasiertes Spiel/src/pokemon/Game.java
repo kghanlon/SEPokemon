@@ -43,8 +43,14 @@ public class Game {
 		//Locations aus XML laden:
 		getAllLocations(doc.getFirstChild().getChildNodes());
 		
+		//Hier muss Abfrage stattfinden: erstes laden oder gibt es einen Speicherstand?
 		//Trainer laden:
 		Trainer t = new Trainer(1, new ArrayList<Integer>());
+		//Start Tokens laden:
+		for(int key : locations.keySet()){
+			t.addToken(key);
+		}
+		
 		
 		//Spiel starten:
 		while(true){
@@ -69,27 +75,43 @@ public class Game {
 			int locId = Integer.parseInt(nodes.item(i).getAttributes().getNamedItem("id").getNodeValue());
 			
 			//Events für die location holen:
-			List <Event> events = new ArrayList<Event>();
+			List <Event> events = getAllEvents(nodes, i);
 			
-			//Geht alle Event Tags durch:
-			for(int j = 1; j < nodes.item(i).getChildNodes().getLength(); j+=2){
-				
-				int typ = Integer.parseInt(nodes.item(i).getChildNodes().item(j)
-						 .getAttributes().getNamedItem("typ").getNodeValue());
-				
-				switch (typ) {
-				case 0:
-					events.add(getInformationEvent(nodes, i, j));
-					break;
-				case 1:
-					events.add(getChangeLocationEvent(nodes, i, j));
-					break;
-				default:
-					break;
-				}
-			}
 			locations.put(locId, new Location(locId, locName, events));
 		}
+	}
+	
+	//Gets all the events that belong to the i-th item of nodes:
+	public static List<Event> getAllEvents(NodeList nodes, int i){
+		List<Event> events = new ArrayList<Event>();
+		//Geht alle Event Tags durch:
+		for(int j = 1; j < nodes.item(i).getChildNodes().getLength(); j+=2){
+			
+			//Und fügt das richte Event zur Liste hinzu.
+			int typ = Integer.parseInt(nodes.item(i).getChildNodes().item(j)
+					 .getAttributes().getNamedItem("typ").getNodeValue());
+			
+			switch (typ) {
+			case 0:
+				events.add(getInformationEvent(nodes, i, j));
+				break;
+			case 1:
+				events.add(getChangeLocationEvent(nodes, i, j));
+				break;
+			case 2:
+				events.add(getCompoundEvent(nodes, i, j));
+				break;
+			case 3: 
+				events.add(getRemoveTokenEvent(nodes, i, j));
+				break;
+			case 4:
+				events.add(getGrantTokenEvent(nodes, i, j));
+				break;
+			default:
+				break;
+			}
+		}
+		return events;
 	}
 	
 	public static InformationEvent getInformationEvent(NodeList nodes, int i, int j){
@@ -115,6 +137,40 @@ public class Game {
 		return new ChangeLocationEvent(reqTokens, command, info, nextLocId);
 	}
 	
+	public static CompoundEvent getCompoundEvent(NodeList nodes, int i, int j){
+		//Get Required Token List:
+		List<Integer> reqTokens = getReqTokenList(nodes, i, j);
+		//Get Command:
+		String command = getCommand(nodes, i, j);
+		//Get Events that belong to the CompountEven:
+		List<Event> compEvents = getAllEvents(nodes.item(i).getChildNodes(), j);
+		return new CompoundEvent(reqTokens, command, compEvents);
+	}
+	
+	public static RemoveTokenEvent getRemoveTokenEvent(NodeList nodes, int i, int j){
+		//Get Required Token List:
+		List<Integer> reqTokens = getReqTokenList(nodes, i, j);
+		//Get Command:
+		String command = getCommand(nodes, i, j);
+		//Get Token that should be removed:
+		int token = Integer.parseInt(nodes.item(i).getChildNodes().item(j)
+					.getAttributes().getNamedItem("token").getNodeValue());
+		
+		return new RemoveTokenEvent(reqTokens, command, token);
+	}
+	
+	public static GrantTokenEvent getGrantTokenEvent(NodeList nodes, int i, int j){
+		//Get Required Token List:
+		List<Integer> reqTokens = getReqTokenList(nodes, i, j);
+		//Get Command:
+		String command = getCommand(nodes, i, j);
+		//Get Token that should be added:
+		int token = Integer.parseInt(nodes.item(i).getChildNodes().item(j)
+				.getAttributes().getNamedItem("token").getNodeValue());
+		
+		return new GrantTokenEvent(reqTokens, command, token);
+	}
+	
 	
 	public static List<Integer> getReqTokenList(NodeList nodes, int i, int j){
 
@@ -122,11 +178,17 @@ public class Game {
 		//String mit allen required Tokens:
 		String tokString = nodes.item(i).getChildNodes().item(j).getAttributes()
 						  .getNamedItem("reqToken").getNodeValue();
-		//Diese einzeln zur Liste hinzufügen:
-		for(int k = 0; k < tokString.split(";").length; k++){
-			reqTokens.add(Integer.parseInt(tokString.split(";")[k]));
+		if(tokString.equals("")){
+			//Es gibt keine Required Tokens:
+			return reqTokens;
+		} else {
+			//Es gibt Required Tokens:
+			//Diese einzeln zur Liste hinzufügen:
+			for(int k = 0; k < tokString.split(";").length; k++){
+				reqTokens.add(Integer.parseInt(tokString.split(";")[k]));
+			}
+			return reqTokens;
 		}
-		return reqTokens;
 	}
 	
 	public static String getCommand(NodeList nodes, int i, int j){
@@ -136,7 +198,7 @@ public class Game {
 	}
 	
 	public static String getInfo(NodeList nodes, int i, int j){
-		String info = nodes.item(i).getChildNodes().item(j).getTextContent().trim();
+		String info = nodes.item(i).getChildNodes().item(j).getTextContent().trim().replaceAll("\\t+", "");
 		return info;
 	}
 	

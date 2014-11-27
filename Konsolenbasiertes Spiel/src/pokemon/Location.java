@@ -14,7 +14,7 @@ public class Location {
 		this.name = name;
 		this.events = events;
 		//Default leeres Event ganz am Anfang einfügen:
-		events.add(0, new InformationEvent(new ArrayList<Integer>(), "", "Default Event"));
+		events.add(0, new InformationEvent(new ArrayList<Integer>(), "", "No Event found"));
 	}
 	
 	public Location runLocation(Trainer t){
