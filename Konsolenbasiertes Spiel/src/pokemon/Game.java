@@ -25,13 +25,14 @@ public class Game {
 	public static Map<Integer, Location> locations = new HashMap<Integer, Location>();
 	
 	public static void main(String args[]){
-		
+		Statisches.setScanner();
+		/*
 		Document doc = null;
 		    
 		try{
 			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder builder = factory.newDocumentBuilder();
-			doc = builder.parse( new File("Locations.xml") );
+			doc = builder.parse( new File("./Locations.xml") );
 		} catch(ParserConfigurationException e){
 		   	e.printStackTrace();
 		} catch (SAXException e){
@@ -45,7 +46,7 @@ public class Game {
 		
 		//Hier muss Abfrage stattfinden: erstes laden oder gibt es einen Speicherstand?
 		//Trainer laden:
-		Trainer t = new Trainer(1, new ArrayList<Integer>());
+		Trainer t = new Trainer(1, new ArrayList<Integer>(), null, null, null);
 		//Start Tokens laden:
 		for(int key : locations.keySet()){
 			t.addToken(key);
@@ -55,11 +56,30 @@ public class Game {
 		//Spiel starten:
 		while(true){
 			locations.get(t.getLocationId()).runLocation(t);
-		}
+		}*/
+		kaitest();
+		Statisches.closScanner();
 		    
 	}
 	
 	//Methoden:
+	
+	public static void kaitest(){		
+		Statisches.einlesen();
+		Trainer t = Statisches.gespeicherterTrainer();
+		//szenario mit wildem pokemon wild=true
+		List<Pokemon> g = new ArrayList<>();
+		g.add(new Pokemon(PokeNamen.PIKACHU, 15));
+		Kampf.start(t, g, true);
+		//ab hier szenario mit gengerischem trainer deswegen wild auf false
+		Statisches.sleep();
+		Statisches.sleep();
+		System.out.println("AB HIER TRAINERKAMPF");
+		g = new ArrayList<>();
+		g.add(new Pokemon(PokeNamen.PIKACHU, 20));
+		g.add(new Pokemon(PokeNamen.GLUMANDA, 20));
+		Kampf.start(t, g, false);
+	}
 	
 	public static void getAllLocations(NodeList nodes){
 		//Hier werden alle Locations die in der XML stehen in die
@@ -74,9 +94,10 @@ public class Game {
 			//Location ID:
 			int locId = Integer.parseInt(nodes.item(i).getAttributes().getNamedItem("id").getNodeValue());
 			
-			//Events für die location holen:
-			List <Event> events = getAllEvents(nodes, i);
+			//Events fuer die location holen:
+			List <Event> events = new ArrayList<Event>();
 			
+		
 			locations.put(locId, new Location(locId, locName, events));
 		}
 	}
@@ -178,17 +199,11 @@ public class Game {
 		//String mit allen required Tokens:
 		String tokString = nodes.item(i).getChildNodes().item(j).getAttributes()
 						  .getNamedItem("reqToken").getNodeValue();
-		if(tokString.equals("")){
-			//Es gibt keine Required Tokens:
-			return reqTokens;
-		} else {
-			//Es gibt Required Tokens:
-			//Diese einzeln zur Liste hinzufügen:
-			for(int k = 0; k < tokString.split(";").length; k++){
-				reqTokens.add(Integer.parseInt(tokString.split(";")[k]));
-			}
-			return reqTokens;
+		//Diese einzeln zur Liste hinzufuegen:
+		for(int k = 0; k < tokString.split(";").length; k++){
+			reqTokens.add(Integer.parseInt(tokString.split(";")[k]));
 		}
+		return reqTokens;
 	}
 	
 	public static String getCommand(NodeList nodes, int i, int j){
@@ -221,5 +236,6 @@ public class Game {
 	
 	
 	
-
-}
+		//Diese einzeln zur Liste hinzufuegen:
+		for(int k = 0; k < tokString.split(";").length; k++){
+			reqTokens.add(Integer.parseInt(tokString.split(";")[k]));

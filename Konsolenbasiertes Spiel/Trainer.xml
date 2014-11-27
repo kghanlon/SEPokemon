@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Trainerelemente locationId="0" name="Siggi">
+<PokemonListe>
+<Pokemon id="PIKACHU" lvl="26" exp="50" maxkp="127" kp="46" staerke="62" vert="36" tempo="58">
+<AttackenListe>
+<Attacke id="RUCKZUCKHIEB"/>
+<Attacke id="FUNKENSPRUNG"/>
+<Attacke id="BODYSLAM"/>
+<Attacke id="DONNERBLITZ"/>
+</AttackenListe>
+</Pokemon>
+<Pokemon id="GLUMANDA" lvl="26" exp="50" maxkp="127" kp="127" staerke="50" vert="57" tempo="51">
+<AttackenListe>
+<Attacke id="RUCKZUCKHIEB"/>
+<Attacke id="GLUT"/>
+<Attacke id="BODYSLAM"/>
+<Attacke id="FLAMMENWURF"/>
+</AttackenListe>
+</Pokemon>
+<Pokemon id="PIKACHU" lvl="26" exp="50" maxkp="127" kp="46" staerke="62" vert="36" tempo="58">
+<AttackenListe>
+<Attacke id="RUCKZUCKHIEB"/>
+<Attacke id="FUNKENSPRUNG"/>
+<Attacke id="BODYSLAM"/>
+<Attacke id="DONNERBLITZ"/>
+</AttackenListe>
+</Pokemon>
+</PokemonListe>
+<ItemListe>
+<Item id="POKEBALL" anzahl="16" typ="BALL"/>
+<Item id="SUPERBALL" anzahl="7" typ="BALL"/>
+<Item id="TRANK" anzahl="5" typ="HEILEN"/>
+<Item id="SUPERTRANK" anzahl="2" typ="HEILEN"/>
+</ItemListe>
+</Trainerelemente>
