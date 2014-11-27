@@ -32,7 +32,7 @@ public class Game {
 		try{
 			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder builder = factory.newDocumentBuilder();
-			doc = builder.parse( new File("./Konsolenbasiertes Spiel/Locations.xml") );
+			doc = builder.parse( new File("./Locations.xml") );
 		} catch(ParserConfigurationException e){
 		   	e.printStackTrace();
 		} catch (SAXException e){

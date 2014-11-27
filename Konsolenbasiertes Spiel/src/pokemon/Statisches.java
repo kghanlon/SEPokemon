@@ -26,7 +26,7 @@ public class Statisches {
 		try{
 			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder builder = factory.newDocumentBuilder();
-			doc = builder.parse( new File("./Konsolenbasiertes Spiel/Pokemon.xml") );
+			doc = builder.parse( new File("./Pokemon.xml") );
 		} catch(ParserConfigurationException e){
 		   	System.out.println("Parserprobleme");
 		} catch (SAXException e){
@@ -38,7 +38,7 @@ public class Statisches {
 		try{		
 			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder builder = factory.newDocumentBuilder();
-			doc = builder.parse( new File("./Konsolenbasiertes Spiel/Attacken.xml") );
+			doc = builder.parse( new File("./Attacken.xml") );
 		} catch(ParserConfigurationException e){
 		   	System.out.println("Parserprobleme");
 		} catch (SAXException e){
@@ -52,7 +52,7 @@ public class Statisches {
 		try{		
 			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder builder = factory.newDocumentBuilder();
-			doc = builder.parse( new File("./Konsolenbasiertes Spiel/Items.xml") );
+			doc = builder.parse( new File("./Items.xml") );
 		} catch(ParserConfigurationException e){
 		   	System.out.println("Parserprobleme");
 		} catch (SAXException e){
@@ -118,7 +118,7 @@ public class Statisches {
 		try{
 			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder builder = factory.newDocumentBuilder();
-			doc = builder.parse( new File("./Konsolenbasiertes Spiel/Trainer.xml") );
+			doc = builder.parse( new File("./Trainer.xml") );
 		} catch(ParserConfigurationException e){
 		   	System.out.println("Parserprobleme");
 		} catch (SAXException e){
@@ -194,7 +194,7 @@ public class Statisches {
 		sb.append("</Trainerelemente>\n");
 
 		try{
-			FileWriter fw = new FileWriter(new File("./Konsolenbasiertes Spiel/Trainer.xml"));
+			FileWriter fw = new FileWriter(new File("./Trainer.xml"));
 			fw.write(sb.toString());
 			fw.close();
 		}catch(IOException io){
