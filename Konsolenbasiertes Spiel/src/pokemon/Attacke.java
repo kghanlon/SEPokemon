@@ -14,6 +14,9 @@ public class Attacke {
 		typ = Statisches.stringToTyp(Statisches.getAtthash().get(name).split("#")[0].trim());
 		gen = Float.parseFloat(Statisches.getAtthash().get(name).split("#")[1].trim());
 		schaden = Integer.parseInt(Statisches.getAtthash().get(name).split("#")[2].trim());
+		if(schaden==1){
+			schaden++;// 1 ist als staerkewert nicht erlaubt, siehe kampf attackenwert
+		}
 	}
 	
 	/*public Attacke(AttackenNamen name, Typ typ, float gen, int schaden){

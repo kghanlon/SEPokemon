@@ -1,11 +1,10 @@
 package pokemon;
 
-import java.util.HashMap;
 
 public abstract class Item {
 
 	protected ItemNamen name;
-	private int anzahl;
+	protected int anzahl;
 	
 	public Item(ItemNamen name){
 		this.name=name;
@@ -23,7 +22,7 @@ public abstract class Item {
 	
 	public abstract boolean istBall();
 	public abstract boolean kannHeilen();
-	public abstract boolean anwenden(Pokemon p);
+	public abstract boolean kannBeleben();
 	public abstract String toString();
 	public abstract String getTyp();
 

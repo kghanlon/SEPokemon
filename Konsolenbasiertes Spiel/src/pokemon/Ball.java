@@ -25,18 +25,12 @@ public class Ball extends Item {
 		return false;
 	}
 
-	
-	public boolean anwenden(Pokemon p) {
-		double r = Math.random();//liefert Zahl zwischen 1 und 0
-		if(p.getFangrate()*wert>r){
-			return true;
-		}
+	public boolean kannBeleben() {		
 		return false;
 	}
-
 	
 	public String toString() {
-		return name + " Fangwahrscheinlichkeit: " +(wert*100) + "%";
+		return name + " Anzahl: " + anzahl;
 	}
 
 	@Override

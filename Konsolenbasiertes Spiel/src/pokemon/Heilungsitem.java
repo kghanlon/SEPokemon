@@ -24,18 +24,19 @@ public class Heilungsitem extends Item {
 	public boolean kannHeilen() {		
 		return true;
 	}
-
 	
-	public boolean anwenden(Pokemon p) {
-		if(p.getKp()!=p.getMaxkp()){
-			p.setKp((int)Statisches.min(p.getKp()+wert, p.getMaxkp()));
+	public boolean kannBeleben(){
+		String i = name +"";
+		String v = "BELEBER";
+		if(i.contains(v)){
 			return true;
+		}else{
+			return false;
 		}
-		return false;
 	}
 	
 	public String toString(){		
-		return name + " Heilungswert: " +wert + "kp";		
+		return name + " Heilungswert: " +wert + "kp " + " Anzahl: " + anzahl ;		
 	}
 
 	@Override

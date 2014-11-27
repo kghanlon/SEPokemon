@@ -1,6 +1,5 @@
 package pokemon;
 
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -65,7 +64,6 @@ public class Pokemon {
 	
 	private void zufallsWerteWild(int lvl){
 		int attackenanzahl=0;
-		Attacke[] a = new Attacke[4];
 		for(int i=lvl;i>0; i--){
 			if(moeglicheAttacken.containsKey(i))
 			//sucht die ältesten attacken, die das pokemon hätte lernen können und die einem seiner typen entsprechen
@@ -243,7 +241,9 @@ public class Pokemon {
 		return sb.toString();
 	}
 	
-	
+	public String kampfAusgabe(){
+		return name + "\tlvl " + lvl + "\tkp " + kp + "/" + maxkp;
+	}
 	
 	
 	

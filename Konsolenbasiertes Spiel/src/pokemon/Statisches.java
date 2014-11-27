@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Scanner;
 
 import javax.xml.parsers.*;
 
@@ -17,15 +18,9 @@ public class Statisches {
 	private static HashMap<PokeNamen, String> pokehash = new HashMap<>();
 	private static HashMap <AttackenNamen, String> atthash = new HashMap<>();
 	private static HashMap<ItemNamen, String> itemhash = new HashMap<>();
+	private static Scanner sc;
 	
 	public static void einlesen(){		
-		/*atthash.put(AttackenNamen.DONNERBLITZ, "elektro#0.9#80");
-		atthash.put(AttackenNamen.FUNKENSPRUNG, "elektro#1.0#40");
-		atthash.put(AttackenNamen.RUTENSCHLAG, "normal#1.0#0");
-		atthash.put(AttackenNamen.RUCKZUCKHIEB, "normal#1.0#60");
-		atthash.put(AttackenNamen.BODYSLAM, "normal#0.8#70");
-		
-		pokehash.put(PokeNamen.PIKACHU, "elektro#elektro#0.7#5;RUTENSCHLAG%10;RUCKZUCKHIEB%15;FUNKENSPRUNG%20;BODYSLAM%25;DONNERBLITZ");*/
 		Document doc = null;
 	    
 		try{
@@ -118,7 +113,7 @@ public class Statisches {
 	
 	public static Trainer gespeicherterTrainer(){
 		Trainer t;
-Document doc = null;
+		Document doc = null;
 	    
 		try{
 			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -132,8 +127,7 @@ Document doc = null;
 			System.out.println("IOprobleme");
 		}
 		NodeList n = doc.getChildNodes();
-		Pokemon [] pok = new Pokemon[4];
-		List<Integer> token = new ArrayList<>();
+		Pokemon [] pok = new Pokemon[3];
 		List<Item> item = new ArrayList<>();
 		
 		String name = n.item(0).getAttributes().getNamedItem("name").getNodeValue();//name
@@ -160,16 +154,13 @@ Document doc = null;
 			ItemNamen id = strToItemName(n.item(3).getChildNodes().item(i).getAttributes().getNamedItem("id").getNodeValue());
 			int anzahl = Integer.parseInt(n.item(3).getChildNodes().item(i).getAttributes().getNamedItem("anzahl").getNodeValue());
 			Item it = new Ball(ItemNamen.POKEBALL, 0);
-			switch(n.item(3).getChildNodes().item(i).getAttributes().getNamedItem("id").getNodeValue()){
+			switch(n.item(3).getChildNodes().item(i).getAttributes().getNamedItem("typ").getNodeValue()){
 			case "BALL": it= new Ball(id, anzahl); break;
 			case "HEILEN": it=new Heilungsitem(id, anzahl);break;
 			}
 			item.add(it);
-		}
-		for(int i=1; i<n.item(5).getChildNodes().getLength(); i+=2){//tokens einlesen
-			token.add(Integer.parseInt(n.item(5).getChildNodes().item(i).getAttributes().getNamedItem("id").getNodeValue()));
-		}
-		t = new Trainer(locid, token, name, item, pok);
+		}		
+		t = new Trainer(locid, new ArrayList<Integer>(), name, item, pok);
 		return t;
 	}
 	
@@ -198,13 +189,7 @@ Document doc = null;
 		for(int i=0; i<t.getItems().size(); i++){//auslesen der items
 			sb.append("<Item id=\""+t.getItems().get(i).getName() +"\" anzahl=\"" +t.getItems().get(i).getAnzahl() + "\" typ=\"" + t.getItems().get(i).getTyp()  + "\"/>\n");			
 		}
-		sb.append("</ItemListe>\n");
-		
-		sb.append("<TokenListe>\n");
-		for(int i=0; i<t.getTokens().size(); i++){//auslesen der items
-			sb.append("<Token id=\""+t.getTokens().get(i) +"\"/>\n");			
-		}
-		sb.append("</TokenListe>\n");
+		sb.append("</ItemListe>\n");		
 		
 		sb.append("</Trainerelemente>\n");
 
@@ -253,6 +238,7 @@ Document doc = null;
 	public static void sleep(){
 		try {
 			Thread.sleep(1000);
+			System.out.println("\n");
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
@@ -285,7 +271,7 @@ Document doc = null;
 	
 	
 	
-	public static String typToString(Typ t){
+	public static String typToString(Typ t){//todo: ändern in dynamische abfrage wir attacke und items
 		switch(t){
 		case WASSER : return "WASSER";
 		case ELEKTRO : return "ELEKTRO";
@@ -313,7 +299,23 @@ Document doc = null;
 		return b;
 	}
 	
+	public static boolean random(float t){
+		double r = Math.random();
+		if(r<=t) 
+			return true;
+		return false;
+	}
+
+	public static Scanner getScanner() {
+		return sc;
+	}
 	
+	public static void setScanner(){
+		sc = new Scanner(System.in);
+	}
+	public static void closScanner(){
+		sc.close();
+	}
 	
 	
 }

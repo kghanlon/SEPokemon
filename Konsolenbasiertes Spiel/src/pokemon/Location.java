@@ -8,20 +8,21 @@ public class Location {
 	private int id;
 	private String name;
 	private List<Event> events;
+	private Scanner scan = Statisches.getScanner();
 	
 	public Location(int id, String name, List<Event> events){
 		this.id = id;
 		this.name = name;
 		this.events = events;
-		//Default leeres Event ganz am Anfang einfügen:
+		//Default leeres Event ganz am Anfang einfï¿½gen:
 		events.add(0, new InformationEvent(new ArrayList<Integer>(), "", "Default Event"));
 	}
 	
 	public Location runLocation(Trainer t){
-		//Wartet auf Eingabe, führt dann das ensprechende Event aus.
-		//Wenn die Location vom Trainer geändert wird, gib die neue Loc zurück.
+		//Wartet auf Eingabe, fï¿½hrt dann das ensprechende Event aus.
+		//Wenn die Location vom Trainer geï¿½ndert wird, gib die neue Loc zurï¿½ck.
 		while(true){
-			Scanner scan = new Scanner(System.in);
+			
 			System.out.println("Next Command: ");
 			String commandLine = scan.nextLine();
 			int i = findCorrectEvent(commandLine, t.getTokens());

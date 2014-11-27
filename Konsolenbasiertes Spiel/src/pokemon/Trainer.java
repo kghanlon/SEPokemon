@@ -11,6 +11,7 @@ public class Trainer {
 	private int locationId;
 	List<Integer> tokens = new ArrayList<Integer>();
 	private List<Item> items = new ArrayList<Item>();
+	private Scanner sc = Statisches.getScanner();
 	
 	public Trainer(int locationId, List<Integer> tokens, String name, List<Item> items, Pokemon[] team){
 		this.locationId = locationId;
@@ -51,26 +52,28 @@ public class Trainer {
 		}
 	}
 	
-	public void pokemonTauschen(Pokemon a, Pokemon b){
+	public void pokemonTauschen(int zutauschen){
+		
 		Statisches.sleep();
-		System.out.println(a.getName() + "wurde gegen " + b.getName() + " getauscht.");
-		a = b;
+		System.out.println(team[0].getName() + " wurde gegen " + team[zutauschen].getName() + " ausgetauscht.");
+		Pokemon tmp = team[0];
+		team[0] = team[zutauschen];
+		team[zutauschen] = tmp;
 	}
 	
 	public void pokemonErsetzen(Pokemon p){
 		Statisches.sleep();
-		System.out.println("GEFANGEN: Du hast " + p.getName() + "gefangen.");
+		System.out.println("GEFANGEN: Du hast " + p.getName() + " gefangen.");
 		if(team[team.length-1]!=null){
 			Statisches.sleep();
 			System.out.println("Welches Pokemon soll durch " + p.getName() + " ersetzt werden?");
 		for(int i=0; i< team.length; i++){
-			System.out.println((i+1) + ") " + p.getName());
+			System.out.println((i+1) + ") " + team[i].getName());
 		}
 		int t;
 		try{
-			Scanner sc = new Scanner(System.in);
 			t = sc.nextInt();
-			sc.close();
+			
 		}catch(InputMismatchException e){
 			System.out.println("Ungültige Eingabe wird als nein gewertet.");//todo evtl. hier ne schleife bis gültige eingabe
 			t=0;
@@ -87,11 +90,7 @@ public class Trainer {
 			case 3:
 				System.out.println(team[2].getName() + " wurde freigelassen.");
 				team[2] = p;
-			break;
-			case 4:
-				System.out.println(team[3].getName() + " wurde freigelassen.");
-				team[3] = p;
-			break;
+			break;			
 		default:;
 		System.out.println(p.getName() + "gehört nun zu deinem Team.");
 		}
@@ -106,15 +105,29 @@ public class Trainer {
 				}
 			}
 			Statisches.sleep();
-			System.out.println("Pokemon wurde an " + j +". Stelle im Team eingefügt.");			
+			System.out.println("Pokemon wurde an " + (j+1) +". Stelle im Team eingefügt.");			
 		}
 	}
 	
 	
 	
 	public List<Item> getItems(){
+		itemsAusfiltern();
 		return items;
 	} 
+	
+	/**
+	 * filtert die elemente raus deren anzahl 0 ist es reicht eins auszuschmeißen,
+	 *  da maximal eins gleichezit durch benutzen auf 0 gesetzt werden kann
+	 */
+	private void itemsAusfiltern(){
+		for(int i=0; i<items.size(); i++){
+			if(items.get(i).getAnzahl()<1){
+				items.remove(i);
+				break;
+			}
+		}
+	}
 	
 	public String toString(){
 		StringBuilder sb = new StringBuilder();
@@ -128,9 +141,9 @@ public class Trainer {
 		for(int i=0; i<items.size(); i++){
 			sb.append("ITEM " + i + ": " + items.get(i).getName() + " Anzahl: " + items.get(i).getAnzahl() +"\n");
 		}
-		for(int i=0; i<tokens.size(); i++){
+		/*for(int i=0; i<tokens.size(); i++){
 			sb.append("TOKEN " + i + ": " + tokens.get(i) + "\n");
-		}
+		}*/
 		return sb.toString();
 	}
 	
@@ -157,7 +170,9 @@ public class Trainer {
 	public Pokemon[] getTeam(){
 		return team;
 	}
-	
+	 public void setTeamMitglied(int i, Pokemon p){
+		 team[i]=p;
+	 }
 	
 	public int getLocationId(){
 		return locationId;

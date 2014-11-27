@@ -25,6 +25,7 @@ public class Game {
 	public static Map<Integer, Location> locations = new HashMap<Integer, Location>();
 	
 	public static void main(String args[]){
+		Statisches.setScanner();
 		/*
 		Document doc = null;
 		    
@@ -51,7 +52,7 @@ public class Game {
 			locations.get(t.getLocationId()).runLocation(t);
 		}*/
 		kaitest();
-		
+		Statisches.closScanner();
 		    
 	}
 	
@@ -60,13 +61,18 @@ public class Game {
 	public static void kaitest(){		
 		Statisches.einlesen();
 		Trainer t = Statisches.gespeicherterTrainer();
-		System.out.println(t);
-		Statisches.trainerSpeichern(t);
-		/*Pokemon pikachu = new Pokemon(PokeNamen.PIKACHU, 26);
-		Pokemon glumanda = new Pokemon(PokeNamen.GLUMANDA, 28);
-		System.out.println(glumanda);
-		System.out.println(glumanda.ausgabeAttacken());
-		System.out.println(pikachu);*/
+		//szenario mit wildem pokemon wild=true
+		List<Pokemon> g = new ArrayList<>();
+		g.add(new Pokemon(PokeNamen.PIKACHU, 15));
+		//Kampf.start(t, g, true);
+		//ab hier szenario mit gengerischem trainer deswegen wild auf false
+		Statisches.sleep();
+		Statisches.sleep();
+		System.out.println("AB HIER TRAINERKAMPF");
+		g = new ArrayList<>();
+		g.add(new Pokemon(PokeNamen.PIKACHU, 20));
+		g.add(new Pokemon(PokeNamen.GLUMANDA, 20));
+		Kampf.start(t, g, false);
 	}
 	
 	public static void getAllLocations(NodeList nodes){
