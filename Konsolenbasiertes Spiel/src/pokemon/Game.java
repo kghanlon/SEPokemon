@@ -64,7 +64,7 @@ public class Game {
 		//szenario mit wildem pokemon wild=true
 		List<Pokemon> g = new ArrayList<>();
 		g.add(new Pokemon(PokeNamen.PIKACHU, 15));
-		//Kampf.start(t, g, true);
+		Kampf.start(t, g, true);
 		//ab hier szenario mit gengerischem trainer deswegen wild auf false
 		Statisches.sleep();
 		Statisches.sleep();
