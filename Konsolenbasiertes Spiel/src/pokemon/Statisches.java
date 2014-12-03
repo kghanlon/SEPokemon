@@ -203,7 +203,7 @@ public class Statisches {
 		System.out.println("Speichern erfolgreich.");
 	}
 	
-	private static ItemNamen strToItemName(String name) {
+	public static ItemNamen strToItemName(String name) {
 		for(ItemNamen i : ItemNamen.values()){
 			if(name.equals(i+""))
 				return i;
@@ -212,7 +212,7 @@ public class Statisches {
 		return null;
 	}
 
-	private static PokeNamen strToPokeNamen(String name) {
+	public static PokeNamen strToPokeNamen(String name) {
 		for(PokeNamen p : PokeNamen.values()){
 			if(name.equals(p+""))
 				return p;

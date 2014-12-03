@@ -125,9 +125,9 @@ public class Kampf {
 				switch(h-1){
 					case 1:
 						if(ballGewaehlt(t, g)){
-							System.out.println("Gefangen!");
-							g.get(0).setKp(0);
+							System.out.println("Gefangen!");							
 							t.pokemonErsetzen(g.get(0));
+							g.get(0).setKp(0);
 						}else{
 							System.out.println("Nicht gefangen!");
 							if(gegnerAngriff(t, g)){
@@ -455,11 +455,14 @@ public class Kampf {
 	private static boolean trainerAngriff(Trainer t, List<Pokemon> g, int h){
 		System.out.println(t.getName() + ": " + t.getTeam()[0].getName() + " greift mit " + t.getTeam()[0].getAttacken()[h].getName() + " an!\n");
 		Statisches.sleep();
-		int vorNachteil =1;//wird verändert sobald anfälligkeiten zwischen den typen drin sind
-		int verbleibendekp = vorNachteil*(int)Statisches.max(g.get(0).getKp()-attackenwert(t.getTeam()[0].getStaerke(),g.get(0).getVert(), t.getTeam()[0].getAttacken()[h]), 0);
-		g.get(0).setKp(verbleibendekp);
-		if(g.get(0).getKp()<1){						
-			return true;
+		if(attackenTreffer(t.getTeam()[0].getAttacken()[h])){
+			int vorNachteil =1;//wird verändert sobald anfälligkeiten zwischen den typen drin sind
+			int verbleibendekp = vorNachteil*(int)Statisches.max(g.get(0).getKp()-attackenwert(t.getTeam()[0].getStaerke(),g.get(0).getVert(), t.getTeam()[0].getAttacken()[h]), 0);
+			g.get(0).setKp(verbleibendekp);
+			if(g.get(0).getKp()<1){						
+				return true;
+			}
+			
 		}
 		return false;
 	}
@@ -490,11 +493,13 @@ public class Kampf {
 		att=(int)att;
 		System.out.println("GEGNER: " + g.get(0).getName() + " greift mit " + g.get(0).getAttacken()[att].getName()+ " an!\n");
 		Statisches.sleep();
+		if(attackenTreffer(g.get(0).getAttacken()[att])){
 		int vorNachteil =1;//wird verändert sobald anfälligkeiten zwischen den typen drin sind
 		int verbleibendekp = vorNachteil*(int)Statisches.max(t.getTeam()[0].getKp()-attackenwert(g.get(0).getStaerke(), t.getTeam()[0].getVert(), g.get(0).getAttacken()[att]), 0);
 		t.getTeam()[0].setKp(verbleibendekp);
 		if(t.getTeam()[0].getKp()<1){
 			return true;
+		}
 		}
 		return false;
 	}
@@ -518,4 +523,14 @@ public class Kampf {
 		default: return 0;
 		}
 	}  
+	
+	private static boolean attackenTreffer(Attacke a){
+		double tmp = a.getGen();
+		double r = Math.random();
+		if(r<tmp)
+			return true;
+		System.out.println(a.getName() + " verfehlt sein Ziel.");
+		Statisches.sleep();
+		return false;
+	}
 }

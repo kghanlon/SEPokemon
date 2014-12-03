@@ -69,7 +69,7 @@ public class Game {
 		Trainer t = Statisches.gespeicherterTrainer();
 		//szenario mit wildem pokemon wild=true
 		List<Pokemon> g = new ArrayList<>();
-		g.add(new Pokemon(PokeNamen.PIKACHU, 15));
+		g.add(new Pokemon(PokeNamen.PIKACHU, 15));		
 		Kampf.start(t, g, true);
 		//ab hier szenario mit gengerischem trainer deswegen wild auf false
 		System.out.println("AB HIER TRAINERKAMPF");

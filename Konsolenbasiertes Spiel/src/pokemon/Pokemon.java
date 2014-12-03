@@ -12,6 +12,7 @@ public class Pokemon {
 	private float fangrate;
 	private Typ[] typ = new Typ[2];
 	private int lvl, exp, maxkp, kp, staerke, vert, tempo;
+	private Scanner sc = Statisches.getScanner();
 	
 	public Pokemon(PokeNamen name, int lvl, int exp, AttackenNamen[] attackenid, int maxkp, 
 			int kp, int staerke, int vert, int tempo){
@@ -128,12 +129,9 @@ public class Pokemon {
 			System.out.println("\nWenn du diese Attacke erlernen möchtest,\nwähle aus welche Attacke weichen soll");
 			Statisches.sleep();
 			System.out.println(ausgabeAttacken() + "\n(Wenn die Attacke nicht erlernt werden soll gib 0 ein)\n");
-			Statisches.sleep();
 			String t;
-			try{
-				Scanner sc = new Scanner(System.in);
+			try{				
 				t = sc.next();
-				sc.close();
 			}catch(InputMismatchException e){
 				System.out.println("Ungültige Eingabe wird als nein gewertet.");//todo evtl. hier ne schleife bis gültige eingabe
 				Statisches.sleep();
@@ -188,7 +186,7 @@ public class Pokemon {
 		sb.append("\n" + name + " kennt folgende Attacken:\n");
 		for(int i=0; i<4; i++){
 			if(attacken[i]!=null){
-				sb.append((i+1) + ") " + attacken[i].getName());//todo: evtl. erweiterung dass hier direkt typ stärke und gen auch ausgegeben wird
+				sb.append((i+1) + ") " + attacken[i]);//todo: evtl. erweiterung dass hier direkt typ stärke und gen auch ausgegeben wird
 				sb.append("\n");		
 			}
 		}
