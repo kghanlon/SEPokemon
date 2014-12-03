@@ -237,10 +237,10 @@ public class Statisches {
 	
 	public static void sleep(){
 		try {
-			Thread.sleep(1000);
-			System.out.println("\n");
-		} catch (InterruptedException e) {
-			e.printStackTrace();
+			sc.nextLine();
+			
+		} catch (Exception e) {
+			System.out.println("Fehler bei Lesebstätigung");
 		}
 	}
 	
@@ -313,7 +313,7 @@ public class Statisches {
 	public static void setScanner(){
 		sc = new Scanner(System.in);
 	}
-	public static void closScanner(){
+	public static void closeScanner(){
 		sc.close();
 	}
 	
