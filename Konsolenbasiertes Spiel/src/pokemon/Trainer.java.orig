@@ -9,12 +9,20 @@ public class Trainer {
 	private String name;
 	private Pokemon[] team = new Pokemon[3];
 	private int locationId;
+<<<<<<< HEAD
 	private int geld;
+	List<Integer> tokens = new ArrayList<Integer>();
+	private List<Item> items = new ArrayList<Item>();
+	private Scanner sc = Statisches.getScanner();
+	
+	public Trainer(int locationId, List<Integer> tokens, String name, List<Item> items, Pokemon[] team, int geld){
+=======
 	List<String> tokens = new ArrayList<String>();
 	private List<Item> items = new ArrayList<Item>();
 	private Scanner sc = Statisches.getScanner();
 	
 	public Trainer(int locationId, List<String> tokens, String name, List<Item> items, Pokemon[] team){
+>>>>>>> 5b6a792eb6f3a40b8bf058c2fd38af5a9234a4cb
 		this.locationId = locationId;
 		this.tokens = tokens;
 		if(!tokens.contains(0)){
@@ -26,8 +34,8 @@ public class Trainer {
 		this.geld=geld;
 	}
 	
-	//rueckgabewert ist die Anzahl der verbleibenden items der gleichen sorte
-	public int setItemHinzu(Item item, int anzahl){// dadurch ist es moeglich auch dinge abzuziehen oder mehrere hinzuzufuegen
+	//rückgabewert ist die Anzahl der verbleibenden items der gleichen sorte
+	public int setItemHinzu(Item item, int anzahl){// dadurch ist es möglich auch dinge abzuziehen oder mehrere hinzuzufügen
 		if(anzahl>0){
 			for(int i=0; i<items.size(); i++){
 				if(item.getName().equals(items.get(i).getName())){//item schonmal vorhanden
@@ -90,7 +98,7 @@ public class Trainer {
 			t = sc.nextInt();
 			
 		}catch(InputMismatchException e){
-			System.out.println("Ungueltige Eingabe wird als nein gewertet.");//todo evtl. hier ne schleife bis gueltige eingabe
+			System.out.println("Ungültige Eingabe wird als nein gewertet.");//todo evtl. hier ne schleife bis gültige eingabe
 			t=0;
 		}
 		
@@ -134,7 +142,7 @@ public class Trainer {
 	} 
 	
 	/**
-	 * filtert die elemente raus deren anzahl 0 ist es reicht eins auszuschmeissen,
+	 * filtert die elemente raus deren anzahl 0 ist es reicht eins auszuschmeißen,
 	 *  da maximal eins gleichezit durch benutzen auf 0 gesetzt werden kann
 	 */
 	private void itemsAusfiltern(){
@@ -163,8 +171,6 @@ public class Trainer {
 		}*/
 		return sb.toString();
 	}
-	
-	
 	
 	
 	public Pokemon[] getTeam(){

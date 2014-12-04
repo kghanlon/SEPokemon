@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class Pokemon {
 
 	private HashMap<Integer, Attacke> moeglicheAttacken = new HashMap<>();
+	private HashMap<Typ, Double> fschaden = new HashMap<>();
 	private PokeNamen name;
 	private Attacke [] attacken = new Attacke[4];
 	private float fangrate;
@@ -29,12 +30,19 @@ public class Pokemon {
 		}
 		this.fangrate=Float.parseFloat(Statisches.getPokehash().get(name).split("#")[2].trim());		
 		HashMap<Integer, Attacke> hashtmp = new HashMap<>();
-		String [] moeg = Statisches.getPokehash().get(name).split("#")[3].split("$");
-		for(int i=4; i<moeg.length; i++){
+		String [] moeg = Statisches.getPokehash().get(name).split("#")[3].split("%");
+		for(int i=0; i<moeg.length; i++){
 			Attacke a = new Attacke(Statisches.strToAttName(moeg[i].split(";")[1]));
 			hashtmp.put(Integer.parseInt(moeg[i].split(";")[0].trim()), a);			
 		}
+		HashMap<Typ, Double> fschadentmp = new HashMap<>();
+		String [] faktor = Statisches.getPokehash().get(name).split("#")[4].split("%");
+		for(int i=0; i<faktor.length; i++){
+			fschadentmp.put(Statisches.stringToTyp(faktor[i].split(";")[0].trim()) ,Double.parseDouble(faktor[i].split(";")[1].trim()));			
+		}
+		
 		this.moeglicheAttacken=hashtmp;
+		this.fschaden=fschadentmp;
 		this.lvl=lvl;
 		this.exp=exp;
 		this.maxkp=maxkp;
@@ -59,7 +67,13 @@ public class Pokemon {
 			Attacke a = new Attacke(Statisches.strToAttName(moeg[i].split(";")[1]));
 			hashtmp.put(Integer.parseInt(moeg[i].split(";")[0].trim()), a);			
 		}
+		HashMap<Typ, Double> fschadentmp = new HashMap<>();
+		String [] faktor = Statisches.getPokehash().get(name).split("#")[4].split("%");
+		for(int i=0; i<faktor.length; i++){
+			fschadentmp.put(Statisches.stringToTyp(faktor[i].split(";")[0].trim()) ,Double.parseDouble(faktor[i].split(";")[1].trim()));			
+		}
 		this.moeglicheAttacken=hashtmp;
+		this.fschaden=fschadentmp;
 		zufallsWerteWild(lvl);
 	}
 	
@@ -257,6 +271,11 @@ public class Pokemon {
 	public int getTempo() {
 		return tempo;
 	}
+
+	public double getFschaden(Typ typ) {
+		return fschaden.get(typ);
+	}
+
 
 
 
