@@ -43,7 +43,7 @@ public class Trainer {
 		}else
 		{
 			for(int i=0; i<items.size(); i++){
-				if(item.getName().equals(items.get(i).getName())&&anzahl<=items.get(i).getAnzahl()){//item schonmal vorhanden
+				if(item.getName().equals(items.get(i).getName())&& Math.abs(anzahl)<=items.get(i).getAnzahl()){//item mehr vorhanden genutzt werden soll
 					items.get(i).setAnzahl(items.get(i).getAnzahl()+anzahl);
 					if(items.get(i).getAnzahl()==0){
 						items.remove(i);
@@ -52,7 +52,7 @@ public class Trainer {
 					return items.get(i).getAnzahl();
 				}
 			}			
-			return 0; //eigentlich sollte der fall nie eintreten da man ja nichts von einem item benutzen kann was man nicht hat
+			return 0; //passiert nur wenn man mehr abziehen will als vorhanden sind
 		}
 	}
 	
