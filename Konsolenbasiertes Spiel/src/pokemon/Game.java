@@ -74,8 +74,6 @@ public class Game {
 		g.add(new Pokemon(PokeNamen.PIKACHU, 15));
 		Kampf.start(t, g, true);
 		//ab hier szenario mit gengerischem trainer deswegen wild auf false
-		Statisches.sleep();
-		Statisches.sleep();
 		System.out.println("AB HIER TRAINERKAMPF");
 		g = new ArrayList<>();
 		g.add(new Pokemon(PokeNamen.PIKACHU, 20));

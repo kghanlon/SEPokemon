@@ -54,19 +54,23 @@ public class Trainer {
 	
 	public void pokemonTauschen(int zutauschen){
 		
+		
+		System.out.println(team[0].getName() + " wurde gegen " + team[zutauschen].getName() + " ausgetauscht.\n");
 		Statisches.sleep();
-		System.out.println(team[0].getName() + " wurde gegen " + team[zutauschen].getName() + " ausgetauscht.");
 		Pokemon tmp = team[0];
 		team[0] = team[zutauschen];
 		team[zutauschen] = tmp;
 	}
 	
 	public void pokemonErsetzen(Pokemon p){
-		Statisches.sleep();
+		
 		System.out.println("GEFANGEN: Du hast " + p.getName() + " gefangen.");
+		Statisches.sleep();
+		Pokemon p2 = new Pokemon(Statisches.strToPokeNamen(p.getName()), p.getLvl());
+		p2.setKp(p.getKp());
 		if(team[team.length-1]!=null){
-			Statisches.sleep();
-			System.out.println("Welches Pokemon soll durch " + p.getName() + " ersetzt werden?");
+			
+			System.out.println("Welches Pokemon soll durch " + p.getName() + " ersetzt werden?\n");
 		for(int i=0; i< team.length; i++){
 			System.out.println((i+1) + ") " + team[i].getName());
 		}
@@ -78,34 +82,36 @@ public class Trainer {
 			System.out.println("Ungültige Eingabe wird als nein gewertet.");//todo evtl. hier ne schleife bis gültige eingabe
 			t=0;
 		}
+		
 		switch(t){
 			case 1: 
 				System.out.println(team[0].getName() + " wurde freigelassen.");
-				team[0] = p;
+				team[0] = p2;
 			break; 
 			case 2:
 				System.out.println(team[1].getName() + " wurde freigelassen.");
-				team[1] = p;
+				team[1] = p2;
 			break;
 			case 3:
 				System.out.println(team[2].getName() + " wurde freigelassen.");
-				team[2] = p;
+				team[2] = p2;
 			break;			
 		default:;
-		System.out.println(p.getName() + "gehört nun zu deinem Team.");
+		System.out.println(p2.getName() + "gehört nun zu deinem Team.");
 		}
 		}
 		else{
 			int j=0;
 			for(int i=0; i<team.length; i++){
 				if(team[i]==null){
-					team[i]=p;
+					team[i]=p2;
 					j=i;
 					break;
 				}
 			}
+			
+			System.out.println(p2.getName() + " wurde an " + (j+1) +". Stelle im Team eingefügt.");			
 			Statisches.sleep();
-			System.out.println("Pokemon wurde an " + (j+1) +". Stelle im Team eingefügt.");			
 		}
 	}
 	
