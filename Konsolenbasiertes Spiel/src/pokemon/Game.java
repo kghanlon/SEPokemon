@@ -27,49 +27,21 @@ public class Game {
 	public static void main(String args[]){
 		Statisches.setScanner();
 		Statisches.einlesen();
-		/*
-		Document doc = null;
-		    
-		try{
-			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-			DocumentBuilder builder = factory.newDocumentBuilder();
-			doc = builder.parse( new File("./Locations.xml") );
-		} catch(ParserConfigurationException e){
-		   	e.printStackTrace();
-		} catch (SAXException e){
-		   	e.printStackTrace();
-		}catch (IOException e){
-		   	e.printStackTrace();
-		}
-		
-		//Locations aus XML laden:
-		getAllLocations(doc.getFirstChild().getChildNodes());
-		
-		//Hier muss Abfrage stattfinden: erstes laden oder gibt es einen Speicherstand?
-		//Trainer laden:
-		Trainer t = new Trainer(1, new ArrayList<String>(), null, null, null);
-		//Start Tokens laden:
-		for(int key : locations.keySet()){
-			t.addToken(locations.get(key).getName()+"Default");
-		}
 		
 		
-		//Spiel starten:
-		while(true){
-			locations.get(t.getLocationId()).runLocation(t);
-		}*/
 		
-		kaitest();
+		
+		
 		Statisches.closeScanner();
 		    
 	}
 	
 	//Methoden:
 	
-	public static void kaitest(){		
-		Pokemon p = new Pokemon(PokeNamen.MEWTU, 24);
-		System.out.println(p);
-	}
+	/*public static void kaitest(){			
+		Trainer t = Statisches.gespeicherterTrainer();
+		Statisches.trainerSpeichern(t);
+	}*/
 	
 	public static void getAllLocations(NodeList nodes){ //nodes = alle locations in der welt.
 		//Hier werden alle Locations die in der XML stehen in die

@@ -14,15 +14,17 @@ public class Trainer {
 	private List<Item> items = new ArrayList<Item>();
 	private Scanner sc = Statisches.getScanner();
 	
-	public Trainer(int locationId, List<String> tokens, String name, List<Item> items, Pokemon[] team){
+	public Trainer(int locationId, List<String> tokens, String name, List<Item> items, Pokemon[] team, int geld){
 		this.locationId = locationId;
 		this.tokens = tokens;
-		if(!tokens.contains(0)){
-			tokens.add("0");
+		if(tokens!=null){
+			this.tokens=tokens;
 		}
 		this.name=name;
-		this.items=items;
-		this.team=team;
+		if(items!=null)
+			this.items=items;
+		if(team!=null)
+			this.team=team;
 		this.geld=geld;
 	}
 	

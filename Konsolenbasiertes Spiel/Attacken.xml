@@ -170,6 +170,11 @@
 		<Gen wert="1.0"/>
 		<Schaden wert="0"/>
 	</Attacke>
+	<Attacke id="TACKLE">
+		<Typ id="NORMAL"/>	
+		<Gen wert="1.0"/>
+		<Schaden wert="50"/>
+	</Attacke>
 	<Attacke id="RISIKOTACKLE">
 		<Typ id="NORMAL"/>	
 		<Gen wert="0.7"/>

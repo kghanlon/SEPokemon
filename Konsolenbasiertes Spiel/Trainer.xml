@@ -32,4 +32,9 @@
 <Item id="TRANK" anzahl="5" typ="HEILEN"/>
 <Item id="SUPERTRANK" anzahl="2" typ="HEILEN"/>
 </ItemListe>
+<TokenListe>
+<Token name="AlabastiaDefault"/>
+<Token name="FoundKey"/>
+<Token name="HatPikachu"/>
+</TokenListe>
 </Trainerelemente>

@@ -88,6 +88,7 @@ public class Statisches {
 					sb.append("%");
 				}
 			}
+			sb.append("#" + n.item(i).getAttributes().getNamedItem("entwicklung").getNodeValue());
 			pokehash.put(strToPokeNamen(name), sb.toString());
 			
 		}
@@ -138,6 +139,7 @@ public class Statisches {
 		NodeList n = doc.getChildNodes();
 		Pokemon [] pok = new Pokemon[3];
 		List<Item> item = new ArrayList<>();
+		List<String> token = new ArrayList<>();
 		
 		String name = n.item(0).getAttributes().getNamedItem("name").getNodeValue();//name
 		int locid = Integer.parseInt(n.item(0).getAttributes().getNamedItem("locationId").getNodeValue());
@@ -170,7 +172,11 @@ public class Statisches {
 			}
 			item.add(it);
 		}		
-		t = new Trainer(locid, new ArrayList<String>(), name, item, pok);
+		for(int i=1; i<n.item(5).getChildNodes().getLength(); i+=2){//item einlesen
+			String toki = n.item(5).getChildNodes().item(i).getAttributes().getNamedItem("name").getNodeValue();
+			token.add(toki);
+		}	
+		t = new Trainer(locid, token, name, item, pok, geld);
 		return t;
 	}
 	
@@ -200,11 +206,15 @@ public class Statisches {
 			sb.append("<Item id=\""+t.getItems().get(i).getName() +"\" anzahl=\"" +t.getItems().get(i).getAnzahl() + "\" typ=\"" + t.getItems().get(i).getTyp()  + "\"/>\n");			
 		}
 		sb.append("</ItemListe>\n");		
-		
+		sb.append("<TokenListe>\n");
+		for(int i=0; i<t.getItems().size(); i++){//auslesen der items
+			sb.append("<Token name=\""+t.getTokens().get(i) + "\"/>\n");
+		}
+		sb.append("</TokenListe>\n");
 		sb.append("</Trainerelemente>\n");
 
 		try{
-			FileWriter fw = new FileWriter(new File("./Test.xml"));
+			FileWriter fw = new FileWriter(new File("./Trainer.xml"));
 			fw.write(sb.toString());
 			fw.close();
 		}catch(IOException io){
