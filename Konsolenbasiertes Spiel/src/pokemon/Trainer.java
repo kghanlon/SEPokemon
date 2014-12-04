@@ -24,8 +24,8 @@ public class Trainer {
 		this.team=team;
 	}
 	
-	//rückgabewert ist die Anzahl der verbleibenden items der gleichen sorte
-	public int setItemHinzu(Item item, int anzahl){// dadurch ist es möglich auch dinge abzuziehen oder mehrere hinzuzufügen
+	//rueckgabewert ist die Anzahl der verbleibenden items der gleichen sorte
+	public int setItemHinzu(Item item, int anzahl){// dadurch ist es moeglich auch dinge abzuziehen oder mehrere hinzuzufuegen
 		if(anzahl>0){
 			for(int i=0; i<items.size(); i++){
 				if(item.getName().equals(items.get(i).getName())){//item schonmal vorhanden
@@ -79,7 +79,7 @@ public class Trainer {
 			t = sc.nextInt();
 			
 		}catch(InputMismatchException e){
-			System.out.println("Ungültige Eingabe wird als nein gewertet.");//todo evtl. hier ne schleife bis gültige eingabe
+			System.out.println("Ungueltige Eingabe wird als nein gewertet.");//todo evtl. hier ne schleife bis gueltige eingabe
 			t=0;
 		}
 		
@@ -123,7 +123,7 @@ public class Trainer {
 	} 
 	
 	/**
-	 * filtert die elemente raus deren anzahl 0 ist es reicht eins auszuschmeißen,
+	 * filtert die elemente raus deren anzahl 0 ist es reicht eins auszuschmeissen,
 	 *  da maximal eins gleichezit durch benutzen auf 0 gesetzt werden kann
 	 */
 	private void itemsAusfiltern(){

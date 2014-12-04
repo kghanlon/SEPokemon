@@ -28,12 +28,11 @@ public class Location {
 			int i = findCorrectEvent(commandLine, t.getTokens());
 			events.get(i).runEvent(t);
 			if(this.id!=t.getLocationId()){
-				return Game.locations.get(t.getLocationId());
+				return LocationFactory.locations.get(t.getLocationId());
 			}
 		}
 	}
 	
-	//!!!!!!!!!!NONTOKENS!!!!!!!!
 	public int findCorrectEvent(String command, List<String> tokens){
 		//Only one event can fit to a specified command+token combination. This Method finds
 		//that event if it exists. If not, the default "empty" event is returned

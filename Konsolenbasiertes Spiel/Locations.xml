@@ -2,7 +2,7 @@
 <world>
 	<location id="1" name="Alabastia">
 			<InformationEvent command="look around" reqToken="AlabastiaDefault" reqNonToken="WearsSunglasses">
-				You are standing in Alabastia, it is very light outside.
+				You are standing in Alabastia, it is very bright outside.
 			</InformationEvent>
 			<InformationEvent command="look around" reqToken="WearsSunglasses;AlabastiaDefault">
 				You see absolutely nothing...
@@ -11,13 +11,14 @@
 				<InformationEvent command="">
 					You put on your really stylish Ray Ban sunglasses!
 				</InformationEvent>
-				<GrantTokenEvent command="" token="WearsSunglasses"/>
+				<GrantTokenEvent token="WearsSunglasses"/>
 			</CompoundEvent>
 			<CompoundEvent command="take off sunglasses" reqToken="WearsSunglasses">
-				<InformationEvent command="">
+				<InformationEvent>
 					You take off your sunglasses. Your Coolness diminishes drastically!
 				</InformationEvent>
-				<RemoveTokenEvent command="" token="WearsSunglasses"/>
+				<RemoveTokenEvent token="WearsSunglasses"/>
 			</CompoundEvent>
+			<WildPokemonEvent command="enter high gras" pokemon="PIKACHU;GLUMANDA" minlvl="999" maxlvl="1000" nextPokeCenterLocId="1"/>
 	</location>
 </world>
