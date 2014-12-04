@@ -25,6 +25,14 @@ public class Game {
 	public static void main(String args[]){
 		Statisches.setScanner();
 		Statisches.einlesen();
+<<<<<<< HEAD
+		
+		
+		
+		
+		
+		Statisches.closeScanner();
+=======
 		
 		
 		//Locations aus XML laden:
@@ -46,12 +54,16 @@ public class Game {
 			LocationFactory.locations.get(t.getLocationId()).runLocation(t);
 		}
 		
-		Statisches.closeScanner();
+		
+//		kaitest();
+//		Statisches.closeScanner();
+>>>>>>> a68d9f72d3a303dc5a5563c363acfe00d1f04043
 		    
 	}
 	
 	//Methoden:
 	
+<<<<<<< HEAD
 	/*public static void kaitest(){			
 		Trainer t = Statisches.gespeicherterTrainer();
 		Statisches.trainerSpeichern(t);
@@ -240,4 +252,10 @@ public class Game {
 		return info;
 	}
 	
+=======
+	public static void kaitest(){		
+		Pokemon p = new Pokemon(PokeNamen.MEWTU, 24);
+		System.out.println(p);
+	}
+>>>>>>> a68d9f72d3a303dc5a5563c363acfe00d1f04043
 }
