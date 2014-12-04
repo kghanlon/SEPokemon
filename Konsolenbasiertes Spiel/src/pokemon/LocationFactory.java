@@ -15,6 +15,16 @@ import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
+import Events.ChangeLocationEvent;
+import Events.CompoundEvent;
+import Events.Event;
+import Events.GrantMoneyEvent;
+import Events.GrantTokenEvent;
+import Events.InformationEvent;
+import Events.RemoveMoneyEvent;
+import Events.RemoveTokenEvent;
+import Events.WildPokemonEvent;
+
 public class LocationFactory {
 	
 	public static Map<Integer, Location> locations = new HashMap<Integer, Location>();
@@ -88,6 +98,13 @@ public class LocationFactory {
 				break;
 			case "WildPokemonEvent":
 				events.add(getWildPokemonEvent(i, j));
+				break;
+			case "GrantMoneyEvent":
+				events.add(getGrantMoneyEvent(i, j));
+				break;
+			case "RemoveMoneyEvent":
+				events.add(getRemoveMoneyEvent(i, j));
+				break;
 			default:
 				break;
 			}
@@ -187,6 +204,34 @@ public class LocationFactory {
 				.getNamedItem("nextPokeCenterLocId").getNodeValue());
 		
 		return new WildPokemonEvent(reqTokens, reqNonTokens, command, pokemon, minlvl, maxlvl, nextPokeCenterLocId);
+	}
+	
+	public GrantMoneyEvent getGrantMoneyEvent(int i, int j){
+		//Get Required Token List:
+		List<String> reqTokens = getReqTokenList(i, j);
+		//Get Required NonToken List:
+		List<String> reqNonTokens = getReqNonTokenList(i, j);
+		//Get Command:
+		String command = getCommand(i, j);
+		//Get the amount of money:
+		int amount = Integer.parseInt(nodes.item(i).getChildNodes().item(j).getAttributes()
+				.getNamedItem("amount").getNodeValue());
+		
+		return new GrantMoneyEvent(reqTokens, reqNonTokens, command, amount);
+	}
+	
+	public RemoveMoneyEvent getRemoveMoneyEvent(int i, int j){
+		//Get Required Token List:
+		List<String> reqTokens = getReqTokenList(i, j);
+		//Get Required NonToken List:
+		List<String> reqNonTokens = getReqNonTokenList(i, j);
+		//Get Command:
+		String command = getCommand(i, j);
+		//Get the amount of money:
+		int amount = Integer.parseInt(nodes.item(i).getChildNodes().item(j).getAttributes()
+				.getNamedItem("amount").getNodeValue());
+		
+		return new RemoveMoneyEvent(reqTokens, reqNonTokens, command, amount);
 	}
 	
 	

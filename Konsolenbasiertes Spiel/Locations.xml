@@ -20,5 +20,7 @@
 				<RemoveTokenEvent token="WearsSunglasses"/>
 			</CompoundEvent>
 			<WildPokemonEvent command="enter high gras" pokemon="PIKACHU;GLUMANDA" minlvl="999" maxlvl="1000" nextPokeCenterLocId="1"/>
+			<GrantMoneyEvent command="pick up money" amount="100"/>
+			<RemoveMoneyEvent command="give hobo insane amounts of money" amount="999"/>
 	</location>
 </world>

@@ -1,7 +1,13 @@
-package pokemon;
+package Events;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import pokemon.Kampf;
+import pokemon.LocationFactory;
+import pokemon.PokeNamen;
+import pokemon.Pokemon;
+import pokemon.Trainer;
 
 public class WildPokemonEvent extends Event {
 	

@@ -1,6 +1,8 @@
-package pokemon;
+package Events;
 
 import java.util.List;
+
+import pokemon.Trainer;
 
 public abstract class Event {
 	protected List<String> reqTokens;

@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import Events.CheckMoneyEvent;
+import Events.Event;
+import Events.InformationEvent;
+
 public class Location {
 	private int id;
 	private String name;
@@ -14,8 +18,9 @@ public class Location {
 		this.id = id;
 		this.name = name;
 		this.events = events;
-		//Default leeres Event ganz am Anfang einfuegen:
-		events.add(0, new InformationEvent(new ArrayList<String>(), new ArrayList<String>(), "", "Default Event"));
+		//Events hinzufügen die jede Location hat, und die nicht in der XML stehen sollten:
+		events.add(0, new InformationEvent(new ArrayList<String>(), new ArrayList<String>(), "", "Kein passendes Event gefunden"));
+		events.add(1, new CheckMoneyEvent());
 	}
 	
 	public Location runLocation(Trainer t){
