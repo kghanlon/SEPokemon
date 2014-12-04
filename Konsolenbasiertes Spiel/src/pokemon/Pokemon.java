@@ -14,6 +14,7 @@ public class Pokemon {
 	private Typ[] typ = new Typ[2];
 	private int lvl, exp, maxkp, kp, staerke, vert, tempo;
 	private Scanner sc = Statisches.getScanner();
+	private int entwicklungslvl;
 	
 	public Pokemon(PokeNamen name, int lvl, int exp, AttackenNamen[] attackenid, int maxkp, 
 			int kp, int staerke, int vert, int tempo){
@@ -43,6 +44,7 @@ public class Pokemon {
 		
 		this.moeglicheAttacken=hashtmp;
 		this.fschaden=fschadentmp;
+		this.entwicklungslvl = Integer.parseInt(Statisches.getPokehash().get(name).split("#")[5].trim());
 		this.lvl=lvl;
 		this.exp=exp;
 		this.maxkp=maxkp;
@@ -50,6 +52,7 @@ public class Pokemon {
 		this.staerke=staerke;
 		this.vert=vert;
 		this.tempo=tempo;
+		
 		
 	}
 	
@@ -74,6 +77,7 @@ public class Pokemon {
 		}
 		this.moeglicheAttacken=hashtmp;
 		this.fschaden=fschadentmp;
+		this.entwicklungslvl = Integer.parseInt(Statisches.getPokehash().get(name).split("#")[5].trim());
 		zufallsWerteWild(lvl);
 	}
 	
@@ -104,7 +108,7 @@ public class Pokemon {
 		exp+=i;		
 		System.out.println(name + " erhält " + i + " exp.");
 		Statisches.sleep();
-		if(exp >= aufstiegsgrenze(lvl)){
+		if(exp >= aufstiegsgrenze(lvl) && lvl<100){
 			levelaufstieg();
 		}
 	}
@@ -120,13 +124,28 @@ public class Pokemon {
 		Statisches.sleep();
 		if(gibtAttackeLvl(lvl)){
 			attackeLernen(lvl);
-		}		
+		}	
+		if(lvl>=entwicklungslvl){
+			entwicklung();
+		}
 		if(exp >= aufstiegsgrenze(lvl)){//wenn man so viele exp bekommt, dass direkt mehrere Level steigt dann geht er hier rein
 			levelaufstieg();
 		}
 	}
 	
-
+	private void entwicklung(){
+		System.out.println("ENTWICKUNG von " + name);
+		Statisches.sleep();
+		name = PokeNamen.values()[name.ordinal()+1];
+		System.out.println("Du bist nun Trainer eines " + name);
+		Statisches.sleep();
+		maxkp +=20;
+		kp+=20;
+		staerke+=10;
+		vert+=10;
+		tempo+=15;
+		entwicklungslvl = Integer.parseInt(Statisches.getPokehash().get(name).split("#")[5].trim());
+	}
 	
 	private boolean gibtAttackeLvl(int l){
 		if(moeglicheAttacken.containsKey(l)){

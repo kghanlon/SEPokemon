@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PokemonListe>
-	<Pokemon id="PIKACHU">
+	<Pokemon id="PIKACHU" entwicklung="25">
 		<Typ id="ELEKTRO"/>	
 		<Typ id="ELEKTRO"/>
 		<Fangrate wert="0.3"/>
@@ -26,7 +26,7 @@
 			<Faktor Typ="PFLANZE" Faktor="1.0"/>
 		</TypenListe>
 	</Pokemon>
-	<Pokemon id="RAICHU">
+	<Pokemon id="RAICHU" entwicklung="1000">
 		<Typ id="ELEKTRO"/>	
 		<Typ id="ELEKTRO"/>
 		<Fangrate wert="0.15"/>
@@ -52,7 +52,7 @@
 			<Faktor Typ="PFLANZE" Faktor="1.0"/>
 		</TypenListe>
 	</Pokemon>
-	<Pokemon id="GLUMANDA">
+	<Pokemon id="GLUMANDA" entwicklung="16">
 		<Typ id="FEUER"/>	
 		<Typ id="FEUER"/>
 		<Fangrate wert="0.3"/>
@@ -80,7 +80,7 @@
 			<Faktor Typ="PFLANZE" Faktor="0.5"/>
 		</TypenListe>
 	</Pokemon>
-	<Pokemon id="GLUTEXO">
+	<Pokemon id="GLUTEXO" entwicklung="36">
 		<Typ id="FEUER"/>	
 		<Typ id="FEUER"/>
 		<Fangrate wert="0.2"/>
@@ -108,7 +108,7 @@
 			<Faktor Typ="PFLANZE" Faktor="0.5"/>
 		</TypenListe>
 	</Pokemon>
-	<Pokemon id="GLURAK">
+	<Pokemon id="GLURAK" entwicklung="1000">
 		<Typ id="FEUER"/>	
 		<Typ id="FLUG"/>
 		<Fangrate wert="0.1"/>
@@ -136,7 +136,7 @@
 			<Faktor Typ="PFLANZE" Faktor="0.25"/>
 		</TypenListe>
 	</Pokemon>
-	<Pokemon id="BISASAM">
+	<Pokemon id="BISASAM" entwicklung="16">
 		<Typ id="PFLANZE"/>	
 		<Typ id="PFLANZE"/>
 		<Fangrate wert="0.3"/>
@@ -162,7 +162,7 @@
 			<Faktor Typ="PFLANZE" Faktor="0.25"/>
 		</TypenListe>
 	</Pokemon>
-	<Pokemon id="BISAKNOPST">
+	<Pokemon id="BISAKNOPST" entwicklung="32">
 		<Typ id="PFLANZE"/>	
 		<Typ id="PFLANZE"/>
 		<Fangrate wert="0.2"/>
@@ -188,7 +188,7 @@
 			<Faktor Typ="PFLANZE" Faktor="0.25"/>
 		</TypenListe>
 	</Pokemon>
-	<Pokemon id="BISAFLOR">
+	<Pokemon id="BISAFLOR" entwicklung="1000">
 		<Typ id="PFLANZE"/>	
 		<Typ id="PFLANZE"/>
 		<Fangrate wert="0.1"/>
@@ -214,7 +214,7 @@
 			<Faktor Typ="PFLANZE" Faktor="0.25"/>
 		</TypenListe>
 	</Pokemon>
-	<Pokemon id="SCHIGGY">
+	<Pokemon id="SCHIGGY" entwicklung="16">
 		<Typ id="WASSER"/>	
 		<Typ id="WASSER"/>
 		<Fangrate wert="0.3"/>
@@ -240,7 +240,7 @@
 			<Faktor Typ="PFLANZE" Faktor="2.0"/>
 		</TypenListe>
 	</Pokemon>
-	<Pokemon id="SCHILLOK">
+	<Pokemon id="SCHILLOK" entwicklung="36">
 		<Typ id="WASSER"/>	
 		<Typ id="WASSER"/>
 		<Fangrate wert="0.2"/>
@@ -266,7 +266,7 @@
 			<Faktor Typ="PFLANZE" Faktor="2.0"/>
 		</TypenListe>
 	</Pokemon>
-	<Pokemon id="TURTOK">
+	<Pokemon id="TURTOK" entwicklung="1000">
 		<Typ id="WASSER"/>	
 		<Typ id="WASSER"/>
 		<Fangrate wert="0.3"/>
@@ -292,7 +292,7 @@
 			<Faktor Typ="PFLANZE" Faktor="2.0"/>
 		</TypenListe>
 	</Pokemon>
-	<Pokemon id="KARPADOR">
+	<Pokemon id="KARPADOR" entwicklung="20">
 		<Typ id="WASSER"/>	
 		<Typ id="WASSER"/>
 		<Fangrate wert="0.4"/>
@@ -317,7 +317,7 @@
 			<Faktor Typ="PFLANZE" Faktor="2.0"/>
 		</TypenListe>
 	</Pokemon>
-	<Pokemon id="GARADOS">
+	<Pokemon id="GARADOS" entwicklung="1000">
 		<Typ id="WASSER"/>	
 		<Typ id="FLUG"/>
 		<Fangrate wert="0.15"/>
@@ -342,7 +342,7 @@
 			<Faktor Typ="PFLANZE" Faktor="1.0"/>
 		</TypenListe>
 	</Pokemon>
-	<Pokemon id="TAUBSI">
+	<Pokemon id="TAUBSI" entwicklung="18">
 		<Typ id="NORMAL"/>	
 		<Typ id="FLUG"/>
 		<Fangrate wert="0.35"/>
@@ -367,7 +367,7 @@
 			<Faktor Typ="PFLANZE" Faktor="0.5"/>
 		</TypenListe>
 	</Pokemon>
-	<Pokemon id="TAUBOGA">
+	<Pokemon id="TAUBOGA" entwicklung="36">
 		<Typ id="NORMAL"/>	
 		<Typ id="FLUG"/>
 		<Fangrate wert="0.25"/>
@@ -392,7 +392,7 @@
 			<Faktor Typ="PFLANZE" Faktor="0.5"/>
 		</TypenListe>
 	</Pokemon>
-	<Pokemon id="TAUBOSS">
+	<Pokemon id="TAUBOSS" entwicklung="1000">
 		<Typ id="NORMAL"/>	
 		<Typ id="FLUG"/>
 		<Fangrate wert="0.15"/>
@@ -417,7 +417,7 @@
 			<Faktor Typ="PFLANZE" Faktor="0.5"/>
 		</TypenListe>
 	</Pokemon>
-	<Pokemon id="RATTFRATZ">
+	<Pokemon id="RATTFRATZ" entwicklung="20">
 		<Typ id="NORMAL"/>	
 		<Typ id="NORMAL"/>
 		<Fangrate wert="0.4"/>
@@ -441,7 +441,7 @@
 			<Faktor Typ="PFLANZE" Faktor="1.0"/>
 		</TypenListe>
 	</Pokemon>
-	<Pokemon id="RATTIKARL">
+	<Pokemon id="RATTIKARL" entwicklung="1000">
 		<Typ id="NORMAL"/>	
 		<Typ id="NORMAL"/>
 		<Fangrate wert="0.2"/>
@@ -465,7 +465,7 @@
 			<Faktor Typ="PFLANZE" Faktor="1.0"/>
 		</TypenListe>
 	</Pokemon>
-		<Pokemon id="HABITAK">
+		<Pokemon id="HABITAK" entwicklung="20">
 		<Typ id="NORMAL"/>	
 		<Typ id="FLUG"/>
 		<Fangrate wert="0.35"/>
@@ -489,7 +489,7 @@
 			<Faktor Typ="PFLANZE" Faktor="0.5"/>
 		</TypenListe>
 	</Pokemon>
-		<Pokemon id="IBITAK">
+		<Pokemon id="IBITAK" entwicklung="1000">
 		<Typ id="NORMAL"/>	
 		<Typ id="FLUG"/>
 		<Fangrate wert="0.25"/>
@@ -513,7 +513,7 @@
 			<Faktor Typ="PFLANZE" Faktor="0.5"/>
 		</TypenListe>
 	</Pokemon>
-	<Pokemon id="PIEPI">
+	<Pokemon id="PIEPI" entwicklung="25">
 		<Typ id="NORMAL"/>	
 		<Typ id="NORMAL"/>
 		<Fangrate wert="0.3"/>
@@ -539,7 +539,7 @@
 			<Faktor Typ="PFLANZE" Faktor="1.0"/>
 		</TypenListe>
 	</Pokemon>
-	<Pokemon id="PIXI">
+	<Pokemon id="PIXI" entwicklung="1000">
 		<Typ id="NORMAL"/>	
 		<Typ id="NORMAL"/>
 		<Fangrate wert="0.2"/>
@@ -565,7 +565,7 @@
 			<Faktor Typ="PFLANZE" Faktor="1.0"/>
 		</TypenListe>
 	</Pokemon>
-	<Pokemon id="VULPIX">
+	<Pokemon id="VULPIX" entwicklung="31">
 		<Typ id="FEUER"/>	
 		<Typ id="FEUER"/>
 		<Fangrate wert="0.3"/>
@@ -589,7 +589,7 @@
 			<Faktor Typ="PFLANZE" Faktor="0.5"/>
 		</TypenListe>
 	</Pokemon>
-	<Pokemon id="VULNONA">
+	<Pokemon id="VULNONA" entwicklung="1000">
 		<Typ id="FEUER"/>	
 		<Typ id="FEUER"/>
 		<Fangrate wert="0.15"/>
@@ -613,7 +613,7 @@
 			<Faktor Typ="PFLANZE" Faktor="0.5"/>
 		</TypenListe>
 	</Pokemon>
-	<Pokemon id="MYRAPLA">
+	<Pokemon id="MYRAPLA" entwicklung="21">
 		<Typ id="PFLANZE"/>	
 		<Typ id="PFLANZE"/>
 		<Fangrate wert="0.4"/>
@@ -637,7 +637,7 @@
 			<Faktor Typ="PFLANZE" Faktor="0.25"/>
 		</TypenListe>
 	</Pokemon>
-	<Pokemon id="DUFLOR">
+	<Pokemon id="DUFLOR" entwicklung="33">
 		<Typ id="PFLANZE"/>	
 		<Typ id="PFLANZE"/>
 		<Fangrate wert="0.25"/>
@@ -661,7 +661,7 @@
 			<Faktor Typ="PFLANZE" Faktor="0.25"/>
 		</TypenListe>
 	</Pokemon>
-	<Pokemon id="GIFLOR">
+	<Pokemon id="GIFLOR" entwicklung="1000">
 		<Typ id="PFLANZE"/>	
 		<Typ id="PFLANZE"/>
 		<Fangrate wert="0.1"/>
@@ -685,7 +685,7 @@
 			<Faktor Typ="PFLANZE" Faktor="0.25"/>
 		</TypenListe>
 	</Pokemon>
-	<Pokemon id="MAUZI">
+	<Pokemon id="MAUZI" entwicklung="28">
 		<Typ id="NORMAL"/>	
 		<Typ id="NORMAL"/>
 		<Fangrate wert="0.3"/>
@@ -708,7 +708,7 @@
 			<Faktor Typ="PFLANZE" Faktor="1.0"/>
 		</TypenListe>
 	</Pokemon>
-	<Pokemon id="SNOBILIKAT">
+	<Pokemon id="SNOBILIKAT" entwicklung="1000">
 		<Typ id="NORMAL"/>	
 		<Typ id="NORMAL"/>
 		<Fangrate wert="0.10"/>
@@ -731,7 +731,7 @@
 			<Faktor Typ="PFLANZE" Faktor="1.0"/>
 		</TypenListe>
 	</Pokemon>
-	<Pokemon id="ENTON">
+	<Pokemon id="ENTON" entwicklung="33">
 		<Typ id="WASSER"/>	
 		<Typ id="WASSER"/>
 		<Fangrate wert="0.3"/>
@@ -755,7 +755,7 @@
 			<Faktor Typ="PFLANZE" Faktor="2.0"/>
 		</TypenListe>
 	</Pokemon>
-	<Pokemon id="ENTORON">
+	<Pokemon id="ENTORON" entwicklung="1000">
 		<Typ id="WASSER"/>	
 		<Typ id="WASSER"/>
 		<Fangrate wert="0.1"/>
@@ -779,7 +779,7 @@
 			<Faktor Typ="PFLANZE" Faktor="2.0"/>
 		</TypenListe>
 	</Pokemon>
-	<Pokemon id="FUKANO">
+	<Pokemon id="FUKANO" entwicklung="31">
 		<Typ id="FEUER"/>	
 		<Typ id="FEUER"/>
 		<Fangrate wert="0.3"/>
@@ -805,7 +805,7 @@
 			<Faktor Typ="PFLANZE" Faktor="0.5"/>
 		</TypenListe>
 	</Pokemon>
-	<Pokemon id="ARKANI">
+	<Pokemon id="ARKANI" entwicklung="1000">
 		<Typ id="FEUER"/>	
 		<Typ id="FEUER"/>
 		<Fangrate wert="0.1"/>
@@ -831,7 +831,7 @@
 			<Faktor Typ="PFLANZE" Faktor="0.5"/>
 		</TypenListe>
 	</Pokemon>
-	<Pokemon id="ABRA">
+	<Pokemon id="ABRA" entwicklung="16">
 		<Typ id="PSYCHO"/>	
 		<Typ id="PSYCHO"/>
 		<Fangrate wert="0.3"/>
@@ -853,7 +853,7 @@
 			<Faktor Typ="PFLANZE" Faktor="1.0"/>
 		</TypenListe>
 	</Pokemon>
-	<Pokemon id="KADABRA">
+	<Pokemon id="KADABRA" entwicklung="36">
 		<Typ id="PSYCHO"/>	
 		<Typ id="PSYCHO"/>
 		<Fangrate wert="0.1"/>
@@ -875,7 +875,7 @@
 			<Faktor Typ="PFLANZE" Faktor="1.0"/>
 		</TypenListe>
 	</Pokemon>
-	<Pokemon id="SIMSALA">
+	<Pokemon id="SIMSALA" entwicklung="1000">
 		<Typ id="PSYCHO"/>	
 		<Typ id="PSYCHO"/>
 		<Fangrate wert="0.05"/>
@@ -897,7 +897,7 @@
 			<Faktor Typ="PFLANZE" Faktor="1.0"/>
 		</TypenListe>
 	</Pokemon>
-	<Pokemon id="FLEGMON">
+	<Pokemon id="FLEGMON" entwicklung="37">
 		<Typ id="WASSER"/>	
 		<Typ id="PSYCHO"/>
 		<Fangrate wert="0.25"/>
@@ -921,7 +921,7 @@
 			<Faktor Typ="PFLANZE" Faktor="2.0"/>
 		</TypenListe>
 	</Pokemon>
-	<Pokemon id="LAHMUS">
+	<Pokemon id="LAHMUS" entwicklung="1000">
 		<Typ id="WASSER"/>	
 		<Typ id="PSYCHO"/>
 		<Fangrate wert="0.075"/>
@@ -945,7 +945,7 @@
 			<Faktor Typ="PFLANZE" Faktor="2.0"/>
 		</TypenListe>
 	</Pokemon>
-	<Pokemon id="MAGNETILO">
+	<Pokemon id="MAGNETILO" entwicklung="30">
 		<Typ id="ELEKTRO"/>	
 		<Typ id="ELEKTRO"/>
 		<Fangrate wert="0.35"/>
@@ -967,7 +967,7 @@
 			<Faktor Typ="PFLANZE" Faktor="1.0"/>
 		</TypenListe>
 	</Pokemon>
-	<Pokemon id="MAGNETILO">
+	<Pokemon id="MAGNETON" entwicklung="1000">
 		<Typ id="ELEKTRO"/>	
 		<Typ id="ELEKTRO"/>
 		<Fangrate wert="0.15"/>
@@ -989,7 +989,7 @@
 			<Faktor Typ="PFLANZE" Faktor="1.0"/>
 		</TypenListe>
 	</Pokemon>
-	<Pokemon id="PORENTA">
+	<Pokemon id="PORENTA" entwicklung="1000">
 		<Typ id="FLUG"/>	
 		<Typ id="NORMAL"/>
 		<Fangrate wert="0.2"/>
@@ -1011,7 +1011,7 @@
 			<Faktor Typ="PFLANZE" Faktor="0.5"/>
 		</TypenListe>
 	</Pokemon>
-	<Pokemon id="TRAUMATO">
+	<Pokemon id="TRAUMATO" entwicklung="26">
 		<Typ id="PSYCHO"/>	
 		<Typ id="PSYCHO"/>
 		<Fangrate wert="0.2"/>
@@ -1033,7 +1033,7 @@
 			<Faktor Typ="PFLANZE" Faktor="1.0"/>
 		</TypenListe>
 	</Pokemon>
-	<Pokemon id="HYPNO">
+	<Pokemon id="HYPNO" entwicklung="1000">
 		<Typ id="PSYCHO"/>	
 		<Typ id="PSYCHO"/>
 		<Fangrate wert="0.09"/>
@@ -1055,7 +1055,7 @@
 			<Faktor Typ="PFLANZE" Faktor="1.0"/>
 		</TypenListe>
 	</Pokemon>
-	<Pokemon id="KRABBY">
+	<Pokemon id="KRABBY" entwicklung="28">
 		<Typ id="WASSER"/>	
 		<Typ id="WASSER"/>
 		<Fangrate wert="0.25"/>
@@ -1080,7 +1080,7 @@
 			<Faktor Typ="PFLANZE" Faktor="2.0"/>
 		</TypenListe>
 	</Pokemon>
-	<Pokemon id="KINGLER">
+	<Pokemon id="KINGLER"  entwicklung="1000">
 		<Typ id="WASSER"/>	
 		<Typ id="WASSER"/>
 		<Fangrate wert="0.08"/>
@@ -1105,7 +1105,7 @@
 			<Faktor Typ="PFLANZE" Faktor="2.0"/>
 		</TypenListe>
 	</Pokemon>
-	<Pokemon id="OWEI">
+	<Pokemon id="OWEI" entwicklung="25">
 		<Typ id="PFLANZE"/>	
 		<Typ id="PSYCHO"/>
 		<Fangrate wert="0.25"/>
@@ -1128,7 +1128,7 @@
 			<Faktor Typ="PFLANZE" Faktor="0.5"/>
 		</TypenListe>
 	</Pokemon>
-	<Pokemon id="KOKOWEI">
+	<Pokemon id="KOKOWEI" entwicklung="1000">
 		<Typ id="PFLANZE"/>	
 		<Typ id="PSYCHO"/>
 		<Fangrate wert="0.08"/>
@@ -1151,7 +1151,7 @@
 			<Faktor Typ="PFLANZE" Faktor="0.5"/>
 		</TypenListe>
 	</Pokemon>
-	<Pokemon id="SCHLURP">
+	<Pokemon id="SCHLURP" entwicklung="1000">
 		<Typ id="NORMAL"/>	
 		<Typ id="NORMAL"/>
 		<Fangrate wert="0.10"/>
@@ -1174,7 +1174,7 @@
 			<Faktor Typ="PFLANZE" Faktor="1.0"/>
 		</TypenListe>
 	</Pokemon>
-	<Pokemon id="CHANEIRA">
+	<Pokemon id="CHANEIRA" entwicklung="1000">
 		<Typ id="NORMAL"/>	
 		<Typ id="NORMAL"/>
 		<Fangrate wert="0.10"/>
@@ -1196,7 +1196,7 @@
 			<Faktor Typ="PFLANZE" Faktor="1.0"/>
 		</TypenListe>
 	</Pokemon>
-	<Pokemon id="TANGELA">
+	<Pokemon id="TANGELA" entwicklung="1000">
 		<Typ id="PFLANZE"/>	
 		<Typ id="PFLANZE"/>
 		<Fangrate wert="0.10"/>
@@ -1219,7 +1219,7 @@
 			<Faktor Typ="PFLANZE" Faktor="0.5"/>
 		</TypenListe>
 	</Pokemon>
-	<Pokemon id="STERNDU">
+	<Pokemon id="STERNDU" entwicklung="25">
 		<Typ id="WASSER"/>	
 		<Typ id="WASSER"/>
 		<Fangrate wert="0.3"/>
@@ -1241,7 +1241,7 @@
 			<Faktor Typ="PFLANZE" Faktor="2.0"/>
 		</TypenListe>
 	</Pokemon>
-	<Pokemon id="STARMIE">
+	<Pokemon id="STARMIE" entwicklung="1000">
 		<Typ id="WASSER"/>	
 		<Typ id="WASSER"/>
 		<Fangrate wert="0.08"/>
@@ -1263,7 +1263,7 @@
 			<Faktor Typ="PFLANZE" Faktor="2.0"/>
 		</TypenListe>
 	</Pokemon>
-	<Pokemon id="PANTIMOS">
+	<Pokemon id="PANTIMOS" entwicklung="1000">
 		<Typ id="PSYCHO"/>	
 		<Typ id="PSYCHO"/>
 		<Fangrate wert="0.09"/>
@@ -1285,7 +1285,7 @@
 			<Faktor Typ="PFLANZE" Faktor="1.0"/>
 		</TypenListe>
 	</Pokemon>
-	<Pokemon id="ELEKTEK">
+	<Pokemon id="ELEKTEK" entwicklung="1000">
 		<Typ id="ELEKTRO"/>	
 		<Typ id="ELEKTRO"/>
 		<Fangrate wert="0.07"/>
@@ -1311,7 +1311,7 @@
 			<Faktor Typ="PFLANZE" Faktor="1.0"/>
 		</TypenListe>
 	</Pokemon>
-	<Pokemon id="MAGMAR">
+	<Pokemon id="MAGMAR" entwicklung="1000">
 		<Typ id="FEUER"/>	
 		<Typ id="FEUER"/>
 		<Fangrate wert="0.07"/>
@@ -1336,7 +1336,7 @@
 			<Faktor Typ="PFLANZE" Faktor="0.25"/>
 		</TypenListe>
 	</Pokemon>
-	<Pokemon id="RELAXO">
+	<Pokemon id="RELAXO" entwicklung="1000">
 		<Typ id="NORMAL"/>	
 		<Typ id="NORMAL"/>
 		<Fangrate wert="0.07"/>
@@ -1360,7 +1360,7 @@
 			<Faktor Typ="PFLANZE" Faktor="1.0"/>
 		</TypenListe>
 	</Pokemon>
-	<Pokemon id="ARKTOS">
+	<Pokemon id="ARKTOS" entwicklung="1000">
 		<Typ id="FLUG"/>	
 		<Typ id="WASSER"/>
 		<Fangrate wert="0.03"/>
@@ -1384,7 +1384,7 @@
 			<Faktor Typ="PFLANZE" Faktor="1.0"/>
 		</TypenListe>
 	</Pokemon>	
-	<Pokemon id="ZAPDOS">
+	<Pokemon id="ZAPDOS" entwicklung="1000">
 		<Typ id="FLUG"/>	
 		<Typ id="ELEKTRO"/>
 		<Fangrate wert="0.03"/>
@@ -1409,7 +1409,7 @@
 			<Faktor Typ="PFLANZE" Faktor="0.5"/>
 		</TypenListe>
 	</Pokemon>	
-	<Pokemon id="LAVADOS">
+	<Pokemon id="LAVADOS" entwicklung="1000">
 		<Typ id="FLUG"/>	
 		<Typ id="FEUER"/>
 		<Fangrate wert="0.03"/>
@@ -1434,7 +1434,7 @@
 			<Faktor Typ="PFLANZE" Faktor="0.25"/>
 		</TypenListe>
 	</Pokemon>	
-	<Pokemon id="MEWTU">
+	<Pokemon id="MEWTU" entwicklung="1000">
 		<Typ id="PSYCHO"/>	
 		<Typ id="PSYCHO"/>
 		<Fangrate wert="0.01"/>

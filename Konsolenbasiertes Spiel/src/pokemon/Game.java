@@ -31,16 +31,7 @@ public class Game {
 			LocationFactory.locations.get(t.getLocationId()).runLocation(t);
 		}
 		
-		
-//		kaitest();
-//		Statisches.closeScanner();
+		//Statisches.closeScanner();
 		    
-	}
-	
-	//Methoden:
-	
-	public static void kaitest(){		
-		Pokemon p = new Pokemon(PokeNamen.MEWTU, 24);
-		System.out.println(p);
 	}
 }
