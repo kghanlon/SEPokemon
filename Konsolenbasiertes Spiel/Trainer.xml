@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Trainerelemente locationId="0" name="Siggi">
+<Trainerelemente locationId="0" name="Siggi" geld="1000">
 <PokemonListe>
 <Pokemon id="PIKACHU" lvl="26" exp="50" maxkp="127" kp="46" staerke="62" vert="36" tempo="58">
 <AttackenListe>

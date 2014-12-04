@@ -26,6 +26,7 @@ public class Game {
 	
 	public static void main(String args[]){
 		Statisches.setScanner();
+		Statisches.einlesen();
 		/*
 		Document doc = null;
 		    
@@ -57,6 +58,7 @@ public class Game {
 		while(true){
 			locations.get(t.getLocationId()).runLocation(t);
 		}*/
+		
 		kaitest();
 		Statisches.closeScanner();
 		    
@@ -65,18 +67,8 @@ public class Game {
 	//Methoden:
 	
 	public static void kaitest(){		
-		Statisches.einlesen();
-		Trainer t = Statisches.gespeicherterTrainer();
-		//szenario mit wildem pokemon wild=true
-		List<Pokemon> g = new ArrayList<>();
-		g.add(new Pokemon(PokeNamen.PIKACHU, 15));		
-		Kampf.start(t, g, true);
-		//ab hier szenario mit gengerischem trainer deswegen wild auf false
-		System.out.println("AB HIER TRAINERKAMPF");
-		g = new ArrayList<>();
-		g.add(new Pokemon(PokeNamen.PIKACHU, 20));
-		g.add(new Pokemon(PokeNamen.GLUMANDA, 20));
-		Kampf.start(t, g, false);
+		Pokemon p = new Pokemon(PokeNamen.MEWTU, 24);
+		System.out.println(p);
 	}
 	
 	public static void getAllLocations(NodeList nodes){

@@ -2,13 +2,13 @@
 <AttackenListe>
 	<Attacke id="DONNERBLITZ">
 		<Typ id="ELEKTRO"/>	
-		<Gen wert="0.7"/>
-		<Schaden wert="80"/>
+		<Gen wert="1.0"/>
+		<Schaden wert="90"/>
 	</Attacke>
 	<Attacke id="FUNKENSPRUNG">
 		<Typ id="ELEKTRO"/>	
-		<Gen wert="0.9"/>
-		<Schaden wert="40"/>
+		<Gen wert="1.0"/>
+		<Schaden wert="65"/>
 	</Attacke>
 	<Attacke id="RUTENSCHLAG">
 		<Typ id="NORMAL"/>	
@@ -17,22 +17,457 @@
 	</Attacke>
 	<Attacke id="RUCKZUCKHIEB">
 		<Typ id="NORMAL"/>	
-		<Gen wert="0.8"/>
-		<Schaden wert="60"/>
+		<Gen wert="1.0"/>
+		<Schaden wert="40"/>
 	</Attacke>
 	<Attacke id="BODYSLAM">
 		<Typ id="NORMAL"/>	
-		<Gen wert="0.6"/>
-		<Schaden wert="70"/>
+		<Gen wert="1.0"/>
+		<Schaden wert="85"/>
 	</Attacke>
 	<Attacke id="GLUT">
 		<Typ id="FEUER"/>	
-		<Gen wert="0.9"/>
-		<Schaden wert="50"/>
+		<Gen wert="1.0"/>
+		<Schaden wert="40"/>
 	</Attacke>
 	<Attacke id="FLAMMENWURF">
 		<Typ id="FEUER"/>	
-		<Gen wert="0.7"/>
+		<Gen wert="1.0"/>
 		<Schaden wert="90"/>
+	</Attacke>
+	<Attacke id="FLAMMENBLITZ">
+		<Typ id="FEUER"/>	
+		<Gen wert="1.0"/>
+		<Schaden wert="120"/>
+	</Attacke>
+	<Attacke id="HITZEWELLE">
+		<Typ id="FEUER"/>	
+		<Gen wert="0.9"/>
+		<Schaden wert="95"/>
+	</Attacke>
+	<Attacke id="INFERNO">
+		<Typ id="FEUER"/>	
+		<Gen wert="0.5"/>
+		<Schaden wert="100"/>
+	</Attacke>
+	<Attacke id="SCHLITZER">
+		<Typ id="NORMAL"/>	
+		<Gen wert="1.0"/>
+		<Schaden wert="70"/>
+	</Attacke>
+	<Attacke id="FLUEGELSCHLAG">
+		<Typ id="FLUG"/>	
+		<Gen wert="1.0"/>
+		<Schaden wert="60"/>
+	</Attacke>
+	<Attacke id="FUNKENFLUG">
+		<Typ id="FEUER"/>	
+		<Gen wert="1.0"/>
+		<Schaden wert="70"/>
+	</Attacke>
+	<Attacke id="FEUERZAHN">
+		<Typ id="FEUER"/>	
+		<Gen wert="0.95"/>
+		<Schaden wert="65"/>
+	</Attacke>
+	<Attacke id="GRIMASSE">
+		<Typ id="NORMAL"/>	
+		<Gen wert="1.0"/>
+		<Schaden wert="0"/>
+	</Attacke>
+	<Attacke id="KRATZER">
+		<Typ id="NORMAL"/>	
+		<Gen wert="1.0"/>
+		<Schaden wert="40"/>
+	</Attacke>
+	<Attacke id="HEULER">
+		<Typ id="NORMAL"/>	
+		<Gen wert="1.0"/>
+		<Schaden wert="0"/>
+	</Attacke>
+	<Attacke id="DONNERSCHOCK">
+		<Typ id="ELEKTRO"/>	
+		<Gen wert="1.0"/>
+		<Schaden wert="40"/>
+	</Attacke>
+	<Attacke id="ELEKTROBALL">
+		<Typ id="ELEKTRO"/>	
+		<Gen wert="1.0"/>
+		<Schaden wert="60"/>
+	</Attacke>
+	<Attacke id="SLAM">
+		<Typ id="NORMAL"/>	
+		<Gen wert="0.75"/>
+		<Schaden wert="80"/>
+	</Attacke>
+	<Attacke id="OFFENLEGUNG">
+		<Typ id="NORMAL"/>	
+		<Gen wert="1.0"/>
+		<Schaden wert="40"/>
+	</Attacke>
+	<Attacke id="LADUNGSSTOSS">
+		<Typ id="ELEKTRO"/>	
+		<Gen wert="1.0"/>
+		<Schaden wert="80"/>
+	</Attacke>
+	<Attacke id="DONNER">
+		<Typ id="ELEKTRO"/>	
+		<Gen wert="0.7"/>
+		<Schaden wert="110"/>
+	</Attacke>
+	<Attacke id="RANKENHIEB">
+		<Typ id="PFLANZE"/>	
+		<Gen wert="1.0"/>
+		<Schaden wert="45"/>
+	</Attacke>
+	<Attacke id="HYDROPUMPE">
+		<Typ id="WASSER"/>	
+		<Gen wert="0.8"/>
+		<Schaden wert="110"/>
+	</Attacke>
+	<Attacke id="SCHAEDELWUMME">
+		<Typ id="NORMAL"/>	
+		<Gen wert="1.0"/>
+		<Schaden wert="130"/>
+	</Attacke>
+	<Attacke id="NASSSCHWEIF">
+		<Typ id="WASSER"/>	
+		<Gen wert="0.9"/>
+		<Schaden wert="90"/>
+	</Attacke>
+	<Attacke id="AQUAWELLE">
+		<Typ id="WASSER"/>	
+		<Gen wert="1.0"/>
+		<Schaden wert="60"/>
+	</Attacke>
+	<Attacke id="BLUBBER">
+		<Typ id="WASSER"/>	
+		<Gen wert="1.0"/>
+		<Schaden wert="40"/>
+	</Attacke>
+	<Attacke id="AQUAKNARRE">
+		<Typ id="WASSER"/>	
+		<Gen wert="1.0"/>
+		<Schaden wert="40"/>
+	</Attacke>
+	<Attacke id="PANZERSCHUTZ">
+		<Typ id="NORMAL"/>	
+		<Gen wert="1.0"/>
+		<Schaden wert="0"/>
+	</Attacke>
+	<Attacke id="BODYCHECK">
+		<Typ id="NORMAL"/>	
+		<Gen wert="0.85"/>
+		<Schaden wert="90"/>
+	</Attacke>
+	<Attacke id="RASIERBLATT">
+		<Typ id="PFLANZE"/>	
+		<Gen wert="0.95"/>
+		<Schaden wert="55"/>
+	</Attacke>
+	<Attacke id="LOCKDUFT">
+		<Typ id="NORMAL"/>	
+		<Gen wert="1.0"/>
+		<Schaden wert="0"/>
+	</Attacke>
+	<Attacke id="RISIKOTACKLE">
+		<Typ id="NORMAL"/>	
+		<Gen wert="0.7"/>
+		<Schaden wert="120"/>
+	</Attacke>
+	<Attacke id="SOLARSTRAHL">
+		<Typ id="PFLANZE"/>	
+		<Gen wert="1.0"/>
+		<Schaden wert="120"/>
+	</Attacke>
+	<Attacke id="BLUETENWIRBEL">
+		<Typ id="PFLANZE"/>	
+		<Gen wert="1.0"/>
+		<Schaden wert="90"/>
+	</Attacke>
+	<Attacke id="SAMENBOMBEN">
+		<Typ id="NORMAL"/>	
+		<Gen wert="1.0"/>
+		<Schaden wert="80"/>
+	</Attacke>
+	<Attacke id="PLATSCHER">
+		<Typ id="NORMAL"/>	
+		<Gen wert="1.0"/>
+		<Schaden wert="0"/>
+	</Attacke>
+	<Attacke id="DRESCHFLEGEL">
+		<Typ id="NORMAL"/>	
+		<Gen wert="1.0"/>
+		<Schaden wert="60"/>
+	</Attacke>
+	<Attacke id="SILBERBLICK">
+		<Typ id="NORMAL"/>	
+		<Gen wert="1.0"/>
+		<Schaden wert="0"/>
+	</Attacke>
+	<Attacke id="HYPERSTRAHL">
+		<Typ id="NORMAL"/>	
+		<Gen wert="0.7"/>
+		<Schaden wert="150"/>
+	</Attacke>
+	<Attacke id="FUCHTLER">
+		<Typ id="NORMAL"/>	
+		<Gen wert="1.0"/>
+		<Schaden wert="90"/>
+	</Attacke>
+	<Attacke id="WINDSTOSS">
+		<Typ id="FLUG"/>	
+		<Gen wert="1.0"/>
+		<Schaden wert="40"/>
+	</Attacke>
+	<Attacke id="WIRBELWIND">
+		<Typ id="NORMAL"/>	
+		<Gen wert="1.0"/>
+		<Schaden wert="0"/>
+	</Attacke>
+	<Attacke id="RUECKENWIND">
+		<Typ id="NORMAL"/>	
+		<Gen wert="1.0"/>
+		<Schaden wert="0"/>
+	</Attacke>
+	<Attacke id="LUFTSCHNITT">
+		<Typ id="FLUG"/>	
+		<Gen wert="0.95"/>
+		<Schaden wert="75"/>
+	</Attacke>
+	<Attacke id="ORKAN">
+		<Typ id="FLUG"/>	
+		<Gen wert="0.7"/>
+		<Schaden wert="110"/>
+	</Attacke>	
+	<Attacke id="ENERGIEFOKUS">
+		<Typ id="NORMAL"/>	
+		<Gen wert="1.0"/>
+		<Schaden wert="0"/>
+	</Attacke>
+	<Attacke id="HYPERZAHN">
+		<Typ id="NORMAL"/>	
+		<Gen wert="0.9"/>
+		<Schaden wert="80"/>
+	</Attacke>
+	<Attacke id="SUPERZAHN">
+		<Typ id="NORMAL"/>	
+		<Gen wert="0.9"/>
+		<Schaden wert="100"/>
+	</Attacke>
+	<Attacke id="SCHNABEL">
+		<Typ id="FLUG"/>	
+		<Gen wert="1.0"/>
+		<Schaden wert="35"/>
+	</Attacke>
+	<Attacke id="AERO_ASS">
+		<Typ id="FLUG"/>	
+		<Gen wert="1.0"/>
+		<Schaden wert="60"/>
+	</Attacke>
+	<Attacke id="BOHRSCHNABEL">
+		<Typ id="FLUG"/>	
+		<Gen wert="1.0"/>
+		<Schaden wert="80"/>
+	</Attacke>	
+	<Attacke id="PFUND">
+		<Typ id="NORMAL"/>	
+		<Gen wert="1.0"/>
+		<Schaden wert="40"/>
+	</Attacke>
+	<Attacke id="SAEUSELSTIMME">
+		<Typ id="PSYCHO"/>	
+		<Gen wert="1.0"/>
+		<Schaden wert="40"/>
+	</Attacke>
+	<Attacke id="DUPLEXHIEB">
+		<Typ id="NORMAL"/>	
+		<Gen wert="0.85"/>
+		<Schaden wert="70"/>
+	</Attacke>
+	<Attacke id="EINIGLER">
+		<Typ id="NORMAL"/>	
+		<Gen wert="1.0"/>
+		<Schaden wert="0"/>
+	</Attacke>
+	<Attacke id="WECKRUF">
+		<Typ id="NORMAL"/>	
+		<Gen wert="1.0"/>
+		<Schaden wert="70"/>
+	</Attacke>
+	<Attacke id="KRAFTVORRAT">
+		<Typ id="NORMAL"/>	
+		<Gen wert="1.0"/>
+		<Schaden wert="70"/>
+	</Attacke>
+	<Attacke id="KOSMIKKRAFT">
+		<Typ id="NORMAL"/>	
+		<Gen wert="1.0"/>
+		<Schaden wert="0"/>
+	</Attacke>
+	<Attacke id="STERNSCHAUER">
+		<Typ id="NORMAL"/>	
+		<Gen wert="1.0"/>
+		<Schaden wert="90"/>
+	</Attacke>
+	<Attacke id="SONDERSENSOR">
+		<Typ id="PSYCHO"/>	
+		<Gen wert="1.0"/>
+		<Schaden wert="80"/>
+	</Attacke>
+	<Attacke id="ABSORBER">
+		<Typ id="PFLANZE"/>	
+		<Gen wert="1.0"/>
+		<Schaden wert="30"/>
+	</Attacke>
+	<Attacke id="MEGASAUGER">
+		<Typ id="PFLANZE"/>	
+		<Gen wert="1.0"/>
+		<Schaden wert="50"/>
+	</Attacke>
+	<Attacke id="BEERENKRAEFTE">
+		<Typ id="NORMAL"/>	
+		<Gen wert="1.0"/>
+		<Schaden wert="60"/>
+	</Attacke>
+	<Attacke id="GIGASAUGER">
+		<Typ id="PFLANZE"/>	
+		<Gen wert="1.0"/>
+		<Schaden wert="75"/>
+	</Attacke>
+	<Attacke id="BLAETTERTANZ">
+		<Typ id="PFLANZE"/>	
+		<Gen wert="1.0"/>
+		<Schaden wert="120"/>
+	</Attacke>
+	<Attacke id="KRATZFURIE">
+		<Typ id="NORMAL"/>	
+		<Gen wert="0.8"/>
+		<Schaden wert="60"/>
+	</Attacke>
+	<Attacke id="MOGEHIEB">
+		<Typ id="NORMAL"/>	
+		<Gen wert="1.0"/>
+		<Schaden wert="40"/>
+	</Attacke>
+	<Attacke id="KONFUSION">
+		<Typ id="PSYCHO"/>	
+		<Gen wert="1.0"/>
+		<Schaden wert="50"/>
+	</Attacke>
+	<Attacke id="PSYSTRAHL">
+		<Typ id="PSYCHO"/>	
+		<Gen wert="1.0"/>
+		<Schaden wert="65"/>
+	</Attacke>
+	<Attacke id="PSYCHOKLINGE">
+		<Typ id="PSYCHO"/>	
+		<Gen wert="1.0"/>
+		<Schaden wert="70"/>
+	</Attacke>
+	<Attacke id="PSYCHOKINESE">
+		<Typ id="PSYCHO"/>	
+		<Gen wert="1.0"/>
+		<Schaden wert="90"/>
+	</Attacke>
+	<Attacke id="ZEN_KOPFSTOSS">
+		<Typ id="PSYCHO"/>	
+		<Gen wert="0.9"/>
+		<Schaden wert="80"/>
+	</Attacke>
+	<Attacke id="KOPFUSS">
+		<Typ id="NORMAL"/>	
+		<Gen wert="1.0"/>
+		<Schaden wert="70"/>
+	</Attacke>
+	<Attacke id="BLITZKANONE">
+		<Typ id="ELEKTRO"/>	
+		<Gen wert="0.5"/>
+		<Schaden wert="120"/>
+	</Attacke>
+	<Attacke id="STURZFLUG">
+		<Typ id="FLUG"/>	
+		<Gen wert="1.0"/>
+		<Schaden wert="120"/>
+	</Attacke>
+	<Attacke id="KLAMMER">
+		<Typ id="NORMAL"/>	
+		<Gen wert="1.0"/>
+		<Schaden wert="55"/>
+	</Attacke>
+	<Attacke id="BLUBBSTRAHL">
+		<Typ id="WASSER"/>	
+		<Gen wert="1.0"/>
+		<Schaden wert="65"/>
+	</Attacke>
+	<Attacke id="STAMPFER">
+		<Typ id="NORMAL"/>	
+		<Gen wert="1.0"/>
+		<Schaden wert="65"/>
+	</Attacke>
+	<Attacke id="GUILLOTINE">
+		<Typ id="NORMAL"/>	
+		<Gen wert="0.3"/>
+		<Schaden wert="800000"/>
+	</Attacke>
+	<Attacke id="KRABBHAMMER">
+		<Typ id="WASSER"/>	
+		<Gen wert="0.9"/>
+		<Schaden wert="100"/>
+	</Attacke>
+	<Attacke id="KUGELSAAT">
+		<Typ id="PFLANZE"/>	
+		<Gen wert="1.0"/>
+		<Schaden wert="45"/>
+	</Attacke>
+	<Attacke id="BLATTGEISSEL">
+		<Typ id="PFLANZE"/>	
+		<Gen wert="0.85"/>
+		<Schaden wert="120"/>
+	</Attacke>
+	<Attacke id="ZERMUERBEN">
+		<Typ id="NORMAL"/>	
+		<Gen wert="1.0"/>
+		<Schaden wert="80"/>
+	</Attacke>
+	<Attacke id="EIERBOMBE">
+		<Typ id="NORMAL"/>	
+		<Gen wert="0.75"/>
+		<Schaden wert="100"/>
+	</Attacke>
+	<Attacke id="DONNERSCHLAG">
+		<Typ id="ELEKTRO"/>	
+		<Gen wert="1.0"/>
+		<Schaden wert="75"/>
+	</Attacke>
+	<Attacke id="FEUERSCHLAG">
+		<Typ id="FEUER"/>	
+		<Gen wert="1.0"/>
+		<Schaden wert="75"/>
+	</Attacke>
+	<Attacke id="FLAMMENSTURM">
+		<Typ id="FEUER"/>	
+		<Gen wert="1.0"/>
+		<Schaden wert="80"/>
+	</Attacke>
+	<Attacke id="FEUERSTURM">
+		<Typ id="FEUER"/>	
+		<Gen wert="0.85"/>
+		<Schaden wert="110"/>
+	</Attacke>
+	<Attacke id="GIGASTOSS">
+		<Typ id="NORMAL"/>	
+		<Gen wert="0.9"/>
+		<Schaden wert="150"/>
+	</Attacke>
+	<Attacke id="BAUCHTROMMEL">
+		<Typ id="NORMAL"/>	
+		<Gen wert="0.9"/>
+		<Schaden wert="90"/>
+	</Attacke>
+	<Attacke id="PSYCHOSTOSS">
+		<Typ id="PSYCHO"/>	
+		<Gen wert="1.0"/>
+		<Schaden wert="100"/>
 	</Attacke>
 </AttackenListe>

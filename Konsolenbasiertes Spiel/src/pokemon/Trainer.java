@@ -9,11 +9,12 @@ public class Trainer {
 	private String name;
 	private Pokemon[] team = new Pokemon[3];
 	private int locationId;
+	private int geld;
 	List<Integer> tokens = new ArrayList<Integer>();
 	private List<Item> items = new ArrayList<Item>();
 	private Scanner sc = Statisches.getScanner();
 	
-	public Trainer(int locationId, List<Integer> tokens, String name, List<Item> items, Pokemon[] team){
+	public Trainer(int locationId, List<Integer> tokens, String name, List<Item> items, Pokemon[] team, int geld){
 		this.locationId = locationId;
 		this.tokens = tokens;
 		if(!tokens.contains(0)){
@@ -22,6 +23,7 @@ public class Trainer {
 		this.name=name;
 		this.items=items;
 		this.team=team;
+		this.geld=geld;
 	}
 	
 	//rückgabewert ist die Anzahl der verbleibenden items der gleichen sorte
@@ -52,6 +54,14 @@ public class Trainer {
 		}
 	}
 	
+	
+	public void teamHeilen(){
+		for(int i=0; i<team.length; i++){
+			team[i].setKp(team[i].getMaxkp());
+		}
+		System.out.println("Deine Pokemon sind vollständig geheilt.");
+		Statisches.sleep();
+	}
 	public void pokemonTauschen(int zutauschen){
 		
 		
@@ -76,6 +86,7 @@ public class Trainer {
 		}
 		int t;
 		try{
+			
 			t = sc.nextInt();
 			
 		}catch(InputMismatchException e){
@@ -214,6 +225,14 @@ public class Trainer {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public int getGeld() {
+		return geld;
+	}
+
+	public void setGeld(int geld) {
+		this.geld = geld;
 	}
 
 }

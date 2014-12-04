@@ -61,7 +61,6 @@ public class Statisches {
 			System.out.println("IOprobleme");
 		}
 		itemeinlesen(doc.getChildNodes().item(0).getChildNodes());
-			
 	}
 	
 	private static void pokemoneinlesen(NodeList n){
@@ -80,7 +79,16 @@ public class Statisches {
 					sb.append("%");
 				}
 			}
+			sb.append("#");
+			for(int j=1; j<n.item(i).getChildNodes().item(9).getChildNodes().getLength(); j+=2){
+				sb.append(n.item(i).getChildNodes().item(9).getChildNodes().item(j).getAttributes().getNamedItem("Typ").getNodeValue()+";");
+				sb.append(n.item(i).getChildNodes().item(9).getChildNodes().item(j).getAttributes().getNamedItem("Faktor").getNodeValue());
+				if(j!=n.item(i).getChildNodes().item(9).getChildNodes().getLength()-2){
+					sb.append("%");
+				}
+			}
 			pokehash.put(strToPokeNamen(name), sb.toString());
+			
 		}
 	}
 	
@@ -132,6 +140,7 @@ public class Statisches {
 		
 		String name = n.item(0).getAttributes().getNamedItem("name").getNodeValue();//name
 		int locid = Integer.parseInt(n.item(0).getAttributes().getNamedItem("locationId").getNodeValue());
+		int geld = Integer.parseInt(n.item(0).getAttributes().getNamedItem("geld").getNodeValue());
 		n=n.item(0).getChildNodes();
 		int pokcounter=0;
 		for(int i=1; i<n.item(1).getChildNodes().getLength(); i+=2){//pokemon einlesen
@@ -160,7 +169,7 @@ public class Statisches {
 			}
 			item.add(it);
 		}		
-		t = new Trainer(locid, new ArrayList<Integer>(), name, item, pok);
+		t = new Trainer(locid, new ArrayList<Integer>(), name, item, pok, geld);
 		return t;
 	}
 	
@@ -168,7 +177,7 @@ public class Statisches {
 		StringBuilder sb = new StringBuilder();
 		
 		sb.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");//Headzeile der xml
-		sb.append("<Trainerelemente locationId=\""+ t.getLocationId() + "\" name=\""+ t.getName() + "\">\n");
+		sb.append("<Trainerelemente locationId=\""+ t.getLocationId() + "\" name=\""+ t.getName() + "\" geld=\"" + t.getGeld()  +"\">\n");
 		
 		sb.append("<PokemonListe>\n");
 		for(int i=0; i<t.getTeam().length; i++){//auslesen der Pokemon
@@ -194,7 +203,7 @@ public class Statisches {
 		sb.append("</Trainerelemente>\n");
 
 		try{
-			FileWriter fw = new FileWriter(new File("./Trainer.xml"));
+			FileWriter fw = new FileWriter(new File("./Test.xml"));
 			fw.write(sb.toString());
 			fw.close();
 		}catch(IOException io){
@@ -218,7 +227,7 @@ public class Statisches {
 				return p;
 			
 		}
-		return PokeNamen.KAPADOR;
+		return PokeNamen.KARPADOR;
 	}
 
 	public static HashMap <AttackenNamen, String> getAtthash() {
@@ -246,15 +255,10 @@ public class Statisches {
 	
 	
 	public static Typ stringToTyp(String s){
-		switch(s){
-		case "WASSER": return Typ.WASSER;
-		case "ELEKTRO" : return Typ.ELEKTRO;
-		case "FEUER" : return Typ.FEUER;
-		case "PFLANZE" : return Typ.PFLANZE;
-		case "PSYCHO" : return Typ.PSYCHO;
-		case "GESTEIN" : return Typ.GESTEIN;
-		case "FLUG" : return Typ.FLUG;
-		case "NORMAL" : return Typ.NORMAL;
+		for(Typ t :Typ.values()){
+			if(s.equals(t+"")){
+				return t;
+			}
 		}
 		return null;
 	}
@@ -272,17 +276,12 @@ public class Statisches {
 	
 	
 	public static String typToString(Typ t){//todo: ändern in dynamische abfrage wir attacke und items
-		switch(t){
-		case WASSER : return "WASSER";
-		case ELEKTRO : return "ELEKTRO";
-		case FEUER : return "FEUER";
-		case PFLANZE : return "PFLANZE";
-		case PSYCHO : return "PSYCHO";
-		case GESTEIN : return "GESTEIN";
-		case FLUG : return "FLUG";
-		case NORMAL : return "NORMAL";
+		for(Typ s :Typ.values()){
+			if(t==s){
+				return s+"";
+			}
 		}
-		return null;
+		return null;		
 	}
 	 
 	public static double min(double a, double b){

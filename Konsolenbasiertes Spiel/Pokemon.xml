@@ -3,25 +3,1457 @@
 	<Pokemon id="PIKACHU">
 		<Typ id="ELEKTRO"/>	
 		<Typ id="ELEKTRO"/>
-		<Fangrate wert="0.7"/>
+		<Fangrate wert="0.3"/>
 		<AttackenListe>
-			<Attacke id="RUTENSCHLAG" lvl="5"/>
+			<Attacke id="DONNERSCHOCK" lvl="1"/>
+			<Attacke id="RUTENSCHLAG" lvl="1"/>
+			<Attacke id="HEULER" lvl="5"/>
 			<Attacke id="RUCKZUCKHIEB" lvl="10"/>
-			<Attacke id="FUNKENSPRUNG" lvl="15"/>
-			<Attacke id="BODYSLAM" lvl="20"/>
-			<Attacke id="DONNERBLITZ" lvl="25"/>
+			<Attacke id="ELEKTROBALL" lvl="18"/>
+			<Attacke id="SLAM" lvl="26"/>
+			<Attacke id="DONNERBLITZ" lvl="29"/>
+			<Attacke id="OFFENLEGUNG" lvl="21"/>
+			<Attacke id="LADUNGSSTOSS" lvl="40"/>
+			<Attacke id="DONNER" lvl="50"/>
 		</AttackenListe>
+		<TypenListe>
+			<Faktor Typ="WASSER" Faktor="1.0"/>
+			<Faktor Typ="NORMAL" Faktor="1.0"/>
+			<Faktor Typ="FEUER" Faktor="1.0"/>
+			<Faktor Typ="PSYCHO" Faktor="1.0"/>
+			<Faktor Typ="ELEKTRO" Faktor="0.5"/>
+			<Faktor Typ="FLUG" Faktor="0.5"/>
+			<Faktor Typ="PFLANZE" Faktor="1.0"/>
+		</TypenListe>
+	</Pokemon>
+	<Pokemon id="RAICHU">
+		<Typ id="ELEKTRO"/>	
+		<Typ id="ELEKTRO"/>
+		<Fangrate wert="0.15"/>
+		<AttackenListe>
+			<Attacke id="DONNERSCHOCK" lvl="1"/>
+			<Attacke id="RUTENSCHLAG" lvl="1"/>
+			<Attacke id="HEULER" lvl="5"/>
+			<Attacke id="RUCKZUCKHIEB" lvl="10"/>
+			<Attacke id="ELEKTROBALL" lvl="18"/>
+			<Attacke id="SLAM" lvl="26"/>
+			<Attacke id="DONNERBLITZ" lvl="29"/>
+			<Attacke id="OFFENLEGUNG" lvl="21"/>
+			<Attacke id="LADUNGSSTOSS" lvl="40"/>
+			<Attacke id="DONNER" lvl="50"/>
+		</AttackenListe>
+		<TypenListe>
+			<Faktor Typ="WASSER" Faktor="1.0"/>
+			<Faktor Typ="NORMAL" Faktor="1.0"/>
+			<Faktor Typ="FEUER" Faktor="1.0"/>
+			<Faktor Typ="PSYCHO" Faktor="1.0"/>
+			<Faktor Typ="ELEKTRO" Faktor="0.5"/>
+			<Faktor Typ="FLUG" Faktor="0.5"/>
+			<Faktor Typ="PFLANZE" Faktor="1.0"/>
+		</TypenListe>
 	</Pokemon>
 	<Pokemon id="GLUMANDA">
 		<Typ id="FEUER"/>	
 		<Typ id="FEUER"/>
-		<Fangrate wert="0.5"/>
+		<Fangrate wert="0.3"/>
 		<AttackenListe>
-			<Attacke id="RUTENSCHLAG" lvl="5"/>
-			<Attacke id="RUCKZUCKHIEB" lvl="10"/>
-			<Attacke id="GLUT" lvl="15"/>
-			<Attacke id="BODYSLAM" lvl="20"/>
-			<Attacke id="FLAMMENWURF" lvl="25"/>
+			<Attacke id="KRATZER" lvl="1"/>
+			<Attacke id="HEULER" lvl="1"/>
+			<Attacke id="GLUT" lvl="7"/>
+			<Attacke id="SCHLITZER" lvl="12"/>
+			<Attacke id ="GRIMASSE" lvl="17"/>
+			<Attacke id="FEUERZAHN" lvl="25"/>
+			<Attacke id="FUNKENFLUG" lvl="30"/>
+			<Attacke id="FLUEGELSCHLAG" lvl="36"/>
+			<Attacke id="FLAMMENWURF" lvl="40"/>
+			<Attacke id="INFERNO" lvl="46"/>
+			<Attacke id="HITZEWELLE" lvl="55"/>
+			<Attacke id="FLAMMENBLITZ" lvl="65"/>
 		</AttackenListe>
+		<TypenListe>
+			<Faktor Typ="WASSER" Faktor="2.0"/>
+			<Faktor Typ="NORMAL" Faktor="1.0"/>
+			<Faktor Typ="FEUER" Faktor="0.5"/>
+			<Faktor Typ="PSYCHO" Faktor="1.0"/>
+			<Faktor Typ="ELEKTRO" Faktor="1.0"/>
+			<Faktor Typ="FLUG" Faktor="1.0"/>
+			<Faktor Typ="PFLANZE" Faktor="0.5"/>
+		</TypenListe>
 	</Pokemon>
+	<Pokemon id="GLUTEXO">
+		<Typ id="FEUER"/>	
+		<Typ id="FEUER"/>
+		<Fangrate wert="0.2"/>
+		<AttackenListe>
+			<Attacke id="KRATZER" lvl="1"/>
+			<Attacke id="HEULER" lvl="1"/>
+			<Attacke id="GLUT" lvl="7"/>
+			<Attacke id="SCHLITZER" lvl="12"/>
+			<Attacke id ="GRIMASSE" lvl="17"/>
+			<Attacke id="FEUERZAHN" lvl="25"/>
+			<Attacke id="FUNKENFLUG" lvl="30"/>
+			<Attacke id="FLUEGELSCHLAG" lvl="36"/>
+			<Attacke id="FLAMMENWURF" lvl="40"/>
+			<Attacke id="INFERNO" lvl="46"/>
+			<Attacke id="HITZEWELLE" lvl="55"/>
+			<Attacke id="FLAMMENBLITZ" lvl="65"/>
+		</AttackenListe>
+		<TypenListe>
+			<Faktor Typ="WASSER" Faktor="2.0"/>
+			<Faktor Typ="NORMAL" Faktor="1.0"/>
+			<Faktor Typ="FEUER" Faktor="0.5"/>
+			<Faktor Typ="PSYCHO" Faktor="1.0"/>
+			<Faktor Typ="ELEKTRO" Faktor="1.0"/>
+			<Faktor Typ="FLUG" Faktor="1.0"/>
+			<Faktor Typ="PFLANZE" Faktor="0.5"/>
+		</TypenListe>
+	</Pokemon>
+	<Pokemon id="GLURAK">
+		<Typ id="FEUER"/>	
+		<Typ id="FLUG"/>
+		<Fangrate wert="0.1"/>
+		<AttackenListe>
+			<Attacke id="KRATZER" lvl="1"/>
+			<Attacke id="HEULER" lvl="1"/>
+			<Attacke id="GLUT" lvl="7"/>
+			<Attacke id="SCHLITZER" lvl="12"/>
+			<Attacke id ="GRIMASSE" lvl="17"/>
+			<Attacke id="FEUERZAHN" lvl="25"/>
+			<Attacke id="FUNKENFLUG" lvl="30"/>
+			<Attacke id="FLUEGELSCHLAG" lvl="36"/>
+			<Attacke id="FLAMMENWURF" lvl="40"/>
+			<Attacke id="INFERNO" lvl="46"/>
+			<Attacke id="HITZEWELLE" lvl="55"/>
+			<Attacke id="FLAMMENBLITZ" lvl="65"/>
+		</AttackenListe>
+		<TypenListe>
+			<Faktor Typ="WASSER" Faktor="2.0"/>
+			<Faktor Typ="NORMAL" Faktor="1.0"/>
+			<Faktor Typ="FEUER" Faktor="0.5"/>
+			<Faktor Typ="PSYCHO" Faktor="1.0"/>
+			<Faktor Typ="ELEKTRO" Faktor="2.0"/>
+			<Faktor Typ="FLUG" Faktor="1.0"/>
+			<Faktor Typ="PFLANZE" Faktor="0.25"/>
+		</TypenListe>
+	</Pokemon>
+	<Pokemon id="BISASAM">
+		<Typ id="PFLANZE"/>	
+		<Typ id="PFLANZE"/>
+		<Fangrate wert="0.3"/>
+		<AttackenListe>
+			<Attacke id="TACKLE" lvl="1"/>
+			<Attacke id="HEULER" lvl="3"/>
+			<Attacke id="RANKENHIEB" lvl="8"/>
+			<Attacke id="BODYCHECK" lvl="15"/>
+			<Attacke id ="RASIERBLATT" lvl="19"/>
+			<Attacke id="LOCKDUFT" lvl="21"/>
+			<Attacke id="RISIKOTACKLE" lvl="27"/>
+			<Attacke id="SAMENBOMBEN" lvl="36"/>
+			<Attacke id="SOLARSTRAHL" lvl="50"/>
+			<Attacke id="BLUETENWIRBEL" lvl="45"/>
+		</AttackenListe>
+		<TypenListe>
+			<Faktor Typ="WASSER" Faktor="0.5"/>
+			<Faktor Typ="NORMAL" Faktor="1.0"/>
+			<Faktor Typ="FEUER" Faktor="2.0"/>
+			<Faktor Typ="PSYCHO" Faktor="2.0"/>
+			<Faktor Typ="ELEKTRO" Faktor="0.5"/>
+			<Faktor Typ="FLUG" Faktor="2.0"/>
+			<Faktor Typ="PFLANZE" Faktor="0.25"/>
+		</TypenListe>
+	</Pokemon>
+	<Pokemon id="BISAKNOPST">
+		<Typ id="PFLANZE"/>	
+		<Typ id="PFLANZE"/>
+		<Fangrate wert="0.2"/>
+		<AttackenListe>
+			<Attacke id="TACKLE" lvl="1"/>
+			<Attacke id="HEULER" lvl="3"/>
+			<Attacke id="RANKENHIEB" lvl="8"/>
+			<Attacke id="BODYCHECK" lvl="15"/>
+			<Attacke id ="RASIERBLATT" lvl="19"/>
+			<Attacke id="LOCKDUFT" lvl="21"/>
+			<Attacke id="RISIKOTACKLE" lvl="27"/>
+			<Attacke id="SAMENBOMBEN" lvl="36"/>
+			<Attacke id="SOLARSTRAHL" lvl="50"/>
+			<Attacke id="BLUETENWIRBEL" lvl="45"/>
+		</AttackenListe>
+		<TypenListe>
+			<Faktor Typ="WASSER" Faktor="0.5"/>
+			<Faktor Typ="NORMAL" Faktor="1.0"/>
+			<Faktor Typ="FEUER" Faktor="2.0"/>
+			<Faktor Typ="PSYCHO" Faktor="2.0"/>
+			<Faktor Typ="ELEKTRO" Faktor="0.5"/>
+			<Faktor Typ="FLUG" Faktor="2.0"/>
+			<Faktor Typ="PFLANZE" Faktor="0.25"/>
+		</TypenListe>
+	</Pokemon>
+	<Pokemon id="BISAFLOR">
+		<Typ id="PFLANZE"/>	
+		<Typ id="PFLANZE"/>
+		<Fangrate wert="0.1"/>
+		<AttackenListe>
+			<Attacke id="TACKLE" lvl="1"/>
+			<Attacke id="HEULER" lvl="3"/>
+			<Attacke id="RANKENHIEB" lvl="8"/>
+			<Attacke id="BODYCHECK" lvl="15"/>
+			<Attacke id ="RASIERBLATT" lvl="19"/>
+			<Attacke id="LOCKDUFT" lvl="21"/>
+			<Attacke id="RISIKOTACKLE" lvl="27"/>
+			<Attacke id="SAMENBOMBEN" lvl="36"/>
+			<Attacke id="SOLARSTRAHL" lvl="50"/>
+			<Attacke id="BLUETENWIRBEL" lvl="45"/>
+		</AttackenListe>
+		<TypenListe>
+			<Faktor Typ="WASSER" Faktor="0.5"/>
+			<Faktor Typ="NORMAL" Faktor="1.0"/>
+			<Faktor Typ="FEUER" Faktor="2.0"/>
+			<Faktor Typ="PSYCHO" Faktor="2.0"/>
+			<Faktor Typ="ELEKTRO" Faktor="0.5"/>
+			<Faktor Typ="FLUG" Faktor="2.0"/>
+			<Faktor Typ="PFLANZE" Faktor="0.25"/>
+		</TypenListe>
+	</Pokemon>
+	<Pokemon id="SCHIGGY">
+		<Typ id="WASSER"/>	
+		<Typ id="WASSER"/>
+		<Fangrate wert="0.3"/>
+		<AttackenListe>
+			<Attacke id="TACKLE" lvl="1"/>
+			<Attacke id="ROUTENSCHLAG" lvl="4"/>
+			<Attacke id="AQUAKNARRE" lvl="7"/>
+			<Attacke id="PANZERSCHUTZ" lvl="10"/>
+			<Attacke id ="BLUBBER" lvl="13"/>
+			<Attacke id="SLAM" lvl="18"/>
+			<Attacke id="AQUAWELLE" lvl="25"/>
+			<Attacke id="NASSSCHWEIF" lvl="28"/>
+			<Attacke id="SCHAEDELWUMME" lvl="31"/>
+			<Attacke id="HYDROPUMPE" lvl="50"/>
+		</AttackenListe>
+		<TypenListe>
+			<Faktor Typ="WASSER" Faktor="0.5"/>
+			<Faktor Typ="NORMAL" Faktor="1.0"/>
+			<Faktor Typ="FEUER" Faktor="0.5"/>
+			<Faktor Typ="PSYCHO" Faktor="1.0"/>
+			<Faktor Typ="ELEKTRO" Faktor="2.0"/>
+			<Faktor Typ="FLUG" Faktor="1.0"/>
+			<Faktor Typ="PFLANZE" Faktor="2.0"/>
+		</TypenListe>
+	</Pokemon>
+	<Pokemon id="SCHILLOK">
+		<Typ id="WASSER"/>	
+		<Typ id="WASSER"/>
+		<Fangrate wert="0.2"/>
+		<AttackenListe>
+			<Attacke id="TACKLE" lvl="1"/>
+			<Attacke id="ROUTENSCHLAG" lvl="4"/>
+			<Attacke id="AQUAKNARRE" lvl="7"/>
+			<Attacke id="PANZERSCHUTZ" lvl="10"/>
+			<Attacke id ="BLUBBER" lvl="13"/>
+			<Attacke id="SLAM" lvl="18"/>
+			<Attacke id="AQUAWELLE" lvl="25"/>
+			<Attacke id="NASSSCHWEIF" lvl="28"/>
+			<Attacke id="SCHAEDELWUMME" lvl="31"/>
+			<Attacke id="HYDROPUMPE" lvl="50"/>
+		</AttackenListe>
+		<TypenListe>
+			<Faktor Typ="WASSER" Faktor="0.5"/>
+			<Faktor Typ="NORMAL" Faktor="1.0"/>
+			<Faktor Typ="FEUER" Faktor="0.5"/>
+			<Faktor Typ="PSYCHO" Faktor="1.0"/>
+			<Faktor Typ="ELEKTRO" Faktor="2.0"/>
+			<Faktor Typ="FLUG" Faktor="1.0"/>
+			<Faktor Typ="PFLANZE" Faktor="2.0"/>
+		</TypenListe>
+	</Pokemon>
+	<Pokemon id="TURTOK">
+		<Typ id="WASSER"/>	
+		<Typ id="WASSER"/>
+		<Fangrate wert="0.3"/>
+		<AttackenListe>
+			<Attacke id="TACKLE" lvl="1"/>
+			<Attacke id="ROUTENSCHLAG" lvl="4"/>
+			<Attacke id="AQUAKNARRE" lvl="7"/>
+			<Attacke id="PANZERSCHUTZ" lvl="10"/>
+			<Attacke id ="BLUBBER" lvl="13"/>
+			<Attacke id="SLAM" lvl="18"/>
+			<Attacke id="AQUAWELLE" lvl="25"/>
+			<Attacke id="NASSSCHWEIF" lvl="28"/>
+			<Attacke id="SCHAEDELWUMME" lvl="31"/>
+			<Attacke id="HYDROPUMPE" lvl="50"/>
+		</AttackenListe>
+		<TypenListe>
+			<Faktor Typ="WASSER" Faktor="0.5"/>
+			<Faktor Typ="NORMAL" Faktor="1.0"/>
+			<Faktor Typ="FEUER" Faktor="0.5"/>
+			<Faktor Typ="PSYCHO" Faktor="1.0"/>
+			<Faktor Typ="ELEKTRO" Faktor="2.0"/>
+			<Faktor Typ="FLUG" Faktor="1.0"/>
+			<Faktor Typ="PFLANZE" Faktor="2.0"/>
+		</TypenListe>
+	</Pokemon>
+	<Pokemon id="KARPADOR">
+		<Typ id="WASSER"/>	
+		<Typ id="WASSER"/>
+		<Fangrate wert="0.4"/>
+		<AttackenListe>
+			<Attacke id="TACKLE" lvl="6"/>
+			<Attacke id="PLATSCHER" lvl="1"/>
+			<Attacke id="DRESCHFLEGEL" lvl="14"/>
+			<Attacke id="FUCHTLER" lvl="21"/>
+			<Attacke id ="SILBERBLICK" lvl="28"/>
+			<Attacke id="AQUAWELLE" lvl="23"/>
+			<Attacke id="NASSSCHWEIF" lvl="35"/>
+			<Attacke id="HYDROPUMPE" lvl="41"/>
+			<Attacke id="HYPERSTRAHL" lvl="47"/>
+		</AttackenListe>
+		<TypenListe>
+			<Faktor Typ="WASSER" Faktor="0.5"/>
+			<Faktor Typ="NORMAL" Faktor="1.0"/>
+			<Faktor Typ="FEUER" Faktor="0.5"/>
+			<Faktor Typ="PSYCHO" Faktor="1.0"/>
+			<Faktor Typ="ELEKTRO" Faktor="2.0"/>
+			<Faktor Typ="FLUG" Faktor="1.0"/>
+			<Faktor Typ="PFLANZE" Faktor="2.0"/>
+		</TypenListe>
+	</Pokemon>
+	<Pokemon id="GARADOS">
+		<Typ id="WASSER"/>	
+		<Typ id="FLUG"/>
+		<Fangrate wert="0.15"/>
+		<AttackenListe>
+			<Attacke id="TACKLE" lvl="6"/>
+			<Attacke id="PLATSCHER" lvl="1"/>
+			<Attacke id="DRESCHFLEGEL" lvl="14"/>
+			<Attacke id="FUCHTLER" lvl="21"/>
+			<Attacke id ="SILBERBLICK" lvl="28"/>
+			<Attacke id="AQUAWELLE" lvl="23"/>
+			<Attacke id="NASSSCHWEIF" lvl="35"/>
+			<Attacke id="HYDROPUMPE" lvl="41"/>
+			<Attacke id="HYPERSTRAHL" lvl="47"/>
+		</AttackenListe>
+		<TypenListe>
+			<Faktor Typ="WASSER" Faktor="0.5"/>
+			<Faktor Typ="NORMAL" Faktor="1.0"/>
+			<Faktor Typ="FEUER" Faktor="0.5"/>
+			<Faktor Typ="PSYCHO" Faktor="1.0"/>
+			<Faktor Typ="ELEKTRO" Faktor="4.0"/>
+			<Faktor Typ="FLUG" Faktor="1.0"/>
+			<Faktor Typ="PFLANZE" Faktor="1.0"/>
+		</TypenListe>
+	</Pokemon>
+	<Pokemon id="TAUBSI">
+		<Typ id="NORMAL"/>	
+		<Typ id="FLUG"/>
+		<Fangrate wert="0.35"/>
+		<AttackenListe>
+			<Attacke id="TACKLE" lvl="1"/>
+			<Attacke id="WINDSTOSS" lvl="9"/>
+			<Attacke id="RUCKZUCKHIEB" lvl="13"/>
+			<Attacke id="WIRBELWIND" lvl="17"/>
+			<Attacke id ="SCHLITZER" lvl="20"/>
+			<Attacke id="FLUEGELSCHLAG" lvl="29"/>
+			<Attacke id="RUECKENWIND" lvl="36"/>
+			<Attacke id="LUFTSCHNITT" lvl="42"/>
+			<Attacke id="ORKAN" lvl="49"/>
+		</AttackenListe>
+		<TypenListe>
+			<Faktor Typ="WASSER" Faktor="1.0"/>
+			<Faktor Typ="NORMAL" Faktor="1.0"/>
+			<Faktor Typ="FEUER" Faktor="1.0"/>
+			<Faktor Typ="PSYCHO" Faktor="1.0"/>
+			<Faktor Typ="ELEKTRO" Faktor="2.0"/>
+			<Faktor Typ="FLUG" Faktor="1.0"/>
+			<Faktor Typ="PFLANZE" Faktor="0.5"/>
+		</TypenListe>
+	</Pokemon>
+	<Pokemon id="TAUBOGA">
+		<Typ id="NORMAL"/>	
+		<Typ id="FLUG"/>
+		<Fangrate wert="0.25"/>
+		<AttackenListe>
+			<Attacke id="TACKLE" lvl="1"/>
+			<Attacke id="WINDSTOSS" lvl="9"/>
+			<Attacke id="RUCKZUCKHIEB" lvl="13"/>
+			<Attacke id="WIRBELWIND" lvl="17"/>
+			<Attacke id ="SCHLITZER" lvl="20"/>
+			<Attacke id="FLUEGELSCHLAG" lvl="29"/>
+			<Attacke id="RUECKENWIND" lvl="36"/>
+			<Attacke id="LUFTSCHNITT" lvl="42"/>
+			<Attacke id="ORKAN" lvl="49"/>
+		</AttackenListe>
+		<TypenListe>
+			<Faktor Typ="WASSER" Faktor="1.0"/>
+			<Faktor Typ="NORMAL" Faktor="1.0"/>
+			<Faktor Typ="FEUER" Faktor="1.0"/>
+			<Faktor Typ="PSYCHO" Faktor="1.0"/>
+			<Faktor Typ="ELEKTRO" Faktor="2.0"/>
+			<Faktor Typ="FLUG" Faktor="1.0"/>
+			<Faktor Typ="PFLANZE" Faktor="0.5"/>
+		</TypenListe>
+	</Pokemon>
+	<Pokemon id="TAUBOSS">
+		<Typ id="NORMAL"/>	
+		<Typ id="FLUG"/>
+		<Fangrate wert="0.15"/>
+		<AttackenListe>
+			<Attacke id="TACKLE" lvl="1"/>
+			<Attacke id="WINDSTOSS" lvl="9"/>
+			<Attacke id="RUCKZUCKHIEB" lvl="13"/>
+			<Attacke id="WIRBELWIND" lvl="17"/>
+			<Attacke id ="SCHLITZER" lvl="20"/>
+			<Attacke id="FLUEGELSCHLAG" lvl="29"/>
+			<Attacke id="RUECKENWIND" lvl="36"/>
+			<Attacke id="LUFTSCHNITT" lvl="42"/>
+			<Attacke id="ORKAN" lvl="49"/>
+		</AttackenListe>
+		<TypenListe>
+			<Faktor Typ="WASSER" Faktor="1.0"/>
+			<Faktor Typ="NORMAL" Faktor="1.0"/>
+			<Faktor Typ="FEUER" Faktor="1.0"/>
+			<Faktor Typ="PSYCHO" Faktor="1.0"/>
+			<Faktor Typ="ELEKTRO" Faktor="2.0"/>
+			<Faktor Typ="FLUG" Faktor="1.0"/>
+			<Faktor Typ="PFLANZE" Faktor="0.5"/>
+		</TypenListe>
+	</Pokemon>
+	<Pokemon id="RATTFRATZ">
+		<Typ id="NORMAL"/>	
+		<Typ id="NORMAL"/>
+		<Fangrate wert="0.4"/>
+		<AttackenListe>
+			<Attacke id="TACKLE" lvl="1"/>
+			<Attacke id="ROUTENSCHLAG" lvl="1"/>
+			<Attacke id="RUCKZUCKHIEB" lvl="4"/>
+			<Attacke id="ENERGIEFOKUS" lvl="7"/>
+			<Attacke id ="HYPERZAHN" lvl="20"/>
+			<Attacke id="SCHLITZER" lvl="13"/>
+			<Attacke id="SUPERZAHN" lvl="30"/>
+			<Attacke id="RISIKOTACKLE" lvl="42"/>
+		</AttackenListe>
+		<TypenListe>
+			<Faktor Typ="WASSER" Faktor="1.0"/>
+			<Faktor Typ="NORMAL" Faktor="1.0"/>
+			<Faktor Typ="FEUER" Faktor="1.0"/>
+			<Faktor Typ="PSYCHO" Faktor="1.0"/>
+			<Faktor Typ="ELEKTRO" Faktor="1.0"/>
+			<Faktor Typ="FLUG" Faktor="1.0"/>
+			<Faktor Typ="PFLANZE" Faktor="1.0"/>
+		</TypenListe>
+	</Pokemon>
+	<Pokemon id="RATTIKARL">
+		<Typ id="NORMAL"/>	
+		<Typ id="NORMAL"/>
+		<Fangrate wert="0.2"/>
+		<AttackenListe>
+			<Attacke id="TACKLE" lvl="1"/>
+			<Attacke id="ROUTENSCHLAG" lvl="1"/>
+			<Attacke id="RUCKZUCKHIEB" lvl="4"/>
+			<Attacke id="ENERGIEFOKUS" lvl="7"/>
+			<Attacke id ="HYPERZAHN" lvl="20"/>
+			<Attacke id="SCHLITZER" lvl="13"/>
+			<Attacke id="SUPERZAHN" lvl="30"/>
+			<Attacke id="RISIKOTACKLE" lvl="42"/>
+		</AttackenListe>
+		<TypenListe>
+			<Faktor Typ="WASSER" Faktor="1.0"/>
+			<Faktor Typ="NORMAL" Faktor="1.0"/>
+			<Faktor Typ="FEUER" Faktor="1.0"/>
+			<Faktor Typ="PSYCHO" Faktor="1.0"/>
+			<Faktor Typ="ELEKTRO" Faktor="1.0"/>
+			<Faktor Typ="FLUG" Faktor="1.0"/>
+			<Faktor Typ="PFLANZE" Faktor="1.0"/>
+		</TypenListe>
+	</Pokemon>
+		<Pokemon id="HABITAK">
+		<Typ id="NORMAL"/>	
+		<Typ id="FLUG"/>
+		<Fangrate wert="0.35"/>
+		<AttackenListe>
+			<Attacke id="HEULER" lvl="1"/>
+			<Attacke id="SCHNABEL" lvl="1"/>
+			<Attacke id="SILBERBLICK" lvl="5"/>
+			<Attacke id="AERO_ASS" lvl="13"/>
+			<Attacke id ="SCHLITZER" lvl="20"/>
+			<Attacke id="FLUEGELSCHLAG" lvl="26"/>
+			<Attacke id="RUECKENWIND" lvl="32"/>
+			<Attacke id="BOHRSCHNABEL" lvl="40"/>
+		</AttackenListe>
+		<TypenListe>
+			<Faktor Typ="WASSER" Faktor="1.0"/>
+			<Faktor Typ="NORMAL" Faktor="1.0"/>
+			<Faktor Typ="FEUER" Faktor="1.0"/>
+			<Faktor Typ="PSYCHO" Faktor="1.0"/>
+			<Faktor Typ="ELEKTRO" Faktor="2.0"/>
+			<Faktor Typ="FLUG" Faktor="1.0"/>
+			<Faktor Typ="PFLANZE" Faktor="0.5"/>
+		</TypenListe>
+	</Pokemon>
+		<Pokemon id="IBITAK">
+		<Typ id="NORMAL"/>	
+		<Typ id="FLUG"/>
+		<Fangrate wert="0.25"/>
+		<AttackenListe>
+			<Attacke id="HEULER" lvl="1"/>
+			<Attacke id="SCHNABEL" lvl="1"/>
+			<Attacke id="SILBERBLICK" lvl="5"/>
+			<Attacke id="AERO_ASS" lvl="13"/>
+			<Attacke id ="SCHLITZER" lvl="20"/>
+			<Attacke id="FLUEGELSCHLAG" lvl="26"/>
+			<Attacke id="RUECKENWIND" lvl="32"/>
+			<Attacke id="BOHRSCHNABEL" lvl="40"/>
+		</AttackenListe>
+		<TypenListe>
+			<Faktor Typ="WASSER" Faktor="1.0"/>
+			<Faktor Typ="NORMAL" Faktor="1.0"/>
+			<Faktor Typ="FEUER" Faktor="1.0"/>
+			<Faktor Typ="PSYCHO" Faktor="1.0"/>
+			<Faktor Typ="ELEKTRO" Faktor="2.0"/>
+			<Faktor Typ="FLUG" Faktor="1.0"/>
+			<Faktor Typ="PFLANZE" Faktor="0.5"/>
+		</TypenListe>
+	</Pokemon>
+	<Pokemon id="PIEPI">
+		<Typ id="NORMAL"/>	
+		<Typ id="NORMAL"/>
+		<Fangrate wert="0.3"/>
+		<AttackenListe>
+			<Attacke id="PFUND" lvl="1"/>
+			<Attacke id="SAEUSELSTIMME" lvl="1"/>
+			<Attacke id="HEULER" lvl="1"/>
+			<Attacke id="DUPLEXHIEB" lvl="10"/>
+			<Attacke id ="EINIGLER" lvl="15"/>
+			<Attacke id="WECKRUF" lvl="22"/>
+			<Attacke id="KRAFTVORRAT" lvl="27"/>
+			<Attacke id="KOSMIKKRAFT" lvl="34"/>
+			<Attacke id="BODYSLAM" lvl="40"/>
+			<Attacke id="STERNSCHAUER" lvl="45"/>
+		</AttackenListe>
+		<TypenListe>
+			<Faktor Typ="WASSER" Faktor="1.0"/>
+			<Faktor Typ="NORMAL" Faktor="1.0"/>
+			<Faktor Typ="FEUER" Faktor="1.0"/>
+			<Faktor Typ="PSYCHO" Faktor="1.0"/>
+			<Faktor Typ="ELEKTRO" Faktor="1.0"/>
+			<Faktor Typ="FLUG" Faktor="1.0"/>
+			<Faktor Typ="PFLANZE" Faktor="1.0"/>
+		</TypenListe>
+	</Pokemon>
+	<Pokemon id="PIXI">
+		<Typ id="NORMAL"/>	
+		<Typ id="NORMAL"/>
+		<Fangrate wert="0.2"/>
+		<AttackenListe>
+			<Attacke id="PFUND" lvl="1"/>
+			<Attacke id="SAEUSELSTIMME" lvl="1"/>
+			<Attacke id="HEULER" lvl="1"/>
+			<Attacke id="DUPLEXHIEB" lvl="10"/>
+			<Attacke id ="EINIGLER" lvl="15"/>
+			<Attacke id="WECKRUF" lvl="22"/>
+			<Attacke id="KRAFTVORRAT" lvl="27"/>
+			<Attacke id="KOSMIKKRAFT" lvl="34"/>
+			<Attacke id="BODYSLAM" lvl="40"/>
+			<Attacke id="STERNSCHAUER" lvl="45"/>
+		</AttackenListe>
+		<TypenListe>
+			<Faktor Typ="WASSER" Faktor="1.0"/>
+			<Faktor Typ="NORMAL" Faktor="1.0"/>
+			<Faktor Typ="FEUER" Faktor="1.0"/>
+			<Faktor Typ="PSYCHO" Faktor="1.0"/>
+			<Faktor Typ="ELEKTRO" Faktor="1.0"/>
+			<Faktor Typ="FLUG" Faktor="1.0"/>
+			<Faktor Typ="PFLANZE" Faktor="1.0"/>
+		</TypenListe>
+	</Pokemon>
+	<Pokemon id="VULPIX">
+		<Typ id="FEUER"/>	
+		<Typ id="FEUER"/>
+		<Fangrate wert="0.3"/>
+		<AttackenListe>
+			<Attacke id="GLUT" lvl="1"/>
+			<Attacke id="ROUTENSCHLAG" lvl="4"/>
+			<Attacke id="RUCKZUCKHIEB" lvl="8"/>
+			<Attacke id="FUNKENFLUG" lvl="15"/>
+			<Attacke id ="FLAMMENWURF" lvl="34"/>
+			<Attacke id="FEUERZAHN" lvl="22"/>
+			<Attacke id="SONDERSENSOR" lvl="39"/>
+			<Attacke id="INFERNO" lvl="50"/>
+		</AttackenListe>
+		<TypenListe>
+			<Faktor Typ="WASSER" Faktor="2.0"/>
+			<Faktor Typ="NORMAL" Faktor="1.0"/>
+			<Faktor Typ="FEUER" Faktor="0.5"/>
+			<Faktor Typ="PSYCHO" Faktor="1.0"/>
+			<Faktor Typ="ELEKTRO" Faktor="1.0"/>
+			<Faktor Typ="FLUG" Faktor="1.0"/>
+			<Faktor Typ="PFLANZE" Faktor="0.5"/>
+		</TypenListe>
+	</Pokemon>
+	<Pokemon id="VULNONA">
+		<Typ id="FEUER"/>	
+		<Typ id="FEUER"/>
+		<Fangrate wert="0.15"/>
+		<AttackenListe>
+			<Attacke id="GLUT" lvl="1"/>
+			<Attacke id="ROUTENSCHLAG" lvl="4"/>
+			<Attacke id="RUCKZUCKHIEB" lvl="8"/>
+			<Attacke id="FUNKENFLUG" lvl="15"/>
+			<Attacke id ="FLAMMENWURF" lvl="34"/>
+			<Attacke id="FEUERZAHN" lvl="22"/>
+			<Attacke id="SONDERSENSOR" lvl="39"/>
+			<Attacke id="INFERNO" lvl="50"/>
+		</AttackenListe>
+		<TypenListe>
+			<Faktor Typ="WASSER" Faktor="2.0"/>
+			<Faktor Typ="NORMAL" Faktor="1.0"/>
+			<Faktor Typ="FEUER" Faktor="0.5"/>
+			<Faktor Typ="PSYCHO" Faktor="1.0"/>
+			<Faktor Typ="ELEKTRO" Faktor="1.0"/>
+			<Faktor Typ="FLUG" Faktor="1.0"/>
+			<Faktor Typ="PFLANZE" Faktor="0.5"/>
+		</TypenListe>
+	</Pokemon>
+	<Pokemon id="MYRAPLA">
+		<Typ id="PFLANZE"/>	
+		<Typ id="PFLANZE"/>
+		<Fangrate wert="0.4"/>
+		<AttackenListe>
+			<Attacke id="ABSORBER" lvl="1"/>
+			<Attacke id="LOCKDUFT" lvl="5"/>
+			<Attacke id="MEGASAUGER" lvl="10"/>
+			<Attacke id="BEERENKRAEFTE" lvl="26"/>
+			<Attacke id ="GIGASAUGER" lvl="33"/>			
+			<Attacke id="BLUETENWIRBEL" lvl="40"/>
+			<Attacke id="BLAETTERTANZ" lvl="47"/>
+			<Attacke id="SOLARSTRAHL" lvl="55"/>
+		</AttackenListe>
+		<TypenListe>
+			<Faktor Typ="WASSER" Faktor="0.5"/>
+			<Faktor Typ="NORMAL" Faktor="1.0"/>
+			<Faktor Typ="FEUER" Faktor="2.0"/>
+			<Faktor Typ="PSYCHO" Faktor="2.0"/>
+			<Faktor Typ="ELEKTRO" Faktor="0.5"/>
+			<Faktor Typ="FLUG" Faktor="2.0"/>
+			<Faktor Typ="PFLANZE" Faktor="0.25"/>
+		</TypenListe>
+	</Pokemon>
+	<Pokemon id="DUFLOR">
+		<Typ id="PFLANZE"/>	
+		<Typ id="PFLANZE"/>
+		<Fangrate wert="0.25"/>
+		<AttackenListe>
+			<Attacke id="ABSORBER" lvl="1"/>
+			<Attacke id="LOCKDUFT" lvl="5"/>
+			<Attacke id="MEGASAUGER" lvl="10"/>
+			<Attacke id="BEERENKRAEFTE" lvl="26"/>
+			<Attacke id ="GIGASAUGER" lvl="33"/>			
+			<Attacke id="BLUETENWIRBEL" lvl="40"/>
+			<Attacke id="BLAETTERTANZ" lvl="47"/>
+			<Attacke id="SOLARSTRAHL" lvl="55"/>
+		</AttackenListe>
+		<TypenListe>
+			<Faktor Typ="WASSER" Faktor="0.5"/>
+			<Faktor Typ="NORMAL" Faktor="1.0"/>
+			<Faktor Typ="FEUER" Faktor="2.0"/>
+			<Faktor Typ="PSYCHO" Faktor="2.0"/>
+			<Faktor Typ="ELEKTRO" Faktor="0.5"/>
+			<Faktor Typ="FLUG" Faktor="2.0"/>
+			<Faktor Typ="PFLANZE" Faktor="0.25"/>
+		</TypenListe>
+	</Pokemon>
+	<Pokemon id="GIFLOR">
+		<Typ id="PFLANZE"/>	
+		<Typ id="PFLANZE"/>
+		<Fangrate wert="0.1"/>
+		<AttackenListe>
+			<Attacke id="ABSORBER" lvl="1"/>
+			<Attacke id="LOCKDUFT" lvl="5"/>
+			<Attacke id="MEGASAUGER" lvl="10"/>
+			<Attacke id="BEERENKRAEFTE" lvl="26"/>
+			<Attacke id ="GIGASAUGER" lvl="33"/>			
+			<Attacke id="BLUETENWIRBEL" lvl="40"/>
+			<Attacke id="BLAETTERTANZ" lvl="47"/>
+			<Attacke id="SOLARSTRAHL" lvl="55"/>
+		</AttackenListe>
+		<TypenListe>
+			<Faktor Typ="WASSER" Faktor="0.5"/>
+			<Faktor Typ="NORMAL" Faktor="1.0"/>
+			<Faktor Typ="FEUER" Faktor="2.0"/>
+			<Faktor Typ="PSYCHO" Faktor="2.0"/>
+			<Faktor Typ="ELEKTRO" Faktor="0.5"/>
+			<Faktor Typ="FLUG" Faktor="2.0"/>
+			<Faktor Typ="PFLANZE" Faktor="0.25"/>
+		</TypenListe>
+	</Pokemon>
+	<Pokemon id="MAUZI">
+		<Typ id="NORMAL"/>	
+		<Typ id="NORMAL"/>
+		<Fangrate wert="0.3"/>
+		<AttackenListe>
+			<Attacke id="KRATZER" lvl="1"/>
+			<Attacke id="HEULER" lvl="1"/>
+			<Attacke id="MOGELHIEB" lvl="9"/>
+			<Attacke id="KRATZFURIE" lvl="15"/>
+			<Attacke id ="SCHLITZER" lvl="33"/>
+			<Attacke id="BODYSLAM" lvl="25"/>
+			<Attacke id="STERNSCHAUER" lvl="40"/>
+		</AttackenListe>
+		<TypenListe>
+			<Faktor Typ="WASSER" Faktor="1.0"/>
+			<Faktor Typ="NORMAL" Faktor="1.0"/>
+			<Faktor Typ="FEUER" Faktor="1.0"/>
+			<Faktor Typ="PSYCHO" Faktor="1.0"/>
+			<Faktor Typ="ELEKTRO" Faktor="1.0"/>
+			<Faktor Typ="FLUG" Faktor="1.0"/>
+			<Faktor Typ="PFLANZE" Faktor="1.0"/>
+		</TypenListe>
+	</Pokemon>
+	<Pokemon id="SNOBILIKAT">
+		<Typ id="NORMAL"/>	
+		<Typ id="NORMAL"/>
+		<Fangrate wert="0.10"/>
+		<AttackenListe>
+			<Attacke id="KRATZER" lvl="1"/>
+			<Attacke id="HEULER" lvl="1"/>
+			<Attacke id="MOGELHIEB" lvl="9"/>
+			<Attacke id="KRATZFURIE" lvl="15"/>
+			<Attacke id ="SCHLITZER" lvl="33"/>
+			<Attacke id="BODYSLAM" lvl="25"/>
+			<Attacke id="STERNSCHAUER" lvl="40"/>
+		</AttackenListe>
+		<TypenListe>
+			<Faktor Typ="WASSER" Faktor="1.0"/>
+			<Faktor Typ="NORMAL" Faktor="1.0"/>
+			<Faktor Typ="FEUER" Faktor="1.0"/>
+			<Faktor Typ="PSYCHO" Faktor="1.0"/>
+			<Faktor Typ="ELEKTRO" Faktor="1.0"/>
+			<Faktor Typ="FLUG" Faktor="1.0"/>
+			<Faktor Typ="PFLANZE" Faktor="1.0"/>
+		</TypenListe>
+	</Pokemon>
+	<Pokemon id="ENTON">
+		<Typ id="WASSER"/>	
+		<Typ id="WASSER"/>
+		<Fangrate wert="0.3"/>
+		<AttackenListe>
+			<Attacke id="KRATZER" lvl="1"/>
+			<Attacke id="ROUTENSCHLAG" lvl="4"/>
+			<Attacke id="AQUAKNARRE" lvl="8"/>
+			<Attacke id="KONFUSION" lvl="15"/>
+			<Attacke id ="AQUAWELLE" lvl="19"/>
+			<Attacke id="KRAFTFURIE" lvl="23"/>
+			<Attacke id="NASSSCHWEIF" lvl="32"/>
+			<Attacke id="HYDROPUME" lvl="50"/>
+		</AttackenListe>
+		<TypenListe>
+			<Faktor Typ="WASSER" Faktor="0.5"/>
+			<Faktor Typ="NORMAL" Faktor="1.0"/>
+			<Faktor Typ="FEUER" Faktor="0.5"/>
+			<Faktor Typ="PSYCHO" Faktor="1.0"/>
+			<Faktor Typ="ELEKTRO" Faktor="2.0"/>
+			<Faktor Typ="FLUG" Faktor="1.0"/>
+			<Faktor Typ="PFLANZE" Faktor="2.0"/>
+		</TypenListe>
+	</Pokemon>
+	<Pokemon id="ENTORON">
+		<Typ id="WASSER"/>	
+		<Typ id="WASSER"/>
+		<Fangrate wert="0.1"/>
+		<AttackenListe>
+			<Attacke id="KRATZER" lvl="1"/>
+			<Attacke id="ROUTENSCHLAG" lvl="4"/>
+			<Attacke id="AQUAKNARRE" lvl="8"/>
+			<Attacke id="KONFUSION" lvl="15"/>
+			<Attacke id ="AQUAWELLE" lvl="19"/>
+			<Attacke id="KRAFTFURIE" lvl="23"/>
+			<Attacke id="NASSSCHWEIF" lvl="32"/>
+			<Attacke id="HYDROPUME" lvl="50"/>
+		</AttackenListe>
+		<TypenListe>
+			<Faktor Typ="WASSER" Faktor="0.5"/>
+			<Faktor Typ="NORMAL" Faktor="1.0"/>
+			<Faktor Typ="FEUER" Faktor="0.5"/>
+			<Faktor Typ="PSYCHO" Faktor="1.0"/>
+			<Faktor Typ="ELEKTRO" Faktor="2.0"/>
+			<Faktor Typ="FLUG" Faktor="1.0"/>
+			<Faktor Typ="PFLANZE" Faktor="2.0"/>
+		</TypenListe>
+	</Pokemon>
+	<Pokemon id="FUKANO">
+		<Typ id="FEUER"/>	
+		<Typ id="FEUER"/>
+		<Fangrate wert="0.3"/>
+		<AttackenListe>
+			<Attacke id="GLUT" lvl="1"/>
+			<Attacke id="SILBERBLICK" lvl="4"/>
+			<Attacke id="RUCKZUCKHIEB" lvl="8"/>
+			<Attacke id="FLAMMENRAD" lvl="15"/>
+			<Attacke id ="FEUERZAHN" lvl="21"/>
+			<Attacke id="BODYCHECK" lvl="23"/>
+			<Attacke id="FUNKENFLUG" lvl="30"/>
+			<Attacke id="FLAMMENWURF" lvl="38"/>
+			<Attacke id="HITZEWELLE" lvl="42"/>
+			<Attacke id="FLAMMENBLITZ" lvl="45"/>
+		</AttackenListe>
+		<TypenListe>
+			<Faktor Typ="WASSER" Faktor="2.0"/>
+			<Faktor Typ="NORMAL" Faktor="1.0"/>
+			<Faktor Typ="FEUER" Faktor="0.5"/>
+			<Faktor Typ="PSYCHO" Faktor="1.0"/>
+			<Faktor Typ="ELEKTRO" Faktor="1.0"/>
+			<Faktor Typ="FLUG" Faktor="1.0"/>
+			<Faktor Typ="PFLANZE" Faktor="0.5"/>
+		</TypenListe>
+	</Pokemon>
+	<Pokemon id="ARKANI">
+		<Typ id="FEUER"/>	
+		<Typ id="FEUER"/>
+		<Fangrate wert="0.1"/>
+		<AttackenListe>
+			<Attacke id="GLUT" lvl="1"/>
+			<Attacke id="SILBERBLICK" lvl="4"/>
+			<Attacke id="RUCKZUCKHIEB" lvl="8"/>
+			<Attacke id="FLAMMENRAD" lvl="15"/>
+			<Attacke id ="FEUERZAHN" lvl="21"/>
+			<Attacke id="BODYCHECK" lvl="23"/>
+			<Attacke id="FUNKENFLUG" lvl="30"/>
+			<Attacke id="FLAMMENWURF" lvl="38"/>
+			<Attacke id="HITZEWELLE" lvl="42"/>
+			<Attacke id="FLAMMENBLITZ" lvl="45"/>
+		</AttackenListe>
+		<TypenListe>
+			<Faktor Typ="WASSER" Faktor="2.0"/>
+			<Faktor Typ="NORMAL" Faktor="1.0"/>
+			<Faktor Typ="FEUER" Faktor="0.5"/>
+			<Faktor Typ="PSYCHO" Faktor="1.0"/>
+			<Faktor Typ="ELEKTRO" Faktor="1.0"/>
+			<Faktor Typ="FLUG" Faktor="1.0"/>
+			<Faktor Typ="PFLANZE" Faktor="0.5"/>
+		</TypenListe>
+	</Pokemon>
+	<Pokemon id="ABRA">
+		<Typ id="PSYCHO"/>	
+		<Typ id="PSYCHO"/>
+		<Fangrate wert="0.3"/>
+		<AttackenListe>
+			<Attacke id="TACKLE" lvl="1"/>
+			<Attacke id="KONFUSION" lvl="10"/>
+			<Attacke id ="DRESCHFLEGEL" lvl="15"/>
+			<Attacke id="PSYSTRAHL" lvl="22"/>
+			<Attacke id="PSYCHOKLINGE" lvl="40"/>
+			<Attacke id ="PSYCHOKINESE" lvl="46"/>
+		</AttackenListe>
+		<TypenListe>
+			<Faktor Typ="WASSER" Faktor="1.0"/>
+			<Faktor Typ="NORMAL" Faktor="1.0"/>
+			<Faktor Typ="FEUER" Faktor="1.0"/>
+			<Faktor Typ="PSYCHO" Faktor="0.5"/>
+			<Faktor Typ="ELEKTRO" Faktor="1.0"/>
+			<Faktor Typ="FLUG" Faktor="1.0"/>
+			<Faktor Typ="PFLANZE" Faktor="1.0"/>
+		</TypenListe>
+	</Pokemon>
+	<Pokemon id="KADABRA">
+		<Typ id="PSYCHO"/>	
+		<Typ id="PSYCHO"/>
+		<Fangrate wert="0.1"/>
+		<AttackenListe>
+			<Attacke id="TACKLE" lvl="1"/>
+			<Attacke id="KONFUSION" lvl="10"/>
+			<Attacke id ="DRESCHFLEGEL" lvl="15"/>
+			<Attacke id="PSYSTRAHL" lvl="22"/>
+			<Attacke id="PSYCHOKLINGE" lvl="40"/>
+			<Attacke id ="PSYCHOKINESE" lvl="46"/>
+		</AttackenListe>
+		<TypenListe>
+			<Faktor Typ="WASSER" Faktor="1.0"/>
+			<Faktor Typ="NORMAL" Faktor="1.0"/>
+			<Faktor Typ="FEUER" Faktor="1.0"/>
+			<Faktor Typ="PSYCHO" Faktor="0.5"/>
+			<Faktor Typ="ELEKTRO" Faktor="1.0"/>
+			<Faktor Typ="FLUG" Faktor="1.0"/>
+			<Faktor Typ="PFLANZE" Faktor="1.0"/>
+		</TypenListe>
+	</Pokemon>
+	<Pokemon id="SIMSALA">
+		<Typ id="PSYCHO"/>	
+		<Typ id="PSYCHO"/>
+		<Fangrate wert="0.05"/>
+		<AttackenListe>
+			<Attacke id="TACKLE" lvl="1"/>
+			<Attacke id="KONFUSION" lvl="10"/>
+			<Attacke id ="DRESCHFLEGEL" lvl="15"/>
+			<Attacke id="PSYSTRAHL" lvl="22"/>
+			<Attacke id="PSYCHOKLINGE" lvl="40"/>
+			<Attacke id ="PSYCHOKINESE" lvl="46"/>
+		</AttackenListe>
+		<TypenListe>
+			<Faktor Typ="WASSER" Faktor="1.0"/>
+			<Faktor Typ="NORMAL" Faktor="1.0"/>
+			<Faktor Typ="FEUER" Faktor="1.0"/>
+			<Faktor Typ="PSYCHO" Faktor="0.5"/>
+			<Faktor Typ="ELEKTRO" Faktor="1.0"/>
+			<Faktor Typ="FLUG" Faktor="1.0"/>
+			<Faktor Typ="PFLANZE" Faktor="1.0"/>
+		</TypenListe>
+	</Pokemon>
+	<Pokemon id="FLEGMON">
+		<Typ id="WASSER"/>	
+		<Typ id="PSYCHO"/>
+		<Fangrate wert="0.25"/>
+		<AttackenListe>
+			<Attacke id="TACKLE" lvl="1"/>
+			<Attacke id="HEULER" lvl="5"/>
+			<Attacke id ="AQUAKNARRE" lvl="9"/>
+			<Attacke id="KONFUSION" lvl="14"/>
+			<Attacke id="KOPFNUSS" lvl="23"/>
+			<Attacke id ="AQUAWELLE" lvl="28"/>
+			<Attacke id ="ZEN_KOPFSTOSS" lvl="35"/>
+			<Attacke id="PSYCHOKINESE" lvl="45"/>
+		</AttackenListe>
+		<TypenListe>
+			<Faktor Typ="WASSER" Faktor="0.5"/>
+			<Faktor Typ="NORMAL" Faktor="1.0"/>
+			<Faktor Typ="FEUER" Faktor="0.5"/>
+			<Faktor Typ="PSYCHO" Faktor="0.5"/>
+			<Faktor Typ="ELEKTRO" Faktor="2.0"/>
+			<Faktor Typ="FLUG" Faktor="1.0"/>
+			<Faktor Typ="PFLANZE" Faktor="2.0"/>
+		</TypenListe>
+	</Pokemon>
+	<Pokemon id="LAHMUS">
+		<Typ id="WASSER"/>	
+		<Typ id="PSYCHO"/>
+		<Fangrate wert="0.075"/>
+		<AttackenListe>
+			<Attacke id="TACKLE" lvl="1"/>
+			<Attacke id="HEULER" lvl="5"/>
+			<Attacke id ="AQUAKNARRE" lvl="9"/>
+			<Attacke id="KONFUSION" lvl="14"/>
+			<Attacke id="KOPFNUSS" lvl="23"/>
+			<Attacke id ="AQUAWELLE" lvl="28"/>
+			<Attacke id ="ZEN_KOPFSTOSS" lvl="35"/>
+			<Attacke id="PSYCHOKINESE" lvl="45"/>
+		</AttackenListe>
+		<TypenListe>
+			<Faktor Typ="WASSER" Faktor="0.5"/>
+			<Faktor Typ="NORMAL" Faktor="1.0"/>
+			<Faktor Typ="FEUER" Faktor="0.5"/>
+			<Faktor Typ="PSYCHO" Faktor="0.5"/>
+			<Faktor Typ="ELEKTRO" Faktor="2.0"/>
+			<Faktor Typ="FLUG" Faktor="1.0"/>
+			<Faktor Typ="PFLANZE" Faktor="2.0"/>
+		</TypenListe>
+	</Pokemon>
+	<Pokemon id="MAGNETILO">
+		<Typ id="ELEKTRO"/>	
+		<Typ id="ELEKTRO"/>
+		<Fangrate wert="0.35"/>
+		<AttackenListe>
+			<Attacke id="TACKLE" lvl="1"/>
+			<Attacke id="DONNERSCHOCK" lvl="7"/>
+			<Attacke id ="FUNKENSPRUNG" lvl="21"/>
+			<Attacke id="ELEKTROBALL" lvl="32"/>
+			<Attacke id="LADUNGSSTOSS" lvl="43"/>
+			<Attacke id ="BLITZKANONE" lvl="52"/>
+		</AttackenListe>
+		<TypenListe>
+			<Faktor Typ="WASSER" Faktor="1.0"/>
+			<Faktor Typ="NORMAL" Faktor="1.0"/>
+			<Faktor Typ="FEUER" Faktor="1.0"/>
+			<Faktor Typ="PSYCHO" Faktor="1.0"/>
+			<Faktor Typ="ELEKTRO" Faktor="0.5"/>
+			<Faktor Typ="FLUG" Faktor="0.5"/>
+			<Faktor Typ="PFLANZE" Faktor="1.0"/>
+		</TypenListe>
+	</Pokemon>
+	<Pokemon id="MAGNETILO">
+		<Typ id="ELEKTRO"/>	
+		<Typ id="ELEKTRO"/>
+		<Fangrate wert="0.15"/>
+		<AttackenListe>
+			<Attacke id="TACKLE" lvl="1"/>
+			<Attacke id="DONNERSCHOCK" lvl="7"/>
+			<Attacke id ="FUNKENSPRUNG" lvl="21"/>
+			<Attacke id="ELEKTROBALL" lvl="32"/>
+			<Attacke id="LADUNGSSTOSS" lvl="43"/>
+			<Attacke id ="BLITZKANONE" lvl="52"/>
+		</AttackenListe>
+		<TypenListe>
+			<Faktor Typ="WASSER" Faktor="1.0"/>
+			<Faktor Typ="NORMAL" Faktor="1.0"/>
+			<Faktor Typ="FEUER" Faktor="1.0"/>
+			<Faktor Typ="PSYCHO" Faktor="1.0"/>
+			<Faktor Typ="ELEKTRO" Faktor="0.5"/>
+			<Faktor Typ="FLUG" Faktor="0.5"/>
+			<Faktor Typ="PFLANZE" Faktor="1.0"/>
+		</TypenListe>
+	</Pokemon>
+	<Pokemon id="PORENTA">
+		<Typ id="FLUG"/>	
+		<Typ id="NORMAL"/>
+		<Fangrate wert="0.2"/>
+		<AttackenListe>
+			<Attacke id="SCHNABEL" lvl="1"/>
+			<Attacke id="AERO_ASS" lvl="8"/>
+			<Attacke id ="SCHLITZER" lvl="19"/>
+			<Attacke id="WINDSCHNITT" lvl="22"/>
+			<Attacke id="LUFTSCHNITT" lvl="33"/>
+			<Attacke id ="STURZFLUG" lvl="52"/>
+		</AttackenListe>
+		<TypenListe>
+			<Faktor Typ="WASSER" Faktor="1.0"/>
+			<Faktor Typ="NORMAL" Faktor="1.0"/>
+			<Faktor Typ="FEUER" Faktor="1.0"/>
+			<Faktor Typ="PSYCHO" Faktor="1.0"/>
+			<Faktor Typ="ELEKTRO" Faktor="2.0"/>
+			<Faktor Typ="FLUG" Faktor="1.0"/>
+			<Faktor Typ="PFLANZE" Faktor="0.5"/>
+		</TypenListe>
+	</Pokemon>
+	<Pokemon id="TRAUMATO">
+		<Typ id="PSYCHO"/>	
+		<Typ id="PSYCHO"/>
+		<Fangrate wert="0.2"/>
+		<AttackenListe>
+			<Attacke id="PFUND" lvl="1"/>
+			<Attacke id="KONFUSION" lvl="10"/>
+			<Attacke id ="KOPFNUSS" lvl="15"/>
+			<Attacke id="PSYSTRAHL" lvl="24"/>
+			<Attacke id="ZEN_KOPFSTOSS" lvl="37"/>
+			<Attacke id ="PSYCHOKINESE" lvl="48"/>
+		</AttackenListe>
+		<TypenListe>
+			<Faktor Typ="WASSER" Faktor="1.0"/>
+			<Faktor Typ="NORMAL" Faktor="1.0"/>
+			<Faktor Typ="FEUER" Faktor="1.0"/>
+			<Faktor Typ="PSYCHO" Faktor="0.5"/>
+			<Faktor Typ="ELEKTRO" Faktor="1.0"/>
+			<Faktor Typ="FLUG" Faktor="1.0"/>
+			<Faktor Typ="PFLANZE" Faktor="1.0"/>
+		</TypenListe>
+	</Pokemon>
+	<Pokemon id="HYPNO">
+		<Typ id="PSYCHO"/>	
+		<Typ id="PSYCHO"/>
+		<Fangrate wert="0.09"/>
+		<AttackenListe>
+			<Attacke id="PFUND" lvl="1"/>
+			<Attacke id="KONFUSION" lvl="10"/>
+			<Attacke id ="KOPFNUSS" lvl="15"/>
+			<Attacke id="PSYSTRAHL" lvl="24"/>
+			<Attacke id="ZEN_KOPFSTOSS" lvl="37"/>
+			<Attacke id ="PSYCHOKINESE" lvl="48"/>
+		</AttackenListe>
+		<TypenListe>
+			<Faktor Typ="WASSER" Faktor="1.0"/>
+			<Faktor Typ="NORMAL" Faktor="1.0"/>
+			<Faktor Typ="FEUER" Faktor="1.0"/>
+			<Faktor Typ="PSYCHO" Faktor="0.5"/>
+			<Faktor Typ="ELEKTRO" Faktor="1.0"/>
+			<Faktor Typ="FLUG" Faktor="1.0"/>
+			<Faktor Typ="PFLANZE" Faktor="1.0"/>
+		</TypenListe>
+	</Pokemon>
+	<Pokemon id="KRABBY">
+		<Typ id="WASSER"/>	
+		<Typ id="WASSER"/>
+		<Fangrate wert="0.25"/>
+		<AttackenListe>
+			<Attacke id="BLUBBER" lvl="1"/>
+			<Attacke id="KLAMMER" lvl="5"/>
+			<Attacke id="SILBERBLICK" lvl="9"/>
+			<Attacke id="BLUBBSTRAHL" lvl="15"/>
+			<Attacke id ="STAMPFER" lvl="25"/>
+			<Attacke id="GUILLOTINE" lvl="31"/>
+			<Attacke id="SLAM" lvl="35"/>
+			<Attacke id="KRABBHAMMER" lvl="41"/>
+			<Attacke id="DRESCHFLEGEL" lvl="45"/>
+		</AttackenListe>
+		<TypenListe>
+			<Faktor Typ="WASSER" Faktor="0.5"/>
+			<Faktor Typ="NORMAL" Faktor="1.0"/>
+			<Faktor Typ="FEUER" Faktor="0.5"/>
+			<Faktor Typ="PSYCHO" Faktor="1.0"/>
+			<Faktor Typ="ELEKTRO" Faktor="2.0"/>
+			<Faktor Typ="FLUG" Faktor="1.0"/>
+			<Faktor Typ="PFLANZE" Faktor="2.0"/>
+		</TypenListe>
+	</Pokemon>
+	<Pokemon id="KINGLER">
+		<Typ id="WASSER"/>	
+		<Typ id="WASSER"/>
+		<Fangrate wert="0.08"/>
+		<AttackenListe>
+			<Attacke id="BLUBBER" lvl="1"/>
+			<Attacke id="KLAMMER" lvl="5"/>
+			<Attacke id="SILBERBLICK" lvl="9"/>
+			<Attacke id="BLUBBSTRAHL" lvl="15"/>
+			<Attacke id ="STAMPFER" lvl="25"/>
+			<Attacke id="GUILLOTINE" lvl="31"/>
+			<Attacke id="SLAM" lvl="35"/>
+			<Attacke id="KRABBHAMMER" lvl="41"/>
+			<Attacke id="DRESCHFLEGEL" lvl="45"/>
+		</AttackenListe>
+		<TypenListe>
+			<Faktor Typ="WASSER" Faktor="0.5"/>
+			<Faktor Typ="NORMAL" Faktor="1.0"/>
+			<Faktor Typ="FEUER" Faktor="0.5"/>
+			<Faktor Typ="PSYCHO" Faktor="1.0"/>
+			<Faktor Typ="ELEKTRO" Faktor="2.0"/>
+			<Faktor Typ="FLUG" Faktor="1.0"/>
+			<Faktor Typ="PFLANZE" Faktor="2.0"/>
+		</TypenListe>
+	</Pokemon>
+	<Pokemon id="OWEI">
+		<Typ id="PFLANZE"/>	
+		<Typ id="PSYCHO"/>
+		<Fangrate wert="0.25"/>
+		<AttackenListe>
+			<Attacke id="PFUND" lvl="1"/>
+			<Attacke id="KONFUSION" lvl="27"/>
+			<Attacke id ="KOPFNUSS" lvl="8"/>
+			<Attacke id="KUGELSAAT" lvl="16"/>
+			<Attacke id="BEERENKRAEFTE" lvl="35"/>
+			<Attacke id ="SOLARSTRAHL" lvl="46"/>
+			<Attacke id ="SONDERSENSOR" lvl="46"/>
+		</AttackenListe>
+		<TypenListe>
+			<Faktor Typ="WASSER" Faktor="0.5"/>
+			<Faktor Typ="NORMAL" Faktor="1.0"/>
+			<Faktor Typ="FEUER" Faktor="2.0"/>
+			<Faktor Typ="PSYCHO" Faktor="0.5"/>
+			<Faktor Typ="ELEKTRO" Faktor="0.5"/>
+			<Faktor Typ="FLUG" Faktor="2.0"/>
+			<Faktor Typ="PFLANZE" Faktor="0.5"/>
+		</TypenListe>
+	</Pokemon>
+	<Pokemon id="KOKOWEI">
+		<Typ id="PFLANZE"/>	
+		<Typ id="PSYCHO"/>
+		<Fangrate wert="0.08"/>
+		<AttackenListe>
+			<Attacke id="PFUND" lvl="1"/>
+			<Attacke id="KONFUSION" lvl="27"/>
+			<Attacke id ="KOPFNUSS" lvl="8"/>
+			<Attacke id="KUGELSAAT" lvl="16"/>
+			<Attacke id="BEERENKRAEFTE" lvl="35"/>
+			<Attacke id ="SOLARSTRAHL" lvl="46"/>
+			<Attacke id ="SONDERSENSOR" lvl="46"/>
+		</AttackenListe>
+		<TypenListe>
+			<Faktor Typ="WASSER" Faktor="0.5"/>
+			<Faktor Typ="NORMAL" Faktor="1.0"/>
+			<Faktor Typ="FEUER" Faktor="2.0"/>
+			<Faktor Typ="PSYCHO" Faktor="0.5"/>
+			<Faktor Typ="ELEKTRO" Faktor="0.5"/>
+			<Faktor Typ="FLUG" Faktor="2.0"/>
+			<Faktor Typ="PFLANZE" Faktor="0.5"/>
+		</TypenListe>
+	</Pokemon>
+	<Pokemon id="SCHLURP">
+		<Typ id="NORMAL"/>	
+		<Typ id="NORMAL"/>
+		<Fangrate wert="0.10"/>
+		<AttackenListe>
+			<Attacke id="PFUND" lvl="1"/>
+			<Attacke id="EINIGLER" lvl="6"/>
+			<Attacke id="KLAMMER" lvl="15"/>
+			<Attacke id="STAMPFER" lvl="21"/>
+			<Attacke id ="SLAM" lvl="28"/>
+			<Attacke id="ZERMUERBEN" lvl="37"/>
+			<Attacke id="BLATTGEISSEL" lvl="50"/>
+		</AttackenListe>
+		<TypenListe>
+			<Faktor Typ="WASSER" Faktor="1.0"/>
+			<Faktor Typ="NORMAL" Faktor="1.0"/>
+			<Faktor Typ="FEUER" Faktor="1.0"/>
+			<Faktor Typ="PSYCHO" Faktor="1.0"/>
+			<Faktor Typ="ELEKTRO" Faktor="1.0"/>
+			<Faktor Typ="FLUG" Faktor="1.0"/>
+			<Faktor Typ="PFLANZE" Faktor="1.0"/>
+		</TypenListe>
+	</Pokemon>
+	<Pokemon id="CHANEIRA">
+		<Typ id="NORMAL"/>	
+		<Typ id="NORMAL"/>
+		<Fangrate wert="0.10"/>
+		<AttackenListe>
+			<Attacke id="PFUND" lvl="1"/>
+			<Attacke id="RISIKOTACKLE" lvl="52"/>
+			<Attacke id="ROUTENSCHLAG" lvl="5"/>
+			<Attacke id="DUPLEXHIEB" lvl="12"/>
+			<Attacke id ="BODYCHECK" lvl="27"/>
+			<Attacke id="EIERBOMBE" lvl="43"/>
+		</AttackenListe>
+		<TypenListe>
+			<Faktor Typ="WASSER" Faktor="1.0"/>
+			<Faktor Typ="NORMAL" Faktor="1.0"/>
+			<Faktor Typ="FEUER" Faktor="1.0"/>
+			<Faktor Typ="PSYCHO" Faktor="1.0"/>
+			<Faktor Typ="ELEKTRO" Faktor="1.0"/>
+			<Faktor Typ="FLUG" Faktor="1.0"/>
+			<Faktor Typ="PFLANZE" Faktor="1.0"/>
+		</TypenListe>
+	</Pokemon>
+	<Pokemon id="TANGELA">
+		<Typ id="PFLANZE"/>	
+		<Typ id="PFLANZE"/>
+		<Fangrate wert="0.10"/>
+		<AttackenListe>
+			<Attacke id="TACKLE" lvl="1"/>
+			<Attacke id="RANKENHIEB" lvl="7"/>
+			<Attacke id="ABSORBER" lvl="10"/>
+			<Attacke id="MEGASAUGER" lvl="23"/>
+			<Attacke id ="BEERENKRAEFTE" lvl="33"/>
+			<Attacke id="GIGASAUGER" lvl="37"/>
+			<Attacke id="BLATTGEISSEL" lvl="50"/>
+		</AttackenListe>
+		<TypenListe>
+			<Faktor Typ="WASSER" Faktor="0.5"/>
+			<Faktor Typ="NORMAL" Faktor="1.0"/>
+			<Faktor Typ="FEUER" Faktor="2.0"/>
+			<Faktor Typ="PSYCHO" Faktor="1.0"/>
+			<Faktor Typ="ELEKTRO" Faktor="0.5"/>
+			<Faktor Typ="FLUG" Faktor="2.0"/>
+			<Faktor Typ="PFLANZE" Faktor="0.5"/>
+		</TypenListe>
+	</Pokemon>
+	<Pokemon id="STERNDU">
+		<Typ id="WASSER"/>	
+		<Typ id="WASSER"/>
+		<Fangrate wert="0.3"/>
+		<AttackenListe>
+			<Attacke id="TACKLE" lvl="1"/>
+			<Attacke id="AQUAKNARRE" lvl="6"/>
+			<Attacke id="STERNSCHAUER" lvl="16"/>
+			<Attacke id="BLUBBSTRAHL" lvl="23"/>
+			<Attacke id ="AQUAWELLE" lvl="33"/>
+			<Attacke id="HYDROPUMPE" lvl="46"/>
+		</AttackenListe>
+		<TypenListe>
+			<Faktor Typ="WASSER" Faktor="0.5"/>
+			<Faktor Typ="NORMAL" Faktor="1.0"/>
+			<Faktor Typ="FEUER" Faktor="0.5"/>
+			<Faktor Typ="PSYCHO" Faktor="1.0"/>
+			<Faktor Typ="ELEKTRO" Faktor="2.0"/>
+			<Faktor Typ="FLUG" Faktor="1.0"/>
+			<Faktor Typ="PFLANZE" Faktor="2.0"/>
+		</TypenListe>
+	</Pokemon>
+	<Pokemon id="STARMIE">
+		<Typ id="WASSER"/>	
+		<Typ id="WASSER"/>
+		<Fangrate wert="0.08"/>
+		<AttackenListe>
+			<Attacke id="TACKLE" lvl="1"/>
+			<Attacke id="AQUAKNARRE" lvl="6"/>
+			<Attacke id="STERNSCHAUER" lvl="16"/>
+			<Attacke id="BLUBBSTRAHL" lvl="23"/>
+			<Attacke id ="AQUAWELLE" lvl="33"/>
+			<Attacke id="HYDROPUMPE" lvl="46"/>
+		</AttackenListe>
+		<TypenListe>
+			<Faktor Typ="WASSER" Faktor="0.5"/>
+			<Faktor Typ="NORMAL" Faktor="1.0"/>
+			<Faktor Typ="FEUER" Faktor="0.5"/>
+			<Faktor Typ="PSYCHO" Faktor="1.0"/>
+			<Faktor Typ="ELEKTRO" Faktor="2.0"/>
+			<Faktor Typ="FLUG" Faktor="1.0"/>
+			<Faktor Typ="PFLANZE" Faktor="2.0"/>
+		</TypenListe>
+	</Pokemon>
+	<Pokemon id="PANTIMOS">
+		<Typ id="PSYCHO"/>	
+		<Typ id="PSYCHO"/>
+		<Fangrate wert="0.09"/>
+		<AttackenListe>
+			<Attacke id="KONFUSION" lvl="1"/>
+			<Attacke id ="RASIERBLATT" lvl="5"/>
+			<Attacke id="PSYSTRAHL" lvl="24"/>
+			<Attacke id="BODYSLAM" lvl="31"/>
+			<Attacke id="DUPLEXHIEB" lvl="11"/>
+			<Attacke id ="PSYCHOKINESE" lvl="40"/>
+		</AttackenListe>
+		<TypenListe>
+			<Faktor Typ="WASSER" Faktor="1.0"/>
+			<Faktor Typ="NORMAL" Faktor="1.0"/>
+			<Faktor Typ="FEUER" Faktor="1.0"/>
+			<Faktor Typ="PSYCHO" Faktor="0.5"/>
+			<Faktor Typ="ELEKTRO" Faktor="1.0"/>
+			<Faktor Typ="FLUG" Faktor="1.0"/>
+			<Faktor Typ="PFLANZE" Faktor="1.0"/>
+		</TypenListe>
+	</Pokemon>
+	<Pokemon id="ELEKTEK">
+		<Typ id="ELEKTRO"/>	
+		<Typ id="ELEKTRO"/>
+		<Fangrate wert="0.07"/>
+		<AttackenListe>
+			<Attacke id="DONNERSCHOCK" lvl="1"/>
+			<Attacke id="RUCKZUCKHIEB" lvl="1"/>
+			<Attacke id="SILBERBLICK" lvl="1"/>
+			<Attacke id="DONNERSCHOCK" lvl="5"/>
+			<Attacke id="STERNSCHAUER" lvl="13"/>
+			<Attacke id="ELEKTROBALL" lvl="22"/>
+			<Attacke id="DONNERSCHLAG" lvl="29"/>
+			<Attacke id="LADUNGSSTOSS" lvl="36"/>
+			<Attacke id="DONNERBLITZ" lvl="49"/>
+			<Attacke id="DONNER" lvl="55"/>
+		</AttackenListe>
+		<TypenListe>
+			<Faktor Typ="WASSER" Faktor="1.0"/>
+			<Faktor Typ="NORMAL" Faktor="1.0"/>
+			<Faktor Typ="FEUER" Faktor="1.0"/>
+			<Faktor Typ="PSYCHO" Faktor="1.0"/>
+			<Faktor Typ="ELEKTRO" Faktor="0.5"/>
+			<Faktor Typ="FLUG" Faktor="0.5"/>
+			<Faktor Typ="PFLANZE" Faktor="1.0"/>
+		</TypenListe>
+	</Pokemon>
+	<Pokemon id="MAGMAR">
+		<Typ id="FEUER"/>	
+		<Typ id="FEUER"/>
+		<Fangrate wert="0.07"/>
+		<AttackenListe>
+			<Attacke id="GLUT" lvl="1"/>
+			<Attacke id="RUCKZUCKHIEB" lvl="1"/>
+			<Attacke id="SILBERBLICK" lvl="1"/>
+			<Attacke id="STERNSCHAUER" lvl="13"/>
+			<Attacke id="FUNKENFLUG" lvl="22"/>
+			<Attacke id="FEUERSCHLAG" lvl="29"/>
+			<Attacke id="FLAMMENSTURM" lvl="36"/>
+			<Attacke id="FLAMMENWURF" lvl="49"/>
+			<Attacke id="FEUERSTURM" lvl="55"/>
+		</AttackenListe>
+		<TypenListe>
+			<Faktor Typ="WASSER" Faktor="2.0"/>
+			<Faktor Typ="NORMAL" Faktor="1.0"/>
+			<Faktor Typ="FEUER" Faktor="0.5"/>
+			<Faktor Typ="PSYCHO" Faktor="1.0"/>
+			<Faktor Typ="ELEKTRO" Faktor="1.0"/>
+			<Faktor Typ="FLUG" Faktor="1.0"/>
+			<Faktor Typ="PFLANZE" Faktor="0.25"/>
+		</TypenListe>
+	</Pokemon>
+	<Pokemon id="RELAXO">
+		<Typ id="NORMAL"/>	
+		<Typ id="NORMAL"/>
+		<Fangrate wert="0.07"/>
+		<AttackenListe>
+			<Attacke id="Tackle" lvl="1"/>
+			<Attacke id="EINIGLER" lvl="4"/>
+			<Attacke id="SLAM" lvl="11"/>
+			<Attacke id="ZERMUERBEN" lvl="17"/>
+			<Attacke id ="BODYSLAM" lvl="25"/>
+			<Attacke id="BEERENKRAEFTE" lvl="32"/>
+			<Attacke id="BAUCHTROMMEL" lvl="40"/>
+			<Attacke id="GIGASTOSS" lvl="50"/>
+		</AttackenListe>
+		<TypenListe>
+			<Faktor Typ="WASSER" Faktor="1.0"/>
+			<Faktor Typ="NORMAL" Faktor="1.0"/>
+			<Faktor Typ="FEUER" Faktor="1.0"/>
+			<Faktor Typ="PSYCHO" Faktor="1.0"/>
+			<Faktor Typ="ELEKTRO" Faktor="1.0"/>
+			<Faktor Typ="FLUG" Faktor="1.0"/>
+			<Faktor Typ="PFLANZE" Faktor="1.0"/>
+		</TypenListe>
+	</Pokemon>
+	<Pokemon id="ARKTOS">
+		<Typ id="FLUG"/>	
+		<Typ id="WASSER"/>
+		<Fangrate wert="0.03"/>
+		<AttackenListe>
+			<Attacke id="SCHNABEL" lvl="1"/>
+			<Attacke id="WINDSTOSS" lvl="4"/>
+			<Attacke id="LUFTSCHNITT" lvl="11"/>
+			<Attacke id="FLUEGELSCHLAG" lvl="17"/>			
+			<Attacke id="STURZFLUG" lvl="75"/>
+			<Attacke id="HYDROPUMPE" lvl="65"/>
+			<Attacke id="ORKAN" lvl="70"/>
+			<Attacke id ="GIGASTOSS" lvl="80"/>
+		</AttackenListe>
+		<TypenListe>
+			<Faktor Typ="WASSER" Faktor="0.5"/>
+			<Faktor Typ="NORMAL" Faktor="1.0"/>
+			<Faktor Typ="FEUER" Faktor="0.5"/>
+			<Faktor Typ="PSYCHO" Faktor="1.0"/>
+			<Faktor Typ="ELEKTRO" Faktor="4.0"/>
+			<Faktor Typ="FLUG" Faktor="1.0"/>
+			<Faktor Typ="PFLANZE" Faktor="1.0"/>
+		</TypenListe>
+	</Pokemon>	
+	<Pokemon id="ZAPDOS">
+		<Typ id="FLUG"/>	
+		<Typ id="ELEKTRO"/>
+		<Fangrate wert="0.03"/>
+		<AttackenListe>
+			<Attacke id="SCHNABEL" lvl="1"/>
+			<Attacke id="WINDSTOSS" lvl="4"/>
+			<Attacke id="LUFTSCHNITT" lvl="11"/>
+			<Attacke id="FLUEGELSCHLAG" lvl="17"/>
+			<Attacke id="DONNER" lvl="70"/>		
+			<Attacke id="STURZFLUG" lvl="50"/>
+			<Attacke id="BLITZKANONE" lvl="60"/>
+			<Attacke id="BOHRSCHNABEL" lvl="65"/>
+			<Attacke id ="GIGASTOSS" lvl="75"/>
+		</AttackenListe>
+		<TypenListe>
+			<Faktor Typ="WASSER" Faktor="1.0"/>
+			<Faktor Typ="NORMAL" Faktor="1.0"/>
+			<Faktor Typ="FEUER" Faktor="1.0"/>
+			<Faktor Typ="PSYCHO" Faktor="1.0"/>
+			<Faktor Typ="ELEKTRO" Faktor="1.0"/>
+			<Faktor Typ="FLUG" Faktor="0.5"/>
+			<Faktor Typ="PFLANZE" Faktor="0.5"/>
+		</TypenListe>
+	</Pokemon>	
+	<Pokemon id="LAVADOS">
+		<Typ id="FLUG"/>	
+		<Typ id="FEUER"/>
+		<Fangrate wert="0.03"/>
+		<AttackenListe>
+			<Attacke id="SCHNABEL" lvl="1"/>
+			<Attacke id="WINDSTOSS" lvl="4"/>
+			<Attacke id="LUFTSCHNITT" lvl="11"/>
+			<Attacke id="FLUEGELSCHLAG" lvl="17"/>
+			<Attacke id="FLAMMENWURF" lvl="70"/>		
+			<Attacke id="STURZFLUG" lvl="50"/>
+			<Attacke id="HITZEWELLE" lvl="60"/>
+			<Attacke id="ORKAN" lvl="65"/>
+			<Attacke id ="GIGASTOSS" lvl="75"/>
+		</AttackenListe>
+		<TypenListe>
+			<Faktor Typ="WASSER" Faktor="2.0"/>
+			<Faktor Typ="NORMAL" Faktor="1.0"/>
+			<Faktor Typ="FEUER" Faktor="0.5"/>
+			<Faktor Typ="PSYCHO" Faktor="1.0"/>
+			<Faktor Typ="ELEKTRO" Faktor="2.0"/>
+			<Faktor Typ="FLUG" Faktor="1.0"/>
+			<Faktor Typ="PFLANZE" Faktor="0.25"/>
+		</TypenListe>
+	</Pokemon>	
+	<Pokemon id="MEWTU">
+		<Typ id="PSYCHO"/>	
+		<Typ id="PSYCHO"/>
+		<Fangrate wert="0.01"/>
+		<AttackenListe>
+			<Attacke id="KONFUSION" lvl="1"/>
+			<Attacke id="STERNSCHAUER" lvl="8"/>
+			<Attacke id="PSYCHOKLINGE" lvl="36"/>
+			<Attacke id="PSYCHOKINESE" lvl="57"/>
+			<Attacke id="GIGASTOSS" lvl="80"/>		
+			<Attacke id="PSYCHOSTOSS" lvl="100"/>
+		</AttackenListe>
+		<TypenListe>
+			<Faktor Typ="WASSER" Faktor="1.0"/>
+			<Faktor Typ="NORMAL" Faktor="1.0"/>
+			<Faktor Typ="FEUER" Faktor="1.0"/>
+			<Faktor Typ="PSYCHO" Faktor="0.5"/>
+			<Faktor Typ="ELEKTRO" Faktor="1.0"/>
+			<Faktor Typ="FLUG" Faktor="1.0"/>
+			<Faktor Typ="PFLANZE" Faktor="1.0"/>
+		</TypenListe>
+	</Pokemon>	
 </PokemonListe>
