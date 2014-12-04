@@ -9,15 +9,15 @@ public class Trainer {
 	private String name;
 	private Pokemon[] team = new Pokemon[3];
 	private int locationId;
-	List<Integer> tokens = new ArrayList<Integer>();
+	List<String> tokens = new ArrayList<String>();
 	private List<Item> items = new ArrayList<Item>();
 	private Scanner sc = Statisches.getScanner();
 	
-	public Trainer(int locationId, List<Integer> tokens, String name, List<Item> items, Pokemon[] team){
+	public Trainer(int locationId, List<String> tokens, String name, List<Item> items, Pokemon[] team){
 		this.locationId = locationId;
 		this.tokens = tokens;
 		if(!tokens.contains(0)){
-			tokens.add(0);
+			tokens.add("0");
 		}
 		this.name=name;
 		this.items=items;
@@ -148,25 +148,6 @@ public class Trainer {
 	}
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	public Pokemon[] getTeam(){
 		return team;
 	}
@@ -178,7 +159,7 @@ public class Trainer {
 		return locationId;
 	}
 	
-	public List<Integer> getTokens(){
+	public List<String> getTokens(){
 		return tokens;
 	}
 	
@@ -186,7 +167,7 @@ public class Trainer {
 		locationId = newLocId;
 	}
 	
-	public void addToken(int token){
+	public void addToken(String token){
 		if(tokens.contains(token)){
 			//Do nothing, Token already acquired.
 		} else {

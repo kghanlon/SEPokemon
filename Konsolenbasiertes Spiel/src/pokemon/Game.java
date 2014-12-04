@@ -26,7 +26,7 @@ public class Game {
 	
 	public static void main(String args[]){
 		Statisches.setScanner();
-		/*
+		
 		Document doc = null;
 		    
 		try{
@@ -46,19 +46,21 @@ public class Game {
 		
 		//Hier muss Abfrage stattfinden: erstes laden oder gibt es einen Speicherstand?
 		//Trainer laden:
-		Trainer t = new Trainer(1, new ArrayList<Integer>(), null, null, null);
+		Trainer t = new Trainer(1, new ArrayList<String>(), null, null, null);
 		//Start Tokens laden:
 		for(int key : locations.keySet()){
-			t.addToken(key);
+			t.addToken(locations.get(key).getName()+"Default");
 		}
 		
 		
 		//Spiel starten:
 		while(true){
 			locations.get(t.getLocationId()).runLocation(t);
-		}*/
-		kaitest();
-		Statisches.closScanner();
+		}
+		
+		
+//		kaitest();
+//		Statisches.closScanner();
 		    
 	}
 	
@@ -81,7 +83,7 @@ public class Game {
 		Kampf.start(t, g, false);
 	}
 	
-	public static void getAllLocations(NodeList nodes){
+	public static void getAllLocations(NodeList nodes){ //nodes = alle locations in der welt.
 		//Hier werden alle Locations die in der XML stehen in die
 		//HashMap geschrieben.
 		
@@ -95,9 +97,8 @@ public class Game {
 			int locId = Integer.parseInt(nodes.item(i).getAttributes().getNamedItem("id").getNodeValue());
 			
 			//Events fuer die location holen:
-			List <Event> events = new ArrayList<Event>();
-			
-		
+			List <Event> events = getAllEvents(nodes, i);
+
 			locations.put(locId, new Location(locId, locName, events));
 		}
 	}
@@ -108,24 +109,23 @@ public class Game {
 		//Geht alle Event Tags durch:
 		for(int j = 1; j < nodes.item(i).getChildNodes().getLength(); j+=2){
 			
-			//Und f�gt das richte Event zur Liste hinzu.
-			int typ = Integer.parseInt(nodes.item(i).getChildNodes().item(j)
-					 .getAttributes().getNamedItem("typ").getNodeValue());
+			//Und fuegt das richte Event zur Liste hinzu.
+			String typ = nodes.item(i).getChildNodes().item(j).getNodeName();
 			
 			switch (typ) {
-			case 0:
+			case "InformationEvent":
 				events.add(getInformationEvent(nodes, i, j));
 				break;
-			case 1:
+			case "ChangeLocationEvent":
 				events.add(getChangeLocationEvent(nodes, i, j));
 				break;
-			case 2:
+			case "CompoundEvent":
 				events.add(getCompoundEvent(nodes, i, j));
 				break;
-			case 3: 
+			case "RemoveTokenEvent": 
 				events.add(getRemoveTokenEvent(nodes, i, j));
 				break;
-			case 4:
+			case "GrantTokenEvent":
 				events.add(getGrantTokenEvent(nodes, i, j));
 				break;
 			default:
@@ -137,17 +137,21 @@ public class Game {
 	
 	public static InformationEvent getInformationEvent(NodeList nodes, int i, int j){
 		//Get Required Token List:
-		List<Integer> reqTokens = getReqTokenList(nodes, i, j);
+		List<String> reqTokens = getReqTokenList(nodes, i, j);
+		//Get Required NonToken List:
+		List<String> reqNonTokens = getReqNonTokenList(nodes, i, j);
 		//Get Command:
 		String command = getCommand(nodes, i, j);
 		//Get Info:
 		String info = getInfo(nodes, i, j);
-		return new InformationEvent(reqTokens, command, info);
+		return new InformationEvent(reqTokens, reqNonTokens, command, info);
 	}
 	
 	public static ChangeLocationEvent getChangeLocationEvent(NodeList nodes, int i, int j){
 		//Get Required Token List:
-		List<Integer> reqTokens = getReqTokenList(nodes, i, j);
+		List<String> reqTokens = getReqTokenList(nodes, i, j);
+		//Get Required NonToken List:
+		List<String> reqNonTokens = getReqNonTokenList(nodes, i, j);
 		//Get Command:
 		String command = getCommand(nodes, i, j);
 		//Get Info:
@@ -155,56 +159,101 @@ public class Game {
 		//Get Next Location ID:
 		int nextLocId = Integer.parseInt(nodes.item(i).getChildNodes().item(j)
 					.getAttributes().getNamedItem("nextLocId").getNodeValue());
-		return new ChangeLocationEvent(reqTokens, command, info, nextLocId);
+		return new ChangeLocationEvent(reqTokens, reqNonTokens, command, info, nextLocId);
 	}
 	
 	public static CompoundEvent getCompoundEvent(NodeList nodes, int i, int j){
 		//Get Required Token List:
-		List<Integer> reqTokens = getReqTokenList(nodes, i, j);
+		List<String> reqTokens = getReqTokenList(nodes, i, j);
+		//Get Required NonToken List:
+		List<String> reqNonTokens = getReqNonTokenList(nodes, i, j);
 		//Get Command:
 		String command = getCommand(nodes, i, j);
 		//Get Events that belong to the CompountEven:
 		List<Event> compEvents = getAllEvents(nodes.item(i).getChildNodes(), j);
-		return new CompoundEvent(reqTokens, command, compEvents);
+		return new CompoundEvent(reqTokens, reqNonTokens, command, compEvents);
 	}
 	
 	public static RemoveTokenEvent getRemoveTokenEvent(NodeList nodes, int i, int j){
 		//Get Required Token List:
-		List<Integer> reqTokens = getReqTokenList(nodes, i, j);
+		List<String> reqTokens = getReqTokenList(nodes, i, j);
+		//Get Required NonToken List:
+		List<String> reqNonTokens = getReqNonTokenList(nodes, i, j);
 		//Get Command:
 		String command = getCommand(nodes, i, j);
 		//Get Token that should be removed:
-		int token = Integer.parseInt(nodes.item(i).getChildNodes().item(j)
-					.getAttributes().getNamedItem("token").getNodeValue());
+		String token = nodes.item(i).getChildNodes().item(j)
+					.getAttributes().getNamedItem("token").getNodeValue();
 		
-		return new RemoveTokenEvent(reqTokens, command, token);
+		return new RemoveTokenEvent(reqTokens, reqNonTokens, command, token);
 	}
 	
 	public static GrantTokenEvent getGrantTokenEvent(NodeList nodes, int i, int j){
 		//Get Required Token List:
-		List<Integer> reqTokens = getReqTokenList(nodes, i, j);
+		List<String> reqTokens = getReqTokenList(nodes, i, j);
+		//Get Required NonToken List:
+		List<String> reqNonTokens = getReqNonTokenList(nodes, i, j);
 		//Get Command:
 		String command = getCommand(nodes, i, j);
 		//Get Token that should be added:
-		int token = Integer.parseInt(nodes.item(i).getChildNodes().item(j)
-				.getAttributes().getNamedItem("token").getNodeValue());
+		String token = nodes.item(i).getChildNodes().item(j)
+				.getAttributes().getNamedItem("token").getNodeValue();
 		
-		return new GrantTokenEvent(reqTokens, command, token);
+		return new GrantTokenEvent(reqTokens, reqNonTokens, command, token);
 	}
 	
 	
-	public static List<Integer> getReqTokenList(NodeList nodes, int i, int j){
+	public static List<String> getReqTokenList(NodeList nodes, int i, int j){
 
-		List<Integer> reqTokens = new ArrayList<Integer>();
+		List<String> reqTokens = new ArrayList<String>();
 		//String mit allen required Tokens:
-		String tokString = nodes.item(i).getChildNodes().item(j).getAttributes()
-						  .getNamedItem("reqToken").getNodeValue();
-		//Diese einzeln zur Liste hinzufuegen:
-		for(int k = 0; k < tokString.split(";").length; k++){
-			reqTokens.add(Integer.parseInt(tokString.split(";")[k]));
+		String tokString = "";
+		try{
+			tokString = nodes.item(i).getChildNodes().item(j).getAttributes()
+							  .getNamedItem("reqToken").getNodeValue();
+		} catch (NullPointerException e){
+			//The event does not have a reqToken Attribute. That should be ok!
+			//Do nothing, tokString is empty.
 		}
-		return reqTokens;
+		if(tokString.equals("")){
+			//Es gibt keine req Tokens:
+			return reqTokens;
+		} else {
+			//Es gibt required Tokens:
+			//Diese einzeln zur Liste hinzufuegen:
+			for(int k = 0; k < tokString.split(";").length; k++){
+				reqTokens.add(tokString.split(";")[k]);
+			}
+			return reqTokens;
+		}
 	}
+	
+	public static List<String> getReqNonTokenList(NodeList nodes, int i, int j){
+
+		List<String> reqNonTokens = new ArrayList<String>();
+		//String mit allen required NonTokens:
+		String tokString = "";
+		try{
+			tokString = nodes.item(i).getChildNodes().item(j).getAttributes()
+							  .getNamedItem("reqNonToken").getNodeValue();
+		} catch (NullPointerException e){
+			//The event does not have a reqNonToken Attribute. That should be ok!
+			//Do nothing, tokString is empty.
+		}
+		if(tokString.equals("")){
+			//Es gibt keine req NonTokens:
+			return reqNonTokens;
+		} else {
+			//Es gibt required NonTokens:
+			//Diese einzeln zur Liste hinzufuegen:
+			for(int k = 0; k < tokString.split(";").length; k++){
+				reqNonTokens.add(tokString.split(";")[k]);
+			}
+			return reqNonTokens;
+		}
+	}
+	
+	
 	
 	public static String getCommand(NodeList nodes, int i, int j){
 		String command = nodes.item(i).getChildNodes().item(j).getAttributes()

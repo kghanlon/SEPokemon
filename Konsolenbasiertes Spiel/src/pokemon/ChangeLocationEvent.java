@@ -7,8 +7,8 @@ public class ChangeLocationEvent extends Event {
 	private int nextLocId;
 	private String info;
 	
-	public ChangeLocationEvent(List<Integer> reqTokens, String command, String info, int nextLocId){
-		super(reqTokens, command);
+	public ChangeLocationEvent(List<String> reqTokens, List<String> reqNonTokens, String command, String info, int nextLocId){
+		super(reqTokens, reqNonTokens, command);
 		this.nextLocId = nextLocId;
 		this.info = info;
 	}
