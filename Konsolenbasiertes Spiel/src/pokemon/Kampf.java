@@ -8,7 +8,7 @@ public class Kampf {
 	
 	/**
 	 * 
-	 * @return 0 Spieler hat noch kampffähige Pokemon !=0 spieler hat verloren also heilen an nächster stelle
+	 * @return 0 Spieler hat noch kampffaehige Pokemon !=0 spieler hat verloren also heilen an nächster stelle
 	 */
 	public static int start(Trainer trainer, List<Pokemon> gegner, boolean wild){
 		while(kampffaehig(trainer) && kampffaehigGegner(gegner)){
@@ -49,7 +49,7 @@ public class Kampf {
 	}
 	
 	private static void kaempfen(Trainer t, List<Pokemon> g, boolean w){
-		//ich wähle immer das erste pokemon, denn sollte getauscht werden, dann ist das aktive pokemon immer an stelle 1 bzw 0
+		//ich waehle immer das erste pokemon, denn sollte getauscht werden, dann ist das aktive pokemon immer an stelle 1 bzw 0
 		System.out.println(t.getName() + ": " + t.getTeam()[0].getName() + " lvl:" + t.getTeam()[0].getLvl() + " kp:" + t.getTeam()[0].getKp() + "/" + t.getTeam()[0].getMaxkp());
 		System.out.println("Gegner: " + g.get(0).getName() + " lvl:" + g.get(0).getLvl() + " kp:" + g.get(0).getKp() + "/" + g.get(0).getMaxkp());
 		Statisches.sleep();
@@ -281,7 +281,7 @@ public class Kampf {
 			if(t.getItems().get(i).istBall()){
 				woBall[counter++] = i;
 			}
-		}//hiernach alle stellen der bälle in woBall
+		}//hiernach alle stellen der baelle in woBall
 		
 		counter = 1;
 		for(int b:woBall){

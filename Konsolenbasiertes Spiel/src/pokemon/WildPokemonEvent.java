@@ -39,12 +39,12 @@ public class WildPokemonEvent extends Event {
 		if(result == 0){
 			//gewonnen, da wilder Kampf passiert nichts spannendes.
 		} else {
-			//verloren, zürück zum nächsten pokecenter.
-			//team noch heilen!!
+			//verloren, zürück zum nächsten pokecenter und team heilen.
 			System.out.println("Du fällst in Ohnmacht...");
 			System.out.println("Nach einiger Zeit wachst du am PokeCenter in "
 								+LocationFactory.locations.get(nextPokeCenterLocId).getName()+" wieder auf");
 			t.setLocation(nextPokeCenterLocId);
+			t.teamHeilen();
 		}
 	}
 

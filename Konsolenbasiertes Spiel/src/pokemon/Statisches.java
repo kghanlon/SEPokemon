@@ -170,7 +170,7 @@ public class Statisches {
 			}
 			item.add(it);
 		}		
-		t = new Trainer(locid, new ArrayList<String>(), name, item, pok);
+		t = new Trainer(locid, new ArrayList<String>(), name, item, pok, 0);
 		return t;
 	}
 	

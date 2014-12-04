@@ -14,7 +14,7 @@ public class Trainer {
 	private List<Item> items = new ArrayList<Item>();
 	private Scanner sc = Statisches.getScanner();
 	
-	public Trainer(int locationId, List<String> tokens, String name, List<Item> items, Pokemon[] team){
+	public Trainer(int locationId, List<String> tokens, String name, List<Item> items, Pokemon[] team, int geld){
 		this.locationId = locationId;
 		this.tokens = tokens;
 		if(!tokens.contains(0)){
@@ -59,7 +59,7 @@ public class Trainer {
 		for(int i=0; i<team.length; i++){
 			team[i].setKp(team[i].getMaxkp());
 		}
-		System.out.println("Deine Pokemon sind vollständig geheilt.");
+		System.out.println("Deine Pokemon sind vollstaendig geheilt.");
 		Statisches.sleep();
 	}
 	public void pokemonTauschen(int zutauschen){
