@@ -30,7 +30,8 @@ public class Game {
 		while(true){
 			LocationFactory.locations.get(t.getLocationId()).runLocation(t);
 		}
-		//Statisches.closeScanner();  
+		
+		//Statisches.closeScanner();
+		    
 	}
-	
 }
