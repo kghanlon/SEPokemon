@@ -5,8 +5,8 @@ import java.util.List;
 public class InformationEvent extends Event {
 	private String info;
 	
-	public InformationEvent(List<Integer> reqTokens, String command, String info){
-		super(reqTokens, command);
+	public InformationEvent(List<String> reqTokens, List<String> reqNonTokens, String command, String info){
+		super(reqTokens, reqNonTokens, command);
 		this.info = info;
 	}
 	

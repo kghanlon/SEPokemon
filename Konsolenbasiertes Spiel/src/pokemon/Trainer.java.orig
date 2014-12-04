@@ -9,12 +9,20 @@ public class Trainer {
 	private String name;
 	private Pokemon[] team = new Pokemon[3];
 	private int locationId;
+<<<<<<< HEAD
 	private int geld;
+	List<Integer> tokens = new ArrayList<Integer>();
+	private List<Item> items = new ArrayList<Item>();
+	private Scanner sc = Statisches.getScanner();
+	
+	public Trainer(int locationId, List<Integer> tokens, String name, List<Item> items, Pokemon[] team, int geld){
+=======
 	List<String> tokens = new ArrayList<String>();
 	private List<Item> items = new ArrayList<Item>();
 	private Scanner sc = Statisches.getScanner();
 	
 	public Trainer(int locationId, List<String> tokens, String name, List<Item> items, Pokemon[] team){
+>>>>>>> 5b6a792eb6f3a40b8bf058c2fd38af5a9234a4cb
 		this.locationId = locationId;
 		this.tokens = tokens;
 		if(!tokens.contains(0)){
@@ -163,8 +171,6 @@ public class Trainer {
 		}*/
 		return sb.toString();
 	}
-	
-	
 	
 	
 	public Pokemon[] getTeam(){

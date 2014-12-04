@@ -4,10 +4,10 @@ import java.util.List;
 
 public class GrantTokenEvent extends Event {
 	
-	private int token;
+	private String token;
 	
-	public GrantTokenEvent(List<Integer> reqTokens, String command, int token){
-		super(reqTokens, command);
+	public GrantTokenEvent(List<String> reqTokens, List<String> reqNonTokens, String command, String token){
+		super(reqTokens, reqNonTokens, command);
 		this.token = token;
 	}
 	

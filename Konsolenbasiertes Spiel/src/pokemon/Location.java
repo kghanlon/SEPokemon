@@ -15,7 +15,7 @@ public class Location {
 		this.name = name;
 		this.events = events;
 		//Default leeres Event ganz am Anfang einfuegen:
-		events.add(0, new InformationEvent(new ArrayList<Integer>(), "", "Default Event"));
+		events.add(0, new InformationEvent(new ArrayList<String>(), new ArrayList<String>(), "", "Default Event"));
 	}
 	
 	public Location runLocation(Trainer t){
@@ -33,7 +33,8 @@ public class Location {
 		}
 	}
 	
-	public int findCorrectEvent(String command, List<Integer> tokens){
+	//!!!!!!!!!!NONTOKENS!!!!!!!!
+	public int findCorrectEvent(String command, List<String> tokens){
 		//Only one event can fit to a specified command+token combination. This Method finds
 		//that event if it exists. If not, the default "empty" event is returned
 		for(int i = 0; i < events.size(); i++){
@@ -42,17 +43,28 @@ public class Location {
 				boolean b = true;
 				for(int j = 0; j < events.get(i).getReqTokens().size(); j++){
 					if(!tokens.contains(events.get(i).getReqTokens().get(j))){
+						//Trainer does not have a required Token:
+						b = false;
+					}
+				}
+				for(int j = 0; j < events.get(i).getReqNonTokens().size(); j++){
+					if(tokens.contains(events.get(i).getReqNonTokens().get(j))){
+						//Trainer has a required NonToken:
 						b = false;
 					}
 				}
 				if(b){
-					//Trainer has all Required Tokens, so return the event:
+					//Trainer has all Required Tokens and no required NonTokens, so return the event:
 					return i;
 				}
 			}
 		}
 		//No matching event was found, return default "empty" event
 		return 0;
+	}
+	
+	public String getName(){
+		return this.name;
 	}
 
 }

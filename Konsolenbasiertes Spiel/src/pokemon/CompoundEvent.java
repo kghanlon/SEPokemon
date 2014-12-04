@@ -6,8 +6,8 @@ public class CompoundEvent extends Event {
 	
 	private List<Event> events;
 	
-	public CompoundEvent(List<Integer> reqTokens, String command, List<Event> events){
-		super(reqTokens, command);
+	public CompoundEvent(List<String> reqTokens, List<String> reqNonTokens, String command, List<Event> events){
+		super(reqTokens, reqNonTokens, command);
 		this.events = events;
 	}
 	

@@ -61,7 +61,6 @@ public class Statisches {
 			System.out.println("IOprobleme");
 		}
 		itemeinlesen(doc.getChildNodes().item(0).getChildNodes());
-			
 	}
 	
 	private static void pokemoneinlesen(NodeList n){
@@ -170,7 +169,11 @@ public class Statisches {
 			}
 			item.add(it);
 		}		
+<<<<<<< HEAD
+		t = new Trainer(locid, new ArrayList<Integer>(), name, item, pok, geld);
+=======
 		t = new Trainer(locid, new ArrayList<String>(), name, item, pok);
+>>>>>>> 5b6a792eb6f3a40b8bf058c2fd38af5a9234a4cb
 		return t;
 	}
 	

@@ -26,8 +26,12 @@ public class Game {
 	
 	public static void main(String args[]){
 		Statisches.setScanner();
+<<<<<<< HEAD
 		Statisches.einlesen();
 		/*
+=======
+		
+>>>>>>> 5b6a792eb6f3a40b8bf058c2fd38af5a9234a4cb
 		Document doc = null;
 		    
 		try{
@@ -57,18 +61,41 @@ public class Game {
 		//Spiel starten:
 		while(true){
 			locations.get(t.getLocationId()).runLocation(t);
+<<<<<<< HEAD
 		}*/
 		
 		kaitest();
 		Statisches.closeScanner();
+=======
+		}
+		
+		
+//		kaitest();
+//		Statisches.closScanner();
+>>>>>>> 5b6a792eb6f3a40b8bf058c2fd38af5a9234a4cb
 		    
 	}
 	
 	//Methoden:
 	
 	public static void kaitest(){		
+<<<<<<< HEAD
 		Pokemon p = new Pokemon(PokeNamen.MEWTU, 24);
 		System.out.println(p);
+=======
+		Statisches.einlesen();
+		Trainer t = Statisches.gespeicherterTrainer();
+		//szenario mit wildem pokemon wild=true
+		List<Pokemon> g = new ArrayList<>();
+		g.add(new Pokemon(PokeNamen.PIKACHU, 15));
+		Kampf.start(t, g, true);
+		//ab hier szenario mit gengerischem trainer deswegen wild auf false
+		System.out.println("AB HIER TRAINERKAMPF");
+		g = new ArrayList<>();
+		g.add(new Pokemon(PokeNamen.PIKACHU, 20));
+		g.add(new Pokemon(PokeNamen.GLUMANDA, 20));
+		Kampf.start(t, g, false);
+>>>>>>> 5b6a792eb6f3a40b8bf058c2fd38af5a9234a4cb
 	}
 	
 	public static void getAllLocations(NodeList nodes){ //nodes = alle locations in der welt.
