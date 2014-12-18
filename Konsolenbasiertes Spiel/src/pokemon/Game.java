@@ -5,12 +5,14 @@
 
 package pokemon;
 
+import java.util.ArrayList;
+
 public class Game {
 		
 	public static void main(String args[]){
 		Statisches.setScanner();
 		Statisches.einlesen();
-		
+		/*
 		
 		//Locations aus XML laden:
 		LocationFactory factory = new LocationFactory("./Locations.xml");
@@ -32,6 +34,12 @@ public class Game {
 		}
 		
 		//Statisches.closeScanner();
-		    
+		    */
+		Pokemon [] tmp = {new Pokemon(PokeNamen.ARKANI,  100), null , null};
+		ArrayList<Pokemon> tmp2 = new ArrayList<Pokemon>();
+		tmp2.add(new Pokemon(PokeNamen.HABITAK, 20));
+		ArrayList<Item> tmp3 = new ArrayList<>();
+		tmp3.add(new Ball(ItemNamen.POKEBALL, 200));
+		Kampf.start(new Trainer(0, null, "name", tmp3, tmp, 0), tmp2 ,true);
 	}
 }

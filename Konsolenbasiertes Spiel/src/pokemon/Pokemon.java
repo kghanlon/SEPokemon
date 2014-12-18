@@ -245,7 +245,18 @@ public class Pokemon {
 	}
 	
 	public String kampfAusgabe(){
-		return name + "\tlvl " + lvl + "\tkp " + kp + "/" + maxkp;
+		StringBuilder sb = new StringBuilder();
+		sb.append(name + "\tlvl " + lvl + "\t");
+		for(int i=0; i< 100; i++){
+			double tmo = (double)kp/maxkp*100.0+1;
+			if(i< tmo){
+				sb.append('|');
+			}else{
+				sb.append(' ');
+			}
+		}
+		sb.append("kp");
+		return  sb.toString() + kp +"/" + maxkp;
 	}
 	
 	

@@ -50,8 +50,8 @@ public class Kampf {
 	
 	private static void kaempfen(Trainer t, List<Pokemon> g, boolean w){
 		//ich waehle immer das erste pokemon, denn sollte getauscht werden, dann ist das aktive pokemon immer an stelle 1 bzw 0
-		System.out.println(t.getName() + ": " + t.getTeam()[0].getName() + " lvl:" + t.getTeam()[0].getLvl() + " kp:" + t.getTeam()[0].getKp() + "/" + t.getTeam()[0].getMaxkp());
-		System.out.println("Gegner: " + g.get(0).getName() + " lvl:" + g.get(0).getLvl() + " kp:" + g.get(0).getKp() + "/" + g.get(0).getMaxkp());
+		System.out.println(t.getName() + ": " + t.getTeam()[0].kampfAusgabe());
+		System.out.println("GEGNER: " +g.get(0).kampfAusgabe());
 		Statisches.sleep();
 		int wahl = auswahlMenue(t);
 		switch(wahl){
@@ -109,9 +109,18 @@ public class Kampf {
 			System.out.println("Gegner komplett besiegt!");
 		}
 	}
+	
+	private static boolean ballInItems(Trainer t){
+		for(int i=0; i<t.getItems().size(); i++){
+			if(t.getItems().get(i).istBall())
+				return true;
+		}
+		return false;
+	}
+
 
 	private static void itemWahl(Trainer t, List<Pokemon> g, boolean w) {
-		if(w){
+		if(w && ballInItems(t)){
 			System.out.println("Bitte die Art des Items auswählen, das genutzt werden soll:");
 			Statisches.sleep();
 			System.out.println("1) Heilung");
@@ -268,6 +277,7 @@ public class Kampf {
 	 * @return ob gefangen oder nicht
 	 */
 	private static boolean ballGewaehlt(Trainer t, List<Pokemon> g) {
+		
 		System.out.println("Bitte den Ball wählen:");
 		int counter=0;		
 		for(int i=0; i< t.getItems().size(); i++){
@@ -306,13 +316,15 @@ public class Kampf {
 				}
 			}
 		}
-		
+		System.out.println(t.getName() + " wirft einen " + ball.getName());
 		//ab hier eigentliches fangen
 		double i = Math.random();
-		Statisches.sleep();
 		ball.setAnzahl(ball.getAnzahl()-1);
+		double restfaktor = 1.2-g.get(0).getKp()/g.get(0).getMaxkp();// wenn man ein pokemon versucht zu fangen, dass noch alle kp hat dann ist dies unwahrscheinlicher zu fangen als wenn man es fängt
+		//1,2 weil sonst wäre zu beginn der wert 0 angebeen also unmöglich zu fangen
 		Statisches.sleep();
-		if(ball.getWert()*g.get(0).getFangrate()>=i){
+		Statisches.sleep();
+		if(ball.getWert()*g.get(0).getFangrate()*restfaktor>=i){
 			return true;
 		}
 		return false;
