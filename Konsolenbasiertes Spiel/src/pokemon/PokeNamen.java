@@ -1,5 +1,11 @@
 package pokemon;
 
+/**
+ * 
+ * @author Kai
+ *
+ *	Pokemon die im Spiel auftauchen können
+ */
 public enum PokeNamen {
 	BISASAM, BISAKNOSP, BISAFLOR, GLUMANDA, GLUTEXO, GLURAK, SCHIGGY, SCHILLOK, TURTOK, PIKACHU, RAICHU, KARPADOR, GARADOS,
 	TAUBSI, TAUBOGA, TAUBOSS, RATTFRATZ, RATTIKARL, HABITAK, IBITAK, PIEPI, PIXI, VULPIX, VULNONA,	

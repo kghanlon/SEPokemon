@@ -4,6 +4,12 @@ import java.util.HashMap;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+/**
+ * 
+ * @author Kai
+ *
+ *	@class Pokemon Ein Trainer hat Pokemonn die Kämpfen können, dafür haben sie Attacken ein Level und bestimmte Werte für den Kampf, je nach Anzahl von Exp die ein Pokemon insgesamt shon bekommen hat steigt es im Level bis max 100
+ */
 public class Pokemon {
 
 	private HashMap<Integer, Attacke> moeglicheAttacken = new HashMap<>();
@@ -16,10 +22,24 @@ public class Pokemon {
 	private Scanner sc = Statisches.getScanner();
 	private int entwicklungslvl;
 	
+	
+	
+	
+	
+	/**
+	 * Initiert ein neues Pokemon von dem man alle Werte kennt, weil es ein Trainerpokemon ist
+	 * @param name Enum PokeNamen
+	 * @param lvl int Level des Pokemons
+	 * @param exp int Bisher gesammelte Anzahl Exp in diesem Level
+	 * @param attackenid Enum AttackenNamen [4] 
+	 * @param maxkp int höchst Anzahl der Kp die das Pokemon im vollkommen geheiltem Zustand hat
+	 * @param kp int aktuelle Anzahl Kp
+	 * @param staerke int Berechnungswert für Attacken auf andere Pokemon
+	 * @param vert int Berechnungswert fur Attacken aus dieses Pokemon
+	 * @param tempo int Zur Entscheidungsfindung welcher Pokemon zuerst angreifen darf
+	 */
 	public Pokemon(PokeNamen name, int lvl, int exp, AttackenNamen[] attackenid, int maxkp, 
-			int kp, int staerke, int vert, int tempo){
-		
-		
+			int kp, int staerke, int vert, int tempo){		
 		this.name = name;
 		Typ[] typtmp = new Typ[2];
 		typtmp[0] = Statisches.stringToTyp(Statisches.getPokehash().get(name).split("#")[0].trim());
@@ -45,7 +65,11 @@ public class Pokemon {
 		this.moeglicheAttacken=hashtmp;
 		this.fschaden=fschadentmp;
 		this.entwicklungslvl = Integer.parseInt(Statisches.getPokehash().get(name).split("#")[5].trim());
-		this.lvl=lvl;
+		if(lvl>100){
+			this.lvl=100;
+		}else{
+			this.lvl=lvl;
+		}
 		this.exp=exp;
 		this.maxkp=maxkp;
 		this.kp=kp;
@@ -56,13 +80,22 @@ public class Pokemon {
 		
 	}
 	
+	/**
+	 * 
+	 * @param name Enum PokeNamen
+	 * @param lvl int Level des Pokemons
+	 */
 	public Pokemon(PokeNamen name, int lvl){
 		this.name = name;
 		Typ[] typtmp = new Typ[2];
 		typtmp[0] = Statisches.stringToTyp(Statisches.getPokehash().get(name).split("#")[0].trim());
 		typtmp[1] = Statisches.stringToTyp(Statisches.getPokehash().get(name).split("#")[1].trim());
 		this.typ=typtmp;
-		this.lvl=lvl;
+		if(lvl<100){
+			this.lvl=lvl;
+		}else{
+			this.lvl=100;
+		}
 		this.fangrate=Float.parseFloat(Statisches.getPokehash().get(name).split("#")[2].trim());		
 		HashMap<Integer, Attacke> hashtmp = new HashMap<>();
 		String [] moeg = Statisches.getPokehash().get(name).split("#")[3].split("%");
@@ -78,7 +111,8 @@ public class Pokemon {
 		this.moeglicheAttacken=hashtmp;
 		this.fschaden=fschadentmp;
 		this.entwicklungslvl = Integer.parseInt(Statisches.getPokehash().get(name).split("#")[5].trim());
-		zufallsWerteWild(lvl);
+		
+		zufallsWerteWild(this.lvl);
 	}
 	
 	private void zufallsWerteWild(int lvl){
@@ -104,6 +138,10 @@ public class Pokemon {
 	}
 	
 	
+	/**
+	 * erhöht die Exp des Pokemons um den Wert und initiiert intern einen Levelaufstieg wenn nötig
+	 * @param i Anzahl Exp die hinzukommen
+	 */
 	public void expGewinn(int i){
 		exp+=i;		
 		System.out.println(name + " erhÃ¤lt " + i + " exp.");
@@ -214,10 +252,14 @@ public class Pokemon {
 	}
 	
 	
+	/**
+	 * 
+	 * @return Zeilenweise Ausgabe der Attacken mit Vorzahl um zu entscheiden welche man nutzen möchte
+	 */
 	public String ausgabeAttacken(){
 		StringBuilder sb =new StringBuilder();
 		sb.append("\n" + name + " kennt folgende Attacken:\n");
-		for(int i=0; i<4; i++){
+		for(int i=0; i<attacken.length; i++){
 			if(attacken[i]!=null){
 				sb.append((i+1) + ") " + attacken[i]);//todo: evtl. erweiterung dass hier direkt typ stÃ¤rke und gen auch ausgegeben wird
 				sb.append("\n");		
@@ -227,6 +269,10 @@ public class Pokemon {
 		return sb.toString();
 	}
 	
+	/**
+	 * 
+	 * @return Name, Attacken, Level, Exp, benötigte Exp, wenn Level über 100: Name, Attacken und Level
+	 */
 	public String toString(){
 		StringBuilder sb =new StringBuilder();
 		sb.append("\n" + name + "\nAttacken:");
@@ -244,6 +290,10 @@ public class Pokemon {
 		return sb.toString();
 	}
 	
+	/**
+	 * kp sind prozentual als Striche dargestellt und steigen bzw fallen nach jeder Aktion
+	 * @return Zeile in der Alle für den Kampf relevanten Daten enthalten sind
+	 */
 	public String kampfAusgabe(){
 		StringBuilder sb = new StringBuilder();
 		sb.append(name + "\tlvl " + lvl + "\t");
@@ -262,46 +312,103 @@ public class Pokemon {
 	
 	
 	
-	
+	/**
+	 * 
+	 * @return Namen des Pokemons
+	 */
 	public String getName() {
 		return ""+name;
 	}
 	
 
+	/**
+	 * 
+	 * @return Attacken die das Pokemon beherscht
+	 */
 	public Attacke [] getAttacken() {
 		return attacken;
 	}
+	
+	/**
+	 * 
+	 * @return Fangwert für das Spezielle Pokemon
+	 */
 	public float getFangrate() {
 		return fangrate;
 	}
+	/**
+	 * Wenn ein Pokemon nur einen Typen hat dann dieser 2 mal
+	 * @return Rückgabe der Typen die ein Pokemon hat
+	 */
 	public Typ[] getTyp() {
 		return typ;
 	}
+	/**
+	 * 
+	 * @return Level des Pokemons
+	 */
 	public int getLvl() {
 		return lvl;
 	}
+	
+	/**
+	 * 
+	 * @return aktuelle Exp des Pokemons
+	 */
 	public int getExp() {
 		return exp;
 	}
+	/**
+	 * 
+	 * @return aktuelle Kp des Pokemons
+	 */
 	public int getKp() {
 		return kp;
 	}
+	/**
+	 * 
+	 * @param kp int Wert auf den die Kp gesetzt werden sollen
+	 */
 	public void setKp(int kp) {
 		this.kp = kp;
 	}
+	
+	/**
+	 * 
+	 * @return Maximale Anzahl Kp wenn vollständig geheilt
+	 */
 	public int getMaxkp() {
 		return maxkp;
 	}
+	
+	/**
+	 * 
+	 * @return Angriffswert für Kämpfe
+	 */
 	public int getStaerke() {
 		return staerke;
 	}
+	/**
+	 * 
+	 * @return Verteigungswert für Kämpfe
+	 */
 	public int getVert() {
 		return vert;
 	}
+	
+	/**
+	 * 
+	 * @return Schnelligkeit für Kämpfe
+	 */
 	public int getTempo() {
 		return tempo;
 	}
-
+	
+	/**
+	 * Gibt zurück ob der Typ anfällig gegen die Attacke ist
+	 * @param typ Typ der angreifende Attacke
+	 * @return Faktor um die eine Attacke auf dieses Pokemon mehr oder weniger effektiv ist
+	 */
 	public double getFschaden(Typ typ) {
 		return fschaden.get(typ);
 	}

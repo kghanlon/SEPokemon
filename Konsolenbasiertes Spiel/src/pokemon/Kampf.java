@@ -3,11 +3,16 @@ package pokemon;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * 
+ * @author Kai
+ *	@class Kampf Kampf ist eine statische Klasse die aufgerufen wird, wenn man in der Story k‰mpfen muss und je nach Ausgang des Kampfes geht das Abenteuer weiter oder man muss ins am n‰chsten liegende PokemonCenter gebracht werden
+ */
 public class Kampf {
 	private static Scanner sc = Statisches.getScanner();
 	
 	/**
-	 * 
+	 * Startet einen Kampf mit festgelegtem Trainer und Gegner (Liste von Pokemon)
 	 * @return 0 Spieler hat noch kampffaehige Pokemon !=0 spieler hat verloren also heilen an n√§chster stelle
 	 */
 	public static int start(Trainer trainer, List<Pokemon> gegner, boolean wild){
@@ -21,6 +26,7 @@ public class Kampf {
 		}
 	}
 	
+
 	private static boolean kampffaehig(Trainer t){
 		for(int i=0; i<t.getTeam().length; i++)
 		{
