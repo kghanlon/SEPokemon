@@ -1,9 +1,6 @@
 package pokemon;
 
-import java.util.ArrayList;
-import java.util.InputMismatchException;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * 
@@ -253,9 +250,10 @@ public class Trainer {
 	 * @param token String ein Ziel bzw. Event was erledigt wurde
 	 */
 	public void addToken(String token){
-		if(tokens.contains(token)){
-			//Do nothing, Token already acquired.
-		} else {
+		if(tokens!=null&&!tokens.contains(token)){			
+			tokens.add(token);
+		}else{
+			tokens=new ArrayList<String>();
 			tokens.add(token);
 		}
 	}

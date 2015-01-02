@@ -24,10 +24,8 @@ public class Ball extends Item {
 	 * @param anzahl int Anzahl die dem Trainer hinzugefügt werden sollen
 	 */
 	public Ball(ItemNamen name, int anzahl){
-		if(anzahl > 0){//weniger als 1 einzutragen macht keinen Sinn und erfordert keiner Ausgabe, da wenn dann ein Entwickler den Fehler macht und kein User
 			super(name, anzahl);
 			this.wert = Integer.parseInt(Statisches.getItemhash().get(name).split("#")[0].trim());
-		}
 	}
 	
 	/**

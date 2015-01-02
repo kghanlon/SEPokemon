@@ -1,9 +1,5 @@
 package pokemon;
-
-import java.util.HashMap;
-import java.util.InputMismatchException;
-import java.util.Scanner;
-
+import java.util.*;
 /**
  * 
  * @author Kai
@@ -134,7 +130,7 @@ public class Pokemon {
 		double ran = Math.random()*3.14;
 		staerke=(int)(10+lvl+Math.sin(ran)*lvl);//ausgeglichen angriff und verteidigung
 		vert = (int)(10+lvl+Math.abs(Math.cos(ran))*lvl);
-		tempo=(int)((6*staerke+vert)/7);//starkes pokemon ist schneller einfach festgelegt		
+		tempo=(6*staerke+vert)/7;//starkes pokemon ist schneller einfach festgelegt		
 	}
 	
 	

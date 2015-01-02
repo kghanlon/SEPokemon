@@ -1,5 +1,6 @@
 package pokemon;
 
+
 /**
  * 
  * @author Kai
@@ -24,10 +25,8 @@ public class Heilungsitem extends Item {
 	 * @param anzahl int Anzahl die dem Trainer hinzugefügt werden sollen
 	 */
 	public Heilungsitem(ItemNamen name, int anzahl){
-	if(anzahl < 0){
 		super(name, anzahl);
 		this.wert = Integer.parseInt(Statisches.getItemhash().get(name).split("#")[0].trim());
-	}
 	}
 	
 	

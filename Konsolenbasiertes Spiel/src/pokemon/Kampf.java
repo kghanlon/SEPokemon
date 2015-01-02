@@ -1,8 +1,5 @@
 package pokemon;
-
-import java.util.List;
-import java.util.Scanner;
-
+import java.util.*;
 /**
  * 
  * @author Kai
@@ -516,7 +513,6 @@ public class Kampf {
 		}else{
 			att=3;
 		}
-		att=(int)att;
 		System.out.println("GEGNER: " + g.get(0).getName() + " greift mit " + g.get(0).getAttacken()[att].getName()+ " an!\n");
 		Statisches.sleep();
 		if(attackenTreffer(g.get(0).getAttacken()[att])){

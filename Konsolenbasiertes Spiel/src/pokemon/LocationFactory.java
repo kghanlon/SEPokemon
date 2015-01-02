@@ -1,18 +1,11 @@
 package pokemon;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.io.*;
+import java.util.*;
 
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.parsers.*;
 
-import org.w3c.dom.Document;
-import org.w3c.dom.NodeList;
+import org.w3c.dom.*;
 import org.xml.sax.SAXException;
 
 import Events.ChangeLocationEvent;
@@ -27,8 +20,7 @@ import Events.WildPokemonEvent;
 
 public class LocationFactory {
 	
-	public static Map<Integer, Location> locations = new HashMap<Integer, Location>();
-	
+	public static Map<Integer, Location> locations = new HashMap<Integer, Location>();	
 	private NodeList nodes;
 	Document doc;
 	String s;
