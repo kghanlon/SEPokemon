@@ -12,8 +12,8 @@ import pokemon.Trainer;
 public class WildPokemonEvent extends Event {
 	
 	private List<PokeNamen> pokemon;
-	int minlvl, maxlvl;
-	int nextPokeCenterLocId;
+	private int minlvl, maxlvl;
+	private int nextPokeCenterLocId;
 	
 	public WildPokemonEvent(List<String> reqTokens, List<String> reqNonTokens,
 			String command, List<PokeNamen> pokemon, int minlvl, int maxlvl, int nextPokeCenterLocId) {

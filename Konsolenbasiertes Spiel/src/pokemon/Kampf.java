@@ -8,7 +8,7 @@ public class Kampf {
 	
 	/**
 	 * 
-	 * @return 0 Spieler hat noch kampffaehige Pokemon !=0 spieler hat verloren also heilen an nächster stelle
+	 * @return 0 Spieler hat noch kampffaehige Pokemon !=0 spieler hat verloren also heilen an naechster stelle
 	 */
 	public static int start(Trainer trainer, List<Pokemon> gegner, boolean wild){
 		while(kampffaehig(trainer) && kampffaehigGegner(gegner)){

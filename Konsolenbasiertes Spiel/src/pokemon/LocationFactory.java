@@ -23,6 +23,7 @@ import Events.GrantTokenEvent;
 import Events.InformationEvent;
 import Events.RemoveMoneyEvent;
 import Events.RemoveTokenEvent;
+import Events.TrainerFightEvent;
 import Events.WildPokemonEvent;
 
 public class LocationFactory {
@@ -105,6 +106,8 @@ public class LocationFactory {
 			case "RemoveMoneyEvent":
 				events.add(getRemoveMoneyEvent(i, j));
 				break;
+			case "TrainerFightEvent":
+				events.add(getTrainerFightEvent(i, j));
 			default:
 				break;
 			}
@@ -192,7 +195,7 @@ public class LocationFactory {
 		//Get Command:
 		String command = getCommand(i, j);
 		//Get the available Pokemon:
-		List<PokeNamen> pokemon = getWildPokemon(i, j);
+		List<PokeNamen> pokemon = getPokeNames(i, j);
 		//Get the min level for the pokemon here
 		int minlvl = Integer.parseInt(nodes.item(i).getChildNodes().item(j).getAttributes()
 										.getNamedItem("minlvl").getNodeValue());
@@ -232,6 +235,30 @@ public class LocationFactory {
 				.getNamedItem("amount").getNodeValue());
 		
 		return new RemoveMoneyEvent(reqTokens, reqNonTokens, command, amount);
+	}
+	
+	public TrainerFightEvent getTrainerFightEvent(int i, int j){
+		//Get Required Token List:
+		List<String> reqTokens = getReqTokenList(i, j);
+		//Get Required NonToken List:
+		List<String> reqNonTokens = getReqNonTokenList(i, j);
+		//Get the Token you get after you win:
+		String tokenAtWin = nodes.item(i).getChildNodes().item(j).getAttributes()
+									.getNamedItem("tokenAtWin").getNodeValue();
+		//Get Command:
+		String command = getCommand(i, j);
+		//Get the pokenames:
+		List<PokeNamen> poke = getPokeNames(i, j);
+		//Get the levels:
+		List<Integer> levels = getPokeLevels(i, j);
+		//Get the Location of the nearest PokeCenter:
+		int nextPokeCenterLocId = Integer.parseInt(nodes.item(i).getChildNodes().item(j).getAttributes()
+									.getNamedItem("nextPokeCenterLocId").getNodeValue());
+		//Get the amount of money you can win:
+		int money = Integer.parseInt(nodes.item(i).getChildNodes().item(j).getAttributes()
+						.getNamedItem("money").getNodeValue());
+		
+		return new TrainerFightEvent(reqTokens, reqNonTokens, tokenAtWin, command, poke, levels, nextPokeCenterLocId, money);
 	}
 	
 	
@@ -317,14 +344,14 @@ public class LocationFactory {
 	}
 	
 	//Attribute required!
-	public List<PokeNamen> getWildPokemon(int i, int j){
+	public List<PokeNamen> getPokeNames(int i, int j){
 		List<PokeNamen> pokemon = new ArrayList<PokeNamen>();
 		//String mit allen vorhandenen pokemon:
 		String pokString = nodes.item(i).getChildNodes().item(j).getAttributes()
 				  .getNamedItem("pokemon").getNodeValue();
 		if(pokString.equals("")){
 			//Es gibt keine Pokemon, dass darf nicht sein!!:
-			System.out.println("FEHLER! Es müssen Wilde Pokemon in einem WildPokemonEvent existieren!");
+			System.out.println("FEHLER! Es müssenPokemon in einem FightEvent existieren! in getPokeNames");
 			System.exit(1);
 			return pokemon;
 		} else {
@@ -334,6 +361,24 @@ public class LocationFactory {
 				pokemon.add(PokeNamen.valueOf(pokString.split(";")[k].toUpperCase()));
 			}
 			return pokemon;
+		}
+	}
+	
+	public List<Integer> getPokeLevels(int i, int j){
+		List<Integer> levels = new ArrayList<Integer>();
+		//String mit allen leveln:
+		String lvlString = nodes.item(i).getChildNodes().item(j).getAttributes()
+				  .getNamedItem("level").getNodeValue();
+		if(lvlString.equals("")){
+			//Es gibt keien Level, dass darf nicht sein!
+			System.out.println("FEHLER! es müssen level in einem TrainerFight existieren! in getPokeLevels");
+			System.exit(1);
+			return levels;
+		} else {
+			for(int k = 0; k < lvlString.split(";").length; k++){
+				levels.add(Integer.parseInt(lvlString.split(";")[k]));
+			}
+			return levels;
 		}
 	}
 	
