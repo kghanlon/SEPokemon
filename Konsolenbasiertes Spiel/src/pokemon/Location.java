@@ -1,12 +1,9 @@
 package pokemon;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
-
 import Events.CheckMoneyEvent;
 import Events.Event;
 import Events.InformationEvent;
+import java.util.*;
 
 public class Location {
 	private int id;

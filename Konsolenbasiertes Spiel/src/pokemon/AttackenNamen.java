@@ -1,5 +1,11 @@
 package pokemon;
 
+/**
+ * 
+ * @author Kai
+ *
+ * hier sind alle Erlernbaren Attackennamen gespeichert 
+ */
 public enum AttackenNamen {
 	RUCKZUCKHIEB, DONNERSCHOCK, DONNER, TACKLE, FUNKENSPRUNG,  FLAMMENWURF, GLUT, 
 	PLATSCHER, RUTENSCHLAG, DONNERBLITZ, BODYSLAM, FLAMMENBLITZ, HITZEWELLE, KRATZER, FLUEGELSCHLAG, 

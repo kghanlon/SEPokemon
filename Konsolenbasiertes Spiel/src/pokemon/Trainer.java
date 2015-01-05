@@ -1,10 +1,13 @@
 package pokemon;
 
-import java.util.ArrayList;
-import java.util.InputMismatchException;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
+/**
+ * 
+ * @author Kai
+ *
+ * @class Trainer Trainer ist der Hauptcharakter der das Abenteuer bestreitet, Pokemon besitzt oder fangen kann und Items kaufen, finden oder benutzen kann 
+ */
 public class Trainer {
 	private String name;
 	private Pokemon[] team = new Pokemon[3];
@@ -14,6 +17,15 @@ public class Trainer {
 	private List<Item> items = new ArrayList<Item>();
 	private Scanner sc = Statisches.getScanner();
 	
+	/**
+	 * 
+	 * @param locationId int Standort in der Welt
+	 * @param tokens List von Dingen die er in der Welt schon erledigt hat
+	 * @param name String Name dem man ihm gegeben hat
+	 * @param items List Items die er benutzten kann
+	 * @param team Pokemon[3] Seine Pokemon die er nutzt
+	 * @param geld int Geld
+	 */
 	public Trainer(int locationId, List<String> tokens, String name, List<Item> items, Pokemon[] team, int geld){
 		this.locationId = locationId;
 		this.tokens = tokens;
@@ -29,6 +41,13 @@ public class Trainer {
 	}
 	
 	//rueckgabewert ist die Anzahl der verbleibenden items der gleichen sorte
+	/**
+	 * Unterscheidet automatisch ob davon schon Items vorhanden sind oder nach der Aktion noch welche vorhanden sind oder alle aufgebraucht
+	 * 
+	 * @param item das betreffende Item das genutzt wird
+	 * @param anzahl Anzahl der Items die hinzu oder weg kommen sprich gekauft gefunden oder verbraucht werden
+	 * @return Anzahl der verbleibenden items der gleichen sorte
+	 */
 	public int setItemHinzu(Item item, int anzahl){// dadurch ist es moeglich auch dinge abzuziehen oder mehrere hinzuzufuegen
 		if(anzahl>0){
 			for(int i=0; i<items.size(); i++){
@@ -57,6 +76,10 @@ public class Trainer {
 	}
 	
 	
+	
+	/**
+	 * setzt bei allen Pokemon die Kp auf MaxKp
+	 */
 	public void teamHeilen(){
 		for(int i=0; i<team.length; i++){
 			team[i].setKp(team[i].getMaxkp());
@@ -64,6 +87,12 @@ public class Trainer {
 		System.out.println("Deine Pokemon sind vollstaendig geheilt.");
 		Statisches.sleep();
 	}
+	
+	
+	/**
+	 * 
+	 * @param zutauschen int position an dem das Pokemon eingefügt werden soll
+	 */
 	public void pokemonTauschen(int zutauschen){
 		
 		
@@ -74,8 +103,12 @@ public class Trainer {
 		team[zutauschen] = tmp;
 	}
 	
-	public void pokemonErsetzen(Pokemon p){
-		
+	
+	/**
+	 * 
+	 * @param p Pokemon das ins Team eingefügt werden soll, oder eben nicht
+	 */
+	public void pokemonErsetzen(Pokemon p){		
 		System.out.println("GEFANGEN: Du hast " + p.getName() + " gefangen.");
 		Statisches.sleep();
 		Pokemon p2 = new Pokemon(Statisches.strToPokeNamen(p.getName()), p.getLvl());
@@ -129,15 +162,17 @@ public class Trainer {
 	}
 	
 	
-	
+	/**
+	 * 
+	 * @return Liste der Items die der Trainer besitzt
+	 */
 	public List<Item> getItems(){
 		itemsAusfiltern();
 		return items;
 	} 
 	
 	/**
-	 * filtert die elemente raus deren anzahl 0 ist es reicht eins auszuschmeissen,
-	 *  da maximal eins gleichezit durch benutzen auf 0 gesetzt werden kann
+	 * filtert die elemente raus deren anzahl 0 ist es reicht eins auszuschmeissen, da maximal eins gleichezit durch benutzen auf 0 gesetzt werden kann
 	 */
 	private void itemsAusfiltern(){
 		for(int i=0; i<items.size(); i++){
@@ -148,6 +183,10 @@ public class Trainer {
 		}
 	}
 	
+	/**
+	 * 
+	 * @return Name, LocId, Pokemons und Items mit Anzahl
+	 */
 	public String toString(){
 		StringBuilder sb = new StringBuilder();
 		sb.append("Name: " + name + "\n");
@@ -160,62 +199,105 @@ public class Trainer {
 		for(int i=0; i<items.size(); i++){
 			sb.append("ITEM " + i + ": " + items.get(i).getName() + " Anzahl: " + items.get(i).getAnzahl() +"\n");
 		}
-		/*for(int i=0; i<tokens.size(); i++){
-			sb.append("TOKEN " + i + ": " + tokens.get(i) + "\n");
-		}*/
 		return sb.toString();
 	}
 	
 	
 	
-	
+	/**
+	 * 
+	 * @return Pokemon im Team
+	 */
 	public Pokemon[] getTeam(){
 		return team;
 	}
+	
+	/**
+	 * 
+	 * @param i int Stelle an der das Pokemon im Team gesetzt wird
+	 * @param p Pokemon das gesetzt wird
+	 */
 	 public void setTeamMitglied(int i, Pokemon p){
 		 team[i]=p;
 	 }
 	
+	 /**
+	  * 
+	  * @return aktuelle Location id
+	  */
 	public int getLocationId(){
 		return locationId;
 	}
 	
+	/**
+	 * 
+	 * @return Liste der bisher erfüllten Tokens
+	 */
 	public List<String> getTokens(){
 		return tokens;
 	}
 	
+	/**
+	 * 
+	 * @param newLocId int an die Trainer nun kommt
+	 */
 	public void setLocation(int newLocId){
 		locationId = newLocId;
 	}
 	
+	/**
+	 * 
+	 * @param token String ein Ziel bzw. Event was erledigt wurde
+	 */
 	public void addToken(String token){
-		if(tokens.contains(token)){
-			//Do nothing, Token already acquired.
-		} else {
+		if(tokens!=null&&!tokens.contains(token)){			
+			tokens.add(token);
+		}else{
+			tokens=new ArrayList<String>();
 			tokens.add(token);
 		}
 	}
 	
-	public void removeToken(int token){
+	/**
+	 * 
+	 * @param token String der gelöscht werden soll
+	 */
+	public void removeToken(String token){
 		if(tokens.contains(token)){
-			tokens.remove((Integer)token); //Braucht man, damit nicht list.remove(index int) aufgerufen wird!
+			tokens.remove(token); 
 		} else {
 			//Do nothing, token not in possession anyway.
 		}
 	}
 
+	/**
+	 * 
+	 * @return Name des Trainers
+	 */
 	public String getName() {
 		return name;
 	}
 
+	/**
+	 * 
+	 * @param name String der als Name gespeichert wird
+	 */
 	public void setName(String name) {
 		this.name = name;
 	}
 
+	/**
+	 * 
+	 * @return Geld des Trainers
+	 */
 	public int getGeld() {
 		return geld;
 	}
 
+	/**
+	 * 
+	 * @param geld int Geld
+	 */
 	public void setGeld(int geld) {
 		this.geld = geld;
 	}

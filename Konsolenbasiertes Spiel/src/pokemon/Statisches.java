@@ -1,12 +1,7 @@
 package pokemon;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Scanner;
+import java.io.*;
+import java.util.*;
 
 import javax.xml.parsers.*;
 
@@ -14,12 +9,20 @@ import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
+/**
+ * 
+ * @author Kai
+ * @class Statisches Alle Daten die mehrfach gebraucht werden, werden hier zentral gespeichert, sodass man Änderungen nur einmalig vornehmen muss
+ */
 public class Statisches {
 	private static HashMap<PokeNamen, String> pokehash = new HashMap<>();
 	private static HashMap <AttackenNamen, String> atthash = new HashMap<>();
 	private static HashMap<ItemNamen, String> itemhash = new HashMap<>();
 	private static Scanner sc;
 	
+	/**
+	 * Liest Werte für Pokemon, Attacken und Items ein um sie in den entsprechenden HashMaps zu speichern
+	 */
 	public static void einlesen(){		
 		Document doc = null;
 	    
@@ -121,6 +124,10 @@ public class Statisches {
 		}
 	}
 	
+	/**
+	 * liest aus Trainer.xml den gespeicherten Trainer ein
+	 * @return zuletzt genutzer Trainer, der gepspeichert wurde
+	 */
 	public static Trainer gespeicherterTrainer(){
 		Trainer t;
 		Document doc = null;
@@ -180,6 +187,11 @@ public class Statisches {
 		return t;
 	}
 	
+	
+	/**
+	 * Speichern des grade genutzten Trainers
+	 * @param t Trainer der gespeichert werden soll
+	 */
 	public static void trainerSpeichern(Trainer t){
 		StringBuilder sb = new StringBuilder();
 		
@@ -223,6 +235,11 @@ public class Statisches {
 		System.out.println("Speichern erfolgreich.");
 	}
 	
+	/**
+	 * 
+	 * @param name String von dem ein ItemNamen gesucht wird
+	 * @return Enum ItemName
+	 */
 	public static ItemNamen strToItemName(String name) {
 		for(ItemNamen i : ItemNamen.values()){
 			if(name.equals(i+""))
@@ -232,6 +249,11 @@ public class Statisches {
 		return null;
 	}
 
+	/**
+	 * 
+	 * @param name String von dem ein PokeNamen gesucht wird
+	 * @return Enum PokeNamen
+	 */
 	public static PokeNamen strToPokeNamen(String name) {
 		for(PokeNamen p : PokeNamen.values()){
 			if(name.equals(p+""))
@@ -241,20 +263,34 @@ public class Statisches {
 		return PokeNamen.KARPADOR;
 	}
 
+	/**
+	 * 
+	 * @return HashMap die AttackenNamen und String der Eigenschaften zurückgibt
+	 */
 	public static HashMap <AttackenNamen, String> getAtthash() {
 		return atthash;
 	}
 
-	
+	/**
+	 * 
+	 * @return HashMap die PokeNamen und String der Eigenschaften zurückgibt
+	 */
 	public static HashMap<PokeNamen, String> getPokehash() {
 		return pokehash;
 	}
 	
+	/**
+	 * 
+	 * @return HashMap die ItemNamen und String der Eigenschaften zurückgibt
+	 */
 	public static HashMap<ItemNamen, String> getItemhash() {
 		return itemhash;
 	}
 
-	
+	/**
+	 * 
+	 * Wird genutzt um auf Eingabe des Spielers zu warten, dass er die Nachricht gelesen hat
+	 */
 	public static void sleep(){
 		try {
 			sc.nextLine();
@@ -264,7 +300,11 @@ public class Statisches {
 		}
 	}
 	
-	
+	/**
+	 * 
+	 * @param s String der in einem Typ umgewandelt werden soll
+	 * @return Enum Typ
+	 */
 	public static Typ stringToTyp(String s){
 		for(Typ t :Typ.values()){
 			if(s.equals(t+"")){
@@ -274,7 +314,11 @@ public class Statisches {
 		return null;
 	}
 	
-	
+	/**
+	 * 
+	 * @param name String von dem ein AttackenNamen gesucht wird
+	 * @return Enum AttackeneNamen
+	 */
 	public static AttackenNamen strToAttName(String s){
 		for(AttackenNamen t :AttackenNamen.values()){
 			if(s.equals(t+"")){
@@ -285,7 +329,11 @@ public class Statisches {
 	}
 	
 	
-	
+	/**
+	 * 
+	 * @param t Typ der ausgegeben werden soll
+	 * @return Enum + ""
+	 */
 	public static String typToString(Typ t){//todo: Ã¤ndern in dynamische abfrage wir attacke und items
 		for(Typ s :Typ.values()){
 			if(t==s){
@@ -295,6 +343,12 @@ public class Statisches {
 		return null;		
 	}
 	 
+	/**
+	 * 
+	 * @param a double 
+	 * @param b double
+	 * @return min von a und b
+	 */
 	public static double min(double a, double b){
 		if(a<=b){
 			return a;
@@ -302,6 +356,12 @@ public class Statisches {
 		return b;
 	}
 	
+	/**
+	 * 
+	 * @param a double 
+	 * @param b double
+	 * @return max von a und b
+	 */
 	public static double max(double a, double b){
 		if(a>=b){
 			return a;
@@ -309,6 +369,11 @@ public class Statisches {
 		return b;
 	}
 	
+	/**
+	 * 
+	 * @param t Wert von 0-1 in dem True zurückgegeben werden soll 
+	 * @return true wenn t über zufällig generiertem r liegt oder gleich ist, sonst false
+	 */
 	public static boolean random(float t){
 		double r = Math.random();
 		if(r<=t) 
@@ -316,13 +381,24 @@ public class Statisches {
 		return false;
 	}
 
+	/**
+	 * gemeinsamer Scanner benötigt, da sonst sich meherere Scanner den Input weglesen und man keine Einagebn mehr tätigen kann
+	 * @return Zentralen Scanner 
+	 */
 	public static Scanner getScanner() {
 		return sc;
 	}
 	
+	/**
+	 * Zentrasler Scanner sc wird initialisert 
+	 */
 	public static void setScanner(){
 		sc = new Scanner(System.in);
 	}
+	
+	/**
+	 * Zentrales Schließen des Scanners
+	 */
 	public static void closeScanner(){
 		sc.close();
 	}
