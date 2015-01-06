@@ -81,7 +81,18 @@ public class Trainer {
 	 * setzt bei allen Pokemon die Kp auf MaxKp
 	 */
 	public void teamHeilen(){
-		for(int i=0; i<team.length; i++){
+		//Pokemoncount, damit wir wissen wie viele Pokemon wirklich dabei sind:
+		int count = 0;
+		for(int i = 0; i < this.getTeam().length; i++){
+			if(this.getTeam()[i] == null){
+				//Nichts
+			} else {
+				//Hier ist ein pokemon, also:
+				count++;
+			}
+		}
+		
+		for(int i=0; i<count; i++){
 			team[i].setKp(team[i].getMaxkp());
 		}
 		System.out.println("Deine Pokemon sind vollstaendig geheilt.");

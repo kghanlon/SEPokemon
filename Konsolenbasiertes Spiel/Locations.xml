@@ -1,29 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <world>
 	<location id="1" name="Alabastia">
-			<BuyItemEvent command="buy trank" item="trank" type="heal" cost="10"/>
-			<InformationEvent command="look around" reqToken="AlabastiaDefault" reqNonToken="WearsSunglasses">
-				You are standing in Alabastia, it is very bright outside.
+			<InformationEvent command="schau dich um" reqToken="AlabastiaDefault">
+				Du stehst in Alabastia, deiner Heimatstadt. Du hast gerade das Haus deiner Mutter mit deinem ersten eigenen
+				Pokemon verlassen und bereitest dich auf ein großes Abenteuer vor. Vor dir liegt das Labor von Prof. Eich. Du
+				solltest kurz mit ihm reden bevor du losziehst. Im Norden siehst du den Weg nach Vertania City
 			</InformationEvent>
-			<InformationEvent command="look around" reqToken="WearsSunglasses;AlabastiaDefault">
-				You see absolutely nothing...
+			<InformationEvent command="schau dich um" reqNonToken="AlabastiaDefault">
+				Du stehst in Alabastia, deiner Heimatstadt. Hinter dir ist das Haus deiner Mutter. Vor dir siehst du das Labor
+				von Prof. Eich und im Norden den Weg nach Vertania City.
 			</InformationEvent>
-			<CompoundEvent command="put on sunglasses" reqToken="AlabastiaDefault" reqNonToken="WearsSunglasses">
-				<InformationEvent command="">
-					You put on your really stylish Ray Ban sunglasses!
-				</InformationEvent>
-				<GrantTokenEvent token="WearsSunglasses"/>
-			</CompoundEvent>
-			<CompoundEvent command="take off sunglasses" reqToken="WearsSunglasses">
+			<ChangeLocationEvent command="gehe in das labor" nextLocId="2">
+				Du betrittst das Labor von Prof. Eich.
+			</ChangeLocationEvent>
+	</location>
+	<location id="2" name="EichsLabor">
+			<InformationEvent command="schau dich um">
+				Das Labor ist ziemlich groß und du siehst viele merkwürdige Maschienen an den Wänden stehen. Prof. Eich steht
+				im hinteren Teil des Labors an seinem Schreibtisch.
+			</InformationEvent>
+			<CompoundEvent command="rede mit eich" reqToken="AlabastiaDefault">
 				<InformationEvent>
-					You take off your sunglasses. Your Coolness diminishes drastically!
+					Du näherst dich dem Professor. Als er dich bemerkt dreht er sich lächelnd zu dir hin. "Ah, wie ich sehe
+					hast du dein erstes eigenes Pokemon bekommen. Kümmere dich gut darum. Wenn du in die weite Welt hinaus
+					gehst wirst du sicherlich viele neue Pokemon sehen und fangen. Gehe am Besten zuerst nach Vertania City
+					und rede dort mit meinem Bekannten im Pokemon Markt. Viel Spaß!"
+					Hiermit dreht sich der Professor zurück zu seinem Experiment.
 				</InformationEvent>
-				<RemoveTokenEvent token="WearsSunglasses"/>
+				<RemoveTokenEvent token="AlabastiaDefault"/>
+				<GrantTokenEvent token="ErsteKonverstaionMitEich"/>
 			</CompoundEvent>
-			<WildPokemonEvent command="enter high gras" pokemon="PIKACHU;GLUMANDA" minlvl="999" maxlvl="1000" nextPokeCenterLocId="1"/>
-			<GrantMoneyEvent command="pick up money" amount="100"/>
-			<RemoveMoneyEvent command="give hobo insane amounts of money" amount="999"/>
-			<TrainerFightEvent command="fight John" reqNonToken="JohnBesiegt" tokenAtWin="JohnBesiegt"
-						pokemon="PIKACHU;GLUMANDA;BISASAM" level="12;13;14" money="100" nextPokeCenterLocId="1"/>
+			<ChangeLocationEvent command="verlasse das labor" nextLocId="1">
+				Du verlässt das Labor von Prof. Eich und gehst zurück auf die Straßen von Alabastia.
+			</ChangeLocationEvent>
 	</location>
 </world>

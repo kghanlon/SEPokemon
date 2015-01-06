@@ -9,7 +9,7 @@ import pokemon.Trainer;
 public class HelpEvent extends Event {
 	
 	public HelpEvent(){
-		super(new ArrayList<String>(), new ArrayList<String>(), "help");
+		super(new ArrayList<String>(), new ArrayList<String>(), "hilfe");
 	}
 	
 	public void runEvent(Trainer t){

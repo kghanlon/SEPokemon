@@ -43,7 +43,9 @@ public class Pokemon {
 		this.typ=typtmp;
 		attacken= new Attacke[4];
 		for(int i=0; i<attackenid.length; i++){
-			attacken[i] = new Attacke(attackenid[i]);
+			if(attackenid[i]!=null){
+				attacken[i] = new Attacke(attackenid[i]);
+			}
 		}
 		this.fangrate=Float.parseFloat(Statisches.getPokehash().get(name).split("#")[2].trim());		
 		HashMap<Integer, Attacke> hashtmp = new HashMap<>();

@@ -193,6 +193,7 @@ public class Statisches {
 	 * @param t Trainer der gespeichert werden soll
 	 */
 	public static void trainerSpeichern(Trainer t){
+		
 		StringBuilder sb = new StringBuilder();
 		
 		sb.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");//Headzeile der xml
@@ -204,7 +205,9 @@ public class Statisches {
 			sb.append("<Pokemon id=\""+t.getTeam()[i].getName() +"\" lvl=\"" +t.getTeam()[i].getLvl() + "\" exp=\"" + t.getTeam()[i].getExp() + "\" maxkp=\"" + t.getTeam()[i].getMaxkp() + "\" kp=\"" + t.getTeam()[i].getKp() + "\" staerke=\"" + t.getTeam()[i].getStaerke() + "\" vert=\"" + t.getTeam()[i].getVert() + "\" tempo=\"" + t.getTeam()[i].getTempo() + "\">\n");
 			sb.append("<AttackenListe>\n");
 			for(int j=0; j<t.getTeam()[i].getAttacken().length; j++){//attacken auslesen
-				sb.append("<Attacke id=\"" + t.getTeam()[i].getAttacken()[j].getName() + "\"/>\n");
+				if(t.getTeam()[i].getAttacken()[j]!=null){
+					sb.append("<Attacke id=\"" + t.getTeam()[i].getAttacken()[j].getName() + "\"/>\n");
+				}
 			}
 			sb.append("</AttackenListe>\n");
 			
@@ -219,7 +222,7 @@ public class Statisches {
 		}
 		sb.append("</ItemListe>\n");		
 		sb.append("<TokenListe>\n");
-		for(int i=0; i<t.getItems().size(); i++){//auslesen der items
+		for(int i=0; i<t.getTokens().size(); i++){//auslesen der items
 			sb.append("<Token name=\""+t.getTokens().get(i) + "\"/>\n");
 		}
 		sb.append("</TokenListe>\n");
@@ -230,7 +233,7 @@ public class Statisches {
 			fw.write(sb.toString());
 			fw.close();
 		}catch(IOException io){
-			System.out.println("Datei konnte nicht geöffnet werden.");
+			System.out.println("Datei konnte nicht geoeffnet werden.");
 		}
 		System.out.println("Speichern erfolgreich.");
 	}

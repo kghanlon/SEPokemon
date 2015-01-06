@@ -48,7 +48,12 @@ public class Game {
 		
 		//Spiel starten:
 		while(true){
-			LocationFactory.locations.get(t.getLocationId()).runLocation(t);
+			try{
+				LocationFactory.locations.get(t.getLocationId()).runLocation(t);
+			} catch (InputMismatchException e){
+				System.out.println("Unpassende Eingabe...");
+				continue;
+			}
 		}
 	}
 	

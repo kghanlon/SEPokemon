@@ -86,7 +86,7 @@ public class Heilungsitem extends Item {
 	 * @return HEILEN oder BELEBEN
 	 */
 	public String getTyp() {
-		if(kannBeleben()){
+		if(!kannBeleben()){
 			return "HEILEN";
 		}else{
 			return "BELEBEN";
