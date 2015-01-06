@@ -4,7 +4,7 @@ import java.util.*;
  * 
  * @author Kai
  *
- *	@class Pokemon Ein Trainer hat Pokemonn die Kämpfen können, dafür haben sie Attacken ein Level und bestimmte Werte für den Kampf, je nach Anzahl von Exp die ein Pokemon insgesamt shon bekommen hat steigt es im Level bis max 100
+ *	@class Pokemon Ein Trainer hat Pokemonn die Kï¿½mpfen kï¿½nnen, dafï¿½r haben sie Attacken ein Level und bestimmte Werte fï¿½r den Kampf, je nach Anzahl von Exp die ein Pokemon insgesamt shon bekommen hat steigt es im Level bis max 100
  */
 public class Pokemon {
 
@@ -28,9 +28,9 @@ public class Pokemon {
 	 * @param lvl int Level des Pokemons
 	 * @param exp int Bisher gesammelte Anzahl Exp in diesem Level
 	 * @param attackenid Enum AttackenNamen [4] 
-	 * @param maxkp int höchst Anzahl der Kp die das Pokemon im vollkommen geheiltem Zustand hat
+	 * @param maxkp int hï¿½chst Anzahl der Kp die das Pokemon im vollkommen geheiltem Zustand hat
 	 * @param kp int aktuelle Anzahl Kp
-	 * @param staerke int Berechnungswert für Attacken auf andere Pokemon
+	 * @param staerke int Berechnungswert fï¿½r Attacken auf andere Pokemon
 	 * @param vert int Berechnungswert fur Attacken aus dieses Pokemon
 	 * @param tempo int Zur Entscheidungsfindung welcher Pokemon zuerst angreifen darf
 	 */
@@ -43,6 +43,7 @@ public class Pokemon {
 		this.typ=typtmp;
 		attacken= new Attacke[4];
 		for(int i=0; i<attackenid.length; i++){
+			if(attackenid[i]!=null)
 			attacken[i] = new Attacke(attackenid[i]);
 		}
 		this.fangrate=Float.parseFloat(Statisches.getPokehash().get(name).split("#")[2].trim());		
@@ -135,7 +136,7 @@ public class Pokemon {
 	
 	
 	/**
-	 * erhöht die Exp des Pokemons um den Wert und initiiert intern einen Levelaufstieg wenn nötig
+	 * erhï¿½ht die Exp des Pokemons um den Wert und initiiert intern einen Levelaufstieg wenn nï¿½tig
 	 * @param i Anzahl Exp die hinzukommen
 	 */
 	public void expGewinn(int i){
@@ -250,7 +251,7 @@ public class Pokemon {
 	
 	/**
 	 * 
-	 * @return Zeilenweise Ausgabe der Attacken mit Vorzahl um zu entscheiden welche man nutzen möchte
+	 * @return Zeilenweise Ausgabe der Attacken mit Vorzahl um zu entscheiden welche man nutzen mï¿½chte
 	 */
 	public String ausgabeAttacken(){
 		StringBuilder sb =new StringBuilder();
@@ -267,7 +268,7 @@ public class Pokemon {
 	
 	/**
 	 * 
-	 * @return Name, Attacken, Level, Exp, benötigte Exp, wenn Level über 100: Name, Attacken und Level
+	 * @return Name, Attacken, Level, Exp, benï¿½tigte Exp, wenn Level ï¿½ber 100: Name, Attacken und Level
 	 */
 	public String toString(){
 		StringBuilder sb =new StringBuilder();
@@ -288,7 +289,7 @@ public class Pokemon {
 	
 	/**
 	 * kp sind prozentual als Striche dargestellt und steigen bzw fallen nach jeder Aktion
-	 * @return Zeile in der Alle für den Kampf relevanten Daten enthalten sind
+	 * @return Zeile in der Alle fï¿½r den Kampf relevanten Daten enthalten sind
 	 */
 	public String kampfAusgabe(){
 		StringBuilder sb = new StringBuilder();
@@ -327,14 +328,14 @@ public class Pokemon {
 	
 	/**
 	 * 
-	 * @return Fangwert für das Spezielle Pokemon
+	 * @return Fangwert fï¿½r das Spezielle Pokemon
 	 */
 	public float getFangrate() {
 		return fangrate;
 	}
 	/**
 	 * Wenn ein Pokemon nur einen Typen hat dann dieser 2 mal
-	 * @return Rückgabe der Typen die ein Pokemon hat
+	 * @return Rï¿½ckgabe der Typen die ein Pokemon hat
 	 */
 	public Typ[] getTyp() {
 		return typ;
@@ -371,7 +372,7 @@ public class Pokemon {
 	
 	/**
 	 * 
-	 * @return Maximale Anzahl Kp wenn vollständig geheilt
+	 * @return Maximale Anzahl Kp wenn vollstï¿½ndig geheilt
 	 */
 	public int getMaxkp() {
 		return maxkp;
@@ -379,14 +380,14 @@ public class Pokemon {
 	
 	/**
 	 * 
-	 * @return Angriffswert für Kämpfe
+	 * @return Angriffswert fï¿½r Kï¿½mpfe
 	 */
 	public int getStaerke() {
 		return staerke;
 	}
 	/**
 	 * 
-	 * @return Verteigungswert für Kämpfe
+	 * @return Verteigungswert fï¿½r Kï¿½mpfe
 	 */
 	public int getVert() {
 		return vert;
@@ -394,14 +395,14 @@ public class Pokemon {
 	
 	/**
 	 * 
-	 * @return Schnelligkeit für Kämpfe
+	 * @return Schnelligkeit fï¿½r Kï¿½mpfe
 	 */
 	public int getTempo() {
 		return tempo;
 	}
 	
 	/**
-	 * Gibt zurück ob der Typ anfällig gegen die Attacke ist
+	 * Gibt zurï¿½ck ob der Typ anfï¿½llig gegen die Attacke ist
 	 * @param typ Typ der angreifende Attacke
 	 * @return Faktor um die eine Attacke auf dieses Pokemon mehr oder weniger effektiv ist
 	 */

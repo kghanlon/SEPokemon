@@ -12,7 +12,7 @@ import org.xml.sax.SAXException;
 /**
  * 
  * @author Kai
- * @class Statisches Alle Daten die mehrfach gebraucht werden, werden hier zentral gespeichert, sodass man Änderungen nur einmalig vornehmen muss
+ * @class Statisches Alle Daten die mehrfach gebraucht werden, werden hier zentral gespeichert, sodass man ï¿½nderungen nur einmalig vornehmen muss
  */
 public class Statisches {
 	private static HashMap<PokeNamen, String> pokehash = new HashMap<>();
@@ -21,7 +21,7 @@ public class Statisches {
 	private static Scanner sc;
 	
 	/**
-	 * Liest Werte für Pokemon, Attacken und Items ein um sie in den entsprechenden HashMaps zu speichern
+	 * Liest Werte fï¿½r Pokemon, Attacken und Items ein um sie in den entsprechenden HashMaps zu speichern
 	 */
 	public static void einlesen(){		
 		Document doc = null;
@@ -204,6 +204,7 @@ public class Statisches {
 			sb.append("<Pokemon id=\""+t.getTeam()[i].getName() +"\" lvl=\"" +t.getTeam()[i].getLvl() + "\" exp=\"" + t.getTeam()[i].getExp() + "\" maxkp=\"" + t.getTeam()[i].getMaxkp() + "\" kp=\"" + t.getTeam()[i].getKp() + "\" staerke=\"" + t.getTeam()[i].getStaerke() + "\" vert=\"" + t.getTeam()[i].getVert() + "\" tempo=\"" + t.getTeam()[i].getTempo() + "\">\n");
 			sb.append("<AttackenListe>\n");
 			for(int j=0; j<t.getTeam()[i].getAttacken().length; j++){//attacken auslesen
+				if(t.getTeam()[i].getAttacken()[j]!=null)
 				sb.append("<Attacke id=\"" + t.getTeam()[i].getAttacken()[j].getName() + "\"/>\n");
 			}
 			sb.append("</AttackenListe>\n");
@@ -219,7 +220,7 @@ public class Statisches {
 		}
 		sb.append("</ItemListe>\n");		
 		sb.append("<TokenListe>\n");
-		for(int i=0; i<t.getItems().size(); i++){//auslesen der items
+		for(int i=0; i<t.getTokens().size(); i++){//auslesen der items
 			sb.append("<Token name=\""+t.getTokens().get(i) + "\"/>\n");
 		}
 		sb.append("</TokenListe>\n");
@@ -265,7 +266,7 @@ public class Statisches {
 
 	/**
 	 * 
-	 * @return HashMap die AttackenNamen und String der Eigenschaften zurückgibt
+	 * @return HashMap die AttackenNamen und String der Eigenschaften zurï¿½ckgibt
 	 */
 	public static HashMap <AttackenNamen, String> getAtthash() {
 		return atthash;
@@ -273,7 +274,7 @@ public class Statisches {
 
 	/**
 	 * 
-	 * @return HashMap die PokeNamen und String der Eigenschaften zurückgibt
+	 * @return HashMap die PokeNamen und String der Eigenschaften zurï¿½ckgibt
 	 */
 	public static HashMap<PokeNamen, String> getPokehash() {
 		return pokehash;
@@ -281,7 +282,7 @@ public class Statisches {
 	
 	/**
 	 * 
-	 * @return HashMap die ItemNamen und String der Eigenschaften zurückgibt
+	 * @return HashMap die ItemNamen und String der Eigenschaften zurï¿½ckgibt
 	 */
 	public static HashMap<ItemNamen, String> getItemhash() {
 		return itemhash;
@@ -371,8 +372,8 @@ public class Statisches {
 	
 	/**
 	 * 
-	 * @param t Wert von 0-1 in dem True zurückgegeben werden soll 
-	 * @return true wenn t über zufällig generiertem r liegt oder gleich ist, sonst false
+	 * @param t Wert von 0-1 in dem True zurï¿½ckgegeben werden soll 
+	 * @return true wenn t ï¿½ber zufï¿½llig generiertem r liegt oder gleich ist, sonst false
 	 */
 	public static boolean random(float t){
 		double r = Math.random();
@@ -382,7 +383,7 @@ public class Statisches {
 	}
 
 	/**
-	 * gemeinsamer Scanner benötigt, da sonst sich meherere Scanner den Input weglesen und man keine Einagebn mehr tätigen kann
+	 * gemeinsamer Scanner benï¿½tigt, da sonst sich meherere Scanner den Input weglesen und man keine Einagebn mehr tï¿½tigen kann
 	 * @return Zentralen Scanner 
 	 */
 	public static Scanner getScanner() {
@@ -397,7 +398,7 @@ public class Statisches {
 	}
 	
 	/**
-	 * Zentrales Schließen des Scanners
+	 * Zentrales Schlieï¿½en des Scanners
 	 */
 	public static void closeScanner(){
 		sc.close();

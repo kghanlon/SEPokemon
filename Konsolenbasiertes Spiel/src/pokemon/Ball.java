@@ -32,7 +32,7 @@ public class Ball extends Item {
 	 * 
 	 * @return Fangwert des Balls
 	 */
-	public float getWert(){
+	public int getWert(){
 		return wert;
 	}
 	
