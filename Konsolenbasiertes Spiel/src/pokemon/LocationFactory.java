@@ -12,8 +12,10 @@ import Events.BuyItemEvent;
 import Events.ChangeLocationEvent;
 import Events.CompoundEvent;
 import Events.Event;
+import Events.GrantItemEvent;
 import Events.GrantMoneyEvent;
 import Events.GrantTokenEvent;
+import Events.HealPokemonEvent;
 import Events.InformationEvent;
 import Events.RemoveMoneyEvent;
 import Events.RemoveTokenEvent;
@@ -104,6 +106,12 @@ public class LocationFactory {
 				break;
 			case "BuyItemEvent":
 				events.add(getBuyItemEvent(i, j));
+				break;
+			case "GrantItemEvent":
+				events.add(getGrantItemEvent(i, j));
+				break;
+			case "HealPokemonEvent":
+				events.add(getHealPokemonEvent(i, j));
 				break;
 			default:
 				break;
@@ -289,6 +297,49 @@ public class LocationFactory {
 				.getNamedItem("cost").getNodeValue());
 		
 		return new BuyItemEvent(reqTokens, reqNonTokens, command, kosten, item);
+	}
+	
+	public GrantItemEvent getGrantItemEvent(int i, int j){
+		//Get Required Token List:
+		List<String> reqTokens = getReqTokenList(i, j);
+		//Get Required NonToken List:
+		List<String> reqNonTokens = getReqNonTokenList(i, j);
+		//Get Command:
+		String command = getCommand(i, j);
+		//Get the Item Name:
+		ItemNamen name = ItemNamen.valueOf(nodes.item(i).getChildNodes().item(j).getAttributes()
+										.getNamedItem("item").getNodeValue().toUpperCase());
+		//Get the Item Type:
+		String type = nodes.item(i).getChildNodes().item(j).getAttributes()
+									.getNamedItem("type").getNodeValue();
+		//Create the Item Object, depending on the type:
+		Item item;
+		switch(type){
+		case "ball":
+			item = new Ball(name); break;
+		case "heal":
+			item = new Heilungsitem(name); break;
+		default:
+			//This should not happen!!
+			item = new Ball(ItemNamen.DUMMYBALL);
+			System.out.println("Fehler in Itemerzeugung, Item hatte keinen Typ!!!!");
+		}
+		//Get the amount of Items granted:
+		int amount = Integer.parseInt(nodes.item(i).getChildNodes().item(j).getAttributes()
+									.getNamedItem("amount").getNodeValue());
+		
+		return new GrantItemEvent(reqTokens, reqNonTokens, command, item, amount);
+	}
+	
+	public HealPokemonEvent getHealPokemonEvent(int i, int j){
+		//Get Required Token List:
+		List<String> reqTokens = getReqTokenList(i, j);
+		//Get Required NonToken List:
+		List<String> reqNonTokens = getReqNonTokenList(i, j);
+		//Get Command:
+		String command = getCommand(i, j);
+		
+		return new HealPokemonEvent(reqTokens, reqNonTokens, command);
 	}
 	
 	

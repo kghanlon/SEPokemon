@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Trainerelemente locationId="1" name="Ash" geld="0">
+<Trainerelemente locationId="3" name="Ash" geld="0">
 <PokemonListe>
-<Pokemon id="BISASAM" lvl="5" exp="71" maxkp="11" kp="11" staerke="19" vert="16" tempo="18">
+<Pokemon id="BISASAM" lvl="5" exp="135" maxkp="11" kp="11" staerke="18" vert="18" tempo="18">
 <AttackenListe>
 <Attacke id="HEULER"/>
 <Attacke id="TACKLE"/>
@@ -9,9 +9,11 @@
 </Pokemon>
 </PokemonListe>
 <ItemListe>
+<Item id="TRANK" anzahl="3" typ="HEILEN"/>
 </ItemListe>
 <TokenListe>
-<Token name="AlabastiaDefault"/>
 <Token name="EichsLaborDefault"/>
+<Token name="Route1Default"/>
+<Token name="mitTeenagerGeredet"/>
 </TokenListe>
 </Trainerelemente>

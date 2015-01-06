@@ -13,11 +13,14 @@
 			<ChangeLocationEvent command="gehe in das labor" nextLocId="2">
 				Du betrittst das Labor von Prof. Eich.
 			</ChangeLocationEvent>
+			<ChangeLocationEvent command="gehe nach norden" nextLocId="3" reqNonToken="AlabastiaDefault">
+				Du gehst nach Norden zur Route 1, die nach Vertania City führt.
+			</ChangeLocationEvent>
 	</location>
 	<location id="2" name="EichsLabor">
 			<InformationEvent command="schau dich um">
-				Das Labor ist ziemlich groß und du siehst viele merkwürdige Maschienen an den Wänden stehen. Prof. Eich steht
-				im hinteren Teil des Labors an seinem Schreibtisch.
+				Das Labor ist ziemlich groß und du siehst viele merkwürdige Maschienen an den Wänden stehen. An einer davon kannst du 
+				deine Pokemon heilen. Prof. Eich steht im hinteren Teil des Labors an seinem Schreibtisch.
 			</InformationEvent>
 			<CompoundEvent command="rede mit eich" reqToken="AlabastiaDefault">
 				<InformationEvent>
@@ -28,10 +31,39 @@
 					Hiermit dreht sich der Professor zurück zu seinem Experiment.
 				</InformationEvent>
 				<RemoveTokenEvent token="AlabastiaDefault"/>
-				<GrantTokenEvent token="ErsteKonverstaionMitEich"/>
+				<GrantTokenEvent token="ErsteKonversationMitEich"/>
 			</CompoundEvent>
+			<InformationEvent command="rede mit eich" reqToken="ErsteKonversationMitEich">
+				"Und, warst du schon in Vertania City?"
+			</InformationEvent>
 			<ChangeLocationEvent command="verlasse das labor" nextLocId="1">
 				Du verlässt das Labor von Prof. Eich und gehst zurück auf die Straßen von Alabastia.
+			</ChangeLocationEvent>
+			<HealPokemonEvent command="heile Pokemon"/>
+	</location>
+	<location id="3" name="Route1">
+			<InformationEvent command="schau dich um">
+				Du befindest dich auf Route 1, der gewundenen, aber nicht allzu langen Straße nach Vertania City.
+				Um dich herum befindet sich viel hohes Gras, hier tümmeln sich wohl viele wilde Pokemon. Etwas die Straße
+				runter steht ein gelangweilter Teenager und am nördlichen Ende der Straße siehst du die ersten Häuser von Vertania
+				City. Hinter dir im Süden befindet sich Alabastia.
+			</InformationEvent>
+			<CompoundEvent command="rede mit dem teenager" reqNonToken="mitTeenagerGeredet">
+				<InformationEvent>
+					Du gehst zu dem Teenager und beginnst mit ihm zu reden.
+					"Oh hallo du! Wie geht's? Ich stehe hier und muss Werbung machen fuer den Pokemon Markt in Vertania City.
+					Hey, ich habs! Ich gebe dir einfach ein Werbegeschenk. Hier nimm diesen Trank, damit kannst du deine Pokemon
+					heilen."
+				</InformationEvent>
+				<GrantItemEvent item="trank" type="heal" amount="1"/>
+				<GrantTokenEvent token="mitTeenagerGeredet"/>
+			</CompoundEvent>
+			<InformationEvent command="rede mit dem teenager" reqToken="mitTeenagerGeredet">
+				Du gehst zu dem Teenager. "Hallo du! Und, warst du schom im Pokemon Markt in Vertania City?"
+			</InformationEvent>
+			<WildPokemonEvent command="gehe in das hohe gras" pokemon="TAUBSI;RATTFRATZ" minlvl="2" maxlvl="4" nextPokeCenterLocId="2"/>
+			<ChangeLocationEvent command="gehe nach süden" nextLocId="1">
+				Du gehst die Route 1 in südlicher Richtung hinunter zurück nach Alabastia.
 			</ChangeLocationEvent>
 	</location>
 </world>

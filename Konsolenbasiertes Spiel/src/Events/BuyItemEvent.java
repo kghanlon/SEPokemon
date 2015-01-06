@@ -31,6 +31,7 @@ public class BuyItemEvent extends Event {
 			t.setGeld(t.getGeld() - totalCost);
 			//Items hinzufuegen:
 			t.setItemHinzu(item, anzahl);
+			System.out.println(anzahl+" "+item.getName()+" fuer "+totalCost+" Pokedollar erhalten.");
 		} else {
 			//Der Trainer hat nicht genug Geld fuer den Einkauf
 			System.out.println("Du hast nicht genug Geld dafuer.");

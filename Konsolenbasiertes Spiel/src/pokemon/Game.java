@@ -32,23 +32,24 @@ public class Game {
 		case "N":
 		case "n": 
 			System.out.println("Neues Spiel!");
-			t=neuerSpieler(sc) ; 
+			t=neuerSpieler(sc); 
+			//Start Tokens laden:
+			for(int key : LocationFactory.locations.keySet()){
+				t.addToken(LocationFactory.locations.get(key).getName()+"Default");
+			}
+			t.setLocation(1);
 		break;
 		default: System.out.println("Spiel fortsetzen " + t);
 		}//ende Hauptmenue
-		
-		
-		
-		t.setLocation(1);
-		//Start Tokens laden:
-		for(int key : LocationFactory.locations.keySet()){
-			t.addToken(LocationFactory.locations.get(key).getName()+"Default");
+				
+		//Spiel starten:
+		for(int i = 0; i < t.getTokens().size(); i++){
+			System.out.println(t.getTokens().get(i));
 		}
 		
-		
-		//Spiel starten:
 		while(true){
 			try{
+				System.out.println(t.getLocationId());
 				LocationFactory.locations.get(t.getLocationId()).runLocation(t);
 			} catch (InputMismatchException e){
 				System.out.println("Unpassende Eingabe...");
@@ -82,7 +83,7 @@ public class Game {
 			starter = new Pokemon(PokeNamen.SCHIGGY, 5);
 			System.out.println("Du hast Schiggy gewählt.");
 			break;
-		default: starter = new Pokemon(PokeNamen.BISASAM, 5);
+		default: starter = new Pokemon(PokeNamen.PIKACHU, 5);
 		System.out.println("Da deine Eingabe ungültig war bekommst du ein Pikachu von mir.");
 		}
 		Pokemon [] team = new Pokemon[3];
