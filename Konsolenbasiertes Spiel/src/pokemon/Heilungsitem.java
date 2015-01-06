@@ -21,7 +21,7 @@ public class Heilungsitem extends Item {
 	/**
 	 * 
 	 * @param name Enum ItemName zur Identifizierung
-	 * @param anzahl int Anzahl die dem Trainer hinzugefügt werden sollen
+	 * @param anzahl int Anzahl die dem Trainer hinzugefï¿½gt werden sollen
 	 */
 	public Heilungsitem(ItemNamen name, int anzahl){
 		super(name, anzahl);
@@ -31,7 +31,7 @@ public class Heilungsitem extends Item {
 	
 	/**
 	 * 
-	 * @return Wert um den die Kp erhöht werden sollen
+	 * @return Wert um den die Kp erhï¿½ht werden sollen
 	 */
 	public int getWert(){
 		return wert;
@@ -55,7 +55,7 @@ public class Heilungsitem extends Item {
 	
 	
 	/**
-	 * prüft ob "Beleber im Namen vorkommt, da Itemname Enum ist BELEBER zu suchen"
+	 * prï¿½ft ob "Beleber im Namen vorkommt, da Itemname Enum ist BELEBER zu suchen"
 	 * @return kann das Item beleben?
 	 */
 	public boolean kannBeleben(){

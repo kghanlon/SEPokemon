@@ -6,7 +6,7 @@
 		<Fangrate wert="0.3"/>
 		<AttackenListe>
 			<Attacke id="DONNERSCHOCK" lvl="1"/>
-			<Attacke id="RUTENSCHLAG" lvl="1"/>
+			<Attacke id="RUTENSCHLAG" lvl="2"/>
 			<Attacke id="HEULER" lvl="5"/>
 			<Attacke id="RUCKZUCKHIEB" lvl="10"/>
 			<Attacke id="ELEKTROBALL" lvl="18"/>
@@ -32,7 +32,7 @@
 		<Fangrate wert="0.15"/>
 		<AttackenListe>
 			<Attacke id="DONNERSCHOCK" lvl="1"/>
-			<Attacke id="RUTENSCHLAG" lvl="1"/>
+			<Attacke id="RUTENSCHLAG" lvl="2"/>
 			<Attacke id="HEULER" lvl="5"/>
 			<Attacke id="RUCKZUCKHIEB" lvl="10"/>
 			<Attacke id="ELEKTROBALL" lvl="18"/>
@@ -58,7 +58,7 @@
 		<Fangrate wert="0.3"/>
 		<AttackenListe>
 			<Attacke id="KRATZER" lvl="1"/>
-			<Attacke id="HEULER" lvl="1"/>
+			<Attacke id="HEULER" lvl="2"/>
 			<Attacke id="GLUT" lvl="7"/>
 			<Attacke id="SCHLITZER" lvl="12"/>
 			<Attacke id ="GRIMASSE" lvl="17"/>
@@ -86,7 +86,7 @@
 		<Fangrate wert="0.2"/>
 		<AttackenListe>
 			<Attacke id="KRATZER" lvl="1"/>
-			<Attacke id="HEULER" lvl="1"/>
+			<Attacke id="HEULER" lvl="2"/>
 			<Attacke id="GLUT" lvl="7"/>
 			<Attacke id="SCHLITZER" lvl="12"/>
 			<Attacke id ="GRIMASSE" lvl="17"/>
@@ -114,7 +114,7 @@
 		<Fangrate wert="0.1"/>
 		<AttackenListe>
 			<Attacke id="KRATZER" lvl="1"/>
-			<Attacke id="HEULER" lvl="1"/>
+			<Attacke id="HEULER" lvl="2"/>
 			<Attacke id="GLUT" lvl="7"/>
 			<Attacke id="SCHLITZER" lvl="12"/>
 			<Attacke id ="GRIMASSE" lvl="17"/>
@@ -470,7 +470,7 @@
 		<Typ id="FLUG"/>
 		<Fangrate wert="0.35"/>
 		<AttackenListe>
-			<Attacke id="HEULER" lvl="1"/>
+			<Attacke id="HEULER" lvl="2"/>
 			<Attacke id="SCHNABEL" lvl="1"/>
 			<Attacke id="SILBERBLICK" lvl="5"/>
 			<Attacke id="AERO_ASS" lvl="13"/>
@@ -494,7 +494,7 @@
 		<Typ id="FLUG"/>
 		<Fangrate wert="0.25"/>
 		<AttackenListe>
-			<Attacke id="HEULER" lvl="1"/>
+			<Attacke id="HEULER" lvl="2"/>
 			<Attacke id="SCHNABEL" lvl="1"/>
 			<Attacke id="SILBERBLICK" lvl="5"/>
 			<Attacke id="AERO_ASS" lvl="13"/>
@@ -518,9 +518,9 @@
 		<Typ id="NORMAL"/>
 		<Fangrate wert="0.3"/>
 		<AttackenListe>
-			<Attacke id="PFUND" lvl="1"/>
+			<Attacke id="PFUND" lvl="3"/>
 			<Attacke id="SAEUSELSTIMME" lvl="1"/>
-			<Attacke id="HEULER" lvl="1"/>
+			<Attacke id="HEULER" lvl="2"/>
 			<Attacke id="DUPLEXHIEB" lvl="10"/>
 			<Attacke id ="EINIGLER" lvl="15"/>
 			<Attacke id="WECKRUF" lvl="22"/>
@@ -544,9 +544,9 @@
 		<Typ id="NORMAL"/>
 		<Fangrate wert="0.2"/>
 		<AttackenListe>
-			<Attacke id="PFUND" lvl="1"/>
+			<Attacke id="PFUND" lvl="3"/>
 			<Attacke id="SAEUSELSTIMME" lvl="1"/>
-			<Attacke id="HEULER" lvl="1"/>
+			<Attacke id="HEULER" lvl="2"/>
 			<Attacke id="DUPLEXHIEB" lvl="10"/>
 			<Attacke id ="EINIGLER" lvl="15"/>
 			<Attacke id="WECKRUF" lvl="22"/>
@@ -691,7 +691,7 @@
 		<Fangrate wert="0.3"/>
 		<AttackenListe>
 			<Attacke id="KRATZER" lvl="1"/>
-			<Attacke id="HEULER" lvl="1"/>
+			<Attacke id="HEULER" lvl="2"/>
 			<Attacke id="MOGELHIEB" lvl="9"/>
 			<Attacke id="KRATZFURIE" lvl="15"/>
 			<Attacke id ="SCHLITZER" lvl="33"/>
@@ -714,7 +714,7 @@
 		<Fangrate wert="0.10"/>
 		<AttackenListe>
 			<Attacke id="KRATZER" lvl="1"/>
-			<Attacke id="HEULER" lvl="1"/>
+			<Attacke id="HEULER" lvl="2"/>
 			<Attacke id="MOGELHIEB" lvl="9"/>
 			<Attacke id="KRATZFURIE" lvl="15"/>
 			<Attacke id ="SCHLITZER" lvl="33"/>
@@ -1291,8 +1291,8 @@
 		<Fangrate wert="0.07"/>
 		<AttackenListe>
 			<Attacke id="DONNERSCHOCK" lvl="1"/>
-			<Attacke id="RUCKZUCKHIEB" lvl="1"/>
-			<Attacke id="SILBERBLICK" lvl="1"/>
+			<Attacke id="RUCKZUCKHIEB" lvl="3"/>
+			<Attacke id="SILBERBLICK" lvl="2"/>
 			<Attacke id="DONNERSCHOCK" lvl="5"/>
 			<Attacke id="STERNSCHAUER" lvl="13"/>
 			<Attacke id="ELEKTROBALL" lvl="22"/>
@@ -1317,8 +1317,8 @@
 		<Fangrate wert="0.07"/>
 		<AttackenListe>
 			<Attacke id="GLUT" lvl="1"/>
-			<Attacke id="RUCKZUCKHIEB" lvl="1"/>
-			<Attacke id="SILBERBLICK" lvl="1"/>
+			<Attacke id="RUCKZUCKHIEB" lvl="3"/>
+			<Attacke id="SILBERBLICK" lvl="2"/>
 			<Attacke id="STERNSCHAUER" lvl="13"/>
 			<Attacke id="FUNKENFLUG" lvl="22"/>
 			<Attacke id="FEUERSCHLAG" lvl="29"/>

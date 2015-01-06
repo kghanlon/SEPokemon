@@ -22,10 +22,10 @@ public class Game {
 		
 		
 		//Hauptmenue
-		System.out.println("Hauptmenü");
+		System.out.println("Hauptmenue");
 		System.out.println("Spiel (f)ortsetzen?");
 		System.out.println("(N)eues Spiel Starten? (Alter Spielstand geht verloren!)");
-		//hier noch als Möglichkeit wenn genug Zeit bleibt Spielstand löschen, wenn dann mehrere Spielstände möglich sind
+		//hier noch als Moeglichkeit wenn genug Zeit bleibt Spielstand löschen, wenn dann mehrere Spielstände möglich sind
 		Trainer t = Statisches.gespeicherterTrainer();
 		String c = sc.next();
 		switch(c){
@@ -61,7 +61,7 @@ public class Game {
 	private static Trainer  neuerSpieler(Scanner sc){
 		System.out.println("Wie lautet dein Name?");
 		String name = sc.next().trim();
-		System.out.println("Du Bekommst die Wahl möchtest du");
+		System.out.println("Du Bekommst die Wahl moechtest du");
 		System.out.println("(B)isasam?");
 		System.out.println("(G)lumanda?");
 		System.out.println("(S)chiggy?");
@@ -71,17 +71,17 @@ public class Game {
 		case "B": 
 		case "b":
 			starter = new Pokemon(PokeNamen.BISASAM, 5);
-			System.out.println("Du hast Bisasam gewählt.");
+			System.out.println("Du hast Bisasam gewaehlt.");
 			break;
 		case "G":
 		case "g":
 			starter = new Pokemon(PokeNamen.GLUMANDA, 5);
-			System.out.println("Du hast Glumanda gewählt.");
+			System.out.println("Du hast Glumanda gewaehlt.");
 			break;
 		case "S":
 		case "s":
 			starter = new Pokemon(PokeNamen.SCHIGGY, 5);
-			System.out.println("Du hast Schiggy gewählt.");
+			System.out.println("Du hast Schiggy gewaehlt.");
 			break;
 		default: starter = new Pokemon(PokeNamen.PIKACHU, 5);
 		System.out.println("Da deine Eingabe ungültig war bekommst du ein Pikachu von mir.");

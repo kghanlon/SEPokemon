@@ -4,40 +4,97 @@
  */
 
 package pokemon;
+import java.util.*;
 
 public class Game {
-		
 	public static void main(String args[]){
 		Statisches.setScanner();
 		Statisches.einlesen();
-		
-		
+		Scanner sc = Statisches.getScanner();
+		hauptmenue(sc);		
+		Statisches.closeScanner();			
+	}
+	
+	private static  boolean hauptmenue(Scanner sc){
 		//Locations aus XML laden:
 		LocationFactory factory = new LocationFactory("./Locations.xml");
 		factory.getAllLocations();
 		
-		//Hier muss Abfrage stattfinden: erstes laden oder gibt es einen Speicherstand?
-		//Trainer laden:
+		
+		//Hauptmenue
+		System.out.println("Hauptmenï¿½");
+		System.out.println("Spiel (f)ortsetzen?");
+		System.out.println("(N)eues Spiel Starten? (Alter Spielstand geht verloren!)");
+		//hier noch als Mï¿½glichkeit wenn genug Zeit bleibt Spielstand lï¿½schen, wenn dann mehrere Spielstï¿½nde mï¿½glich sind
 		Trainer t = Statisches.gespeicherterTrainer();
-		t.setLocation(1);
-		//Start Tokens laden:
-		for(int key : LocationFactory.locations.keySet()){
-			t.addToken(LocationFactory.locations.get(key).getName()+"Default");
-		}
-		
-		
+		String c = sc.next();
+		switch(c){
+		case "N":
+		case "n": 
+			System.out.println("Neues Spiel!");
+			t=neuerSpieler(sc); 
+			//Start Tokens laden:
+			for(int key : LocationFactory.locations.keySet()){
+				t.addToken(LocationFactory.locations.get(key).getName()+"Default");
+			}
+			t.setLocation(1);
+		break;
+		default: System.out.println("Spiel fortsetzen " + t);
+		}//ende Hauptmenue
+				
 		//Spiel starten:
-		while(true){
-			LocationFactory.locations.get(t.getLocationId()).runLocation(t);
+		for(int i = 0; i < t.getTokens().size(); i++){
+			System.out.println(t.getTokens().get(i));
 		}
-<<<<<<< HEAD
-		//Statisches.closeScanner();  
+		
+		while(true){
+			try{
+				System.out.println(t.getLocationId());
+				LocationFactory.locations.get(t.getLocationId()).runLocation(t);
+			} catch (InputMismatchException e){
+				System.out.println("Unpassende Eingabe...");
+				continue;
+			}
+		}
 	}
 	
+	private static Trainer  neuerSpieler(Scanner sc){
+		System.out.println("Wie lautet dein Name?");
+		String name = sc.next().trim();
+		System.out.println("Du Bekommst die Wahl mï¿½chtest du");
+		System.out.println("(B)isasam?");
+		System.out.println("(G)lumanda?");
+		System.out.println("(S)chiggy?");
+		String poki = sc.next().trim();
+		Pokemon starter;
+		switch(poki){
+		case "B": 
+		case "b":
+			starter = new Pokemon(PokeNamen.BISASAM, 5);
+			System.out.println("Du hast Bisasam gewï¿½hlt.");
+			break;
+		case "G":
+		case "g":
+			starter = new Pokemon(PokeNamen.GLUMANDA, 5);
+			System.out.println("Du hast Glumanda gewï¿½hlt.");
+			break;
+		case "S":
+		case "s":
+			starter = new Pokemon(PokeNamen.SCHIGGY, 5);
+			System.out.println("Du hast Schiggy gewï¿½hlt.");
+			break;
+<<<<<<< HEAD
+		default: starter = new Pokemon(PokeNamen.PIKACHU, 5);
+		System.out.println("Da deine Eingabe ungültig war bekommst du ein Pikachu von mir.");
 =======
-		
-		//Statisches.closeScanner();
-		    
+		default: starter = new Pokemon(PokeNamen.BISASAM, 5);
+		System.out.println("Da deine Eingabe ungï¿½ltig war bekommst du ein Pikachu von mir.");
+>>>>>>> 6f6ede7952d42bed23bf845c8b4e5c29f620c1f1
+		}
+		Pokemon [] team = new Pokemon[3];
+		team[0]=starter;
+		return new Trainer(0, null, name, null, team, 0);
 	}
->>>>>>> 36d5f209c85dd8ae6df59b84413a09e459859a4e
+	
+	
 }

@@ -12,7 +12,7 @@ import org.xml.sax.SAXException;
 /**
  * 
  * @author Kai
- * @class Statisches Alle Daten die mehrfach gebraucht werden, werden hier zentral gespeichert, sodass man Änderungen nur einmalig vornehmen muss
+ * @class Statisches Alle Daten die mehrfach gebraucht werden, werden hier zentral gespeichert, sodass man Ã„nderungen nur einmalig vornehmen muss
  */
 public class Statisches {
 	private static HashMap<PokeNamen, String> pokehash = new HashMap<>();
@@ -21,7 +21,7 @@ public class Statisches {
 	private static Scanner sc;
 	
 	/**
-	 * Liest Werte für Pokemon, Attacken und Items ein um sie in den entsprechenden HashMaps zu speichern
+	 * Liest Werte fÃ¼r Pokemon, Attacken und Items ein um sie in den entsprechenden HashMaps zu speichern
 	 */
 	public static void einlesen(){		
 		Document doc = null;
@@ -193,7 +193,6 @@ public class Statisches {
 	 * @param t Trainer der gespeichert werden soll
 	 */
 	public static void trainerSpeichern(Trainer t){
-		
 		StringBuilder sb = new StringBuilder();
 		
 		sb.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");//Headzeile der xml
@@ -268,7 +267,7 @@ public class Statisches {
 
 	/**
 	 * 
-	 * @return HashMap die AttackenNamen und String der Eigenschaften zurückgibt
+	 * @return HashMap die AttackenNamen und String der Eigenschaften zurï¿½ckgibt
 	 */
 	public static HashMap <AttackenNamen, String> getAtthash() {
 		return atthash;
@@ -276,7 +275,7 @@ public class Statisches {
 
 	/**
 	 * 
-	 * @return HashMap die PokeNamen und String der Eigenschaften zurückgibt
+	 * @return HashMap die PokeNamen und String der Eigenschaften zurï¿½ckgibt
 	 */
 	public static HashMap<PokeNamen, String> getPokehash() {
 		return pokehash;
@@ -284,7 +283,7 @@ public class Statisches {
 	
 	/**
 	 * 
-	 * @return HashMap die ItemNamen und String der Eigenschaften zurückgibt
+	 * @return HashMap die ItemNamen und String der Eigenschaften zurï¿½ckgibt
 	 */
 	public static HashMap<ItemNamen, String> getItemhash() {
 		return itemhash;
@@ -374,8 +373,8 @@ public class Statisches {
 	
 	/**
 	 * 
-	 * @param t Wert von 0-1 in dem True zurückgegeben werden soll 
-	 * @return true wenn t über zufällig generiertem r liegt oder gleich ist, sonst false
+	 * @param t Wert von 0-1 in dem True zurÃ¼ckgegeben werden soll 
+	 * @return true wenn t Ã¼ber zufÃ¤llig generiertem r liegt oder gleich ist, sonst false
 	 */
 	public static boolean random(float t){
 		double r = Math.random();
@@ -385,7 +384,7 @@ public class Statisches {
 	}
 
 	/**
-	 * gemeinsamer Scanner benötigt, da sonst sich meherere Scanner den Input weglesen und man keine Einagebn mehr tätigen kann
+	 * gemeinsamer Scanner benÃ¶tigt, da sonst sich meherere Scanner den Input weglesen und man keine Einagebn mehr tÃ¤tigen kann
 	 * @return Zentralen Scanner 
 	 */
 	public static Scanner getScanner() {
@@ -400,7 +399,7 @@ public class Statisches {
 	}
 	
 	/**
-	 * Zentrales Schließen des Scanners
+	 * Zentrales SchlieÃŸen des Scanners
 	 */
 	public static void closeScanner(){
 		sc.close();
