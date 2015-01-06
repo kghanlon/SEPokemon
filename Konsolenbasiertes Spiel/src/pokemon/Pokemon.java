@@ -279,7 +279,7 @@ public class Pokemon {
 			}
 		}
 		if(lvl<100){
-		sb.append("\nLevel: " + lvl + "\tExp: " + exp + "\tbenötigte Exp: " + (int)aufstiegsgrenze(lvl) +"\n");
+		sb.append("\nLevel: " + lvl + "\tExp: " + exp + "\tbenoetigte Exp: " + (int)aufstiegsgrenze(lvl) +"\n");
 		}else{
 			sb.append("\nLevel: " + lvl + "\n");
 		}

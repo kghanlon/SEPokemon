@@ -7,7 +7,6 @@ package pokemon;
  *	@class Ball Spezialisiertes Item mit dem man Pokemon fangen kann
  */
 public class Ball extends Item {
-	private int wert;
 	
 	/**
 	 * 
@@ -32,7 +31,7 @@ public class Ball extends Item {
 	 * 
 	 * @return Fangwert des Balls
 	 */
-	public float getWert(){
+	public int getWert(){
 		return wert;
 	}
 	

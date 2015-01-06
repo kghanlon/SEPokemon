@@ -6,7 +6,8 @@ package pokemon;
  * @class Item Abstrakte Klasse von der spezialisierte Items erben
  */
 public abstract class Item {
-
+	
+	protected int wert;
 	protected ItemNamen name;
 	protected int anzahl;
 	
@@ -37,6 +38,7 @@ public abstract class Item {
 		return name+"";
 	}
 	
+	public abstract int getWert();
 	public abstract boolean istBall();
 	public abstract boolean kannHeilen();
 	public abstract boolean kannBeleben();

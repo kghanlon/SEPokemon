@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <world>
 	<location id="1" name="Alabastia">
+			<BuyItemEvent command="buy trank" item="trank" type="heal" cost="10"/>
 			<InformationEvent command="look around" reqToken="AlabastiaDefault" reqNonToken="WearsSunglasses">
 				You are standing in Alabastia, it is very bright outside.
 			</InformationEvent>
