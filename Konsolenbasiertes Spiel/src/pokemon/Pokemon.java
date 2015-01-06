@@ -43,8 +43,9 @@ public class Pokemon {
 		this.typ=typtmp;
 		attacken= new Attacke[4];
 		for(int i=0; i<attackenid.length; i++){
-			if(attackenid[i]!=null)
-			attacken[i] = new Attacke(attackenid[i]);
+			if(attackenid[i]!=null){
+				attacken[i] = new Attacke(attackenid[i]);
+			}
 		}
 		this.fangrate=Float.parseFloat(Statisches.getPokehash().get(name).split("#")[2].trim());		
 		HashMap<Integer, Attacke> hashtmp = new HashMap<>();
@@ -116,7 +117,7 @@ public class Pokemon {
 		int attackenanzahl=0;
 		for(int i=lvl;i>0; i--){
 			if(moeglicheAttacken.containsKey(i))
-			//sucht die ältesten attacken, die das pokemon hätte lernen können und die einem seiner typen entsprechen
+			//sucht die �ltesten attacken, die das pokemon h�tte lernen k�nnen und die einem seiner typen entsprechen
 			{
 				attacken[attackenanzahl]=moeglicheAttacken.get(i);
 				attackenanzahl++;
@@ -125,7 +126,7 @@ public class Pokemon {
 				break;
 			}
 		}
-		exp=(int)(aufstiegsgrenze(lvl)/5);//mache ich damit man als exp gewinn des trainers einfach die nehmen kann die das fremde pokemon hat so steigt es auch wenn die level höher gehen
+		exp=(int)(aufstiegsgrenze(lvl)/5);//mache ich damit man als exp gewinn des trainers einfach die nehmen kann die das fremde pokemon hat so steigt es auch wenn die level h�her gehen
 		maxkp = (int)(lvl*Math.pow(1.035, lvl)*2);
 		kp=maxkp;
 		double ran = Math.random()*3.14;
@@ -141,7 +142,7 @@ public class Pokemon {
 	 */
 	public void expGewinn(int i){
 		exp+=i;		
-		System.out.println(name + " erhält " + i + " exp.");
+		System.out.println(name + " erh�lt " + i + " exp.");
 		Statisches.sleep();
 		if(exp >= aufstiegsgrenze(lvl) && lvl<100){
 			levelaufstieg();
@@ -149,7 +150,7 @@ public class Pokemon {
 	}
 	
 	private double aufstiegsgrenze(int i){
-		return 300*Math.pow(1.035, i);// ist eine Kurve die in etwa die benötigen Exp gut bescheribt zunächst eher wenig und gegen ende was mehr
+		return 300*Math.pow(1.035, i);// ist eine Kurve die in etwa die ben�tigen Exp gut bescheribt zun�chst eher wenig und gegen ende was mehr
 	}
 	
 	private void levelaufstieg(){

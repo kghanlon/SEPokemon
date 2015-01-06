@@ -1,7 +1,6 @@
 package Events;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 import pokemon.Pokemon;
 import pokemon.Statisches;
@@ -14,16 +13,29 @@ public class ShowPokemonEvent extends Event {
 	}
 	
 	public void runEvent(Trainer t){
-		Scanner scan = Statisches.getScanner();
 		System.out.println("Du hast folgende Pokemon dabei:");
+		//Wir brauchen einen count, um zu wissen wie viele Pokemon man wirklich besitzt:
+		int count = 0;
 		for(int i = 0; i < t.getTeam().length; i++){
-			System.out.println((i+1)+": "+t.getTeam()[i].getName()+" LVL: "+t.getTeam()[i].getLvl());
+			if(t.getTeam()[i] == null){
+				//Nichts
+			} else {
+				//Hier ist ein pokemon, also:
+				count++;
+			}
 		}
-		System.out.println("Ueber welches Pokemon willst du mehr wissen?");
-		int i = scan.nextInt();
+		
+		for(int i = 0; i < count; i++){
+			System.out.println((i+1)+": "+t.getTeam()[i].getName()+" LVL: "+t.getTeam()[i].getLvl()+" KP: "
+									+t.getTeam()[i].getKp()+"/"+t.getTeam()[i].getMaxkp());
+		}
+		System.out.println("Ueber welches Pokemon willst du mehr wissen? (0 für Abbruch)");
+		int i = Statisches.getScanner().nextInt();
 		i = i-1; //da Iterator bei 0 beginnt.
-		Pokemon poke = t.getTeam()[i];
-		System.out.println(poke+" Level: "+poke.getLvl()+" KP: "+poke.getKp()+"/"+poke.getMaxkp());
+		if(i>=0 && i<count){
+			Pokemon poke = t.getTeam()[i];
+			System.out.println(poke+"KP: "+poke.getKp()+"/"+poke.getMaxkp());
+		}
 		
 	}
 

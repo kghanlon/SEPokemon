@@ -12,7 +12,7 @@ import org.xml.sax.SAXException;
 /**
  * 
  * @author Kai
- * @class Statisches Alle Daten die mehrfach gebraucht werden, werden hier zentral gespeichert, sodass man �nderungen nur einmalig vornehmen muss
+ * @class Statisches Alle Daten die mehrfach gebraucht werden, werden hier zentral gespeichert, sodass man Änderungen nur einmalig vornehmen muss
  */
 public class Statisches {
 	private static HashMap<PokeNamen, String> pokehash = new HashMap<>();
@@ -21,7 +21,7 @@ public class Statisches {
 	private static Scanner sc;
 	
 	/**
-	 * Liest Werte f�r Pokemon, Attacken und Items ein um sie in den entsprechenden HashMaps zu speichern
+	 * Liest Werte für Pokemon, Attacken und Items ein um sie in den entsprechenden HashMaps zu speichern
 	 */
 	public static void einlesen(){		
 		Document doc = null;
@@ -204,8 +204,9 @@ public class Statisches {
 			sb.append("<Pokemon id=\""+t.getTeam()[i].getName() +"\" lvl=\"" +t.getTeam()[i].getLvl() + "\" exp=\"" + t.getTeam()[i].getExp() + "\" maxkp=\"" + t.getTeam()[i].getMaxkp() + "\" kp=\"" + t.getTeam()[i].getKp() + "\" staerke=\"" + t.getTeam()[i].getStaerke() + "\" vert=\"" + t.getTeam()[i].getVert() + "\" tempo=\"" + t.getTeam()[i].getTempo() + "\">\n");
 			sb.append("<AttackenListe>\n");
 			for(int j=0; j<t.getTeam()[i].getAttacken().length; j++){//attacken auslesen
-				if(t.getTeam()[i].getAttacken()[j]!=null)
-				sb.append("<Attacke id=\"" + t.getTeam()[i].getAttacken()[j].getName() + "\"/>\n");
+				if(t.getTeam()[i].getAttacken()[j]!=null){
+					sb.append("<Attacke id=\"" + t.getTeam()[i].getAttacken()[j].getName() + "\"/>\n");
+				}
 			}
 			sb.append("</AttackenListe>\n");
 			
@@ -231,7 +232,7 @@ public class Statisches {
 			fw.write(sb.toString());
 			fw.close();
 		}catch(IOException io){
-			System.out.println("Datei konnte nicht geöffnet werden.");
+			System.out.println("Datei konnte nicht geoeffnet werden.");
 		}
 		System.out.println("Speichern erfolgreich.");
 	}
@@ -372,8 +373,8 @@ public class Statisches {
 	
 	/**
 	 * 
-	 * @param t Wert von 0-1 in dem True zur�ckgegeben werden soll 
-	 * @return true wenn t �ber zuf�llig generiertem r liegt oder gleich ist, sonst false
+	 * @param t Wert von 0-1 in dem True zurückgegeben werden soll 
+	 * @return true wenn t über zufällig generiertem r liegt oder gleich ist, sonst false
 	 */
 	public static boolean random(float t){
 		double r = Math.random();
@@ -383,7 +384,7 @@ public class Statisches {
 	}
 
 	/**
-	 * gemeinsamer Scanner ben�tigt, da sonst sich meherere Scanner den Input weglesen und man keine Einagebn mehr t�tigen kann
+	 * gemeinsamer Scanner benötigt, da sonst sich meherere Scanner den Input weglesen und man keine Einagebn mehr tätigen kann
 	 * @return Zentralen Scanner 
 	 */
 	public static Scanner getScanner() {
@@ -398,7 +399,7 @@ public class Statisches {
 	}
 	
 	/**
-	 * Zentrales Schlie�en des Scanners
+	 * Zentrales Schließen des Scanners
 	 */
 	public static void closeScanner(){
 		sc.close();

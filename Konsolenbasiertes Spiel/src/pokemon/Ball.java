@@ -7,7 +7,6 @@ package pokemon;
  *	@class Ball Spezialisiertes Item mit dem man Pokemon fangen kann
  */
 public class Ball extends Item {
-	private int wert;
 	
 	/**
 	 * 

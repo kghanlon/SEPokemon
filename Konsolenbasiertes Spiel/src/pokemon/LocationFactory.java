@@ -8,6 +8,7 @@ import javax.xml.parsers.*;
 import org.w3c.dom.*;
 import org.xml.sax.SAXException;
 
+import Events.BuyItemEvent;
 import Events.ChangeLocationEvent;
 import Events.CompoundEvent;
 import Events.Event;
@@ -100,6 +101,10 @@ public class LocationFactory {
 				break;
 			case "TrainerFightEvent":
 				events.add(getTrainerFightEvent(i, j));
+				break;
+			case "BuyItemEvent":
+				events.add(getBuyItemEvent(i, j));
+				break;
 			default:
 				break;
 			}
@@ -251,6 +256,39 @@ public class LocationFactory {
 						.getNamedItem("money").getNodeValue());
 		
 		return new TrainerFightEvent(reqTokens, reqNonTokens, tokenAtWin, command, poke, levels, nextPokeCenterLocId, money);
+	}
+	
+	public BuyItemEvent getBuyItemEvent(int i, int j){
+		//Get Required Token List:
+		List<String> reqTokens = getReqTokenList(i, j);
+		//Get Required NonToken List:
+		List<String> reqNonTokens = getReqNonTokenList(i, j);
+		//Get Command:
+		String command = getCommand(i, j);
+		//Get the Item Name:
+
+		ItemNamen name = ItemNamen.valueOf(nodes.item(i).getChildNodes().item(j).getAttributes()
+										.getNamedItem("item").getNodeValue().toUpperCase());
+		//Get the Item Type:
+		String type = nodes.item(i).getChildNodes().item(j).getAttributes()
+									.getNamedItem("type").getNodeValue();
+		//Create the Item Object, depending on the type:
+		Item item;
+		switch(type){
+		case "ball":
+			item = new Ball(name); break;
+		case "heal":
+			item = new Heilungsitem(name); break;
+		default:
+			//This should not happen!!
+			item = new Ball(ItemNamen.DUMMYBALL);
+			System.out.println("Fehler in Itemerzeugung, Item hatte keinen Typ!!!!");
+		}
+		//Cost for one Item:
+		int kosten = Integer.parseInt(nodes.item(i).getChildNodes().item(j).getAttributes()
+				.getNamedItem("cost").getNodeValue());
+		
+		return new BuyItemEvent(reqTokens, reqNonTokens, command, kosten, item);
 	}
 	
 	

@@ -8,7 +8,6 @@ package pokemon;
  *	@class Heilungsitem Spezialisiertes Item mit dem man entweder Heilen oder Beleben kann
  */
 public class Heilungsitem extends Item {
-	private int wert;
 	
 	/**
 	 * 

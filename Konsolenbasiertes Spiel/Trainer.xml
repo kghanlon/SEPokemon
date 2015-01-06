@@ -1,40 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Trainerelemente locationId="0" name="Siggi" geld="1000">
+<Trainerelemente locationId="3" name="Ash" geld="0">
 <PokemonListe>
-<Pokemon id="PIKACHU" lvl="26" exp="50" maxkp="127" kp="46" staerke="62" vert="36" tempo="58">
+<Pokemon id="BISASAM" lvl="5" exp="71" maxkp="11" kp="11" staerke="19" vert="16" tempo="18">
 <AttackenListe>
-<Attacke id="RUCKZUCKHIEB"/>
-<Attacke id="FUNKENSPRUNG"/>
-<Attacke id="BODYSLAM"/>
-<Attacke id="DONNERBLITZ"/>
-</AttackenListe>
-</Pokemon>
-<Pokemon id="GLUMANDA" lvl="26" exp="50" maxkp="127" kp="127" staerke="50" vert="57" tempo="51">
-<AttackenListe>
-<Attacke id="RUCKZUCKHIEB"/>
-<Attacke id="GLUT"/>
-<Attacke id="BODYSLAM"/>
-<Attacke id="FLAMMENWURF"/>
-</AttackenListe>
-</Pokemon>
-<Pokemon id="PIKACHU" lvl="26" exp="50" maxkp="127" kp="46" staerke="62" vert="36" tempo="58">
-<AttackenListe>
-<Attacke id="RUCKZUCKHIEB"/>
-<Attacke id="FUNKENSPRUNG"/>
-<Attacke id="BODYSLAM"/>
-<Attacke id="DONNERBLITZ"/>
+<Attacke id="HEULER"/>
+<Attacke id="TACKLE"/>
 </AttackenListe>
 </Pokemon>
 </PokemonListe>
 <ItemListe>
-<Item id="POKEBALL" anzahl="16" typ="BALL"/>
-<Item id="SUPERBALL" anzahl="7" typ="BALL"/>
-<Item id="TRANK" anzahl="5" typ="HEILEN"/>
-<Item id="SUPERTRANK" anzahl="2" typ="HEILEN"/>
 </ItemListe>
 <TokenListe>
 <Token name="AlabastiaDefault"/>
-<Token name="FoundKey"/>
-<Token name="HatPikachu"/>
+<Token name="EichsLaborDefault"/>
 </TokenListe>
 </Trainerelemente>

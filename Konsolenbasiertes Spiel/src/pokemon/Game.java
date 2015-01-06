@@ -22,10 +22,10 @@ public class Game {
 		
 		
 		//Hauptmenue
-		System.out.println("Hauptmenü");
+		System.out.println("Hauptmenï¿½");
 		System.out.println("Spiel (f)ortsetzen?");
 		System.out.println("(N)eues Spiel Starten? (Alter Spielstand geht verloren!)");
-		//hier noch als Möglichkeit wenn genug Zeit bleibt Spielstand löschen, wenn dann mehrere Spielstände möglich sind
+		//hier noch als Mï¿½glichkeit wenn genug Zeit bleibt Spielstand lï¿½schen, wenn dann mehrere Spielstï¿½nde mï¿½glich sind
 		Trainer t = Statisches.gespeicherterTrainer();
 		String c = sc.next();
 		switch(c){
@@ -48,14 +48,19 @@ public class Game {
 		
 		//Spiel starten:
 		while(true){
-			LocationFactory.locations.get(t.getLocationId()).runLocation(t);
+			try{
+				LocationFactory.locations.get(t.getLocationId()).runLocation(t);
+			} catch (InputMismatchException e){
+				System.out.println("Unpassende Eingabe...");
+				continue;
+			}
 		}
 	}
 	
 	private static Trainer  neuerSpieler(Scanner sc){
 		System.out.println("Wie lautet dein Name?");
 		String name = sc.next().trim();
-		System.out.println("Du Bekommst die Wahl möchtest du");
+		System.out.println("Du Bekommst die Wahl mï¿½chtest du");
 		System.out.println("(B)isasam?");
 		System.out.println("(G)lumanda?");
 		System.out.println("(S)chiggy?");
@@ -65,20 +70,20 @@ public class Game {
 		case "B": 
 		case "b":
 			starter = new Pokemon(PokeNamen.BISASAM, 5);
-			System.out.println("Du hast Bisasam gewählt.");
+			System.out.println("Du hast Bisasam gewï¿½hlt.");
 			break;
 		case "G":
 		case "g":
 			starter = new Pokemon(PokeNamen.GLUMANDA, 5);
-			System.out.println("Du hast Glumanda gewählt.");
+			System.out.println("Du hast Glumanda gewï¿½hlt.");
 			break;
 		case "S":
 		case "s":
 			starter = new Pokemon(PokeNamen.SCHIGGY, 5);
-			System.out.println("Du hast Schiggy gewählt.");
+			System.out.println("Du hast Schiggy gewï¿½hlt.");
 			break;
 		default: starter = new Pokemon(PokeNamen.BISASAM, 5);
-		System.out.println("Da deine Eingabe ungültig war bekommst du ein Pikachu von mir.");
+		System.out.println("Da deine Eingabe ungï¿½ltig war bekommst du ein Pikachu von mir.");
 		}
 		Pokemon [] team = new Pokemon[3];
 		team[0]=starter;

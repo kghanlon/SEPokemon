@@ -2,7 +2,12 @@ package pokemon;
 
 import Events.CheckMoneyEvent;
 import Events.Event;
+import Events.HelpEvent;
 import Events.InformationEvent;
+import Events.SaveGameEvent;
+import Events.ShowItemsEvent;
+import Events.ShowPokemonEvent;
+
 import java.util.*;
 
 public class Location {
@@ -16,8 +21,12 @@ public class Location {
 		this.name = name;
 		this.events = events;
 		//Events hinzufügen die jede Location hat, und die nicht in der XML stehen sollten:
-		events.add(0, new InformationEvent(new ArrayList<String>(), new ArrayList<String>(), "", "Kein passendes Event gefunden"));
+		events.add(0, new InformationEvent(new ArrayList<String>(), new ArrayList<String>(), "", "Unbekannter Befehl."));
 		events.add(1, new CheckMoneyEvent());
+		events.add(2, new ShowPokemonEvent());
+		events.add(3, new ShowItemsEvent());
+		events.add(4, new HelpEvent());
+		events.add(5, new SaveGameEvent());
 	}
 	
 	public Location runLocation(Trainer t){
@@ -25,7 +34,7 @@ public class Location {
 		//Wenn die Location vom Trainer geaendert wird, gib die neue Loc zurück.
 		while(true){
 			
-			System.out.println("Next Command: ");
+			System.out.println();
 			String commandLine = scan.nextLine();
 			int i = findCorrectEvent(commandLine, t.getTokens());
 			events.get(i).runEvent(t);
@@ -66,6 +75,10 @@ public class Location {
 	
 	public String getName(){
 		return this.name;
+	}
+	
+	public List<Event> getEvents(){
+		return this.events;
 	}
 
 }
