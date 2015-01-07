@@ -43,13 +43,14 @@ public class Game {
 		}//ende Hauptmenue
 				
 		//Spiel starten:
-		for(int i = 0; i < t.getTokens().size(); i++){
-			System.out.println(t.getTokens().get(i));
-		}
+		
+//		//Tokentest:
+//		for(int i = 0; i < t.getTokens().size(); i++){
+//			System.out.println(t.getTokens().get(i));
+//		}
 		
 		while(true){
 			try{
-				System.out.println(t.getLocationId());
 				LocationFactory.locations.get(t.getLocationId()).runLocation(t);
 			} catch (InputMismatchException e){
 				System.out.println("Unpassende Eingabe...");
@@ -67,28 +68,33 @@ public class Game {
 		System.out.println("(S)chiggy?");
 		String poki = sc.next().trim();
 		Pokemon starter;
+		List<String> startPokToken = new ArrayList<String>();
 		switch(poki){
 		case "B": 
 		case "b":
 			starter = new Pokemon(PokeNamen.BISASAM, 5);
 			System.out.println("Du hast Bisasam gewaehlt.");
+			startPokToken.add("starterBisasam");
 			break;
 		case "G":
 		case "g":
 			starter = new Pokemon(PokeNamen.GLUMANDA, 5);
 			System.out.println("Du hast Glumanda gewaehlt.");
+			startPokToken.add("starterGlumanda");
 			break;
 		case "S":
 		case "s":
 			starter = new Pokemon(PokeNamen.SCHIGGY, 5);
 			System.out.println("Du hast Schiggy gewaehlt.");
+			startPokToken.add("starterSchiggy");
 			break;
 		default: starter = new Pokemon(PokeNamen.PIKACHU, 5);
 		System.out.println("Da deine Eingabe ungültig war bekommst du ein Pikachu von mir.");
+		startPokToken.add("starterPikachu");
 		}
 		Pokemon [] team = new Pokemon[3];
 		team[0]=starter;
-		return new Trainer(0, null, name, null, team, 0);
+		return new Trainer(0, startPokToken, name, null, team, 0);
 	}
 	
 	

@@ -15,8 +15,31 @@ public class CompoundEvent extends Event {
 	
 	public void runEvent(Trainer t){
 		for(int i = 0; i < events.size(); i++){
-			events.get(i).runEvent(t);
+			if(testReqTokens(t, events.get(i))){ //Hat der Trainer die benötigten Tokens?
+				//Wenn ja:
+				events.get(i).runEvent(t);
+			}
 		}
+	}
+	
+	private boolean testReqTokens(Trainer t, Event e){
+		List<String> reqTokens = e.getReqTokens();
+		for(int i = 0; i < reqTokens.size(); i++){
+			if(!t.getTokens().contains(reqTokens.get(i))){
+				//Trainer hat ein benoetiges token nicht, also:
+				return false;
+			}
+		}
+		//Wenn wir hier angekommen sind hat der trainer schonmal alle reqTokens. Was ist mit den reqNonTokens?
+		List<String> reqNonTokens = e.getReqNonTokens();
+		for(int i = 0; i < reqNonTokens.size(); i++){
+			if(t.getTokens().contains(reqNonTokens.get(i))){
+				//Der Trainer hat ein Token dass er nicht haben darf, also:
+				return false;
+			}
+		}
+		//wenn wir hier sind hat er alle die er braucht und keins das er nicht haben darf. Also:
+		return true;
 	}
 
 }

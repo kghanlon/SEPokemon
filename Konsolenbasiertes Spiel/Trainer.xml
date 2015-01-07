@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Trainerelemente locationId="3" name="Ash" geld="0">
+<Trainerelemente locationId="1" name="JOE" geld="200">
 <PokemonListe>
-<Pokemon id="BISASAM" lvl="5" exp="135" maxkp="11" kp="11" staerke="18" vert="18" tempo="18">
+<Pokemon id="BISASAM" lvl="6" exp="45" maxkp="32" kp="32" staerke="17" vert="22" tempo="32">
 <AttackenListe>
 <Attacke id="HEULER"/>
 <Attacke id="TACKLE"/>
@@ -9,11 +9,22 @@
 </Pokemon>
 </PokemonListe>
 <ItemListe>
-<Item id="TRANK" anzahl="3" typ="HEILEN"/>
+<Item id="TRANK" anzahl="2" typ="HEILEN"/>
 </ItemListe>
 <TokenListe>
+<Token name="starterBisasam"/>
 <Token name="EichsLaborDefault"/>
 <Token name="Route1Default"/>
+<Token name="VertaniaCityDefault"/>
+<Token name="VertaniaCityPokeCenterDefault"/>
+<Token name="VertaniaCityPokeMarktDefault"/>
+<Token name="ErsteKonversationMitEich"/>
+<Token name="garyBesiegt1"/>
+<Token name="garyBesiegt1"/>
 <Token name="mitTeenagerGeredet"/>
+<Token name="baumUntersucht"/>
+<Token name="hohlraumLeer"/>
+<Token name="paketDabei"/>
+<Token name="paketZugestellt"/>
 </TokenListe>
 </Trainerelemente>

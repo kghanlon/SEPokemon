@@ -12,7 +12,6 @@ public class HealPokemonEvent extends Event {
 	
 	public void runEvent(Trainer t){
 		t.teamHeilen();
-		System.out.println("Deine Pokemon wurden vollstaendig geheilt.");
 	}
 
 }

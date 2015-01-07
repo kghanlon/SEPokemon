@@ -153,7 +153,7 @@ public class LocationFactory {
 		List<String> reqNonTokens = getReqNonTokenList(i, j);
 		//Get Command:
 		String command = getCommand(i, j);
-		//Get Events that belong to the CompountEven:
+		//Get Events that belong to the CompountEvent:
 		
 		//Workaround, etwas dreckig: nodes verändern, und zwar auf die elemente des Compound event, und danach zurück setzten!
 		nodes = doc.getFirstChild().getChildNodes().item(i).getChildNodes();

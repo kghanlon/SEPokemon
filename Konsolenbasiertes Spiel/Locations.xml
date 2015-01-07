@@ -36,17 +36,60 @@
 			<InformationEvent command="rede mit eich" reqToken="ErsteKonversationMitEich">
 				"Und, warst du schon in Vertania City?"
 			</InformationEvent>
-			<ChangeLocationEvent command="verlasse das labor" nextLocId="1">
+			<InformationEvent command="rede mit eich" reqToken="ZweiteKonversationMitEich">
+				"Hey, deine Pokemon sehen super aus!"
+			</InformationEvent>
+			<ChangeLocationEvent command="verlasse das labor" reqToken="garyBesiegt1" nextLocId="1">
 				Du verlässt das Labor von Prof. Eich und gehst zurück auf die Straßen von Alabastia.
 			</ChangeLocationEvent>
-			<HealPokemonEvent command="heile Pokemon"/>
+			<CompoundEvent command="verlasse das labor" reqToken="ErsteKonversationMitEich" reqNonToken="garyBesiegt1">
+				<InformationEvent>
+					Als du das Labor verlassen willst erscheint plötzlich Gary, Prof. Eichs Enkel.
+					Gary:"Hey du! Ich habe heute auch mein Erstes Pokemon bekommen! Komm lass uns gegeneinander kämpfen"
+				</InformationEvent>
+				<TrainerFightEvent reqToken="starterBisasam" tokenAtWin="garyBesiegt1"
+									pokemon="GLUMANDA" level="5" money="200" nextPokeCenterLocId="2"/>
+				<TrainerFightEvent reqToken="starterGlumanda" tokenAtWin="garyBesiegt1"
+									pokemon="SCHIGGY" level="5" money="200" nextPokeCenterLocId="2"/>
+				<TrainerFightEvent reqToken="starterSchiggy" tokenAtWin="garyBesiegt1"
+									pokemon="BISASAM" level="5" money="200" nextPokeCenterLocId="2"/>
+				<TrainerFightEvent reqToken="starterPikachu" tokenAtWin="garyBesiegt1"
+									pokemon="GLUMANDA" level="5" money="200" nextPokeCenterLocId="2"/>
+				<InformationEvent reqToken="garyBesiegt1">
+					"Ach verdammt, ich habe mir das falsche Pokemon ausgesucht... Egal, ich werde neue Pokemon fangen
+					und trainieren und irgendwann PokemonMeister werden! Wie sehen uns..."
+					Gary verlaesst das Labor.
+				</InformationEvent>
+				<InformationEvent reqNonToken="garyBesiegt1">
+					"Haha ich habe gewonnen! Ich werde noch mehr neue Pokemon fangen und trainieren und irgendwann PokemonMeister
+					werden! Wir sehen uns..."
+					Gary verlaesst das Labor.
+				</InformationEvent>
+				<GrantTokenEvent token="garyBesiegt1"/>
+				<HealPokemonEvent/>
+				<ChangeLocationEvent nextLocId="1">
+					Du verlaesst das Labor von Prof. Eich
+				</ChangeLocationEvent>
+			</CompoundEvent>
+			<HealPokemonEvent command="heile pokemon"/>
+			<CompoundEvent command="paket abgeben" reqToken="paketDabei">
+				<InformationEvent>
+					"Ist das das Paket von meinem Bekannten aus Vertania City? Awesome!! Schau mal was hier drin ist,
+					ein POKEDEX! Dieser wird dir im Verlauf deines Abenteuers sehr nützlich sein."
+					(Editor's note: Zurzeit ist der Pokedex komplett ohne Nutzen...)
+				</InformationEvent>
+				<RemoveTokenEvent token="paketDabei"/>
+				<RemoveTokenEvent token="ErsterKonversationMitEich"/>
+				<GrantTokenEvent token="ZweiteKonversationMitEich"/>
+				<GrantTokenEvent token="paketZugestellt"/>
+			</CompoundEvent>
 	</location>
 	<location id="3" name="Route1">
 			<InformationEvent command="schau dich um">
 				Du befindest dich auf Route 1, der gewundenen, aber nicht allzu langen Straße nach Vertania City.
 				Um dich herum befindet sich viel hohes Gras, hier tümmeln sich wohl viele wilde Pokemon. Etwas die Straße
 				runter steht ein gelangweilter Teenager und am nördlichen Ende der Straße siehst du die ersten Häuser von Vertania
-				City. Hinter dir im Süden befindet sich Alabastia.
+				City. Im Süden befindet sich Alabastia.
 			</InformationEvent>
 			<CompoundEvent command="rede mit dem teenager" reqNonToken="mitTeenagerGeredet">
 				<InformationEvent>
@@ -63,7 +106,87 @@
 			</InformationEvent>
 			<WildPokemonEvent command="gehe in das hohe gras" pokemon="TAUBSI;RATTFRATZ" minlvl="2" maxlvl="4" nextPokeCenterLocId="2"/>
 			<ChangeLocationEvent command="gehe nach süden" nextLocId="1">
-				Du gehst die Route 1 in südlicher Richtung hinunter zurück nach Alabastia.
+				Du gehst die Route 1 in südlicher Richtung hinunter nach Alabastia.
 			</ChangeLocationEvent>
+			<ChangeLocationEvent command="gehe nach norden" nextLocId="4">
+				Du gehst nach Norden und erreichst Vertania City.
+			</ChangeLocationEvent>
+	</location>
+	<location id="4" name="VertaniaCity">
+		<InformationEvent command="schau dich um">
+			Du bist in Vertania City angekommen. Diese Stadt ist um einiges größer als Alabastia und es befinden sich viele Leute
+			auf den Straßen. In der Stadt siehst du ein PokemonCenter und einen Pokemon Markt. Am Rand der Stadt ist ein kleiner Wald
+			mit einem merkwürdigen Baum davor. Im Osten siehst du den Weg zur Siegesstraße und im Norden die Straße zum Vertania Wald.
+		</InformationEvent>
+		<CompoundEvent command="untersuche den baum" reqNonToken="baumUntersucht">
+			<InformationEvent>
+				Du näherst dich dem Baum und erkennst einen Hohlraum auf der Hinterseite.
+			</InformationEvent>
+			<GrantTokenEvent token="baumUntersucht"/>
+		</CompoundEvent>
+		<InformationEvent command="untersuche den baum" reqToken="baumUntersucht">
+			Du näherst dich dem Baum und erkennst einen Hohlraum auf der Hinterseite.
+		</InformationEvent>
+		<CompoundEvent command="untersuche den hohlraum" reqToken="baumUntersucht" reqNonToken="hohlraumLeer">
+			<InformationEvent>
+				Du greifst mit der Hand in den Hohlraum und bekommst etwas loses zugreifen. Als du deine Hand wieder hervorholst
+				erkennst du das in dem Hohlraum ein Trank versteckt war.
+			</InformationEvent>
+			<GrantItemEvent item="trank" type="heal" amount="1"/>
+			<GrantTokenEvent token="hohlraumLeer"/>
+		</CompoundEvent>
+		<InformationEvent command="untersuche den hohlraum" reqToken="baumUntersucht;hohlraumLeer">
+			Du greifst mit der Hand in den Hohlraum, dieser ist allerdings leer.
+		</InformationEvent>
+		<ChangeLocationEvent command="gehe nach süden" nextLocId="3">
+			Du gehst nach Süden und erreichst die Route 1.
+		</ChangeLocationEvent>
+		<ChangeLocationEvent command="gehe in das pokecenter" nextLocId="5">
+			Du betrittst das PokeCenter von Vertania City.
+		</ChangeLocationEvent>
+		<ChangeLocationEvent command="gehe in den pokemarkt" nextLocId="6">
+			Du betrittst den PokeMarkt von Vertania City.
+		</ChangeLocationEvent>
+	</location>
+	<location id="5" name="VertaniaCityPokeCenter">
+		<CompoundEvent command="heile pokemon">
+			<HealPokemonEvent/>
+			<InformationEvent>
+				"Bis zum nächsten Mal :)"
+			</InformationEvent>
+		</CompoundEvent>
+		<ChangeLocationEvent command="verlasse das pokecenter" nextLocId="4">
+			Du verlässt das PokeCenter von Vertania City.
+		</ChangeLocationEvent>
+	</location>
+	<location id="6" name="VertaniaCityPokeMarkt">
+		<InformationEvent command="schau dich um">
+			Du bist im PokeMarkt und der Verkäufer schaut dich interessiert an.
+		</InformationEvent>
+		<BuyItemEvent command="kaufe trank" item="trank" type="heal" cost="100" reqToken="paketZugestellt"/>
+		<BuyItemEvent command="kaufe pokeball" item="pokeball" type="ball" cost="100" reqToken="paketZugestellt"/>
+		<CompoundEvent command="rede mit dem verkäufer" reqNonToken="paketZugestellt;paketDabei">
+			<InformationEvent>
+				"Hey, kommst du aus Alabastia? Ok, super. Ich habe hier ein Pakte für Prof. Eich, meinst du du kannst ihm das
+				vorbeibringen?"
+				EichstPaket erhalten.
+			</InformationEvent>
+			<GrantTokenEvent token="paketDabei"/>
+		</CompoundEvent>
+		<InformationEvent command="rede mit dem verkäufer" reqToken="paketDabei">
+			"Hey, hast du Prof. Eich das Paket vorbeigebracht?"
+		</InformationEvent>
+		<InformationEvent command="rede mit dem verkäufer" reqToken="paketZugestellt">
+			"Willkommen im PokeMarkt, wie kann ich dir behilflich sein?"
+		</InformationEvent>
+		<InformationEvent command="kaufe trank" reqToken="paketDabei">
+			"Hey, hast du Prof. Eich das Paket vorbeigebracht?"
+		</InformationEvent>
+		<InformationEvent command="kaufe ball" reqToken="paketDabei">
+			"Hey, hast du Prof. Eich das Paket vorbeigebracht?"
+		</InformationEvent>
+		<ChangeLocationEvent command="verlasse den pokemarkt" nextLocId="4">
+			Du verlässt den PokeMarkt von Vertania City.
+		</ChangeLocationEvent>
 	</location>
 </world>

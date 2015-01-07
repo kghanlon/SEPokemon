@@ -261,12 +261,20 @@ public class Trainer {
 	 * @param token String ein Ziel bzw. Event was erledigt wurde
 	 */
 	public void addToken(String token){
-		if(tokens!=null&&!tokens.contains(token)){			
-			tokens.add(token);
-		}else{
+//		if(tokens!=null&&!tokens.contains(token)){			
+//			tokens.add(token);
+//		}else {
+//			tokens=new ArrayList<String>();
+//			tokens.add(token);
+//		}
+		if(tokens==null){
+			//Liste existiert noch nicht, also anlegen und rein mit dem token
 			tokens=new ArrayList<String>();
 			tokens.add(token);
-		}
+		} else if(!tokens.contains(token)){
+			//Liste ist da und hat token noch tnicht: rein mit dem token
+			tokens.add(token);
+		} //Sonst nichts machen (eg token ist schon drinnen.
 	}
 	
 	/**

@@ -127,7 +127,7 @@ public class Pokemon {
 			}
 		}
 		exp=(int)(aufstiegsgrenze(lvl)/5);//mache ich damit man als exp gewinn des trainers einfach die nehmen kann die das fremde pokemon hat so steigt es auch wenn die level h�her gehen
-		maxkp = (int)(lvl*Math.pow(2, lvl)+20);
+		maxkp = (int)(lvl*2+20);
 		kp=maxkp;
 		double ran = Math.random()*3.14;
 		staerke=(int)(10+lvl+Math.sin(ran)*lvl);//ausgeglichen angriff und verteidigung
