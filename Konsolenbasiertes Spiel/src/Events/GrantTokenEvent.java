@@ -15,7 +15,7 @@ public class GrantTokenEvent extends Event {
 	
 	public void runEvent(Trainer t){
 		//Add the specified Token to the Trainers Token list
-		t.getTokens().add(token);
+		t.addToken(token);
 	}
 
 }

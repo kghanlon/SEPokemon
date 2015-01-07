@@ -1455,5 +1455,98 @@
 			<Faktor Typ="FLUG" Faktor="1.0"/>
 			<Faktor Typ="PFLANZE" Faktor="1.0"/>
 		</TypenListe>
-	</Pokemon>	
+	</Pokemon>
+	<Pokemon id="RAUPY" entwicklung="1000">
+		<Typ id="PFLANZE"/>	
+		<Typ id="PFLANZE"/>
+		<Fangrate wert="0.8"/>
+		<AttackenListe>
+			<Attacke id="TACKLE" lvl="1"/>
+			<Attacke id="HEULER" lvl="3"/>
+			<Attacke id="RANKENHIEB" lvl="8"/>
+			<Attacke id="BODYCHECK" lvl="15"/>
+			<Attacke id ="RASIERBLATT" lvl="19"/>
+			<Attacke id="LOCKDUFT" lvl="21"/>
+			<Attacke id="RISIKOTACKLE" lvl="27"/>
+			<Attacke id="SAMENBOMBEN" lvl="36"/>
+			<Attacke id="SOLARSTRAHL" lvl="50"/>
+			<Attacke id="BLUETENWIRBEL" lvl="45"/>
+		</AttackenListe>
+		<TypenListe>
+			<Faktor Typ="WASSER" Faktor="0.5"/>
+			<Faktor Typ="NORMAL" Faktor="1.0"/>
+			<Faktor Typ="FEUER" Faktor="2.0"/>
+			<Faktor Typ="PSYCHO" Faktor="2.0"/>
+			<Faktor Typ="ELEKTRO" Faktor="0.5"/>
+			<Faktor Typ="FLUG" Faktor="2.0"/>
+			<Faktor Typ="PFLANZE" Faktor="0.25"/>
+		</TypenListe>
+	</Pokemon>
+	<Pokemon id="HORNLIU" entwicklung="1000">
+		<Typ id="PFLANZE"/>	
+		<Typ id="PFLANZE"/>
+		<Fangrate wert="0.3"/>
+		<AttackenListe>
+			<Attacke id="TACKLE" lvl="1"/>
+			<Attacke id="HEULER" lvl="3"/>
+			<Attacke id="RANKENHIEB" lvl="8"/>
+			<Attacke id="BODYCHECK" lvl="15"/>
+			<Attacke id ="RASIERBLATT" lvl="19"/>
+			<Attacke id="LOCKDUFT" lvl="21"/>
+			<Attacke id="RISIKOTACKLE" lvl="27"/>
+			<Attacke id="SAMENBOMBEN" lvl="36"/>
+			<Attacke id="SOLARSTRAHL" lvl="50"/>
+			<Attacke id="BLUETENWIRBEL" lvl="45"/>
+		</AttackenListe>
+		<TypenListe>
+			<Faktor Typ="WASSER" Faktor="0.5"/>
+			<Faktor Typ="NORMAL" Faktor="1.0"/>
+			<Faktor Typ="FEUER" Faktor="2.0"/>
+			<Faktor Typ="PSYCHO" Faktor="2.0"/>
+			<Faktor Typ="ELEKTRO" Faktor="0.5"/>
+			<Faktor Typ="FLUG" Faktor="2.0"/>
+			<Faktor Typ="PFLANZE" Faktor="0.25"/>
+		</TypenListe>
+	</Pokemon>
+	<Pokemon id="ONIX" entwicklung="1000">
+		<Typ id="NORMAL"/>	
+		<Typ id="NORMAL"/>
+		<Fangrate wert="0.25"/>
+		<AttackenListe>
+			<Attacke id="TACKLE" lvl="1"/>
+			<Attacke id="FLUEGELSCHLAG" lvl="29"/>
+			<Attacke id="RUECKENWIND" lvl="36"/>
+			<Attacke id="LUFTSCHNITT" lvl="42"/>
+			<Attacke id="ORKAN" lvl="49"/>
+		</AttackenListe>
+		<TypenListe>
+			<Faktor Typ="WASSER" Faktor="1.0"/>
+			<Faktor Typ="NORMAL" Faktor="1.0"/>
+			<Faktor Typ="FEUER" Faktor="1.0"/>
+			<Faktor Typ="PSYCHO" Faktor="1.0"/>
+			<Faktor Typ="ELEKTRO" Faktor="2.0"/>
+			<Faktor Typ="FLUG" Faktor="1.0"/>
+			<Faktor Typ="PFLANZE" Faktor="0.5"/>
+		</TypenListe>
+	</Pokemon>
+	<Pokemon id="KLEINSTEIN" entwicklung="1000">
+		<Typ id="NORMAL"/>	
+		<Typ id="NORMAL"/>
+		<Fangrate wert="0.25"/>
+		<AttackenListe>
+			<Attacke id="TACKLE" lvl="1"/>
+			<Attacke id="RUECKENWIND" lvl="36"/>
+			<Attacke id="LUFTSCHNITT" lvl="42"/>
+			<Attacke id="ORKAN" lvl="49"/>
+		</AttackenListe>
+		<TypenListe>
+			<Faktor Typ="WASSER" Faktor="1.0"/>
+			<Faktor Typ="NORMAL" Faktor="1.0"/>
+			<Faktor Typ="FEUER" Faktor="1.0"/>
+			<Faktor Typ="PSYCHO" Faktor="1.0"/>
+			<Faktor Typ="ELEKTRO" Faktor="2.0"/>
+			<Faktor Typ="FLUG" Faktor="1.0"/>
+			<Faktor Typ="PFLANZE" Faktor="0.5"/>
+		</TypenListe>
+	</Pokemon>
 </PokemonListe>

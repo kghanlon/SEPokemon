@@ -15,7 +15,7 @@ public class RemoveTokenEvent extends Event {
 	
 	public void runEvent(Trainer t){
 		//Removes the specified token from the Trainers token List:
-		t.getTokens().remove(token);
+		t.removeToken(token);
 	}
 
 }

@@ -79,7 +79,7 @@
 					(Editor's note: Zurzeit ist der Pokedex komplett ohne Nutzen...)
 				</InformationEvent>
 				<RemoveTokenEvent token="paketDabei"/>
-				<RemoveTokenEvent token="ErsterKonversationMitEich"/>
+				<RemoveTokenEvent token="ErsteKonversationMitEich"/>
 				<GrantTokenEvent token="ZweiteKonversationMitEich"/>
 				<GrantTokenEvent token="paketZugestellt"/>
 			</CompoundEvent>
@@ -116,7 +116,7 @@
 		<InformationEvent command="schau dich um">
 			Du bist in Vertania City angekommen. Diese Stadt ist um einiges größer als Alabastia und es befinden sich viele Leute
 			auf den Straßen. In der Stadt siehst du ein PokemonCenter und einen Pokemon Markt. Am Rand der Stadt ist ein kleiner Wald
-			mit einem merkwürdigen Baum davor. Im Osten siehst du den Weg zur Siegesstraße und im Norden die Straße zum Vertania Wald.
+			mit einem merkwürdigen Baum davor. Im Westen siehst du den Weg zur Siegesstraße und im Norden die Straße zum Vertania Wald.
 		</InformationEvent>
 		<CompoundEvent command="untersuche den baum" reqNonToken="baumUntersucht">
 			<InformationEvent>
@@ -147,6 +147,36 @@
 		<ChangeLocationEvent command="gehe in den pokemarkt" nextLocId="6">
 			Du betrittst den PokeMarkt von Vertania City.
 		</ChangeLocationEvent>
+		<CompoundEvent command="gehe nach westen" reqNonToken="garyBesiegt2">
+			<InformationEvent>
+				Du gehst nach Westen in Richtung Siegesstraße. Aus entgegengesetzter Richtung kommt dir Gary entgegen.
+				"Hey du! So sieht man sich wieder, komm lass mal sehen wie gut du deine Pokemon trainiert hast!"
+			</InformationEvent>
+			<TrainerFightEvent reqToken="starterBisasam" tokenAtWin="garyBesiegt2"
+									pokemon="GLUMANDA;TAUBSI" level="9;9" money="500" nextPokeCenterLocId="5"/>
+			<TrainerFightEvent reqToken="starterGlumanda" tokenAtWin="garyBesiegt2"
+									pokemon="SCHIGGY;TAUBSI" level="9;9" money="500" nextPokeCenterLocId="5"/>
+			<TrainerFightEvent reqToken="starterSchiggy" tokenAtWin="garyBesiegt2"
+									pokemon="BISASAM;TAUBSI" level="9;9" money="500" nextPokeCenterLocId="5"/>
+			<TrainerFightEvent reqToken="starterPikachu" tokenAtWin="garyBesiegt2"
+									pokemon="GLUMANDA;TAUBSI" level="9;9" money="500" nextPokeCenterLocId="5"/>
+			<InformationEvent reqToken="garyBesiegt2">
+				"Was du hast mich schon wieder besiegt? Naja egal, in diese Richtung brauchst du garnicht weitergehen, in die
+				Siegesstraße darfst du eh nicht rein."
+				Mit diesen Worten geht Gary nach Osten in Richtung Vertania City.
+			</InformationEvent>
+			<ChangeLocationEvent reqToken="garyBesiegt2" nextLocId="7">
+				Du gehst den geschwungenen Pfad hinunter zur Route 2.
+			</ChangeLocationEvent>
+		</CompoundEvent>
+		<ChangeLocationEvent command="gehe nach norden" reqToken="paketZugestellt" nextLocId="8">
+			Du gehst nach Norden und betrittst den Vertania Wald.
+		</ChangeLocationEvent>
+		<InformationEvent command="gehe nach norden" reqNonToken="paketZugestellt">
+			Du gehst nach Norden, doch der Weg wird von einem alten Mann versperrt. Er schaut dich mürrisch an und sagt:
+			"Ich hatte noch keinen Kaffee, du kannst hier jetzt nicht durch".
+			Damit schickt er dich zurück nach Vertania City.
+		</InformationEvent>
 	</location>
 	<location id="5" name="VertaniaCityPokeCenter">
 		<CompoundEvent command="heile pokemon">
@@ -164,7 +194,7 @@
 			Du bist im PokeMarkt und der Verkäufer schaut dich interessiert an.
 		</InformationEvent>
 		<BuyItemEvent command="kaufe trank" item="trank" type="heal" cost="100" reqToken="paketZugestellt"/>
-		<BuyItemEvent command="kaufe pokeball" item="pokeball" type="ball" cost="100" reqToken="paketZugestellt"/>
+		<BuyItemEvent command="kaufe pokeball" item="pokeball" type="ball" cost="10" reqToken="paketZugestellt"/>
 		<CompoundEvent command="rede mit dem verkäufer" reqNonToken="paketZugestellt;paketDabei">
 			<InformationEvent>
 				"Hey, kommst du aus Alabastia? Ok, super. Ich habe hier ein Pakte für Prof. Eich, meinst du du kannst ihm das
@@ -182,11 +212,101 @@
 		<InformationEvent command="kaufe trank" reqToken="paketDabei">
 			"Hey, hast du Prof. Eich das Paket vorbeigebracht?"
 		</InformationEvent>
-		<InformationEvent command="kaufe ball" reqToken="paketDabei">
+		<InformationEvent command="kaufe pokeball" reqToken="paketDabei">
 			"Hey, hast du Prof. Eich das Paket vorbeigebracht?"
 		</InformationEvent>
 		<ChangeLocationEvent command="verlasse den pokemarkt" nextLocId="4">
 			Du verlässt den PokeMarkt von Vertania City.
+		</ChangeLocationEvent>
+	</location>
+	<location id="7" name="Route2">
+		<InformationEvent command="schau dich um">
+			Du bist auf Route 2. Um dich herum befindet sich viel hohes Gras, und am westlichen Ende siehst du den Eingang zur
+			Siegesstraße, davor steht eine Wache. In östlicher Richtung befindet sich Vertania City.
+		</InformationEvent>
+		<InformationEvent command="rede mit der wache">
+			Du gehst zur Wache die den Eingang zur Siegesstraße blockiert.
+			"Es tut mir Leid, aber nur Trainer die alle acht Orden besitzte dürfen die Siegesstraße betreten."
+		</InformationEvent>
+		<WildPokemonEvent command="gehe in das hohe gras" pokemon="RATTFRATZ;TAUBSI;HABITAK" minlvl="2" maxlvl="4" nextPokeCenterLocId="5"/>
+		<ChangeLocationEvent command="gehe nach osten" nextLocId="4">
+			Du gehst nach Vertania City.
+		</ChangeLocationEvent>
+	</location>
+	<location id="8" name="VertaniaWald">
+		<InformationEvent command="schau dich um">
+			Du bist im dunklen Vertania Wald. Ein geschwungener Pfad führt in nördlicher Richtung durch die Bäume nach Marmoria City.
+			Überhall befinden sich Stellen mit hohem Gras, in denen nicht nur wilde Pokemon sondern auch andere Trainer lauern.
+			Direkt am Weg siehst du zwei Käfersammler. In südlicher Richtung geht es nach Vertania City.
+		</InformationEvent>
+		<WildPokemonEvent command="gehe in das hohe gras" pokemon="PIKACHU;RAUPY;HORNLIU" minlvl="3" maxlvl="6" nextPokeCenterLocId="5"/>
+		<TrainerFightEvent command="kämpfe gegen käfersammler 1" reqNonToken="VWK1" tokenAtWin="VWK1"
+							pokemon="RAUPY;RAUPY" level="5;5" money="200" nextPokeCenterLocId="5"/>
+		<TrainerFightEvent command="kämpfe gegen käfersammler 2" reqNonToken="VWK2" tokenAtWin="VWK2"
+							pokemon="RAUPY;HORNLIU" level="5;5" money="200" nextPokeCenterLocId="5"/>
+		<CompoundEvent command="gehe nach norden" reqNonToken="VWK3">
+			<InformationEvent>
+				Du willst gerade den Vertania Wald im Norden verlassen als dich ein Käfersammler überrascht und mit dir kämpfen will!
+			</InformationEvent>
+			<TrainerFightEvent tokenAtWin="VWK3" pokemon="HORNLIU" level="9" money="250" nextPokeCenterLocId="5"/>
+			<ChangeLocationEvent reqToken="VWK3" nextLocId="9">
+				Du hast den Käfersammler besiegt und verlässt den Vertania Wald im Norden und erreichst Marmoria City.
+			</ChangeLocationEvent>
+		</CompoundEvent>
+		<ChangeLocationEvent command="gehe nach norden" reqToken="VWK3" nextLocId="9">
+			Du verlässt den Vertania Wald im Norden und erreichst Marmoria City.
+		</ChangeLocationEvent>
+		<ChangeLocationEvent command="gehe nach süden" nextLocId="4">
+			Du verlässt den Vertania Wald im Süden und erreichst Vertania City.
+		</ChangeLocationEvent>
+	</location>
+	<location id="9" name="MarmoriaCity">
+		<InformationEvent command="schau dich um">
+			Du bist in Marmoria City, eine große Stadt mit einem PokeCenter, einem PokeMarkt und einer Pokemon Arena. Im Süden befindet
+			sich der Vertania Wald und im Osten siehst du einen langen Pfad von der Stadt weg führen. Dieser wird allerdings gerade
+			von einem breit gebauten Kerl versperrt. Den lassen wir besser in Ruhe...
+		</InformationEvent>
+		<InformationEvent command="untersuche die arena">
+			Du schaust dir die Arena genauer an. Dies ist der Trainingsplatz von Rocko, dem ersten Arenaleiter in Kanto. Dieser benutzt
+			Stein Pokemon um seine Gegner zu besiegen. Wenn du weiter kommen willst auf deinem Pfad zum Pokemon Meister wirst du gegen
+			ihn antreten müssen.
+		</InformationEvent>
+		<ChangeLocationEvent command="gehe in das pokecenter" nextLocId="5">
+			Du betrittst das PokeCenter von Marmoria City.
+		</ChangeLocationEvent>
+		<ChangeLocationEvent command="gehe in den pokemarkt" nextLocId="6">
+			Du betrittst den PokeMarkt von Marmoria City.
+		</ChangeLocationEvent>
+		<ChangeLocationEvent command="gehe in die arena" nextLocId="10">
+			Du betrittst die Arena von Rocko, dem Arenaleiter von Marmoria City.
+		</ChangeLocationEvent>
+		<ChangeLocationEvent command="gehe nach süden" nextLocId="8">
+			Du verlässt Marmoria City in südlicher Richtung und betrittst den Vertania Wald.
+		</ChangeLocationEvent>
+	</location>
+	<location id="10" name="RockosArena">
+		<InformationEvent command="schau dich um" reqNonToken="rockoBesiegt">
+			Du bist in der felisigen Arena von Rocko. Der Weg zu ihm wird von einem seiner Trainer blockiert. Du wirst den Trainer
+			zuerst besiegen müssen bevor du gegen Rocko antreten kannst.
+		</InformationEvent>
+		<InformationEvent command="schau dich um" reqToken="rockoBesiegt">
+			Du bist in der felsigen Arena von Rocko. Den Felsorden hast du schon erhalten.
+		</InformationEvent>
+		<TrainerFightEvent command="kämpfe gegen den trainer" reqNonToken="rockoTrainerBesiegt" tokenAtWin="rockoTrainerBesiegt"
+							pokemon="KLEINSTEIN" level="10" money="300" nextPokeCenterLocId="9"/>
+		<CompoundEvent command="kämpfe gegen rocko" reqToken="rockoTrainerBesiegt" reqNonToken="rockoBesiegt">
+			<InformationEvent>
+				Du bist beim ersten Arenaleiter angekommen und forderst Rocko zum Kampf heraus!
+			</InformationEvent>
+			<TrainerFightEvent tokenAtWin="rockoBesiegt" pokemon="KLEINSTEIN;ONIX" level="12;15" money="1000" nextPokeCenterLocId="9"/>
+			<InformationEvent reqToken="rockoBesiegt">
+				ROCKO:"Du hast mich besiegt, unglaublich. Dein erster Schritt in Richtung Pokemon Meister ist vollbracht.
+				Hier, nimm den Felsorden als Zeichen meiner Anerkennung."
+				Du erhälst den Felsorden von Rocko.
+			</InformationEvent>
+		</CompoundEvent>
+		<ChangeLocationEvent command="verlasse die arena" nextLocId="9">
+			Du verlässt die Arena von Rocko und bist wieder auf den Straßen von Marmoria City.
 		</ChangeLocationEvent>
 	</location>
 </world>

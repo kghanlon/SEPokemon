@@ -13,8 +13,8 @@ public class Game {
 		Statisches.setScanner();
 		Statisches.einlesen();
 		Scanner sc = Statisches.getScanner();
-		PokemonTest.testKampfSchwach();
-		//hauptmenue(sc);
+		//PokemonTest.testKampfSchwach();
+		hauptmenue(sc);
 		Statisches.closeScanner();			
 	}
 	

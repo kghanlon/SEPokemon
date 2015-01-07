@@ -1,18 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Trainerelemente locationId="1" name="JOE" geld="200">
+<Trainerelemente locationId="9" name="JOE" geld="2150">
 <PokemonListe>
-<Pokemon id="BISASAM" lvl="6" exp="45" maxkp="32" kp="32" staerke="17" vert="22" tempo="32">
+<Pokemon id="PIKACHU" lvl="50" exp="867" maxkp="300" kp="228" staerke="2500" vert="190" tempo="150">
 <AttackenListe>
 <Attacke id="HEULER"/>
-<Attacke id="TACKLE"/>
+<Attacke id="RUTENSCHLAG"/>
+<Attacke id="DONNERSCHOCK"/>
+</AttackenListe>
+</Pokemon>
+<Pokemon id="RATTFRATZ" lvl="4" exp="68" maxkp="28" kp="28" staerke="14" vert="17" tempo="14">
+<AttackenListe>
+<Attacke id="RUCKZUCKHIEB"/>
+<Attacke id="PLATSCHER"/>
 </AttackenListe>
 </Pokemon>
 </PokemonListe>
 <ItemListe>
-<Item id="TRANK" anzahl="2" typ="HEILEN"/>
+<Item id="TRANK" anzahl="3" typ="HEILEN"/>
+<Item id="POKEBALL" anzahl="7" typ="BALL"/>
 </ItemListe>
 <TokenListe>
-<Token name="starterBisasam"/>
+<Token name="starterPikachu"/>
 <Token name="EichsLaborDefault"/>
 <Token name="Route1Default"/>
 <Token name="VertaniaCityDefault"/>
@@ -20,11 +28,15 @@
 <Token name="VertaniaCityPokeMarktDefault"/>
 <Token name="ErsteKonversationMitEich"/>
 <Token name="garyBesiegt1"/>
-<Token name="garyBesiegt1"/>
-<Token name="mitTeenagerGeredet"/>
+<Token name="ZweiteKonversationMitEich"/>
+<Token name="paketZugestellt"/>
 <Token name="baumUntersucht"/>
 <Token name="hohlraumLeer"/>
-<Token name="paketDabei"/>
-<Token name="paketZugestellt"/>
+<Token name="mitTeenagerGeredet"/>
+<Token name="garyBesiegt2"/>
+<Token name="VWK1"/>
+<Token name="VWK3"/>
+<Token name="rockoTrainerBesiegt"/>
+<Token name="rockoBesiegt"/>
 </TokenListe>
 </Trainerelemente>

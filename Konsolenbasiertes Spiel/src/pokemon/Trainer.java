@@ -277,7 +277,7 @@ public class Trainer {
 	
 	/**
 	 * 
-	 * @param token String der geluescht werden soll
+	 * @param token String der geloescht werden soll
 	 */
 	public void removeToken(String token){
 		if(tokens.contains(token)){

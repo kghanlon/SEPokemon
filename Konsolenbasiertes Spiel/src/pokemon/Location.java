@@ -7,6 +7,7 @@ import Events.InformationEvent;
 import Events.SaveGameEvent;
 import Events.ShowItemsEvent;
 import Events.ShowPokemonEvent;
+import Events.ShowTokenEvent;
 
 import java.util.*;
 
@@ -27,6 +28,7 @@ public class Location {
 		events.add(3, new ShowItemsEvent());
 		events.add(4, new HelpEvent());
 		events.add(5, new SaveGameEvent());
+		events.add(5, new ShowTokenEvent());
 	}
 	
 	public Location runLocation(Trainer t){
