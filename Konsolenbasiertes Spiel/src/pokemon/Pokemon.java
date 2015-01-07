@@ -127,7 +127,7 @@ public class Pokemon {
 			}
 		}
 		exp=(int)(aufstiegsgrenze(lvl)/5);//mache ich damit man als exp gewinn des trainers einfach die nehmen kann die das fremde pokemon hat so steigt es auch wenn die level h�her gehen
-		maxkp = (int)(lvl*Math.pow(1.035, lvl)*2);
+		maxkp = (int)(lvl*Math.pow(2, lvl)+20);
 		kp=maxkp;
 		double ran = Math.random()*3.14;
 		staerke=(int)(10+lvl+Math.sin(ran)*lvl);//ausgeglichen angriff und verteidigung
@@ -154,7 +154,13 @@ public class Pokemon {
 	}
 	
 	private void levelaufstieg(){
-		lvl++;		
+		lvl++;	
+		kp+=2;
+		maxkp+=2;
+		double ran = Math.random()*3.14;
+		staerke+=(int)(1+Math.sin(ran)*3);//ausgeglichen angriff und verteidigung		
+		vert += (int)(1+Math.abs(Math.cos(ran))*3);
+		tempo+=(5*staerke+vert)/6;//starkes pokemon ist schneller einfach festgelegt	
 		exp = (int)Statisches.max(exp-aufstiegsgrenze(lvl-1), 0);
 		System.out.println("\nLEVELAUFSTIEG\n" +name + " ist nun auf Level " + lvl + "!");
 		Statisches.sleep();
