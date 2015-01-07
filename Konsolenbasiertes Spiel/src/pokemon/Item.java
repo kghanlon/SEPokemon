@@ -23,7 +23,7 @@ public abstract class Item {
 	/**
 	 * 
 	 * @param namen Enum ItemNamen
-	 * @param anzahl int Anzahl der einzufügenen Items beim Trainer
+	 * @param anzahl int Anzahl der einzufuegenen Items beim Trainer
 	 */
 	public Item(ItemNamen namen, int anzahl){
 		this.name=namen;

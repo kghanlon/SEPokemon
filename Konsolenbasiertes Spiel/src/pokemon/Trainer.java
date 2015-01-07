@@ -102,11 +102,9 @@ public class Trainer {
 	
 	/**
 	 * 
-	 * @param zutauschen int position an dem das Pokemon eingefügt werden soll
+	 * @param zutauschen int position an dem das Pokemon eingefuegt werden soll
 	 */
 	public void pokemonTauschen(int zutauschen){
-		
-		
 		System.out.println(team[0].getName() + " wurde gegen " + team[zutauschen].getName() + " ausgetauscht.\n");
 		Statisches.sleep();
 		Pokemon tmp = team[0];
@@ -117,7 +115,7 @@ public class Trainer {
 	
 	/**
 	 * 
-	 * @param p Pokemon das ins Team eingefügt werden soll, oder eben nicht
+	 * @param p Pokemon das ins Team eingefuegt werden soll, oder eben nicht
 	 */
 	public void pokemonErsetzen(Pokemon p){		
 		System.out.println("GEFANGEN: Du hast " + p.getName() + " gefangen.");
@@ -154,7 +152,7 @@ public class Trainer {
 				team[2] = p2;
 			break;			
 		default:;
-		System.out.println(p2.getName() + "gehÃ¶rt nun zu deinem Team.");
+		System.out.println(p2.getName() + "gehoert nun zu deinem Team.");
 		}
 		}
 		else{
@@ -167,7 +165,7 @@ public class Trainer {
 				}
 			}
 			
-			System.out.println(p2.getName() + " wurde an " + (j+1) +". Stelle im Team eingefÃ¼gt.");			
+			System.out.println(p2.getName() + " wurde an " + (j+1) +". Stelle im Team eingefuegt.");			
 			Statisches.sleep();
 		}
 	}
@@ -242,7 +240,7 @@ public class Trainer {
 	
 	/**
 	 * 
-	 * @return Liste der bisher erfüllten Tokens
+	 * @return Liste der bisher erfuellten Tokens
 	 */
 	public List<String> getTokens(){
 		return tokens;
@@ -279,7 +277,7 @@ public class Trainer {
 	
 	/**
 	 * 
-	 * @param token String der gelöscht werden soll
+	 * @param token String der geluescht werden soll
 	 */
 	public void removeToken(String token){
 		if(tokens.contains(token)){

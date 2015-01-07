@@ -11,7 +11,7 @@ public class Game {
 		Statisches.setScanner();
 		Statisches.einlesen();
 		Scanner sc = Statisches.getScanner();
-		hauptmenue(sc);		
+		hauptmenue(sc);
 		Statisches.closeScanner();			
 	}
 	
@@ -25,7 +25,7 @@ public class Game {
 		System.out.println("Hauptmenue");
 		System.out.println("Spiel (f)ortsetzen?");
 		System.out.println("(N)eues Spiel Starten? (Alter Spielstand geht verloren!)");
-		//hier noch als Moeglichkeit wenn genug Zeit bleibt Spielstand löschen, wenn dann mehrere Spielstände möglich sind
+		//hier noch als Moeglichkeit wenn genug Zeit bleibt Spielstand lueschen, wenn dann mehrere Spielstuende mueglich sind
 		Trainer t = Statisches.gespeicherterTrainer();
 		String c = sc.next();
 		switch(c){
@@ -89,7 +89,7 @@ public class Game {
 			startPokToken.add("starterSchiggy");
 			break;
 		default: starter = new Pokemon(PokeNamen.PIKACHU, 5);
-		System.out.println("Da deine Eingabe ungültig war bekommst du ein Pikachu von mir.");
+		System.out.println("Da deine Eingabe ungÃ¼ltig war bekommst du ein Pikachu von mir.");
 		startPokToken.add("starterPikachu");
 		}
 		Pokemon [] team = new Pokemon[3];

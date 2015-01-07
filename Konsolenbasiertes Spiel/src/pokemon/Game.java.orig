@@ -11,7 +11,7 @@ public class Game {
 		Statisches.setScanner();
 		Statisches.einlesen();
 		Scanner sc = Statisches.getScanner();
-		hauptmenue(sc);		
+		hauptmenue(sc);
 		Statisches.closeScanner();			
 	}
 	
@@ -22,10 +22,14 @@ public class Game {
 		
 		
 		//Hauptmenue
-		System.out.println("Hauptmenï¿½");
+		System.out.println("Hauptmenue");
 		System.out.println("Spiel (f)ortsetzen?");
 		System.out.println("(N)eues Spiel Starten? (Alter Spielstand geht verloren!)");
-		//hier noch als Mï¿½glichkeit wenn genug Zeit bleibt Spielstand lï¿½schen, wenn dann mehrere Spielstï¿½nde mï¿½glich sind
+<<<<<<< HEAD
+		//hier noch als Moeglichkeit wenn genug Zeit bleibt Spielstand löschen, wenn dann mehrere Spielstände möglich sind
+=======
+		//hier noch als Mueglichkeit wenn genug Zeit bleibt Spielstand lueschen, wenn dann mehrere Spielstuende mueglich sind
+>>>>>>> 3859647a21b8d3c919f84c3529f4250a4845ed69
 		Trainer t = Statisches.gespeicherterTrainer();
 		String c = sc.next();
 		switch(c){
@@ -43,13 +47,14 @@ public class Game {
 		}//ende Hauptmenue
 				
 		//Spiel starten:
-		for(int i = 0; i < t.getTokens().size(); i++){
-			System.out.println(t.getTokens().get(i));
-		}
+		
+//		//Tokentest:
+//		for(int i = 0; i < t.getTokens().size(); i++){
+//			System.out.println(t.getTokens().get(i));
+//		}
 		
 		while(true){
 			try{
-				System.out.println(t.getLocationId());
 				LocationFactory.locations.get(t.getLocationId()).runLocation(t);
 			} catch (InputMismatchException e){
 				System.out.println("Unpassende Eingabe...");
@@ -61,39 +66,58 @@ public class Game {
 	private static Trainer  neuerSpieler(Scanner sc){
 		System.out.println("Wie lautet dein Name?");
 		String name = sc.next().trim();
-		System.out.println("Du Bekommst die Wahl mï¿½chtest du");
+<<<<<<< HEAD
+		System.out.println("Du Bekommst die Wahl moechtest du");
+=======
+		System.out.println("Du Bekommst die Wahl muechtest du");
+>>>>>>> 3859647a21b8d3c919f84c3529f4250a4845ed69
 		System.out.println("(B)isasam?");
 		System.out.println("(G)lumanda?");
 		System.out.println("(S)chiggy?");
 		String poki = sc.next().trim();
 		Pokemon starter;
+		List<String> startPokToken = new ArrayList<String>();
 		switch(poki){
 		case "B": 
 		case "b":
 			starter = new Pokemon(PokeNamen.BISASAM, 5);
-			System.out.println("Du hast Bisasam gewï¿½hlt.");
+<<<<<<< HEAD
+			System.out.println("Du hast Bisasam gewaehlt.");
+			startPokToken.add("starterBisasam");
+=======
+			System.out.println("Du hast Bisasam gewuehlt.");
+>>>>>>> 3859647a21b8d3c919f84c3529f4250a4845ed69
 			break;
 		case "G":
 		case "g":
 			starter = new Pokemon(PokeNamen.GLUMANDA, 5);
-			System.out.println("Du hast Glumanda gewï¿½hlt.");
+<<<<<<< HEAD
+			System.out.println("Du hast Glumanda gewaehlt.");
+			startPokToken.add("starterGlumanda");
+=======
+			System.out.println("Du hast Glumanda gewuehlt.");
+>>>>>>> 3859647a21b8d3c919f84c3529f4250a4845ed69
 			break;
 		case "S":
 		case "s":
 			starter = new Pokemon(PokeNamen.SCHIGGY, 5);
-			System.out.println("Du hast Schiggy gewï¿½hlt.");
-			break;
 <<<<<<< HEAD
+			System.out.println("Du hast Schiggy gewaehlt.");
+			startPokToken.add("starterSchiggy");
+			break;
 		default: starter = new Pokemon(PokeNamen.PIKACHU, 5);
 		System.out.println("Da deine Eingabe ungültig war bekommst du ein Pikachu von mir.");
+		startPokToken.add("starterPikachu");
 =======
+			System.out.println("Du hast Schiggy gewuehlt.");
+			break;
 		default: starter = new Pokemon(PokeNamen.BISASAM, 5);
-		System.out.println("Da deine Eingabe ungï¿½ltig war bekommst du ein Pikachu von mir.");
->>>>>>> 6f6ede7952d42bed23bf845c8b4e5c29f620c1f1
+		System.out.println("Da deine Eingabe ungueltig war bekommst du ein Pikachu von mir.");
+>>>>>>> 3859647a21b8d3c919f84c3529f4250a4845ed69
 		}
 		Pokemon [] team = new Pokemon[3];
 		team[0]=starter;
-		return new Trainer(0, null, name, null, team, 0);
+		return new Trainer(0, startPokToken, name, null, team, 0);
 	}
 	
 	
