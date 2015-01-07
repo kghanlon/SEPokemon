@@ -11,7 +11,7 @@ public class Game {
 		Statisches.setScanner();
 		Statisches.einlesen();
 		Scanner sc = Statisches.getScanner();
-		hauptmenue(sc);		
+		hauptmenue(sc);
 		Statisches.closeScanner();			
 	}
 	
@@ -22,10 +22,10 @@ public class Game {
 		
 		
 		//Hauptmenue
-		System.out.println("Hauptmen�");
+		System.out.println("Hauptmenue");
 		System.out.println("Spiel (f)ortsetzen?");
 		System.out.println("(N)eues Spiel Starten? (Alter Spielstand geht verloren!)");
-		//hier noch als M�glichkeit wenn genug Zeit bleibt Spielstand l�schen, wenn dann mehrere Spielst�nde m�glich sind
+		//hier noch als Mueglichkeit wenn genug Zeit bleibt Spielstand lueschen, wenn dann mehrere Spielstuende mueglich sind
 		Trainer t = Statisches.gespeicherterTrainer();
 		String c = sc.next();
 		switch(c){
@@ -60,7 +60,7 @@ public class Game {
 	private static Trainer  neuerSpieler(Scanner sc){
 		System.out.println("Wie lautet dein Name?");
 		String name = sc.next().trim();
-		System.out.println("Du Bekommst die Wahl m�chtest du");
+		System.out.println("Du Bekommst die Wahl muechtest du");
 		System.out.println("(B)isasam?");
 		System.out.println("(G)lumanda?");
 		System.out.println("(S)chiggy?");
@@ -70,20 +70,20 @@ public class Game {
 		case "B": 
 		case "b":
 			starter = new Pokemon(PokeNamen.BISASAM, 5);
-			System.out.println("Du hast Bisasam gew�hlt.");
+			System.out.println("Du hast Bisasam gewuehlt.");
 			break;
 		case "G":
 		case "g":
 			starter = new Pokemon(PokeNamen.GLUMANDA, 5);
-			System.out.println("Du hast Glumanda gew�hlt.");
+			System.out.println("Du hast Glumanda gewuehlt.");
 			break;
 		case "S":
 		case "s":
 			starter = new Pokemon(PokeNamen.SCHIGGY, 5);
-			System.out.println("Du hast Schiggy gew�hlt.");
+			System.out.println("Du hast Schiggy gewuehlt.");
 			break;
 		default: starter = new Pokemon(PokeNamen.BISASAM, 5);
-		System.out.println("Da deine Eingabe ung�ltig war bekommst du ein Pikachu von mir.");
+		System.out.println("Da deine Eingabe ungueltig war bekommst du ein Pikachu von mir.");
 		}
 		Pokemon [] team = new Pokemon[3];
 		team[0]=starter;

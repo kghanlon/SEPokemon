@@ -14,7 +14,7 @@ public class Kampf {
 	
 	/**
 	 * Startet einen Kampf mit festgelegtem Trainer und Gegner (Liste von Pokemon)
-	 * @return 0 Spieler hat noch kampffaehige Pokemon !=0 spieler hat verloren also heilen an nÃ¤chster stelle
+	 * @return 0 Spieler hat noch kampffaehige Pokemon !=0 spieler hat verloren also heilen an naechster stelle
 	 */
 	public static int start(Trainer trainer, List<Pokemon> gegner, boolean wild){
 		while(kampffaehig(trainer) && kampffaehigGegner(gegner)){
@@ -83,7 +83,7 @@ public class Kampf {
 			System.out.println("\nDies ist ein Trainerkampf du kannst nicht fliehen!\n");
 			Statisches.sleep();
 		}else{
-			if(t.getTeam()[0].getTempo()+2>=g.get(0).getTempo()){// man soll nicht immer fliehen kÃ¶nnen
+			if(t.getTeam()[0].getTempo()+2>=g.get(0).getTempo()){// man soll nicht immer fliehen koennen
 				System.out.println("Du bist geflohen.");
 				Statisches.sleep();
 				setUnfaehigGegner(g);
@@ -128,7 +128,7 @@ public class Kampf {
 
 	private static void itemWahl(Trainer t, List<Pokemon> g, boolean w) {
 		if(w && ballInItems(t)){
-			System.out.println("Bitte die Art des Items auswÃ¤hlen, das genutzt werden soll:");
+			System.out.println("Bitte die Art des Items auswaehlen, das genutzt werden soll:");
 			Statisches.sleep();
 			System.out.println("1) Heilung");
 			System.out.println("2) Ball");
@@ -217,7 +217,7 @@ public class Kampf {
 				}
 			}			
 		}
-		System.out.println("Bitte Pokemon wÃ¤hlen aus das es angewendet werden soll:");
+		System.out.println("Bitte Pokemon waehlen aus das es angewendet werden soll:");
 		for(int i=0; i<t.getTeam().length; i++){
 			if(t.getTeam()[i]!=null){
 				System.out.println((i+1) + ") " + t.getTeam()[i].kampfAusgabe());
@@ -267,7 +267,7 @@ public class Kampf {
 		
 		Statisches.sleep();
 		}else{
-			System.out.println("Es gibt keine Items die man verwenden kÃ¶nnte.");
+			System.out.println("Es gibt keine Items die man verwenden koennte.");
 			Statisches.sleep();
 			return false;
 		}
@@ -285,10 +285,10 @@ public class Kampf {
 	 */
 	private static boolean ballGewaehlt(Trainer t, List<Pokemon> g) {
 		
-		System.out.println("Bitte den Ball wÃ¤hlen:");
+		System.out.println("Bitte den Ball waehlen:");
 		int counter=0;		
 		for(int i=0; i< t.getItems().size(); i++){
-			if(t.getItems().get(i).istBall()){//zÃ¤hlen der ballitems in liste
+			if(t.getItems().get(i).istBall()){//zaehlen der ballitems in liste
 				counter++;
 			}
 		}
@@ -302,14 +302,14 @@ public class Kampf {
 		
 		counter = 1;
 		for(int b:woBall){
-			System.out.println(counter++ + ") " + t.getItems().get(b));//anzeigen der optionen man wÃ¤hlen kann
+			System.out.println(counter++ + ") " + t.getItems().get(b));//anzeigen der optionen man waehlen kann
 		}
 		counter=0;
 		int h=1; 
 		try{
 			h = sc.nextInt();
 		}catch(Exception e){
-			System.out.println("Es wurde wegen Falscheingabe " + t.getItems().get(woBall[0]).getName() + " gewÃ¤hlt.");
+			System.out.println("Es wurde wegen Falscheingabe " + t.getItems().get(woBall[0]).getName() + " gewaehlt.");
 			Statisches.sleep();
 		}//abfangen von falschen eingaben die kein int sind dann soll nichts passieren dann wird im zweifel der oberste ball geworfen
 		Ball ball = new Ball(ItemNamen.DUMMYBALL);
@@ -327,8 +327,8 @@ public class Kampf {
 		//ab hier eigentliches fangen
 		double i = Math.random();
 		ball.setAnzahl(ball.getAnzahl()-1);
-		double restfaktor = 1.2-g.get(0).getKp()/g.get(0).getMaxkp();// wenn man ein pokemon versucht zu fangen, dass noch alle kp hat dann ist dies unwahrscheinlicher zu fangen als wenn man es fÃ¤ngt
-		//1,2 weil sonst wÃ¤re zu beginn der wert 0 angebeen also unmÃ¶glich zu fangen
+		double restfaktor = 1.2-g.get(0).getKp()/g.get(0).getMaxkp();// wenn man ein pokemon versucht zu fangen, dass noch alle kp hat dann ist dies unwahrscheinlicher zu fangen als wenn man es faengt
+		//1,2 weil sonst waere zu beginn der wert 0 angebeen also unmoeglich zu fangen
 		Statisches.sleep();
 		Statisches.sleep();
 		if(ball.getWert()*g.get(0).getFangrate()*restfaktor>=i){
@@ -342,8 +342,14 @@ public class Kampf {
 	
 	
 	private static void pokeWahl(Trainer t, List<Pokemon> g, boolean besiegt) {
-		if(t.getTeam().length>1){
-		System.out.println("Bitte Pokemon wÃ¤hlen mit dem es getauscht werden soll:");
+		int anzahlPoke = 1;
+		for(int i = 1; i<t.getTeam().length; i++ ){
+			if(t.getTeam()[i]!=null && t.getTeam()[i].getKp()>0){
+				anzahlPoke++;
+			}
+		}
+		if(anzahlPoke>1){
+		System.out.println("Bitte Pokemon waehlen mit dem es getauscht werden soll:");
 		int ersteslebendige=-1;
 		for(int i=1; i<t.getTeam().length; i++){
 			if(t.getTeam()[i]!=null && t.getTeam()[i].getKp()>0){
@@ -366,16 +372,16 @@ public class Kampf {
 			}
 		}
 		if(!besiegt&&gegnerAngriff(t, g)){
-			pokemonKO(t, g, true);//der bool ist hier egal wollte nur die signatur der obrigen methode nicht Ã¤ndern
+			pokemonKO(t, g, true);//der bool ist hier egal wollte nur die signatur der obrigen methode nicht aendern
 		}
 	}else{
-		System.out.println("Diese Option macht wenig Sinn solange man nur 1 Pokemon besitzt.");
+		System.out.println("Diese Option macht wenig Sinn solange man nur 1 lebendiges Pokemon besitzt.");
 		Statisches.sleep();
 	}
 		
 	}
 
-	
+
 	
 	
 	
@@ -428,8 +434,8 @@ public class Kampf {
 		Statisches.sleep();
 		t.getTeam()[0].expGewinn(g.get(0).getExp());//exp gewinnen
 		pokemonGegnerKO(g);
-		Pokemon a = g.get(0);//tauschen der Pokemon mit dem nÃ¤chsten was fit ist
-		int c = getNextGegnerInt(g);//auch wenn keins mehr frei ist ausfÃ¼hren beim nÃ¤chsten durchlauf der while schleife bemerkt das system das g keine kampfÃ¤hiogen pokemn mehr hat
+		Pokemon a = g.get(0);//tauschen der Pokemon mit dem naechsten was fit ist
+		int c = getNextGegnerInt(g);//auch wenn keins mehr frei ist ausfuehren beim naechsten durchlauf der while schleife bemerkt das system das g keine kampfaehiogen pokemn mehr hat
 		Pokemon b = g.get(c);
 		g.set(0, b);
 		g.set(c, a);	
@@ -451,7 +457,7 @@ public class Kampf {
 	
 	
 	/**
-	 * xÂ³(1-attackenwert)/-27000 + attackenwert ist die funktion die die kp berechnet 
+	 * x³(1-attackenwert)/-27000 + attackenwert ist die funktion die die kp berechnet 
 	 * 1 ist als staerke wert nicht erlaubt!
 	 * es soll aber mindestens einer abgezogen werden
 	 * @param staerkA angreifendes Pokemon staerke
@@ -464,7 +470,7 @@ public class Kampf {
 			return 0;
 		}
 		int x = staerkA-vertG;
-		int wert = ((1-(a.getSchaden()/2)/(-27000)*(x*x*x))+(a.getSchaden()/2)); //axÂ³ + d
+		int wert = ((1-(a.getSchaden()/6)/(-27000)*(x*x*x))+(a.getSchaden()/6)); //axÂ³ + d
 		if(wert<1){//mindestens 1 wird immer abgezogen
 			wert=1;
 		}
@@ -475,7 +481,7 @@ public class Kampf {
 		System.out.println(t.getName() + ": " + t.getTeam()[0].getName() + " greift mit " + t.getTeam()[0].getAttacken()[h].getName() + " an!\n");
 		Statisches.sleep();
 		if(attackenTreffer(t.getTeam()[0].getAttacken()[h])){
-			double vorNachteil = g.get(0).getFschaden(t.getTeam()[0].getAttacken()[h].getTyp());//wird verÃ¤ndert sobald anfÃ¤lligkeiten zwischen den typen drin sind
+			double vorNachteil = g.get(0).getFschaden(t.getTeam()[0].getAttacken()[h].getTyp());//wird veraendert sobald anfaelligkeiten zwischen den typen drin sind
 			if(vorNachteil>1.5){
 				System.out.println("Das ist sehr effektiv!");
 				Statisches.sleep();
@@ -484,8 +490,10 @@ public class Kampf {
 				System.out.println("Das ist nicht sehr effektiv!");
 				Statisches.sleep();
 			}
-			int verbleibendekp = (int)Statisches.max(g.get(0).getKp()-vorNachteil*attackenwert(t.getTeam()[0].getStaerke(),g.get(0).getVert(), t.getTeam()[0].getAttacken()[h]), 0);
-			g.get(0).setKp(verbleibendekp);
+			if(t.getTeam()[0].getAttacken()[h].getSchaden()!=0){
+				int verbleibendekp = (int)Statisches.max(g.get(0).getKp()-vorNachteil*attackenwert(t.getTeam()[0].getStaerke(),g.get(0).getVert(), t.getTeam()[0].getAttacken()[h]), 0);
+				g.get(0).setKp(verbleibendekp);
+			}
 			if(g.get(0).getKp()<1){						
 				return true;
 			}
@@ -507,7 +515,7 @@ public class Kampf {
 		}
 		
 		int att=0;
-		double r = Math.random()*attackenAnzahl;//zfÃ¤llig auswÃ¤hlen einer attacke
+		double r = Math.random()*attackenAnzahl;//zfaellig auswaehlen einer attacke
 		if(r<1){
 			att=0;
 		}else if(r<2){
@@ -520,7 +528,7 @@ public class Kampf {
 		System.out.println("GEGNER: " + g.get(0).getName() + " greift mit " + g.get(0).getAttacken()[att].getName()+ " an!\n");
 		Statisches.sleep();
 		if(attackenTreffer(g.get(0).getAttacken()[att])){
-		double vorNachteil =t.getTeam()[0].getFschaden(g.get(0).getAttacken()[att].getTyp());//wird verÃ¤ndert sobald anfÃ¤lligkeiten zwischen den typen drin sind
+		double vorNachteil =t.getTeam()[0].getFschaden(g.get(0).getAttacken()[att].getTyp());//wird veraendert sobald anfaelligkeiten zwischen den typen drin sind
 		if(vorNachteil>1.5){
 			System.out.println("Das ist sehr effektiv!");
 			Statisches.sleep();
@@ -539,7 +547,7 @@ public class Kampf {
 	}
 
 	private static int auswahlMenue(Trainer t){
-		System.out.println("Bitte die Option auswÃ¤hlen, die ausgefÃ¼hrt werden soll:");
+		System.out.println("Bitte die Option auswaehlen, die ausgefuehrt werden soll:");
 		System.out.println("1) Angreifen");
 		System.out.println("2) Pokemonwechsel");
 		System.out.println("3) Items");
@@ -548,7 +556,7 @@ public class Kampf {
 		try{
 		h = sc.nextInt();
 		}catch(Exception e){
-			//kÃ¶nnte man ne anmerkung ausgeben aber ist auch gut default mÃ¤Ãig dann in die attacken zu gehen
+			//koennte man ne anmerkung ausgeben aber ist auch gut default maessig dann in die attacken zu gehen
 		}
 		switch(h){
 			case 2: return 1;

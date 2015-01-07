@@ -14,7 +14,7 @@ public class Attacke {
 	
 	/**
 	 * 
-	 * @param name Enum AttackenName über die die Attacke eindeutig identifiziert wird.
+	 * @param name Enum AttackenName ueber die die Attacke eindeutig identifiziert wird.
 	 */
 	public Attacke(AttackenNamen name){
 		this.name = name;
@@ -28,7 +28,7 @@ public class Attacke {
 	
 	/**
 	 * 
-	 * @return gibt den Ausgabe String zurück der aus name, Typ, Schaden und Genauigkeit besteht
+	 * @return gibt den Ausgabe String zurueck der aus name, Typ, Schaden und Genauigkeit besteht
 	 */
 	public String toString(){
 		return name +"\t" + Statisches.typToString(typ) + "\tSchaden: "+ schaden + "\tGenauigkeit: " + gen;

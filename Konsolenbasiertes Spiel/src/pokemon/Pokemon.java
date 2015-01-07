@@ -4,7 +4,7 @@ import java.util.*;
  * 
  * @author Kai
  *
- *	@class Pokemon Ein Trainer hat Pokemonn die K�mpfen k�nnen, daf�r haben sie Attacken ein Level und bestimmte Werte f�r den Kampf, je nach Anzahl von Exp die ein Pokemon insgesamt shon bekommen hat steigt es im Level bis max 100
+ *	@class Pokemon Ein Trainer hat Pokemonn die Kaempfen kaennen, dafaer haben sie Attacken ein Level und bestimmte Werte faer den Kampf, je nach Anzahl von Exp die ein Pokemon insgesamt shon bekommen hat steigt es im Level bis max 100
  */
 public class Pokemon {
 
@@ -28,9 +28,9 @@ public class Pokemon {
 	 * @param lvl int Level des Pokemons
 	 * @param exp int Bisher gesammelte Anzahl Exp in diesem Level
 	 * @param attackenid Enum AttackenNamen [4] 
-	 * @param maxkp int h�chst Anzahl der Kp die das Pokemon im vollkommen geheiltem Zustand hat
+	 * @param maxkp int haechst Anzahl der Kp die das Pokemon im vollkommen geheiltem Zustand hat
 	 * @param kp int aktuelle Anzahl Kp
-	 * @param staerke int Berechnungswert f�r Attacken auf andere Pokemon
+	 * @param staerke int Berechnungswert faer Attacken auf andere Pokemon
 	 * @param vert int Berechnungswert fur Attacken aus dieses Pokemon
 	 * @param tempo int Zur Entscheidungsfindung welcher Pokemon zuerst angreifen darf
 	 */
@@ -117,7 +117,7 @@ public class Pokemon {
 		int attackenanzahl=0;
 		for(int i=lvl;i>0; i--){
 			if(moeglicheAttacken.containsKey(i))
-			//sucht die �ltesten attacken, die das pokemon h�tte lernen k�nnen und die einem seiner typen entsprechen
+			//sucht die aeltesten attacken, die das pokemon haette lernen kaennen und die einem seiner typen entsprechen
 			{
 				attacken[attackenanzahl]=moeglicheAttacken.get(i);
 				attackenanzahl++;
@@ -126,8 +126,8 @@ public class Pokemon {
 				break;
 			}
 		}
-		exp=(int)(aufstiegsgrenze(lvl)/5);//mache ich damit man als exp gewinn des trainers einfach die nehmen kann die das fremde pokemon hat so steigt es auch wenn die level h�her gehen
-		maxkp = (int)(lvl*Math.pow(2, lvl)+20);
+		exp=(int)(aufstiegsgrenze(lvl)/5);//mache ich damit man als exp gewinn des trainers einfach die nehmen kann die das fremde pokemon hat so steigt es auch wenn die level haeher gehen
+		maxkp = (int)(lvl*2+20);
 		kp=maxkp;
 		double ran = Math.random()*3.14;
 		staerke=(int)(10+lvl+Math.sin(ran)*lvl);//ausgeglichen angriff und verteidigung
@@ -137,12 +137,12 @@ public class Pokemon {
 	
 	
 	/**
-	 * erh�ht die Exp des Pokemons um den Wert und initiiert intern einen Levelaufstieg wenn n�tig
+	 * erhaeht die Exp des Pokemons um den Wert und initiiert intern einen Levelaufstieg wenn naetig
 	 * @param i Anzahl Exp die hinzukommen
 	 */
 	public void expGewinn(int i){
 		exp+=i;		
-		System.out.println(name + " erh�lt " + i + " exp.");
+		System.out.println(name + " erhaelt " + i + " exp.");
 		Statisches.sleep();
 		if(exp >= aufstiegsgrenze(lvl) && lvl<100){
 			levelaufstieg();
@@ -150,7 +150,7 @@ public class Pokemon {
 	}
 	
 	private double aufstiegsgrenze(int i){
-		return 300*Math.pow(1.035, i);// ist eine Kurve die in etwa die ben�tigen Exp gut bescheribt zun�chst eher wenig und gegen ende was mehr
+		return 300*Math.pow(1.035, i);// ist eine Kurve die in etwa die benaetigen Exp gut bescheribt zunaechst eher wenig und gegen ende was mehr
 	}
 	
 	private void levelaufstieg(){
@@ -198,17 +198,17 @@ public class Pokemon {
 	
 	private void attackeLernen(int l){
 		Attacke tmp = moeglicheAttacken.get(l);		
-		if(attacken[3]!=null){//keine freien Attackenplätze
+		if(attacken[3]!=null){//keine freien Attackenplaetze
 			System.out.println("\nNEUE ATTACKE " + tmp.getName() + " erlernbar:\nTyp: " + tmp.getTyp() + "\tSchaden:" + tmp.getSchaden()+ "\tGen: " + tmp.getGen());
 			Statisches.sleep();
-			System.out.println("\nWenn du diese Attacke erlernen möchtest,\nwähle aus welche Attacke weichen soll");
+			System.out.println("\nWenn du diese Attacke erlernen moechtest,\nwaehle aus welche Attacke weichen soll");
 			Statisches.sleep();
 			System.out.println(ausgabeAttacken() + "\n(Wenn die Attacke nicht erlernt werden soll gib 0 ein)\n");
 			String t;
 			try{				
 				t = sc.next();
 			}catch(InputMismatchException e){
-				System.out.println("Ungültige Eingabe wird als nein gewertet.");//todo evtl. hier ne schleife bis gültige eingabe
+				System.out.println("Ungueltige Eingabe wird als nein gewertet.");//todo evtl. hier ne schleife bis gueltige eingabe
 				Statisches.sleep();
 				t="0";
 			}
@@ -234,7 +234,7 @@ public class Pokemon {
 			Statisches.sleep();
 		}else{
 			int i=0;
-			if(attacken[0]==null){//evtl. nicht sinnvoll weil eig jedes pokemon min eine attacke haben sollte aber so ist es vollständig
+			if(attacken[0]==null){//evtl. nicht sinnvoll weil eig jedes pokemon min eine attacke haben sollte aber so ist es vollstaendig
 				attacken[0]=tmp;
 				i=1;
 			}else if(attacken[1]==null){
@@ -258,24 +258,24 @@ public class Pokemon {
 	
 	/**
 	 * 
-	 * @return Zeilenweise Ausgabe der Attacken mit Vorzahl um zu entscheiden welche man nutzen m�chte
+	 * @return Zeilenweise Ausgabe der Attacken mit Vorzahl um zu entscheiden welche man nutzen maechte
 	 */
 	public String ausgabeAttacken(){
 		StringBuilder sb =new StringBuilder();
 		sb.append("\n" + name + " kennt folgende Attacken:\n");
 		for(int i=0; i<attacken.length; i++){
 			if(attacken[i]!=null){
-				sb.append((i+1) + ") " + attacken[i]);//todo: evtl. erweiterung dass hier direkt typ stärke und gen auch ausgegeben wird
+				sb.append((i+1) + ") " + attacken[i]);//todo: evtl. erweiterung dass hier direkt typ staerke und gen auch ausgegeben wird
 				sb.append("\n");		
 			}
 		}
-		sb.append("Bitte Attacke mittels Zahl wählen:\n");
+		sb.append("Bitte Attacke mittels Zahl waehlen:\n");
 		return sb.toString();
 	}
 	
 	/**
 	 * 
-	 * @return Name, Attacken, Level, Exp, ben�tigte Exp, wenn Level �ber 100: Name, Attacken und Level
+	 * @return Name, Attacken, Level, Exp, benaetigte Exp, wenn Level aeber 100: Name, Attacken und Level
 	 */
 	public String toString(){
 		StringBuilder sb =new StringBuilder();
@@ -283,11 +283,11 @@ public class Pokemon {
 		for(int i=0; i<4; i++){
 			if(attacken[i]!=null){
 				sb.append("\t");
-				sb.append(attacken[i].getName());//todo: evtl. erweiterung dass hier direkt typ stärke und gen auch ausgegeben wird
+				sb.append(attacken[i].getName());//todo: evtl. erweiterung dass hier direkt typ staerke und gen auch ausgegeben wird
 			}
 		}
 		if(lvl<100){
-		sb.append("\nLevel: " + lvl + "\tExp: " + exp + "\tbenötigte Exp: " + (int)aufstiegsgrenze(lvl) +"\n");
+		sb.append("\nLevel: " + lvl + "\tExp: " + exp + "\tbenoetigte Exp: " + (int)aufstiegsgrenze(lvl) +"\n");
 		}else{
 			sb.append("\nLevel: " + lvl + "\n");
 		}
@@ -296,7 +296,7 @@ public class Pokemon {
 	
 	/**
 	 * kp sind prozentual als Striche dargestellt und steigen bzw fallen nach jeder Aktion
-	 * @return Zeile in der Alle f�r den Kampf relevanten Daten enthalten sind
+	 * @return Zeile in der Alle faer den Kampf relevanten Daten enthalten sind
 	 */
 	public String kampfAusgabe(){
 		StringBuilder sb = new StringBuilder();
@@ -335,14 +335,14 @@ public class Pokemon {
 	
 	/**
 	 * 
-	 * @return Fangwert f�r das Spezielle Pokemon
+	 * @return Fangwert faer das Spezielle Pokemon
 	 */
 	public float getFangrate() {
 		return fangrate;
 	}
 	/**
 	 * Wenn ein Pokemon nur einen Typen hat dann dieser 2 mal
-	 * @return R�ckgabe der Typen die ein Pokemon hat
+	 * @return Raeckgabe der Typen die ein Pokemon hat
 	 */
 	public Typ[] getTyp() {
 		return typ;
@@ -379,7 +379,7 @@ public class Pokemon {
 	
 	/**
 	 * 
-	 * @return Maximale Anzahl Kp wenn vollst�ndig geheilt
+	 * @return Maximale Anzahl Kp wenn vollstaendig geheilt
 	 */
 	public int getMaxkp() {
 		return maxkp;
@@ -387,14 +387,14 @@ public class Pokemon {
 	
 	/**
 	 * 
-	 * @return Angriffswert f�r K�mpfe
+	 * @return Angriffswert faer Kaempfe
 	 */
 	public int getStaerke() {
 		return staerke;
 	}
 	/**
 	 * 
-	 * @return Verteigungswert f�r K�mpfe
+	 * @return Verteigungswert faer Kaempfe
 	 */
 	public int getVert() {
 		return vert;
@@ -402,14 +402,14 @@ public class Pokemon {
 	
 	/**
 	 * 
-	 * @return Schnelligkeit f�r K�mpfe
+	 * @return Schnelligkeit faer Kaempfe
 	 */
 	public int getTempo() {
 		return tempo;
 	}
 	
 	/**
-	 * Gibt zur�ck ob der Typ anf�llig gegen die Attacke ist
+	 * Gibt zuraeck ob der Typ anfaellig gegen die Attacke ist
 	 * @param typ Typ der angreifende Attacke
 	 * @return Faktor um die eine Attacke auf dieses Pokemon mehr oder weniger effektiv ist
 	 */
