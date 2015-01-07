@@ -220,7 +220,7 @@
 		<Fangrate wert="0.3"/>
 		<AttackenListe>
 			<Attacke id="TACKLE" lvl="1"/>
-			<Attacke id="ROUTENSCHLAG" lvl="4"/>
+			<Attacke id="RUTENSCHLAG" lvl="4"/>
 			<Attacke id="AQUAKNARRE" lvl="7"/>
 			<Attacke id="PANZERSCHUTZ" lvl="10"/>
 			<Attacke id ="BLUBBER" lvl="13"/>
@@ -246,7 +246,7 @@
 		<Fangrate wert="0.2"/>
 		<AttackenListe>
 			<Attacke id="TACKLE" lvl="1"/>
-			<Attacke id="ROUTENSCHLAG" lvl="4"/>
+			<Attacke id="RUTENSCHLAG" lvl="4"/>
 			<Attacke id="AQUAKNARRE" lvl="7"/>
 			<Attacke id="PANZERSCHUTZ" lvl="10"/>
 			<Attacke id ="BLUBBER" lvl="13"/>
@@ -272,7 +272,7 @@
 		<Fangrate wert="0.3"/>
 		<AttackenListe>
 			<Attacke id="TACKLE" lvl="1"/>
-			<Attacke id="ROUTENSCHLAG" lvl="4"/>
+			<Attacke id="RUTENSCHLAG" lvl="4"/>
 			<Attacke id="AQUAKNARRE" lvl="7"/>
 			<Attacke id="PANZERSCHUTZ" lvl="10"/>
 			<Attacke id ="BLUBBER" lvl="13"/>
@@ -423,7 +423,7 @@
 		<Fangrate wert="0.4"/>
 		<AttackenListe>
 			<Attacke id="TACKLE" lvl="1"/>
-			<Attacke id="ROUTENSCHLAG" lvl="1"/>
+			<Attacke id="RUTENSCHLAG" lvl="2"/>
 			<Attacke id="RUCKZUCKHIEB" lvl="4"/>
 			<Attacke id="ENERGIEFOKUS" lvl="7"/>
 			<Attacke id ="HYPERZAHN" lvl="20"/>
@@ -447,7 +447,7 @@
 		<Fangrate wert="0.2"/>
 		<AttackenListe>
 			<Attacke id="TACKLE" lvl="1"/>
-			<Attacke id="ROUTENSCHLAG" lvl="1"/>
+			<Attacke id="RUTENSCHLAG" lvl="2"/>
 			<Attacke id="RUCKZUCKHIEB" lvl="4"/>
 			<Attacke id="ENERGIEFOKUS" lvl="7"/>
 			<Attacke id ="HYPERZAHN" lvl="20"/>
@@ -571,7 +571,7 @@
 		<Fangrate wert="0.3"/>
 		<AttackenListe>
 			<Attacke id="GLUT" lvl="1"/>
-			<Attacke id="ROUTENSCHLAG" lvl="4"/>
+			<Attacke id="RUTENSCHLAG" lvl="4"/>
 			<Attacke id="RUCKZUCKHIEB" lvl="8"/>
 			<Attacke id="FUNKENFLUG" lvl="15"/>
 			<Attacke id ="FLAMMENWURF" lvl="34"/>
@@ -595,7 +595,7 @@
 		<Fangrate wert="0.15"/>
 		<AttackenListe>
 			<Attacke id="GLUT" lvl="1"/>
-			<Attacke id="ROUTENSCHLAG" lvl="4"/>
+			<Attacke id="RUTENSCHLAG" lvl="4"/>
 			<Attacke id="RUCKZUCKHIEB" lvl="8"/>
 			<Attacke id="FUNKENFLUG" lvl="15"/>
 			<Attacke id ="FLAMMENWURF" lvl="34"/>
@@ -737,7 +737,7 @@
 		<Fangrate wert="0.3"/>
 		<AttackenListe>
 			<Attacke id="KRATZER" lvl="1"/>
-			<Attacke id="ROUTENSCHLAG" lvl="4"/>
+			<Attacke id="RUTENSCHLAG" lvl="4"/>
 			<Attacke id="AQUAKNARRE" lvl="8"/>
 			<Attacke id="KONFUSION" lvl="15"/>
 			<Attacke id ="AQUAWELLE" lvl="19"/>
@@ -761,7 +761,7 @@
 		<Fangrate wert="0.1"/>
 		<AttackenListe>
 			<Attacke id="KRATZER" lvl="1"/>
-			<Attacke id="ROUTENSCHLAG" lvl="4"/>
+			<Attacke id="RUTENSCHLAG" lvl="4"/>
 			<Attacke id="AQUAKNARRE" lvl="8"/>
 			<Attacke id="KONFUSION" lvl="15"/>
 			<Attacke id ="AQUAWELLE" lvl="19"/>
@@ -1181,7 +1181,7 @@
 		<AttackenListe>
 			<Attacke id="PFUND" lvl="1"/>
 			<Attacke id="RISIKOTACKLE" lvl="52"/>
-			<Attacke id="ROUTENSCHLAG" lvl="5"/>
+			<Attacke id="RUTENSCHLAG" lvl="5"/>
 			<Attacke id="DUPLEXHIEB" lvl="12"/>
 			<Attacke id ="BODYCHECK" lvl="27"/>
 			<Attacke id="EIERBOMBE" lvl="43"/>

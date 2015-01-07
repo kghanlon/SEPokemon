@@ -350,7 +350,7 @@
 		<Gen wert="0.8"/>
 		<Schaden wert="60"/>
 	</Attacke>
-	<Attacke id="MOGEHIEB">
+	<Attacke id="MOGELHIEB">
 		<Typ id="NORMAL"/>	
 		<Gen wert="1.0"/>
 		<Schaden wert="40"/>
@@ -380,7 +380,7 @@
 		<Gen wert="0.9"/>
 		<Schaden wert="80"/>
 	</Attacke>
-	<Attacke id="KOPFUSS">
+	<Attacke id="KOPFNUSS">
 		<Typ id="NORMAL"/>	
 		<Gen wert="1.0"/>
 		<Schaden wert="70"/>

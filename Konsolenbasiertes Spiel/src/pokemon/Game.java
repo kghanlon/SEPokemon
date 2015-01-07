@@ -6,12 +6,15 @@
 package pokemon;
 import java.util.*;
 
+import tests.PokemonTest;
+
 public class Game {
 	public static void main(String args[]){
 		Statisches.setScanner();
 		Statisches.einlesen();
 		Scanner sc = Statisches.getScanner();
-		hauptmenue(sc);
+		PokemonTest.testKampfSchwach();
+		//hauptmenue(sc);
 		Statisches.closeScanner();			
 	}
 	
