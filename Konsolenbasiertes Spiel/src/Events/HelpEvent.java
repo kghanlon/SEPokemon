@@ -6,8 +6,15 @@ import java.util.ArrayList;
 import pokemon.LocationFactory;
 import pokemon.Trainer;
 
+/**"UeberallEvent" das alle zurzeit moeglichen Befehle auf der Konsole ausgibt
+ * @author hanlonk
+ *
+ */
 public class HelpEvent extends Event {
 	
+	/**
+	 * Konsturktor fuer ein HelpEvent (Befehl = "hilfe")
+	 */
 	public HelpEvent(){
 		super(new ArrayList<String>(), new ArrayList<String>(), "hilfe");
 	}

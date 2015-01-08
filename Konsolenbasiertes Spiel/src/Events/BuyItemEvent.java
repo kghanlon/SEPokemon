@@ -3,16 +3,27 @@ package Events;
 import java.util.List;
 
 import pokemon.Item;
-import pokemon.ItemNamen;
 import pokemon.Statisches;
 import pokemon.Trainer;
 
+/** Ein Event das ein bestimmtes Item zum Inventar hinzufuegt und dafuer die entsprechenden Pokedollar abzieht
+ * @author hanlonk
+ *
+ */
 public class BuyItemEvent extends Event {
 	
 	private int anzahl;
 	private int kosten;
 	private Item item;
 	
+	/**
+	 * Konstruktor fuer ein BuyItemEvent
+	 * @param reqTokens - Alle benoetigten Tokens
+	 * @param reqNonTokens - Alle Tokens die der Trainer nicht haben darf
+	 * @param command - Befehl zur Ausfuehrung des Events
+	 * @param kosten - Die Kosten fuer eins der gekauften Items
+	 * @param item - Das Item das gekauft werden kann
+	 */
 	public BuyItemEvent (List<String> reqTokens, List<String> reqNonTokens, String command, int kosten, Item item){
 		super(reqTokens, reqNonTokens, command);
 		this.kosten = kosten;

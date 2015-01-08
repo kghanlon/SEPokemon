@@ -4,10 +4,21 @@ import java.util.List;
 
 import pokemon.Trainer;
 
+/** Ein Event das es moeglich macht mehrere Events mit nur einem Befehl auszufuehren
+ * @author hanlonk
+ *
+ */
 public class CompoundEvent extends Event {
 	
 	private List<Event> events;
 	
+	/**
+	 * Konstruktor fuer ein CompoundEvent
+	 * @param reqTokens - Alle benoetigten Tokens
+	 * @param reqNonTokens - Alle Tokens die der Trainer nicht haben darf
+	 * @param command - Befehl zur Ausfuehrung des Events
+	 * @param events - Alle Events die verbunden werden, und hintereinander ausgefuehrt werden
+	 */
 	public CompoundEvent(List<String> reqTokens, List<String> reqNonTokens, String command, List<Event> events){
 		super(reqTokens, reqNonTokens, command);
 		this.events = events;
@@ -22,6 +33,7 @@ public class CompoundEvent extends Event {
 		}
 	}
 	
+	//Testet ob das aufgerufene Event ausgefuehrt werden darf(Tokens)
 	private boolean testReqTokens(Trainer t, Event e){
 		List<String> reqTokens = e.getReqTokens();
 		for(int i = 0; i < reqTokens.size(); i++){

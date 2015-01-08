@@ -22,6 +22,10 @@ import Events.RemoveTokenEvent;
 import Events.TrainerFightEvent;
 import Events.WildPokemonEvent;
 
+/**Die Klasse die aus der LocationXML alle Locations und Events erstellt.
+ * @author hanlonk
+ *
+ */
 public class LocationFactory {
 	
 	public static Map<Integer, Location> locations = new HashMap<Integer, Location>();	
@@ -29,6 +33,9 @@ public class LocationFactory {
 	Document doc;
 	String s;
 	
+	/** Konstruktor fuer die LocationFactory.
+	 * @param s - der Ort an dem die Locatoin.XML liegt
+	 */
 	public LocationFactory(String s){
 		this.s = s;
 		try{
@@ -47,6 +54,10 @@ public class LocationFactory {
 		
 	}
 	
+	/**
+	 * Methode die alle Location Tags in der Location.XML durchgeht, diese erstellt, die Events laden lässt
+	 * und dann alle Location der statischen Location Liste hinzufuegt.
+	 */
 	public void getAllLocations(){ //nodes = alle locations in der welt.
 		//Hier werden alle Locations die in der XML stehen in die
 		//HashMap geschrieben.
@@ -68,6 +79,11 @@ public class LocationFactory {
 	}
 	
 	//Gets all the events that belong to the i-th item of nodes:
+	/** 
+	 * Methode die alle Events aus einer bestimmten Node der Location.XML erstellt und diese in einer Liste zurückgibt.
+	 * @param i - Die Stelle an der sich das akutelle Node in der Location.XML befindet
+	 * @return Liste aller Events in diesem Node
+	 */
 	public List<Event> getAllEvents(int i){
 		List<Event> events = new ArrayList<Event>();
 		//Geht alle Event Tags durch:
@@ -120,7 +136,12 @@ public class LocationFactory {
 		return events;
 	}
 	
-	public InformationEvent getInformationEvent(int i, int j){
+	/** Erstellt ein Information Event und gibt dieses zurück
+	 * @param i - Index für die aktuelle Location (Oder CompoundEvent) in der XML
+	 * @param j - Index für das aktuelle Event in der XML
+	 * @return das erstellte InformationEvent
+	 */
+	private InformationEvent getInformationEvent(int i, int j){
 		//Get Required Token List:
 		List<String> reqTokens = getReqTokenList(i, j);
 		//Get Required NonToken List:
@@ -132,7 +153,12 @@ public class LocationFactory {
 		return new InformationEvent(reqTokens, reqNonTokens, command, info);
 	}
 	
-	public ChangeLocationEvent getChangeLocationEvent(int i, int j){
+	/** Erstellt ein ChangeLocationEvent und gibt dieses zurück
+	 * @param i - Index für die aktuelle Location (Oder CompoundEvent) in der XML
+	 * @param j - Index für das aktuelle Event in der XML
+	 * @return das erstellte ChangeLocationEvent
+	 */
+	private ChangeLocationEvent getChangeLocationEvent(int i, int j){
 		//Get Required Token List:
 		List<String> reqTokens = getReqTokenList(i, j);
 		//Get Required NonToken List:
@@ -146,7 +172,12 @@ public class LocationFactory {
 		return new ChangeLocationEvent(reqTokens, reqNonTokens, command, info, nextLocId);
 	}
 	
-	public CompoundEvent getCompoundEvent(int i, int j){
+	/** Erstellt ein CompoundEvent und gibt dieses zurück
+	 * @param i - Index für die aktuelle Location (Oder CompoundEvent) in der XML
+	 * @param j - Index für das aktuelle Event in der XML
+	 * @return das erstellte CompoundEvent
+	 */
+	private CompoundEvent getCompoundEvent(int i, int j){
 		//Get Required Token List:
 		List<String> reqTokens = getReqTokenList(i, j);
 		//Get Required NonToken List:
@@ -164,7 +195,12 @@ public class LocationFactory {
 		return new CompoundEvent(reqTokens, reqNonTokens, command, compEvents);
 	}
 	
-	public RemoveTokenEvent getRemoveTokenEvent(int i, int j){
+	/** Erstellt ein RemoveTokenEvent und gibt dieses zurück
+	 * @param i - Index für die aktuelle Location (Oder CompoundEvent) in der XML
+	 * @param j - Index für das aktuelle Event in der XML
+	 * @return das erstellte RemoveTokenEvent
+	 */
+	private RemoveTokenEvent getRemoveTokenEvent(int i, int j){
 		//Get Required Token List:
 		List<String> reqTokens = getReqTokenList(i, j);
 		//Get Required NonToken List:
@@ -178,7 +214,12 @@ public class LocationFactory {
 		return new RemoveTokenEvent(reqTokens, reqNonTokens, command, token);
 	}
 	
-	public GrantTokenEvent getGrantTokenEvent(int i, int j){
+	/** Erstellt ein GrantTOkenEvent und gibt dieses zurück
+	 * @param i - Index für die aktuelle Location (Oder CompoundEvent) in der XML
+	 * @param j - Index für das aktuelle Event in der XML
+	 * @return das erstellte GrantTokenEvent
+	 */
+	private GrantTokenEvent getGrantTokenEvent(int i, int j){
 		//Get Required Token List:
 		List<String> reqTokens = getReqTokenList(i, j);
 		//Get Required NonToken List:
@@ -192,7 +233,12 @@ public class LocationFactory {
 		return new GrantTokenEvent(reqTokens, reqNonTokens, command, token);
 	}
 	
-	public WildPokemonEvent getWildPokemonEvent(int i, int j){
+	/** Erstellt ein WildPokemonEvent und gibt dieses zurück
+	 * @param i - Index für die aktuelle Location (Oder CompoundEvent) in der XML
+	 * @param j - Index für das aktuelle Event in der XML
+	 * @return das erstellte WildPokemonEvent
+	 */
+	private WildPokemonEvent getWildPokemonEvent(int i, int j){
 		//Get Required Token List:
 		List<String> reqTokens = getReqTokenList(i, j);
 		//Get Required NonToken List:
@@ -214,7 +260,12 @@ public class LocationFactory {
 		return new WildPokemonEvent(reqTokens, reqNonTokens, command, pokemon, minlvl, maxlvl, nextPokeCenterLocId);
 	}
 	
-	public GrantMoneyEvent getGrantMoneyEvent(int i, int j){
+	/** Erstellt ein GrantMoneyEVent und gibt dieses zurück
+	 * @param i - Index für die aktuelle Location (Oder CompoundEvent) in der XML
+	 * @param j - Index für das aktuelle Event in der XML
+	 * @return das erstellte GrantMoneyEvent
+	 */
+	private GrantMoneyEvent getGrantMoneyEvent(int i, int j){
 		//Get Required Token List:
 		List<String> reqTokens = getReqTokenList(i, j);
 		//Get Required NonToken List:
@@ -228,7 +279,12 @@ public class LocationFactory {
 		return new GrantMoneyEvent(reqTokens, reqNonTokens, command, amount);
 	}
 	
-	public RemoveMoneyEvent getRemoveMoneyEvent(int i, int j){
+	/** Erstellt ein RemoveMoneyEvent und gibt dieses zurück
+	 * @param i - Index für die aktuelle Location (Oder CompoundEvent) in der XML
+	 * @param j - Index für das aktuelle Event in der XML
+	 * @return das erstellte RemoveMoneyEvent
+	 */
+	private RemoveMoneyEvent getRemoveMoneyEvent(int i, int j){
 		//Get Required Token List:
 		List<String> reqTokens = getReqTokenList(i, j);
 		//Get Required NonToken List:
@@ -242,7 +298,12 @@ public class LocationFactory {
 		return new RemoveMoneyEvent(reqTokens, reqNonTokens, command, amount);
 	}
 	
-	public TrainerFightEvent getTrainerFightEvent(int i, int j){
+	/** Erstellt ein TrainerFightEvent und gibt dieses zurück
+	 * @param i - Index für die aktuelle Location (Oder CompoundEvent) in der XML
+	 * @param j - Index für das aktuelle Event in der XML
+	 * @return das erstellte TrainerFightEvent
+	 */
+	private TrainerFightEvent getTrainerFightEvent(int i, int j){
 		//Get Required Token List:
 		List<String> reqTokens = getReqTokenList(i, j);
 		//Get Required NonToken List:
@@ -266,7 +327,12 @@ public class LocationFactory {
 		return new TrainerFightEvent(reqTokens, reqNonTokens, tokenAtWin, command, poke, levels, nextPokeCenterLocId, money);
 	}
 	
-	public BuyItemEvent getBuyItemEvent(int i, int j){
+	/** Erstellt ein BuyItemEvent und gibt dieses zurück
+	 * @param i - Index für die aktuelle Location (Oder CompoundEvent) in der XML
+	 * @param j - Index für das aktuelle Event in der XML
+	 * @return das erstellte BuyItemEvent
+	 */
+	private BuyItemEvent getBuyItemEvent(int i, int j){
 		//Get Required Token List:
 		List<String> reqTokens = getReqTokenList(i, j);
 		//Get Required NonToken List:
@@ -299,7 +365,12 @@ public class LocationFactory {
 		return new BuyItemEvent(reqTokens, reqNonTokens, command, kosten, item);
 	}
 	
-	public GrantItemEvent getGrantItemEvent(int i, int j){
+	/** Erstellt ein GrantItemEvent und gibt dieses zurück
+	 * @param i - Index für die aktuelle Location (Oder CompoundEvent) in der XML
+	 * @param j - Index für das aktuelle Event in der XML
+	 * @return das erstellte GrantItemEvent
+	 */
+	private GrantItemEvent getGrantItemEvent(int i, int j){
 		//Get Required Token List:
 		List<String> reqTokens = getReqTokenList(i, j);
 		//Get Required NonToken List:
@@ -331,7 +402,12 @@ public class LocationFactory {
 		return new GrantItemEvent(reqTokens, reqNonTokens, command, item, amount);
 	}
 	
-	public HealPokemonEvent getHealPokemonEvent(int i, int j){
+	/** Erstellt ein HealPokemonEvent und gibt dieses zurück
+	 * @param i - Index für die aktuelle Location (Oder CompoundEvent) in der XML
+	 * @param j - Index für das aktuelle Event in der XML
+	 * @return das erstellte HealPokemonEvent
+	 */
+	private HealPokemonEvent getHealPokemonEvent(int i, int j){
 		//Get Required Token List:
 		List<String> reqTokens = getReqTokenList(i, j);
 		//Get Required NonToken List:
@@ -346,7 +422,7 @@ public class LocationFactory {
 	//HILFS METHODEN:
 	
 	//Attribute optional
-	public List<String> getReqTokenList(int i, int j){
+	private List<String> getReqTokenList(int i, int j){
 
 		List<String> reqTokens = new ArrayList<String>();
 		//String mit allen required Tokens:
@@ -372,7 +448,7 @@ public class LocationFactory {
 	}
 	
 	//Attribute optional
-	public List<String> getReqNonTokenList(int i, int j){
+	private List<String> getReqNonTokenList(int i, int j){
 
 		List<String> reqNonTokens = new ArrayList<String>();
 		//String mit allen required NonTokens:
@@ -399,7 +475,7 @@ public class LocationFactory {
 	
 	
 	//Attribute optional.
-	public String getCommand(int i, int j){
+	private String getCommand(int i, int j){
 		String command = "##"; //shouldn't really be used by mistake
 		try{
 			command = nodes.item(i).getChildNodes().item(j).getAttributes()
@@ -412,20 +488,20 @@ public class LocationFactory {
 	}
 	
 	//Attribute required!
-	public String getInfo(int i, int j){
+	private String getInfo(int i, int j){
 		String info = nodes.item(i).getChildNodes().item(j).getTextContent().trim().replaceAll("\\t+", "");
 		return info;
 	}
 	
 	//Attribute required!
-	public int getNextLocId(int i, int j){
+	private int getNextLocId(int i, int j){
 		int ret = Integer.parseInt(nodes.item(i).getChildNodes().item(j)
 				.getAttributes().getNamedItem("nextLocId").getNodeValue());
 		return ret;
 	}
 	
 	//Attribute required!
-	public List<PokeNamen> getPokeNames(int i, int j){
+	private List<PokeNamen> getPokeNames(int i, int j){
 		List<PokeNamen> pokemon = new ArrayList<PokeNamen>();
 		//String mit allen vorhandenen pokemon:
 		String pokString = nodes.item(i).getChildNodes().item(j).getAttributes()
@@ -445,7 +521,7 @@ public class LocationFactory {
 		}
 	}
 	
-	public List<Integer> getPokeLevels(int i, int j){
+	private List<Integer> getPokeLevels(int i, int j){
 		List<Integer> levels = new ArrayList<Integer>();
 		//String mit allen leveln:
 		String lvlString = nodes.item(i).getChildNodes().item(j).getAttributes()

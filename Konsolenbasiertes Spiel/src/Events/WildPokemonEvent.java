@@ -9,12 +9,26 @@ import pokemon.PokeNamen;
 import pokemon.Pokemon;
 import pokemon.Trainer;
 
+/**Event fuer einen Kampf gegen ein Wildes Pokemon
+ * @author hanlonk
+ *
+ */
 public class WildPokemonEvent extends Event {
 	
 	private List<PokeNamen> pokemon;
 	private int minlvl, maxlvl;
 	private int nextPokeCenterLocId;
 	
+	/**
+	 * Konstruktor fuer ein WildPokemonEvent
+	 * @param reqTokens - Alle benoetigten Tokens
+	 * @param reqNonTokens - Alle Tokens die der Trainer nicht haben darf
+	 * @param command - Befehl zur Ausfuerung des Events
+	 * @param pokemon - die Pokemon auf die man treffen kann
+	 * @param minlvl - das kleinstmoegliche Level der wilden Pokemon
+	 * @param maxlvl - das groeﬂtmoegliche Level der wilden Pokemon
+	 * @param nextPokeCenterLocId - Der Ort an dem man geheilt wird falls man verliert.
+	 */
 	public WildPokemonEvent(List<String> reqTokens, List<String> reqNonTokens,
 			String command, List<PokeNamen> pokemon, int minlvl, int maxlvl, int nextPokeCenterLocId) {
 		super(reqTokens, reqNonTokens, command);

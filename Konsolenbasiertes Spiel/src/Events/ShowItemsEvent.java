@@ -6,8 +6,15 @@ import pokemon.Pokemon;
 import pokemon.Statisches;
 import pokemon.Trainer;
 
+/**"UeberallEvent" das alle vorhandenen Items anzeigt und mit dem man Traenke benutzen kann
+ * @author hanlonk
+ *
+ */
 public class ShowItemsEvent extends Event {
 	
+	/**
+	 * Konstruktor fuer ein ShowItemsEvent (Befehl = "item info")
+	 */
 	public ShowItemsEvent(){
 		super(new ArrayList<String>(), new ArrayList<String>(), "item info");
 	}

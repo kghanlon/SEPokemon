@@ -6,8 +6,15 @@ import pokemon.Pokemon;
 import pokemon.Statisches;
 import pokemon.Trainer;
 
+/**"Ueberall Event" das Infos ueber die Pokemon die man besitzt anzeigt
+ * @author hanlonk
+ *
+ */
 public class ShowPokemonEvent extends Event {
 	
+	/**
+	 * Konstruktor fuer ein ShowPokemonEvent (Befehl = "pokemon info")
+	 */
 	public ShowPokemonEvent(){
 		super(new ArrayList<String>(), new ArrayList<String>(), "pokemon info");
 	}

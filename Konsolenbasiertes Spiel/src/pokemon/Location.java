@@ -17,6 +17,12 @@ public class Location {
 	private List<Event> events;
 	private Scanner scan = Statisches.getScanner();
 	
+	/**
+	 * Location Konstruktor - erstellt neue Location mit angegebenen Events und allen "ueberall" Events.
+	 * @param id - Die Location ID
+	 * @param name - Name der Location
+	 * @param events - Alle Events die in der Location vorkommen sollen.
+	 */
 	public Location(int id, String name, List<Event> events){
 		this.id = id;
 		this.name = name;
@@ -31,6 +37,11 @@ public class Location {
 		events.add(5, new ShowTokenEvent());
 	}
 	
+	/**
+	 * Fuehrt die Location aus -> Wartet auf Eingaben und fuehrt passende Events aus bis ein Event die LocationId des Trainers aendert.
+	 * @param t - Instanz des Trainers
+	 * @return Die neue Location des Trainers
+	 */
 	public Location runLocation(Trainer t){
 		//Wartet auf Eingabe, fuehrt dann das ensprechende Event aus.
 		//Wenn die Location vom Trainer geaendert wird, gib die neue Loc zurück.
@@ -46,7 +57,7 @@ public class Location {
 		}
 	}
 	
-	public int findCorrectEvent(String command, List<String> tokens){
+	private int findCorrectEvent(String command, List<String> tokens){
 		//Only one event can fit to a specified command+token combination. This Method finds
 		//that event if it exists. If not, the default "empty" event is returned
 		for(int i = 0; i < events.size(); i++){
@@ -75,10 +86,18 @@ public class Location {
 		return 0;
 	}
 	
+	/**
+	 * Getter fuer Location Name
+	 * @return Name der Location
+	 */
 	public String getName(){
 		return this.name;
 	}
 	
+	/**
+	 * Getter fuer die Events der Location
+	 * @return Liste der Events in der Location
+	 */
 	public List<Event> getEvents(){
 		return this.events;
 	}

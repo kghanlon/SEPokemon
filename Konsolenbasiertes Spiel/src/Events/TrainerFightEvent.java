@@ -9,6 +9,10 @@ import pokemon.PokeNamen;
 import pokemon.Pokemon;
 import pokemon.Trainer;
 
+/**Event fuer den Kampf gegen einen Trainer
+ * @author hanlonk
+ *
+ */
 public class TrainerFightEvent extends Event {
 	
 	private List<PokeNamen> poke;
@@ -19,6 +23,17 @@ public class TrainerFightEvent extends Event {
 	private int money;
 	private String tokenAtWin;
 	
+	/**
+	 * Konstruktor fuer ein TrainerFightEvent
+	 * @param reqTokens - Liste aller benoetigten Tokens
+	 * @param reqNonTokens - Lister aller Tokens die der Trainer nicht haben darf
+	 * @param tokenAtWin - Das Token das man erhaelt sollte man den Kampf gewinnen
+	 * @param command - Befehl zur Ausfuerung des Events
+	 * @param poke - Die Pokemon des Gegners
+	 * @param levels - Die Level der Pokemon des Gegners
+	 * @param nextPokeCenterLocId - Der Ort an dem man geheilt wird sollte man den Kampf verlieren
+	 * @param money - Das moegliche Preisgeld
+	 */
 	public TrainerFightEvent(List<String> reqTokens, List<String> reqNonTokens, String tokenAtWin, String command,
 							List<PokeNamen> poke, List<Integer> levels, int nextPokeCenterLocId, int money){
 		super(reqTokens, reqNonTokens, command);

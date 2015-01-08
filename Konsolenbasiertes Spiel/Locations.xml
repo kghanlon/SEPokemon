@@ -14,21 +14,21 @@
 				Du betrittst das Labor von Prof. Eich.
 			</ChangeLocationEvent>
 			<ChangeLocationEvent command="gehe nach norden" nextLocId="3" reqNonToken="AlabastiaDefault">
-				Du gehst nach Norden zur Route 1, die nach Vertania City führt.
+				Du gehst nach Norden zur Route 1, die nach Vertania City fuehrt.
 			</ChangeLocationEvent>
 	</location>
 	<location id="2" name="EichsLabor">
 			<InformationEvent command="schau dich um">
-				Das Labor ist ziemlich groß und du siehst viele merkwürdige Maschienen an den Wänden stehen. An einer davon kannst du 
+				Das Labor ist ziemlich groß und du siehst viele merkwuerdige Maschienen an den Waenden stehen. An einer davon kannst du 
 				deine Pokemon heilen. Prof. Eich steht im hinteren Teil des Labors an seinem Schreibtisch.
 			</InformationEvent>
 			<CompoundEvent command="rede mit eich" reqToken="AlabastiaDefault">
 				<InformationEvent>
-					Du näherst dich dem Professor. Als er dich bemerkt dreht er sich lächelnd zu dir hin. "Ah, wie ich sehe
-					hast du dein erstes eigenes Pokemon bekommen. Kümmere dich gut darum. Wenn du in die weite Welt hinaus
+					Du naeherst dich dem Professor. Als er dich bemerkt dreht er sich laechelnd zu dir hin. "Ah, wie ich sehe
+					hast du dein erstes eigenes Pokemon bekommen. Kuemmere dich gut darum. Wenn du in die weite Welt hinaus
 					gehst wirst du sicherlich viele neue Pokemon sehen und fangen. Gehe am Besten zuerst nach Vertania City
 					und rede dort mit meinem Bekannten im Pokemon Markt. Viel Spaß!"
-					Hiermit dreht sich der Professor zurück zu seinem Experiment.
+					Hiermit dreht sich der Professor zurueck zu seinem Experiment.
 				</InformationEvent>
 				<RemoveTokenEvent token="AlabastiaDefault"/>
 				<GrantTokenEvent token="ErsteKonversationMitEich"/>
@@ -40,12 +40,12 @@
 				"Hey, deine Pokemon sehen super aus!"
 			</InformationEvent>
 			<ChangeLocationEvent command="verlasse das labor" reqToken="garyBesiegt1" nextLocId="1">
-				Du verlässt das Labor von Prof. Eich und gehst zurück auf die Straßen von Alabastia.
+				Du verlaesst das Labor von Prof. Eich und gehst zurueck auf die Straßen von Alabastia.
 			</ChangeLocationEvent>
 			<CompoundEvent command="verlasse das labor" reqToken="ErsteKonversationMitEich" reqNonToken="garyBesiegt1">
 				<InformationEvent>
-					Als du das Labor verlassen willst erscheint plötzlich Gary, Prof. Eichs Enkel.
-					Gary:"Hey du! Ich habe heute auch mein Erstes Pokemon bekommen! Komm lass uns gegeneinander kämpfen"
+					Als du das Labor verlassen willst erscheint ploetzlich Gary, Prof. Eichs Enkel.
+					Gary:"Hey du! Ich habe heute auch mein Erstes Pokemon bekommen! Komm lass uns gegeneinander kaempfen"
 				</InformationEvent>
 				<TrainerFightEvent reqToken="starterBisasam" tokenAtWin="garyBesiegt1"
 									pokemon="GLUMANDA" level="5" money="200" nextPokeCenterLocId="2"/>
@@ -75,7 +75,7 @@
 			<CompoundEvent command="paket abgeben" reqToken="paketDabei">
 				<InformationEvent>
 					"Ist das das Paket von meinem Bekannten aus Vertania City? Awesome!! Schau mal was hier drin ist,
-					ein POKEDEX! Dieser wird dir im Verlauf deines Abenteuers sehr nützlich sein."
+					ein POKEDEX! Dieser wird dir im Verlauf deines Abenteuers sehr nuetzlich sein."
 					(Editor's note: Zurzeit ist der Pokedex komplett ohne Nutzen...)
 				</InformationEvent>
 				<RemoveTokenEvent token="paketDabei"/>
@@ -87,9 +87,9 @@
 	<location id="3" name="Route1">
 			<InformationEvent command="schau dich um">
 				Du befindest dich auf Route 1, der gewundenen, aber nicht allzu langen Straße nach Vertania City.
-				Um dich herum befindet sich viel hohes Gras, hier tümmeln sich wohl viele wilde Pokemon. Etwas die Straße
-				runter steht ein gelangweilter Teenager und am nördlichen Ende der Straße siehst du die ersten Häuser von Vertania
-				City. Im Süden befindet sich Alabastia.
+				Um dich herum befindet sich viel hohes Gras, hier tuemmeln sich wohl viele wilde Pokemon. Etwas die Straße
+				runter steht ein gelangweilter Teenager und am noerdlichen Ende der Straße siehst du die ersten Haeuser von Vertania
+				City. Im Sueden befindet sich Alabastia.
 			</InformationEvent>
 			<CompoundEvent command="rede mit dem teenager" reqNonToken="mitTeenagerGeredet">
 				<InformationEvent>
@@ -105,8 +105,8 @@
 				Du gehst zu dem Teenager. "Hallo du! Und, warst du schom im Pokemon Markt in Vertania City?"
 			</InformationEvent>
 			<WildPokemonEvent command="gehe in das hohe gras" pokemon="TAUBSI;RATTFRATZ" minlvl="2" maxlvl="4" nextPokeCenterLocId="2"/>
-			<ChangeLocationEvent command="gehe nach süden" nextLocId="1">
-				Du gehst die Route 1 in südlicher Richtung hinunter nach Alabastia.
+			<ChangeLocationEvent command="gehe nach sueden" nextLocId="1">
+				Du gehst die Route 1 in suedlicher Richtung hinunter nach Alabastia.
 			</ChangeLocationEvent>
 			<ChangeLocationEvent command="gehe nach norden" nextLocId="4">
 				Du gehst nach Norden und erreichst Vertania City.
@@ -114,18 +114,18 @@
 	</location>
 	<location id="4" name="VertaniaCity">
 		<InformationEvent command="schau dich um">
-			Du bist in Vertania City angekommen. Diese Stadt ist um einiges größer als Alabastia und es befinden sich viele Leute
+			Du bist in Vertania City angekommen. Diese Stadt ist um einiges groeßer als Alabastia und es befinden sich viele Leute
 			auf den Straßen. In der Stadt siehst du ein PokemonCenter und einen Pokemon Markt. Am Rand der Stadt ist ein kleiner Wald
-			mit einem merkwürdigen Baum davor. Im Westen siehst du den Weg zur Siegesstraße und im Norden die Straße zum Vertania Wald.
+			mit einem merkwuerdigen Baum davor. Im Westen siehst du den Weg zur Siegesstraße und im Norden die Straße zum Vertania Wald.
 		</InformationEvent>
 		<CompoundEvent command="untersuche den baum" reqNonToken="baumUntersucht">
 			<InformationEvent>
-				Du näherst dich dem Baum und erkennst einen Hohlraum auf der Hinterseite.
+				Du naeherst dich dem Baum und erkennst einen Hohlraum auf der Hinterseite.
 			</InformationEvent>
 			<GrantTokenEvent token="baumUntersucht"/>
 		</CompoundEvent>
 		<InformationEvent command="untersuche den baum" reqToken="baumUntersucht">
-			Du näherst dich dem Baum und erkennst einen Hohlraum auf der Hinterseite.
+			Du naeherst dich dem Baum und erkennst einen Hohlraum auf der Hinterseite.
 		</InformationEvent>
 		<CompoundEvent command="untersuche den hohlraum" reqToken="baumUntersucht" reqNonToken="hohlraumLeer">
 			<InformationEvent>
@@ -138,8 +138,8 @@
 		<InformationEvent command="untersuche den hohlraum" reqToken="baumUntersucht;hohlraumLeer">
 			Du greifst mit der Hand in den Hohlraum, dieser ist allerdings leer.
 		</InformationEvent>
-		<ChangeLocationEvent command="gehe nach süden" nextLocId="3">
-			Du gehst nach Süden und erreichst die Route 1.
+		<ChangeLocationEvent command="gehe nach sueden" nextLocId="3">
+			Du gehst nach Sueden und erreichst die Route 1.
 		</ChangeLocationEvent>
 		<ChangeLocationEvent command="gehe in das pokecenter" nextLocId="5">
 			Du betrittst das PokeCenter von Vertania City.
@@ -173,40 +173,40 @@
 			Du gehst nach Norden und betrittst den Vertania Wald.
 		</ChangeLocationEvent>
 		<InformationEvent command="gehe nach norden" reqNonToken="paketZugestellt">
-			Du gehst nach Norden, doch der Weg wird von einem alten Mann versperrt. Er schaut dich mürrisch an und sagt:
+			Du gehst nach Norden, doch der Weg wird von einem alten Mann versperrt. Er schaut dich muerrisch an und sagt:
 			"Ich hatte noch keinen Kaffee, du kannst hier jetzt nicht durch".
-			Damit schickt er dich zurück nach Vertania City.
+			Damit schickt er dich zurueck nach Vertania City.
 		</InformationEvent>
 	</location>
 	<location id="5" name="VertaniaCityPokeCenter">
 		<CompoundEvent command="heile pokemon">
 			<HealPokemonEvent/>
 			<InformationEvent>
-				"Bis zum nächsten Mal :)"
+				"Bis zum naechsten Mal :)"
 			</InformationEvent>
 		</CompoundEvent>
 		<ChangeLocationEvent command="verlasse das pokecenter" nextLocId="4">
-			Du verlässt das PokeCenter von Vertania City.
+			Du verlaesst das PokeCenter von Vertania City.
 		</ChangeLocationEvent>
 	</location>
 	<location id="6" name="VertaniaCityPokeMarkt">
 		<InformationEvent command="schau dich um">
-			Du bist im PokeMarkt und der Verkäufer schaut dich interessiert an.
+			Du bist im PokeMarkt und der Verkaeufer schaut dich interessiert an.
 		</InformationEvent>
 		<BuyItemEvent command="kaufe trank" item="trank" type="heal" cost="100" reqToken="paketZugestellt"/>
 		<BuyItemEvent command="kaufe pokeball" item="pokeball" type="ball" cost="10" reqToken="paketZugestellt"/>
-		<CompoundEvent command="rede mit dem verkäufer" reqNonToken="paketZugestellt;paketDabei">
+		<CompoundEvent command="rede mit dem verkaeufer" reqNonToken="paketZugestellt;paketDabei">
 			<InformationEvent>
-				"Hey, kommst du aus Alabastia? Ok, super. Ich habe hier ein Pakte für Prof. Eich, meinst du du kannst ihm das
+				"Hey, kommst du aus Alabastia? Ok, super. Ich habe hier ein Pakte fuer Prof. Eich, meinst du du kannst ihm das
 				vorbeibringen?"
 				EichstPaket erhalten.
 			</InformationEvent>
 			<GrantTokenEvent token="paketDabei"/>
 		</CompoundEvent>
-		<InformationEvent command="rede mit dem verkäufer" reqToken="paketDabei">
+		<InformationEvent command="rede mit dem verkaeufer" reqToken="paketDabei">
 			"Hey, hast du Prof. Eich das Paket vorbeigebracht?"
 		</InformationEvent>
-		<InformationEvent command="rede mit dem verkäufer" reqToken="paketZugestellt">
+		<InformationEvent command="rede mit dem verkaeufer" reqToken="paketZugestellt">
 			"Willkommen im PokeMarkt, wie kann ich dir behilflich sein?"
 		</InformationEvent>
 		<InformationEvent command="kaufe trank" reqToken="paketDabei">
@@ -216,17 +216,17 @@
 			"Hey, hast du Prof. Eich das Paket vorbeigebracht?"
 		</InformationEvent>
 		<ChangeLocationEvent command="verlasse den pokemarkt" nextLocId="4">
-			Du verlässt den PokeMarkt von Vertania City.
+			Du verlaesst den PokeMarkt von Vertania City.
 		</ChangeLocationEvent>
 	</location>
 	<location id="7" name="Route2">
 		<InformationEvent command="schau dich um">
 			Du bist auf Route 2. Um dich herum befindet sich viel hohes Gras, und am westlichen Ende siehst du den Eingang zur
-			Siegesstraße, davor steht eine Wache. In östlicher Richtung befindet sich Vertania City.
+			Siegesstraße, davor steht eine Wache. In oestlicher Richtung befindet sich Vertania City.
 		</InformationEvent>
 		<InformationEvent command="rede mit der wache">
 			Du gehst zur Wache die den Eingang zur Siegesstraße blockiert.
-			"Es tut mir Leid, aber nur Trainer die alle acht Orden besitzte dürfen die Siegesstraße betreten."
+			"Es tut mir Leid, aber nur Trainer die alle acht Orden besitzte duerfen die Siegesstraße betreten."
 		</InformationEvent>
 		<WildPokemonEvent command="gehe in das hohe gras" pokemon="RATTFRATZ;TAUBSI;HABITAK" minlvl="2" maxlvl="4" nextPokeCenterLocId="5"/>
 		<ChangeLocationEvent command="gehe nach osten" nextLocId="4">
@@ -235,41 +235,41 @@
 	</location>
 	<location id="8" name="VertaniaWald">
 		<InformationEvent command="schau dich um">
-			Du bist im dunklen Vertania Wald. Ein geschwungener Pfad führt in nördlicher Richtung durch die Bäume nach Marmoria City.
-			Überhall befinden sich Stellen mit hohem Gras, in denen nicht nur wilde Pokemon sondern auch andere Trainer lauern.
-			Direkt am Weg siehst du zwei Käfersammler. In südlicher Richtung geht es nach Vertania City.
+			Du bist im dunklen Vertania Wald. Ein geschwungener Pfad fuehrt in noerdlicher Richtung durch die Baeume nach Marmoria City.
+			ueberhall befinden sich Stellen mit hohem Gras, in denen nicht nur wilde Pokemon sondern auch andere Trainer lauern.
+			Direkt am Weg siehst du zwei Kaefersammler. In suedlicher Richtung geht es nach Vertania City.
 		</InformationEvent>
 		<WildPokemonEvent command="gehe in das hohe gras" pokemon="PIKACHU;RAUPY;HORNLIU" minlvl="3" maxlvl="6" nextPokeCenterLocId="5"/>
-		<TrainerFightEvent command="kämpfe gegen käfersammler 1" reqNonToken="VWK1" tokenAtWin="VWK1"
+		<TrainerFightEvent command="kaempfe gegen kaefersammler 1" reqNonToken="VWK1" tokenAtWin="VWK1"
 							pokemon="RAUPY;RAUPY" level="5;5" money="200" nextPokeCenterLocId="5"/>
-		<TrainerFightEvent command="kämpfe gegen käfersammler 2" reqNonToken="VWK2" tokenAtWin="VWK2"
+		<TrainerFightEvent command="kaempfe gegen kaefersammler 2" reqNonToken="VWK2" tokenAtWin="VWK2"
 							pokemon="RAUPY;HORNLIU" level="5;5" money="200" nextPokeCenterLocId="5"/>
 		<CompoundEvent command="gehe nach norden" reqNonToken="VWK3">
 			<InformationEvent>
-				Du willst gerade den Vertania Wald im Norden verlassen als dich ein Käfersammler überrascht und mit dir kämpfen will!
+				Du willst gerade den Vertania Wald im Norden verlassen als dich ein Kaefersammler ueberrascht und mit dir kaempfen will!
 			</InformationEvent>
 			<TrainerFightEvent tokenAtWin="VWK3" pokemon="HORNLIU" level="9" money="250" nextPokeCenterLocId="5"/>
 			<ChangeLocationEvent reqToken="VWK3" nextLocId="9">
-				Du hast den Käfersammler besiegt und verlässt den Vertania Wald im Norden und erreichst Marmoria City.
+				Du hast den Kaefersammler besiegt und verlaesst den Vertania Wald im Norden und erreichst Marmoria City.
 			</ChangeLocationEvent>
 		</CompoundEvent>
 		<ChangeLocationEvent command="gehe nach norden" reqToken="VWK3" nextLocId="9">
-			Du verlässt den Vertania Wald im Norden und erreichst Marmoria City.
+			Du verlaesst den Vertania Wald im Norden und erreichst Marmoria City.
 		</ChangeLocationEvent>
-		<ChangeLocationEvent command="gehe nach süden" nextLocId="4">
-			Du verlässt den Vertania Wald im Süden und erreichst Vertania City.
+		<ChangeLocationEvent command="gehe nach sueden" nextLocId="4">
+			Du verlaesst den Vertania Wald im Sueden und erreichst Vertania City.
 		</ChangeLocationEvent>
 	</location>
 	<location id="9" name="MarmoriaCity">
 		<InformationEvent command="schau dich um">
-			Du bist in Marmoria City, eine große Stadt mit einem PokeCenter, einem PokeMarkt und einer Pokemon Arena. Im Süden befindet
-			sich der Vertania Wald und im Osten siehst du einen langen Pfad von der Stadt weg führen. Dieser wird allerdings gerade
+			Du bist in Marmoria City, eine große Stadt mit einem PokeCenter, einem PokeMarkt und einer Pokemon Arena. Im Sueden befindet
+			sich der Vertania Wald und im Osten siehst du einen langen Pfad von der Stadt weg fuehren. Dieser wird allerdings gerade
 			von einem breit gebauten Kerl versperrt. Den lassen wir besser in Ruhe...
 		</InformationEvent>
 		<InformationEvent command="untersuche die arena">
 			Du schaust dir die Arena genauer an. Dies ist der Trainingsplatz von Rocko, dem ersten Arenaleiter in Kanto. Dieser benutzt
 			Stein Pokemon um seine Gegner zu besiegen. Wenn du weiter kommen willst auf deinem Pfad zum Pokemon Meister wirst du gegen
-			ihn antreten müssen.
+			ihn antreten muessen.
 		</InformationEvent>
 		<ChangeLocationEvent command="gehe in das pokecenter" nextLocId="5">
 			Du betrittst das PokeCenter von Marmoria City.
@@ -280,21 +280,21 @@
 		<ChangeLocationEvent command="gehe in die arena" nextLocId="10">
 			Du betrittst die Arena von Rocko, dem Arenaleiter von Marmoria City.
 		</ChangeLocationEvent>
-		<ChangeLocationEvent command="gehe nach süden" nextLocId="8">
-			Du verlässt Marmoria City in südlicher Richtung und betrittst den Vertania Wald.
+		<ChangeLocationEvent command="gehe nach sueden" nextLocId="8">
+			Du verlaesst Marmoria City in suedlicher Richtung und betrittst den Vertania Wald.
 		</ChangeLocationEvent>
 	</location>
 	<location id="10" name="RockosArena">
 		<InformationEvent command="schau dich um" reqNonToken="rockoBesiegt">
 			Du bist in der felisigen Arena von Rocko. Der Weg zu ihm wird von einem seiner Trainer blockiert. Du wirst den Trainer
-			zuerst besiegen müssen bevor du gegen Rocko antreten kannst.
+			zuerst besiegen muessen bevor du gegen Rocko antreten kannst.
 		</InformationEvent>
 		<InformationEvent command="schau dich um" reqToken="rockoBesiegt">
 			Du bist in der felsigen Arena von Rocko. Den Felsorden hast du schon erhalten.
 		</InformationEvent>
-		<TrainerFightEvent command="kämpfe gegen den trainer" reqNonToken="rockoTrainerBesiegt" tokenAtWin="rockoTrainerBesiegt"
+		<TrainerFightEvent command="kaempfe gegen den trainer" reqNonToken="rockoTrainerBesiegt" tokenAtWin="rockoTrainerBesiegt"
 							pokemon="KLEINSTEIN" level="10" money="300" nextPokeCenterLocId="9"/>
-		<CompoundEvent command="kämpfe gegen rocko" reqToken="rockoTrainerBesiegt" reqNonToken="rockoBesiegt">
+		<CompoundEvent command="kaempfe gegen rocko" reqToken="rockoTrainerBesiegt" reqNonToken="rockoBesiegt">
 			<InformationEvent>
 				Du bist beim ersten Arenaleiter angekommen und forderst Rocko zum Kampf heraus!
 			</InformationEvent>
@@ -302,11 +302,11 @@
 			<InformationEvent reqToken="rockoBesiegt">
 				ROCKO:"Du hast mich besiegt, unglaublich. Dein erster Schritt in Richtung Pokemon Meister ist vollbracht.
 				Hier, nimm den Felsorden als Zeichen meiner Anerkennung."
-				Du erhälst den Felsorden von Rocko.
+				Du erhaelst den Felsorden von Rocko.
 			</InformationEvent>
 		</CompoundEvent>
 		<ChangeLocationEvent command="verlasse die arena" nextLocId="9">
-			Du verlässt die Arena von Rocko und bist wieder auf den Straßen von Marmoria City.
+			Du verlaesst die Arena von Rocko und bist wieder auf den Straßen von Marmoria City.
 		</ChangeLocationEvent>
 	</location>
 </world>

@@ -8,7 +8,14 @@ import java.util.*;
 
 import tests.PokemonTest;
 
+/** Die Hauptklasse, die das ganze Spiel startet und leitet
+ * @author hanlonk
+ *
+ */
 public class Game {
+	/** Die Main Methode, startet den Scanner und das Hauptmenue
+	 * @param args
+	 */
 	public static void main(String args[]){
 		Statisches.setScanner();
 		Statisches.einlesen();
